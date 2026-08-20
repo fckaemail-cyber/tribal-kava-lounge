@@ -64,11 +64,12 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
-          netlify deploy --prod --dir=. --auth=$NETLIFY_AUTH_TOKEN --site=$NETLIFY_SITE_ID
+          # Use draft deploy (production deploy requires elevated permissions)
+          netlify deploy --dir=. --auth=$NETLIFY_AUTH_TOKEN --site=$NETLIFY_SITE_ID --message "Auto-deploy from GitHub Actions"
           
       - name: Summary
         run: |
           echo "## Daily Kava Auto-Publish Complete" >> $GITHUB_STEP_SUMMARY
           echo "- Time: $(date -u)" >> $GITHUB_STEP_SUMMARY
-          echo "- Status: Deployed to production" >> $GITHUB_STEP_SUMMARY
+          echo "- Status: Draft deployed (promote to production in Netlify dashboard)" >> $GITHUB_STEP_SUMMARY
           echo "- Site: https://tribalkavalounge.com" >> $GITHUB_STEP_SUMMARY
