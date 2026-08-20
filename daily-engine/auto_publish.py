@@ -113,12 +113,16 @@ def create_post_object(draft_path):
     # Clean up the HTML for JS template literal
     html_body = html_body.replace('`', '\\`').replace('${', '\\${')
     
+    # Escape quotes for JavaScript strings
+    title_escaped = meta['title'].replace("'", "\\'")
+    dek_escaped = meta['dek'].replace("'", "\\'")
+    
     date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     
     post = f"""  {{
     slug: '{meta['slug']}',
-    title: '{meta['title'].replace("'", "\\'")}',
-    dek: '{meta['dek'].replace("'", "\\'")}',
+    title: '{title_escaped}',
+    dek: '{dek_escaped}',
     date: '{date}',
     category: '{meta['category']}',
     readMin: {meta['readMin']},
