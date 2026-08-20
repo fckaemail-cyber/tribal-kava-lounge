@@ -11,9 +11,9 @@ const seoDatabase = {
             "@context": "https://schema.org",
             "@type": "BarOrPub",
             "name": "Tribal Kava Lounge",
-            "image": "https://tribalkavalounge.com/images/lounge-hero.jpg",
-            "@id": "https://tribalkavalounge.com/#lounge",
-            "url": "https://tribalkavalounge.com",
+            "image": "https://thetribalkavalounge.com/images/lounge-hero.jpg",
+            "@id": "https://thetribalkavalounge.com/#lounge",
+            "url": "https://thetribalkavalounge.com",
             "telephone": "+1-561-355-0561",
             "email": "join@tribalkavalounge.co",
             "priceRange": "$$",
@@ -54,7 +54,7 @@ const seoDatabase = {
             "@context": "https://schema.org",
             "@type": "Menu",
             "name": "Tribal Kava Lounge Botanical Beverage Menu",
-            "mainEntityOfPage": "https://tribalkavalounge.com/menu",
+            "mainEntityOfPage": "https://thetribalkavalounge.com/menu",
             "hasMenuSection": [
                 {
                     "@type": "MenuSection",
@@ -135,13 +135,13 @@ const seoDatabase = {
                     "@type": "ListItem",
                     "position": 1,
                     "name": "Home",
-                    "item": "https://tribalkavalounge.com"
+                    "item": "https://thetribalkavalounge.com"
                 },
                 {
                     "@type": "ListItem",
                     "position": 2,
                     "name": "Kava vs. Kratom",
-                    "item": "https://tribalkavalounge.com/kava-vs-kratom"
+                    "item": "https://thetribalkavalounge.com/kava-vs-kratom"
                 }
             ]
         }
@@ -217,7 +217,7 @@ const seoDatabase = {
             "@type": "Article",
             "headline": "What Is Kava?",
             "description": "Beginner guide to kava drinks — culture, preparation, and flavor at Tribal Kava Lounge in West Palm Beach.",
-            "mainEntityOfPage": "https://tribalkavalounge.com/what-is-kava",
+            "mainEntityOfPage": "https://thetribalkavalounge.com/what-is-kava",
             "author": { "@type": "Organization", "name": "Tribal Kava Lounge" },
             "publisher": { "@type": "Organization", "name": "Tribal Kava Lounge", "telephone": "+1-561-355-0561" }
         }
@@ -232,7 +232,7 @@ const seoDatabase = {
             "@type": "Article",
             "headline": "What Is Kratom Tea?",
             "description": "Beginner guide to kratom beverages for adults 21+ at Tribal Kava Lounge.",
-            "mainEntityOfPage": "https://tribalkavalounge.com/what-is-kratom",
+            "mainEntityOfPage": "https://thetribalkavalounge.com/what-is-kratom",
             "author": { "@type": "Organization", "name": "Tribal Kava Lounge" },
             "publisher": { "@type": "Organization", "name": "Tribal Kava Lounge" }
         }
@@ -246,7 +246,7 @@ const seoDatabase = {
             "@context": "https://schema.org",
             "@type": "WebPage",
             "name": "Plan Your Visit",
-            "url": "https://tribalkavalounge.com/plan-your-visit"
+            "url": "https://thetribalkavalounge.com/plan-your-visit"
         }
     },
     'private-events': {
@@ -258,7 +258,7 @@ const seoDatabase = {
             "@context": "https://schema.org",
             "@type": "WebPage",
             "name": "Private Events",
-            "url": "https://tribalkavalounge.com/private-events"
+            "url": "https://thetribalkavalounge.com/private-events"
         }
     },
     'press': {
@@ -270,7 +270,7 @@ const seoDatabase = {
             "@context": "https://schema.org",
             "@type": "WebPage",
             "name": "Press & Social Proof",
-            "url": "https://tribalkavalounge.com/press"
+            "url": "https://thetribalkavalounge.com/press"
         }
     },
     'gift-cards': {
@@ -282,7 +282,7 @@ const seoDatabase = {
             "@context": "https://schema.org",
             "@type": "WebPage",
             "name": "Gift Cards",
-            "url": "https://tribalkavalounge.com/gift-cards"
+            "url": "https://thetribalkavalounge.com/gift-cards"
         }
     },
     'the-daily-kava': {
@@ -295,7 +295,7 @@ const seoDatabase = {
             "@type": "Blog",
             "name": "The Daily Kava",
             "description": "Education, stories, and lounge life from Tribal Kava Lounge in West Palm Beach.",
-            "url": "https://tribalkavalounge.com/the-daily-kava",
+            "url": "https://thetribalkavalounge.com/the-daily-kava",
             "publisher": {
                 "@type": "Organization",
                 "name": "Tribal Kava Lounge",
@@ -534,7 +534,7 @@ function renderDailyKavaArticle(slug) {
         "datePublished": post.date,
         "author": { "@type": "Organization", "name": "Tribal Kava Lounge" },
         "publisher": { "@type": "Organization", "name": "Tribal Kava Lounge" },
-        "mainEntityOfPage": `https://tribalkavalounge.com/the-daily-kava/${post.slug}`,
+        "mainEntityOfPage": `https://thetribalkavalounge.com/the-daily-kava/${post.slug}`,
         "articleSection": post.category
     }, null, 2);
     document.head.appendChild(schemaScript);
@@ -589,7 +589,7 @@ function injectSEO(route) {
     if (dbSchema) dbSchema.textContent = JSON.stringify(meta.schema, null, 2);
 
     // Canonical + Open Graph
-    const absUrl = 'https://tribalkavalounge.com' + (meta.slug === '/' ? '/' : meta.slug);
+    const absUrl = 'https://thetribalkavalounge.com' + (meta.slug === '/' ? '/' : meta.slug);
     const canon = document.getElementById('seo-canonical');
     if (canon) canon.setAttribute('href', absUrl);
     const ogTitle = document.getElementById('og-title');
