@@ -1,0 +1,20 @@
+[build]
+  publish = "."
+
+# Let real files (robots.txt, sitemap.xml, images, css, js) serve first;
+# SPA path routes fall through to index.html for clean SEO URLs.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = false
+  minify = true
+
+[build.processing.html]
+  pretty_urls = false

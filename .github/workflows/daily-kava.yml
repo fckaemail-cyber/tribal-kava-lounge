@@ -1,0 +1,59 @@
+name: Daily Kava Content Engine
+
+on:
+  schedule:
+    # Run daily at 11:00 UTC (6 AM ET / 7 AM ET during DST)
+    - cron: '0 11 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  fetch-and-draft:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # No external dependencies needed - using stdlib only
+          
+      - name: Run daily engine (fetch + draft + check)
+        run: |
+          cd daily-engine
+          python3 run_daily.py run
+          
+      - name: Check for new drafts
+        id: check_drafts
+        run: |
+          cd daily-engine
+          if [ -n "$(ls -A drafts/*.md 2>/dev/null)" ]; then
+            echo "has_drafts=true" >> $GITHUB_OUTPUT
+            echo "New drafts created"
+          else
+            echo "has_drafts=false" >> $GITHUB_OUTPUT
+            echo "No new drafts"
+          fi
+          
+      - name: Commit and push drafts
+        if: steps.check_drafts.outputs.has_drafts == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add daily-engine/drafts/
+          git add daily-engine/state/
+          git commit -m "chore: daily kava digest $(date +%Y-%m-%d)" || exit 0
+          git push
+          
+      - name: Summary
+        run: |
+          echo "## Daily Kava Engine Run Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- Time: $(date -u)" >> $GITHUB_STEP_SUMMARY
+          echo "- Check daily-engine/drafts/ for new content" >> $GITHUB_STEP_SUMMARY
+          echo "- Review drafts before adding to daily-kava.js" >> $GITHUB_STEP_SUMMARY

@@ -1,0 +1,1806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Dynamic Title & Meta inserted by app.js -->
+    <title>Tribal Kava Lounge | West Palm Beach</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="canonical" href="https://tribalkavalounge.com/" id="seo-canonical">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Tribal Kava Lounge">
+    <meta property="og:title" content="Tribal Kava Lounge | West Palm Beach" id="og-title">
+    <meta property="og:description" content="Premium non-alcoholic kava lounge in West Palm Beach. Kava clouds, kratom refreshers (21+), and agua frescas." id="og-desc">
+    <meta property="og:url" content="https://tribalkavalounge.com/" id="og-url">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <!-- COMING SOON OVERLAY -->
+    <div id="coming-soon-overlay" class="coming-soon-overlay">
+      <div class="coming-soon-card">
+        <div class="coming-soon-glow"></div>
+        <div class="logo-icon coming-soon-logo">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <p class="coming-soon-eyebrow">Tribal Kava Lounge</p>
+        <h1 class="coming-soon-title">Something botanical<br>is brewing in West Palm Beach.</h1>
+        <p class="coming-soon-desc">Premium alcohol-free kava clouds, kratom refreshers, and late-night lounge energy. <strong>Opening soon.</strong></p>
+
+        <div class="coming-soon-details">
+          <a href="https://maps.google.com/?q=770+S+Military+Trail+Unit+A1+West+Palm+Beach+FL+33415" target="_blank" rel="noopener">770 S Military Trail, Unit A1<br>West Palm Beach, FL 33415</a>
+          <a href="tel:+15613550561">(561) 355-0561</a>
+        </div>
+
+        <div class="coming-soon-socials">
+          <a href="https://www.instagram.com/TribalKavaLounge" target="_blank" rel="noopener">@TribalKavaLounge</a>
+          <a href="mailto:Join@TribalKavaLounge.Co">Join@TribalKavaLounge.Co</a>
+        </div>
+
+        <form class="coming-soon-form" onsubmit="event.preventDefault(); alert('Thanks — we will keep you posted!');">
+          <input type="email" placeholder="Email for opening updates" aria-label="Email for opening updates" required>
+          <button type="submit">Notify Me</button>
+        </form>
+
+        <button class="coming-soon-preview" id="coming-soon-preview">Preview full site →</button>
+        <p class="coming-soon-note">Full experience preview only. Public launch coming soon.</p>
+      </div>
+    </div>
+
+    <!-- Ambient Ambient Glow Backgrounds -->
+    <div class="glow-vector glow-blue"></div>
+    <div class="glow-vector glow-purple"></div>
+    <div class="glow-vector glow-gold"></div>
+
+    <!-- Developer SEO Strategy Dashboard -->
+    <button class="seo-toggle-btn" id="seo-toggle-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Toggle SEO Meta Check
+    </button>
+    <div class="seo-dashboard" id="seo-dashboard">
+        <h4>
+            Active Page SEO Meta
+            <button class="seo-dashboard-close" id="seo-db-close">Close</button>
+        </h4>
+        <div style="margin-bottom: 0.75rem;">
+            <span style="font-size: 0.7rem; color: var(--electric-blue); font-weight: bold; text-transform: uppercase;">URL Slug:</span>
+            <div class="seo-meta-title" id="seo-db-slug" style="font-family: monospace;">/</div>
+        </div>
+        <div style="margin-bottom: 0.75rem;">
+            <span style="font-size: 0.7rem; color: var(--electric-blue); font-weight: bold; text-transform: uppercase;">Page H1:</span>
+            <div class="seo-meta-title" id="seo-db-h1">H1 Tag</div>
+        </div>
+        <div style="margin-bottom: 0.75rem;">
+            <span style="font-size: 0.7rem; color: var(--electric-blue); font-weight: bold; text-transform: uppercase;">SEO Title:</span>
+            <div class="seo-meta-title" id="seo-db-title">Title Tag</div>
+        </div>
+        <div style="margin-bottom: 0.75rem;">
+            <span style="font-size: 0.7rem; color: var(--electric-blue); font-weight: bold; text-transform: uppercase;">Meta Description:</span>
+            <div class="seo-meta-desc" id="seo-db-desc">Description details go here.</div>
+        </div>
+        <div>
+            <span style="font-size: 0.7rem; color: var(--electric-blue); font-weight: bold; text-transform: uppercase;">JSON-LD Schema Markup:</span>
+            <pre id="seo-db-schema" style="font-size: 0.65rem; color: #a78bfa; overflow-x: auto; background: rgba(0,0,0,0.4); padding: 0.5rem; border-radius: 6px; font-family: monospace; max-height: 120px;"></pre>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="nav-container">
+            <a href="/" class="brand-logo">
+                <div class="logo-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                Tribal Kava
+            </a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="/" class="active">Home</a></li>
+                    <li><a href="/menu">Menu</a></li>
+                    <li><a href="/new-here">New Here?</a></li>
+                    <li><a href="/events">Events</a></li>
+                    <li><a href="/the-daily-kava">The Daily Kava</a></li>
+                    <li><a href="/plan-your-visit">Plan Visit</a></li>
+                    <li><a href="/visit">Visit Us</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                </ul>
+            </nav>
+
+            <button class="hamburger" id="nav-toggle" aria-label="Toggle Menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-drawer">
+        <ul class="mobile-nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/new-here">New Here?</a></li>
+            <li><a href="/kava-vs-kratom">Kava vs. Kratom</a></li>
+            <li><a href="/what-is-kava">What Is Kava?</a></li>
+            <li><a href="/what-is-kratom">What Is Kratom?</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/the-daily-kava">The Daily Kava</a></li>
+            <li><a href="/plan-your-visit">Plan Your Visit</a></li>
+            <li><a href="/private-events">Private Events</a></li>
+            <li><a href="/press">Press</a></li>
+            <li><a href="/gift-cards">Gift Cards</a></li>
+            <li><a href="/visit">Visit Us</a></li>
+            <li><a href="/faq">FAQ</a></li>
+        </ul>
+        <div style="margin-top: auto; border-top: 1px solid var(--card-border); padding-top: 1.5rem;">
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Age 21+ required for kratom. Visit responsibly.</p>
+        </div>
+    </div>
+
+    <!-- MAIN VIEWS WRAPPER -->
+    <div class="content-wrapper">
+
+        <!-- ================= PAGE 1: HOME ================= -->
+        <div id="view-home" class="spa-view">
+            <!-- Hero Section -->
+            <section class="hero-section pro-hero">
+                <div class="container hero-grid">
+                    <div class="hero-copy">
+                        <div class="badge hero-badge">
+                            West Palm Beach's premium alcohol-free third place
+                        </div>
+                        <h1>
+                            Botanical drinks that feel like a night out — without the bar scene.
+                        </h1>
+                        <p class="hero-lede">
+                            Creamy kava clouds, fruit-forward kratom refreshers, and bright agua fresca sips built for first-timers, date nights, study sessions, and late-night hangs.
+                        </p>
+                        <div class="hero-ctas">
+                            <a href="/menu" class="btn btn-accent">View the Drink Menu</a>
+                            <a href="tel:+15613550561" class="btn btn-secondary">Call (561) 355-0561</a>
+                            <a href="/new-here" class="btn btn-secondary">First time? Start here</a>
+                        </div>
+                        <div class="hero-trust-row" aria-label="Lounge highlights">
+                            <span>Sun–Thu 8 AM–12 AM · Fri–Sat 8 AM–1 AM</span>
+                            <span>Beginner-friendly menu</span>
+                            <span>Kratom 21+ with valid ID</span>
+                        </div>
+                    </div>
+                    <div class="hero-showcase" aria-label="Featured Tribal Kava drinks">
+                        <div class="showcase-card showcase-card-main">
+                            <span class="showcase-kicker">Signature sip</span>
+                            <div class="cup cup-blue"><span></span></div>
+                            <h3>Blue Razz Coconut Cloud</h3>
+                            <p>Bright, photogenic, coconut-cream energy.</p>
+                        </div>
+                        <div class="showcase-card showcase-card-float one">
+                            <div class="mini-cup cream"></div>
+                            <strong>Banana Pudding Kava</strong>
+                            <small>Sweet + creamy starter</small>
+                        </div>
+                        <div class="showcase-card showcase-card-float two">
+                            <div class="mini-cup mango"></div>
+                            <strong>Mango Chili Lime</strong>
+                            <small>Kratom refresher · 21+</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Never had kava or kratom? Section -->
+            <section style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
+                <div class="container" style="max-width: 900px; text-align: center;">
+                    <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; margin-bottom: 1.25rem;">Never had kava or kratom?</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                        Never had kava or kratom? You are not the only one. Most first-time guests are brand new to this. Our menu is built to make the first sip easy with familiar flavors, clear labels, beginner-friendly options, and a team that can walk you through it.
+                    </p>
+                    <a href="/new-here" class="btn btn-secondary">Start with the First-Time Guide</a>
+                </div>
+            </section>
+
+            <!-- Compact AI Guide Promo Section -->
+            <section style="background: radial-gradient(circle at center, rgba(var(--electric-blue-rgb), 0.05) 0%, rgba(0,0,0,0) 80%);">
+                <div class="container" style="max-width: 800px; text-align: center; border: 1px dashed rgba(var(--electric-blue-rgb), 0.2); padding: 3rem; border-radius: 24px; background: rgba(7, 9, 14, 0.4); backdrop-filter: blur(10px);">
+                    <h2 style="font-family: var(--font-display); font-size: 2.25rem; font-weight: 800; margin-bottom: 1rem; color: #ffffff;">Curious but confused? Ask the Kava Guide.</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.98rem;">
+                        Ask questions like “Does kava get you drunk?”, “What is kratom?”, “What should I order first?”, or “What is beginner friendly?” before you even walk in.
+                    </p>
+                    <button onclick="askAI('What is kava?', 'float-chat-input', 'float-chat-send')" class="btn btn-secondary" style="border-radius: 100px;">Ask the Kava Guide</button>
+                </div>
+            </section>
+
+            <!-- Why This Beats a Regular Bar Section -->
+            <section>
+                <div class="container">
+                    <div class="section-head">
+                        <h2>A different kind of night out.</h2>
+                        <p>Not every night needs alcohol. Come for creamy kava clouds, fruit-forward refreshers, late-night lounge energy, music, community events, study sessions, first dates, friend hangs, and drinks that feel fun without being a liquor bar.</p>
+                    </div>
+                    <div class="grid grid-4">
+                        <div class="card">
+                            <h3 style="font-size: 1.2rem; color: #ffffff;">Date Night Without the Bar Scene</h3>
+                            <p style="margin-top: 0.5rem;">Vibe with dim lighting and great music in a social atmosphere without the rowdy noise of a traditional bar.</p>
+                        </div>
+                        <div class="card">
+                            <h3 style="font-size: 1.2rem; color: #ffffff;">Study, Work, or Chill</h3>
+                            <p style="margin-top: 0.5rem;">Free Wi‑Fi, multiple seating sections, pool tables, and unlimited free parking — built for study sessions, remote work, and low-key catch-ups.</p>
+                        </div>
+                        <div class="card">
+                            <h3 style="font-size: 1.2rem; color: #ffffff;">Late-Night Social Lounge</h3>
+                            <p style="margin-top: 0.5rem;">Meet local creatives, join game nights, or relax with friends. A welcoming community hub open late every night.</p>
+                        </div>
+                        <div class="card">
+                            <h3 style="font-size: 1.2rem; color: #ffffff;">First-Timer Friendly Botanical Drinks</h3>
+                            <p style="margin-top: 0.5rem;">Our drinks mask the traditional bitterness of botanicals with creamy dessert flavors and fresh fruit infusions.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Drink Category Cards -->
+            <section style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--card-border);">
+                <div class="container">
+                    <div class="section-head">
+                        <h2>Drink Categories</h2>
+                        <p>We structure our menu around flavor profiles so you know exactly what to expect.</p>
+                    </div>
+                    <div class="grid grid-4">
+                        <div class="card">
+                            <div class="badge badge-kava" style="margin-bottom: 1rem;">Kava Base</div>
+                            <h3>Kava Clouds</h3>
+                            <p>Creamy, dessert-style kava drinks made to feel smooth and approachable.</p>
+                        </div>
+                        <div class="card">
+                            <div class="badge badge-kratom" style="margin-bottom: 1rem;">Kratom Base &bull; 21+</div>
+                            <h3>Kratom Refreshers</h3>
+                            <p>Brewed botanical tea served in bright, fruit-forward refresher flavors. 21+ only.</p>
+                        </div>
+                        <div class="card">
+                            <div class="badge badge-nonbotanical" style="margin-bottom: 1rem;">Zero Botanicals</div>
+                            <h3>Agua Fresca Refreshers</h3>
+                            <p>Fresh, colorful, non-kava/non-kratom options for anyone in the group.</p>
+                        </div>
+                        <div class="card">
+                            <div class="badge badge-nonbotanical" style="margin-bottom: 1rem;">Viral Blend</div>
+                            <h3>Viral Signatures</h3>
+                            <p>Bold, photogenic drinks made for the sip, the pic, and the vibe.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Drinks Section -->
+            <section>
+                <div class="container">
+                    <div class="section-head">
+                        <h2>Featured Botanical Drinks</h2>
+                        <p>A few of our most popular craft creations in West Palm Beach.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.75rem;">Featured menu items shown. Full menu expanding soon.</p>
+                    </div>
+                    <div class="grid grid-3">
+                        <!-- Featured Card 1 -->
+                        <div class="card drink-card">
+                            <div>
+                                <div class="drink-visual">
+                                    <img src="/images/coming-soon.jpg" alt="Banana Pudding Kava Cloud — coming soon" loading="lazy" width="640" height="640">
+                                </div>
+                                <div class="drink-tags">
+                                    <span class="badge badge-kava">Kava</span>
+                                    <span class="badge badge-beginner">Beginner Friendly</span>
+                                </div>
+                                <h3>Banana Pudding Kava Cloud</h3>
+                                <p>Creamy banana, vanilla, and wafer-inspired flavor over a smooth kava base. <strong style="color: var(--gold-accent);">$10</strong></p>
+                            </div>
+                        </div>
+                        <!-- Featured Card 2 -->
+                        <div class="card drink-card">
+                            <div>
+                                <div class="drink-visual">
+                                    <img src="/images/coming-soon.jpg" alt="Strawberry Shortcake Kava Cloud — coming soon" loading="lazy" width="640" height="640">
+                                </div>
+                                <div class="drink-tags">
+                                    <span class="badge badge-kava">Kava</span>
+                                    <span class="badge badge-beginner">Fan Favorite</span>
+                                </div>
+                                <h3>Strawberry Shortcake Kava Cloud</h3>
+                                <p>Strawberry, cream, and cake-inspired notes in a dessert-style kava drink. <strong style="color: var(--gold-accent);">$10</strong></p>
+                            </div>
+                        </div>
+                        <!-- Featured Card 3 -->
+                        <div class="card drink-card">
+                            <div>
+                                <div class="drink-visual">
+                                    <img src="/images/coming-soon.jpg" alt="La Nube Tres Leches kava cloud — coming soon" loading="lazy" width="640" height="640">
+                                </div>
+                                <div class="drink-tags">
+                                    <span class="badge badge-kava">Kava</span>
+                                    <span class="badge badge-nonbotanical">Signature</span>
+                                </div>
+                                <h3>La Nube Tres Leches</h3>
+                                <p>A creamy tres leches-inspired kava cloud with soft vanilla and cinnamon notes. <strong style="color: var(--gold-accent);">$10</strong></p>
+                            </div>
+                        </div>
+                        <!-- Featured Card 4 -->
+                        <div class="card drink-card">
+                            <div>
+                                <div class="drink-visual">
+                                    <img src="/images/coming-soon.jpg" alt="Mango Chili Lime Kratomade refresher 21+ — coming soon" loading="lazy" width="640" height="640">
+                                </div>
+                                <div class="drink-tags">
+                                    <span class="badge badge-kratom">Kratom</span>
+                                    <span class="badge badge-21">21+ Required</span>
+                                </div>
+                                <h3>Mango Chili Lime Kratomade</h3>
+                                <p>Mango, lime, and a sweet-heat finish with brewed kratom tea. <strong style="color: var(--gold-accent);">$14</strong></p>
+                            </div>
+                        </div>
+                        <!-- Featured Card 5 -->
+                        <div class="card drink-card">
+                            <div>
+                                <div class="drink-visual">
+                                    <img src="/images/coming-soon.jpg" alt="Passionfruit Mint Kratom Refresher 21+ — coming soon" loading="lazy" width="640" height="640">
+                                </div>
+                                <div class="drink-tags">
+                                    <span class="badge badge-kratom">Kratom</span>
+                                    <span class="badge badge-21">21+ Required</span>
+                                    <span class="badge badge-beginner">Beginner Friendly</span>
+                                </div>
+                                <h3>Passionfruit Mint Kratom Refresher</h3>
+                                <p>Passionfruit, mint, citrus, and brewed kratom tea. <strong style="color: var(--gold-accent);">$14</strong></p>
+                            </div>
+                        </div>
+                        <!-- Featured Card 6 -->
+                        <div class="card drink-card">
+                            <div>
+                                <div class="drink-visual">
+                                    <img src="/images/coming-soon.jpg" alt="Blue Razz Coconut Cloud signature drink — coming soon" loading="lazy" width="640" height="640">
+                                </div>
+                                <div class="drink-tags">
+                                    <span class="badge badge-nonbotanical">Viral Favorite</span>
+                                </div>
+                                <h3>Blue Razz Coconut Cloud</h3>
+                                <p>Sweet blue raspberry and rich coconut cream blended for a photogenic signature. <strong style="color: var(--gold-accent);">$10</strong></p>
+                            </div>
+                        </div>
+                        <!-- Featured Card 7 -->
+                        <div class="card drink-card">
+                            <div>
+                                <div class="drink-visual">
+                                    <img src="/images/coming-soon.jpg" alt="Dubai Chocolate Pistachio Kava Cloud — coming soon" loading="lazy" width="640" height="640">
+                                </div>
+                                <div class="drink-tags">
+                                    <span class="badge badge-kava">Kava</span>
+                                    <span class="badge badge-nonbotanical">Signature</span>
+                                </div>
+                                <h3>Dubai Chocolate Pistachio Kava</h3>
+                                <p>Chocolate, pistachio, and dessert-style richness with a premium kava base. <strong style="color: var(--gold-accent);">$10</strong></p>
+                            </div>
+                        </div>
+                        <!-- Featured Card 8 -->
+                        <div class="card drink-card">
+                            <div>
+                                <div class="drink-visual">
+                                    <img src="/images/coming-soon.jpg" alt="Guava Lime Agua Fresca non-botanical refresher — coming soon" loading="lazy" width="640" height="640">
+                                </div>
+                                <div class="drink-tags">
+                                    <span class="badge badge-nonbotanical">Non-Botanical</span>
+                                    <span class="badge badge-beginner">Anyone</span>
+                                </div>
+                                <h3>Guava Lime Agua Fresca</h3>
+                                <p>Crisp pink guava and fresh key lime over ice — zero kava, zero kratom. <strong style="color: var(--gold-accent);">$13</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Latest from The Daily Kava -->
+            <section class="daily-home-strip" style="border-top: 1px solid var(--card-border);">
+                <div class="container">
+                    <div class="section-head" style="text-align: center; max-width: 720px; margin-left: auto; margin-right: auto;">
+                        <p class="daily-kicker">The Daily Kava</p>
+                        <h2 style="font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 0.75rem; color: #fff;">Latest from The Daily Kava</h2>
+                        <p style="color: var(--text-muted); margin-bottom: 0;">Beginner guides, flavor honesty, Military Trail dispatches — written like a human, not a wellness PDF.</p>
+                    </div>
+                    <div id="daily-kava-home-latest" class="daily-grid daily-home-grid"></div>
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="/the-daily-kava" class="btn btn-accent">See all stories</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pick Your First Sip (Interactive Quiz) -->
+            <section style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
+                <div class="container" style="max-width: 900px;">
+                    <div class="section-head">
+                        <h2>Not sure what to order?</h2>
+                        <p>Select your flavor style below to get an instant recommended drink recommendation.</p>
+                    </div>
+                    <div class="grid grid-2" style="margin-bottom: 2.5rem;">
+                        <div class="card quiz-card" style="cursor:pointer;" data-recommendation="Banana Pudding Kava Cloud or La Nube Tres Leches">
+                            <h3>I want something sweet and creamy.</h3>
+                            <p>Rich, dessert-style kava clouds designed to taste like vanilla, banana, or cinnamon cream.</p>
+                        </div>
+                        <div class="card quiz-card" style="cursor:pointer;" data-recommendation="Passionfruit Mint Kratom Refresher (21+) or Guava Lime Agua Fresca">
+                            <h3>I want something fruity and refreshing.</h3>
+                            <p>Bright, crisp botanical teas or non-botanical fruit refreshers served ice cold.</p>
+                        </div>
+                        <div class="card quiz-card" style="cursor:pointer;" data-recommendation="Blue Razz Coconut Cloud or Dubai Chocolate Pistachio Kava">
+                            <h3>I want something bold and photo-ready.</h3>
+                            <p>Striking layers, colorful whipped foams, and rich custom toppings designed to turn heads.</p>
+                        </div>
+                        <div class="card quiz-card" style="cursor:pointer;" data-recommendation="Start with our Guava Lime or Jamaica Passionfruit Agua Fresca!">
+                            <h3>I am just here with friends.</h3>
+                            <p>Looking for a premium, non-alcoholic drink option without kava or kratom.</p>
+                        </div>
+                    </div>
+                    
+                    <div id="quiz-result-box" style="display: none; background: rgba(var(--electric-blue-rgb), 0.1); border: 1px solid var(--electric-blue); border-radius: 12px; padding: 1.5rem; text-align: center; margin-bottom: 2rem;">
+                        <p id="quiz-recommendation-text" style="font-size: 1.1rem; color: #ffffff;"></p>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <button onclick="askAI('What should I order first?', 'float-chat-input', 'float-chat-send')" class="btn btn-secondary">Help Me Pick a Drink</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Visit Preview -->
+            <section>
+                <div class="container" style="max-width: 1000px;">
+                    <div class="grid grid-2" style="align-items: center;">
+                        <div>
+                            <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem;">Join Us Tonight</h2>
+                            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                                We are located on Military Trail in West Palm Beach, serving nearby Lake Worth, Greenacres, Palm Springs, and Haverhill.
+                            </p>
+                            <p style="margin-bottom: 0.5rem;">📍 <strong>Address:</strong> 770 S Military Trail, Unit A1, West Palm Beach, FL 33415</p>
+                            <p style="margin-bottom: 0.5rem;">⏰ <strong>Hours:</strong> Sun–Thu 8:00 AM–12:00 AM · Fri–Sat 8:00 AM–1:00 AM</p>
+                            <p style="margin-bottom: 0.5rem;">📞 <strong>Phone:</strong> <a href="tel:+15613550561" style="color: var(--text-cream);">(561) 355-0561</a></p>
+                            <p style="margin-bottom: 0.5rem;">✉️ <strong>Email:</strong> <a href="mailto:join@tribalkavalounge.co" style="color: var(--text-cream);">Join@TribalKavaLounge.Co</a></p>
+                            <p style="margin-bottom: 2rem;">📸 <strong>Instagram:</strong> <a href="https://www.instagram.com/TribalKavaLounge" target="_blank" style="color: var(--text-cream);">@TribalKavaLounge</a></p>
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <a href="tel:+15613550561" class="btn btn-accent">Call (561) 355-0561</a>
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=770+S+Military+Trail+Unit+A1,+West+Palm+Beach,+FL+33415" target="_blank" class="btn">Get Directions</a>
+                                <a href="https://www.instagram.com/TribalKavaLounge" target="_blank" class="btn btn-secondary">Follow Us</a>
+                            </div>
+                            <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">Online ordering coming soon — join the VIP list to know when it drops.</p>
+                        </div>
+                        <div style="border-radius: 20px; border: 1px solid var(--card-border); background: var(--card-bg); aspect-ratio: 1.3; overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative;">
+                            <div class="map-card"><span class="map-pin">770 S Military Trail, Unit A1</span><span>West Palm Beach</span><small>Tap “Get Directions” for live navigation.</small></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Phase 2 hospitality strip -->
+            <section class="hospitality-strip" style="padding: 4rem 0; border-top: 1px solid var(--card-border);">
+                <div class="container">
+                    <div class="section-head">
+                        <h2 style="font-family: var(--font-display); font-size: 2.25rem; font-weight: 800;">Plan the night. Host the room. Stay in the loop.</h2>
+                        <p style="color: var(--text-muted); max-width: 640px; margin: 0.75rem auto 0;">Premium hospitality layer — first visits, private bookings, gift cards, and social proof.</p>
+                    </div>
+                    <div class="grid grid-4" style="margin-top: 2rem;">
+                        <a href="/plan-your-visit" class="card hospitality-card" style="text-decoration:none; color:inherit;">
+                            <h3>Plan Your Visit</h3>
+                            <p>Hours, parking, first-timer tips, and what to expect when you walk in.</p>
+                            <span class="daily-read-link">Plan ahead →</span>
+                        </a>
+                        <a href="/private-events" class="card hospitality-card" style="text-decoration:none; color:inherit;">
+                            <h3>Private Events</h3>
+                            <p>Birthdays, creator meetups, study groups, and non-alcoholic hangouts.</p>
+                            <span class="daily-read-link">Host something →</span>
+                        </a>
+                        <a href="/gift-cards" class="card hospitality-card" style="text-decoration:none; color:inherit;">
+                            <h3>Gift Cards</h3>
+                            <p>Coming soon — join the VIP list to be first when digital cards drop.</p>
+                            <span class="daily-read-link">Get notified →</span>
+                        </a>
+                        <a href="/press" class="card hospitality-card" style="text-decoration:none; color:inherit;">
+                            <h3>Press &amp; Proof</h3>
+                            <p>Reviews, social features, and community reactions as they roll in.</p>
+                            <span class="daily-read-link">See the buzz →</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIP Signup -->
+            <div id="vip"></div>
+            <section style="background: radial-gradient(ellipse at top, rgba(var(--purple-glow-rgb), 0.08) 0%, rgba(0,0,0,0) 80%); border-top: 1px solid var(--card-border);">
+                <div class="container" style="max-width: 600px; text-align: center;">
+                    <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">Join the Tribal VIP List</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Be first to know about drops, events, and soft-opening specials.</p>
+                    <form onsubmit="event.preventDefault(); alert('Joined VIP list!');" style="display: flex; flex-direction: column; gap: 1rem;">
+                        <input type="text" placeholder="Your Name" class="btn btn-secondary" style="text-align: left; padding: 1rem; width: 100%; border-radius: 10px;" required>
+                        <input type="email" placeholder="Email Address" class="btn btn-secondary" style="text-align: left; padding: 1rem; width: 100%; border-radius: 10px;" required>
+                        <button type="submit" class="btn btn-accent" style="padding: 1rem;">Join the VIP List</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= PAGE 2: MENU ================= -->
+        <div id="view-menu" class="spa-view" style="display: none;">
+            <section>
+                <div class="container">
+                    <div class="section-head">
+                        <h1>Kava, Kratom &amp; Agua Fresca Menu</h1>
+                        <p>Explore creamy kava clouds, traditional shells, fruit-forward kratom refreshers, and agua fresca-inspired drinks. Not sure where to start? Ask the Kava Guide or look for the Beginner Friendly tag.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.75rem;"><strong>Clouds $10 · Refreshers $14 · Shots $6 · Extracts $15–25 · Agua Frescas $13</strong> &bull; Online ordering coming soon.</p>
+                        <div style="margin-top: 1.5rem;">
+                            <button onclick="askAI('What is beginner friendly?', 'float-chat-input', 'float-chat-send')" class="btn">Help Me Pick a Drink</button>
+                        </div>
+
+                    </div>
+
+                    <!-- $2 Tuesdays promo (Lowkey-style banner) -->
+                    <div class="promo-banner">
+                        <h2>$2 Tuesdays</h2>
+                        <p class="promo-sub">Single shells for <strong style="color: var(--gold-accent);">$2</strong> every Tuesday from <strong style="color: var(--text-cream);">2:00 PM – 5:00 PM</strong>. Stack your afternoon around it.</p>
+                        <div class="promo-windows">
+                            <div class="promo-window">
+                                <strong>Tuesday</strong>
+                                <span>2 PM – 5 PM</span>
+                            </div>
+                            <div class="promo-window">
+                                <strong>Single Shell</strong>
+                                <span>$2 special</span>
+                            </div>
+                            <div class="promo-window">
+                                <strong>Weekly</strong>
+                                <span>Every Tuesday</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <nav class="menu-sticky-cats" aria-label="Menu categories">
+                        <a href="#menu-shells">Shells</a>
+                        <a href="#menu-clouds">Clouds</a>
+                        <a href="#menu-kratom-tea">Kratom Tea</a>
+                        <a href="#menu-refreshers">Refreshers</a>
+                        <a href="#menu-shots">Shots</a>
+                        <a href="#menu-extracts">Extracts</a>
+                        <a href="#menu-agua">Agua Frescas</a>
+                    </nav>
+
+<!-- Category: Kava Shells -->
+                    <div id="menu-shells"></div>
+                    <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 2rem; color: #ffffff; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        🥥 Kava Shells
+                        <span style="font-size: 0.9rem; color: var(--text-muted); font-family: var(--font-sans); font-weight: normal;">(Traditional-style shells)</span>
+                    </h2>
+                    <div class="grid grid-2" style="margin-bottom: 4rem;">
+                        <div class="card">
+                            <div class="drink-tags">
+                                <span class="badge badge-kava">Kava</span>
+                                <span class="badge badge-beginner">Beginner Friendly</span>
+                            </div>
+                            <div class="menu-item-head">
+                                <h3>Single Shell</h3>
+                                <div class="menu-price">$2<small>$2 Tuesdays · 2–5 PM</small></div>
+                            </div>
+                            <p>Classic single shell — a clean starting point for first-timers and regulars. <strong style="color: var(--gold-accent);">$2 every Tuesday from 2:00 PM–5:00 PM.</strong> Ask our team for standard shell pricing outside the special window.</p>
+                        </div>
+                    </div>
+
+                    <!-- Category: Kava Clouds -->
+                    <div id="menu-clouds"></div>
+                                        <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 2rem; color: #ffffff; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        🍨 Kava Clouds
+                        <span style="font-size: 0.9rem; color: var(--gold-accent); font-family: var(--font-sans); font-weight: 700;">$10</span>
+                        <span style="font-size: 0.9rem; color: var(--text-muted); font-family: var(--font-sans); font-weight: normal;">(Approachable dessert-style kava bases)</span>
+                    </h2>
+                    <div class="grid grid-2" style="margin-bottom: 4rem;">
+                        <div class="card">
+                            <div class="drink-tags">
+                                <span class="badge badge-kava">Kava</span>
+                                <span class="badge badge-beginner">Beginner Friendly</span>
+                            </div>
+                            <div class="menu-item-head">
+                                <h3>Banana Pudding Kava Cloud</h3>
+                                <div class="menu-price">$10</div>
+                            </div>
+                            <p>Creamy banana, vanilla, and wafer-inspired flavor over a smooth kava base.</p>
+                        </div>
+                        <div class="card">
+                            <div class="drink-tags">
+                                <span class="badge badge-kava">Kava</span>
+                                <span class="badge badge-beginner">Beginner Friendly</span>
+                            </div>
+                            <div class="menu-item-head">
+                                <h3>Strawberry Shortcake Kava Cloud</h3>
+                                <div class="menu-price">$10</div>
+                            </div>
+                            <p>Strawberry, cream, and cake-inspired notes in a dessert-style kava drink.</p>
+                        </div>
+                        <div class="card">
+                            <div class="drink-tags">
+                                <span class="badge badge-kava">Kava</span>
+                                <span class="badge badge-nonbotanical">Signature</span>
+                            </div>
+                            <div class="menu-item-head">
+                                <h3>La Nube Tres Leches</h3>
+                                <div class="menu-price">$10</div>
+                            </div>
+                            <p>A creamy tres leches-inspired kava cloud with soft vanilla and cinnamon notes.</p>
+                        </div>
+                        <div class="card">
+                            <div class="drink-tags">
+                                <span class="badge badge-kava">Kava</span>
+                                <span class="badge badge-nonbotanical">Signature</span>
+                            </div>
+                            <div class="menu-item-head">
+                                <h3>Dubai Chocolate Pistachio Kava</h3>
+                                <div class="menu-price">$10</div>
+                            </div>
+                            <p>Chocolate, pistachio, and dessert-style richness with a premium kava base.</p>
+                        </div>
+                    </div>
+
+                    <!-- Category: Kratom Tea -->
+                    <div id="menu-kratom-tea"></div>
+                    <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 2rem; color: #ffffff; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        🍵 Kratom Tea
+                        <span style="font-size: 0.9rem; color: #f87171; font-family: var(--font-sans); font-weight: 700;">(Kratom 21+ only. Valid ID required.)</span>
+                    </h2>
+                    <div class="grid grid-3" style="margin-bottom: 4rem;">
+                        <div class="card">
+                            <div class="drink-tags">
+                                <span class="badge badge-kratom">Kratom</span>
+                                <span class="badge badge-21">21+</span>
+                            </div>
+                            <h3>Red Leaf Kratom Tea</h3>
+                            <p>Traditional-style brewed red leaf kratom tea. 21+ only. Valid ID required. Ask our team for tea pricing.</p>
+                        </div>
+                        <div class="card">
+                            <div class="drink-tags">
+                                <span class="badge badge-kratom">Kratom</span>
+                                <span class="badge badge-21">21+</span>
+                            </div>
+                            <h3>White Leaf Kratom Tea</h3>
+                            <p>Traditional-style brewed white leaf kratom tea. 21+ only. Valid ID required. Ask our team for tea pricing.</p>
+                        </div>
+                        <div class="card">
+                            <div class="drink-tags">
+                                <span class="badge badge-kratom">Kratom</span>
+                                <span class="badge badge-21">21+</span>
+                            </div>
+                            <h3>Green Leaf Kratom Tea</h3>
+                            <p>Traditional-style brewed green leaf kratom tea. 21+ only. Valid ID required. Ask our team for tea pricing.</p>
+                        </div>
+                    </div>
+
+                    <!-- Category: Kratom Refreshers -->
+                    <div id="menu-refreshers"></div>
+                                        <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 2rem; color: #ffffff; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        🍹 Kratom Refreshers
+                        <span style="font-size: 0.9rem; color: var(--gold-accent); font-family: var(--font-sans); font-weight: 700;">$14</span>
+                        <span style="font-size: 0.9rem; color: #f87171; font-family: var(--font-sans); font-weight: 700;">(Kratom 21+ only. Valid ID required.)</span>
+                    </h2>
+                    <div class="grid grid-2" style="margin-bottom: 4rem;">
+                        <div class="card">
+                            <div class="drink-tags">
+                                <span class="badge badge-kratom">Kratom</span>
+                                <span class="badge badge-21">21+</span>
+                            </div>
+                            <div class="menu-item-head">
+                                <h3>Mango Chili Lime Kratomade</h3>
+                                <div class="menu-price">$14</div>
+                            </div>
+                            <p>Mango, lime, and a sweet-heat finish with brewed kratom tea.</p>
+                        </div>
+                        <div class="card">
+                            <div class="drink-tags">
+                                <span class="badge badge-kratom">Kratom</span>
+                                <span class="badge badge-21">21+</span>
+                                <span class="badge badge-beginner">Beginner Friendly</span>
+                            </div>
+                            <div class="menu-item-head">
+                                <h3>Passionfruit Mint Kratom Refresher</h3>
+                                <div class="menu-price">$14</div>
+                            </div>
+                            <p>Passionfruit, mint, citrus, and brewed kratom tea.</p>
+                        </div>
+                        <div class="card">
+                            <div class="drink-tags">
+                                <span class="badge badge-kratom">Kratom</span>
+                                <span class="badge badge-21">21+</span>
+                            </div>
+                            <div class="menu-item-head">
+                                <h3>Blackberry Dragonfruit Fizz</h3>
+                                <div class="menu-price">$14</div>
+                            </div>
+                            <p>Blackberry, dragonfruit, and sparkling refresher-style flavor with brewed kratom tea.</p>
+                        </div>
+                    </div>
+
+                    <!-- Category: Kratom Shots -->
+                    <div id="menu-shots"></div>
+                    <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 2rem; color: #ffffff; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        🥃 Kratom / Kava Shots
+                        <span style="font-size: 0.9rem; color: var(--gold-accent); font-family: var(--font-sans); font-weight: 700;">$6</span>
+                        <span style="font-size: 0.9rem; color: #f87171; font-family: var(--font-sans); font-weight: 700;">(Kratom shots 21+ only. Valid ID required.)</span>
+                    </h2>
+                    <div class="grid grid-2" style="margin-bottom: 4rem;">
+                        <div class="card">
+                            <div class="drink-tags">
+                                <span class="badge badge-kratom">Kratom</span>
+                                <span class="badge badge-21">21+</span>
+                            </div>
+                            <div class="menu-item-head">
+                                <h3>Kratom Shots</h3>
+                                <div class="menu-price">$6</div>
+                            </div>
+                            <p>Compact kratom shot options. Ask our team for available styles. 21+ only. Valid ID required.</p>
+                        </div>
+                        <div class="card">
+                            <div class="drink-tags">
+                                <span class="badge badge-kava">Kava</span>
+                            </div>
+                            <div class="menu-item-head">
+                                <h3>Kava Shots</h3>
+                                <div class="menu-price">$6</div>
+                            </div>
+                            <p>Compact kava shot options. Ask our team for available styles.</p>
+                        </div>
+                    </div>
+
+                    <!-- Category: Kratom Extracts -->
+                    <div id="menu-extracts"></div>
+                    <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 2rem; color: #ffffff; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        🌿 Kratom Extracts
+                        <span style="font-size: 0.9rem; color: var(--gold-accent); font-family: var(--font-sans); font-weight: 700;">$15–25</span>
+                        <span style="font-size: 0.9rem; color: #f87171; font-family: var(--font-sans); font-weight: 700;">(Kratom 21+ only. Valid ID required. Ask our team before ordering.)</span>
+                    </h2>
+                    <div class="grid grid-2" style="margin-bottom: 4rem;">
+                        <div class="card">
+                            <div class="drink-tags">
+                                <span class="badge badge-kratom">Kratom</span>
+                                <span class="badge badge-21">21+</span>
+                            </div>
+                            <div class="menu-item-head">
+                                <h3>Adult-Use Kratom Extracts</h3>
+                                <div class="menu-price">$15–25</div>
+                            </div>
+                            <p>Adult-use kratom extract options. Price varies by product — ask our team before ordering. 21+ only. Valid ID required.</p>
+                        </div>
+                    </div>
+
+                    <!-- Category: Agua Fresca Refreshers -->
+                    <div id="menu-agua"></div>
+                    <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 2rem; color: #ffffff; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        🍉 Agua Fresca Refreshers
+                        <span style="font-size: 0.9rem; color: var(--gold-accent); font-family: var(--font-sans); font-weight: 700;">$13</span>
+                        <span style="font-size: 0.9rem; color: var(--text-muted); font-family: var(--font-sans); font-weight: normal;">(Zero Kava / Zero Kratom - Great for anyone!)</span>
+                    </h2>
+                    <div class="grid grid-3" style="margin-bottom: 4rem;">
+                        <div class="card">
+                            <div class="drink-tags">
+                                <span class="badge badge-nonbotanical">Non-Botanical</span>
+                            </div>
+                            <div class="menu-item-head">
+                                <h3>Guava Lime Agua Fresca</h3>
+                                <div class="menu-price">$13</div>
+                            </div>
+                            <p>Crisp pink guava and fresh key lime juice served over crushed ice.</p>
+                        </div>
+                        <div class="card">
+                            <div class="drink-tags">
+                                <span class="badge badge-nonbotanical">Non-Botanical</span>
+                            </div>
+                            <div class="menu-item-head">
+                                <h3>Watermelon Cucumber Lime Agua Fresca</h3>
+                                <div class="menu-price">$13</div>
+                            </div>
+                            <p>Fresh pressed watermelon, muddled cucumber, and fresh lime juice.</p>
+                        </div>
+                        <div class="card">
+                            <div class="drink-tags">
+                                <span class="badge badge-nonbotanical">Non-Botanical</span>
+                            </div>
+                            <div class="menu-item-head">
+                                <h3>Jamaica Passionfruit Refresher</h3>
+                                <div class="menu-price">$13</div>
+                            </div>
+                            <p>Tart traditional hibiscus tea infused with tropical passionfruit juice.</p>
+                        </div>
+                    </div>
+
+                    <!-- Category: Viral Signatures -->
+                    <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 2rem; color: #ffffff; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        📸 Viral Signatures
+                        <span style="font-size: 0.9rem; color: var(--gold-accent); font-family: var(--font-sans); font-weight: 700;">$10</span>
+                        <span style="font-size: 0.9rem; color: var(--text-muted); font-family: var(--font-sans); font-weight: normal;">(Photogenic layers &amp; toppings)</span>
+                    </h2>
+                    <div class="grid grid-3">
+                        <div class="card">
+                            <div class="drink-tags">
+                                <span class="badge badge-nonbotanical">Viral Favorite</span>
+                            </div>
+                            <div class="menu-item-head">
+                                <h3>Blue Razz Coconut Cloud</h3>
+                                <div class="menu-price">$10</div>
+                            </div>
+                            <p>Sweet blue raspberry layered with thick organic coconut whipped cream.</p>
+                        </div>
+                        <div class="card">
+                            <div class="drink-tags">
+                                <span class="badge badge-kava">Kava</span>
+                            </div>
+                            <div class="menu-item-head">
+                                <h3>Dubai Chocolate Pistachio Kava</h3>
+                                <div class="menu-price">$10</div>
+                            </div>
+                            <p>Premium dark chocolate syrup, toasted pistachio spread, and smooth kava.</p>
+                        </div>
+                        <div class="card">
+                            <div class="drink-tags">
+                                <span class="badge badge-beginner">Seasonal</span>
+                            </div>
+                            <div class="menu-item-head">
+                                <h3>Seasonal Signature</h3>
+                                <div class="menu-price">$10</div>
+                            </div>
+                            <p>Ask our team at the counter about our active rotating seasonal signature drink.</p>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 5rem; padding: 2rem; border-top: 1px solid var(--card-border);">
+                        <p style="font-size: 0.95rem; color: var(--text-muted);">
+                            <strong style="color: var(--gold-accent);">$2 Tuesdays:</strong> Single shells $2 from 2–5 PM. &bull;
+                            <strong style="color: var(--text-cream);">Clouds $10 · Refreshers $14 · Shots $6 · Extracts $15–25 · Agua Frescas $13.</strong>
+                            &bull; Ask our team what is beginner-friendly. &bull; Kratom products are 21+ only. Valid ID required.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= PAGE 3: NEW HERE? ================= -->
+        <div id="view-new-here" class="spa-view" style="display: none;">
+            <section>
+                <div class="container">
+                    <div class="section-head" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+                        <h1>Never Had Kava or Kratom? Start Here.</h1>
+                        <p>Most people walk in with questions. This guide explains what we serve, how to choose your first drink, and how to enjoy responsibly.</p>
+                    </div>
+
+                    <div class="grid grid-2" style="margin-bottom: 5rem; align-items: stretch;">
+                        <div class="card">
+                            <div class="badge badge-beginner" style="margin-bottom: 1rem;">Welcome</div>
+                            <h3>You are not behind.</h3>
+                            <p>Kava and kratom are new to a lot of people. We built the menu to make the experience easier with familiar flavors, clear labels, beginner-friendly options, and a team that is happy to help.</p>
+                        </div>
+                        <div class="card" style="border-color: rgba(var(--purple-glow-rgb), 0.25);">
+                            <div class="badge badge-nonbotanical" style="margin-bottom: 1rem;">Not Alcohol</div>
+                            <h3>Is this alcohol?</h3>
+                            <p>No. We are not a liquor bar. Our drinks are non-alcoholic, but kava and kratom products should still be treated as responsible-use botanical beverages.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2" style="margin-bottom: 5rem;">
+                        <div class="card">
+                            <div class="badge badge-kava" style="margin-bottom: 1rem;">Deep Dive</div>
+                            <h3>What is kava?</h3>
+                            <p style="margin-bottom: 1rem;">Kava is a traditional plant-based beverage made from the root of the kava plant (Piper methysticum). Traditional kava has an earthy taste. Our Kava Clouds are designed to make the experience smoother and more familiar with creamy dessert-style flavors.</p>
+                            <div style="background: rgba(239,68,68,0.04); border: 1px solid rgba(239,68,68,0.2); border-radius: 8px; padding: 1rem; font-size: 0.8rem; color: #f87171;">
+                                ⚠️ <strong>Safety Note:</strong> Kava is not for everyone. Do not mix kava with alcohol or other substances. Talk to a qualified professional before using kava if you are pregnant, nursing, taking medications, or have health concerns.
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="badge badge-kratom" style="margin-bottom: 1rem;">Deep Dive &bull; 21+ Required</div>
+                            <h3>What is kratom?</h3>
+                            <p style="margin-bottom: 1rem;">Kratom is a botanical beverage made from kratom leaves (Mitragyna speciosa). We serve it as traditional-style brewed tea, fruit-forward refreshers, compact shots, and adult-use extracts. All kratom products are 21+ with valid ID — ask our team before ordering extracts.</p>
+                            <div style="background: rgba(239,68,68,0.04); border: 1px solid rgba(239,68,68,0.2); border-radius: 8px; padding: 1rem; font-size: 0.8rem; color: #f87171; margin-bottom: 1rem;">
+                                ⚠️ <strong>Safety Note:</strong> Kratom is intended for responsible adult use only. Do not use if pregnant, nursing, taking medications, or if you have health concerns without speaking with a qualified professional. Do not mix with alcohol or other substances.
+                            </div>
+                            <div class="badge badge-21">Kratom products are 21+ only. Valid ID required.</div>
+                        </div>
+                    </div>
+
+                    <!-- What should I order first? -->
+                    <div class="section-head" style="margin-bottom: 3rem;">
+                        <h2>What should I order first?</h2>
+                        <p>Find your path based on what you typically enjoy drinking:</p>
+                    </div>
+                    <div class="grid grid-4" style="margin-bottom: 5rem;">
+                        <div class="card">
+                            <span style="font-size: 2rem;">🍨</span>
+                            <h3 style="font-size: 1.15rem; margin-top: 1rem;">Sweet &amp; Creamy</h3>
+                            <p style="font-size: 0.85rem; margin-bottom: 1rem;">For lovers of milkshakes and lattes.</p>
+                            <p style="font-size: 0.9rem; color: #ffffff; font-weight: bold;">Recommendation: Banana Pudding Kava Cloud or La Nube Tres Leches</p>
+                        </div>
+                        <div class="card">
+                            <span style="font-size: 2rem;">🍓</span>
+                            <h3 style="font-size: 1.15rem; margin-top: 1rem;">Fruity &amp; Refreshing</h3>
+                            <p style="font-size: 0.85rem; margin-bottom: 1rem;">For fans of iced fruit teas and juices.</p>
+                            <p style="font-size: 0.9rem; color: #ffffff; font-weight: bold;">Recommendation: Passionfruit Mint Kratom Refresher (21+) or Guava Lime Agua Fresca</p>
+                        </div>
+                        <div class="card">
+                            <span style="font-size: 2rem;">📸</span>
+                            <h3 style="font-size: 1.15rem; margin-top: 1rem;">Photo-Ready</h3>
+                            <p style="font-size: 0.85rem; margin-bottom: 1rem;">For those looking to capture aesthetic vibes.</p>
+                            <p style="font-size: 0.9rem; color: #ffffff; font-weight: bold;">Recommendation: Blue Razz Coconut Cloud</p>
+                        </div>
+                        <div class="card">
+                            <span style="font-size: 2rem;">☕</span>
+                            <h3 style="font-size: 1.15rem; margin-top: 1rem;">Bold &amp; Unique</h3>
+                            <p style="font-size: 0.85rem; margin-bottom: 1rem;">For fans of rich, decadent chocolate textures.</p>
+                            <p style="font-size: 0.9rem; color: #ffffff; font-weight: bold;">Recommendation: Dubai Chocolate Pistachio Kava</p>
+                        </div>
+                    </div>
+
+                    <!-- First-time tips -->
+                    <div class="section-head" style="margin-bottom: 3rem;">
+                        <h2>First-Time Tips</h2>
+                    </div>
+                    <div class="grid grid-3" style="margin-bottom: 5rem;">
+                        <div class="card">
+                            <span style="color: var(--electric-blue); font-size: 1.5rem; font-weight: 800; font-family: var(--font-display);">01</span>
+                            <h3 style="font-size: 1.2rem; margin-top: 1rem;">Choose Your Style</h3>
+                            <p>Decide whether you want creamy (dessert-style), fruity (refresher-style), or zero-botanical (Agua Fresca).</p>
+                        </div>
+                        <div class="card">
+                            <span style="color: var(--electric-blue); font-size: 1.5rem; font-weight: 800; font-family: var(--font-display);">02</span>
+                            <h3 style="font-size: 1.2rem; margin-top: 1rem;">Ask Our Counter Team</h3>
+                            <p>Our team is fully trained and loves walking new customers through the selections in West Palm Beach.</p>
+                        </div>
+                        <div class="card">
+                            <span style="color: var(--electric-blue); font-size: 1.5rem; font-weight: 800; font-family: var(--font-display);">03</span>
+                            <h3 style="font-size: 1.2rem; margin-top: 1rem;">Sip Responsibly</h3>
+                            <p>Start simple, do not over-consume on your first visit, and never mix botanicals with alcohol.</p>
+                        </div>
+                    </div>
+
+                    <!-- Embedded AI Guide Interface -->
+                    <div style="border: 1px solid var(--electric-blue); border-radius: 24px; padding: 3rem; background: rgba(7, 9, 14, 0.4); backdrop-filter: blur(15px); position: relative; overflow: hidden;" id="ask-guide-section">
+                        <div style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(var(--electric-blue-rgb), 0.1) 0%, rgba(0,0,0,0) 70%); border-radius: 50%; filter: blur(50px); pointer-events: none; z-index: -1;"></div>
+                        
+                        <div style="text-align: center; margin-bottom: 2.5rem;">
+                            <div class="badge badge-kava" style="margin-bottom: 1rem;">Concierge Assistant</div>
+                            <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem;">Still confused? Ask the Kava Guide.</h2>
+                            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Ask anything before you visit. Try clicking one of the common starter questions below or type your own question.</p>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start;">
+                            <!-- Interactive Chat Widget -->
+                            <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); border-radius: 16px; height: 400px; display: flex; flex-direction: column; overflow: hidden;">
+                                <div class="chat-messages" id="embed-chat-messages" style="height: 330px;">
+                                    <div class="chat-msg bot">
+                                        Hello! I am your first-sip concierge. Ask me anything about our kava clouds, kratom refreshers, or what to order first on your visit to West Palm Beach!
+                                    </div>
+                                </div>
+                                <div class="chat-input-area">
+                                    <input type="text" id="embed-chat-input" class="chat-input" placeholder="Type your question here...">
+                                    <button id="embed-chat-send" class="chat-send-btn">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Starter Questions list -->
+                            <div>
+                                <h4 style="font-family: var(--font-display); font-size: 1.1rem; color: #ffffff; margin-bottom: 1rem;">Frequently Asked Questions</h4>
+                                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                    <button class="btn btn-secondary" style="text-align: left; justify-content: flex-start; font-size: 0.88rem; padding: 0.75rem 1rem;" onclick="askAI('What is kava?', 'embed-chat-input', 'embed-chat-send')">❓ What is kava?</button>
+                                    <button class="btn btn-secondary" style="text-align: left; justify-content: flex-start; font-size: 0.88rem; padding: 0.75rem 1rem;" onclick="askAI('What is kratom?', 'embed-chat-input', 'embed-chat-send')">❓ What is kratom?</button>
+                                    <button class="btn btn-secondary" style="text-align: left; justify-content: flex-start; font-size: 0.88rem; padding: 0.75rem 1rem;" onclick="askAI('Does kava get you drunk?', 'embed-chat-input', 'embed-chat-send')">🍺 Does kava get you drunk?</button>
+                                    <button class="btn btn-secondary" style="text-align: left; justify-content: flex-start; font-size: 0.88rem; padding: 0.75rem 1rem;" onclick="askAI('What should I order first?', 'embed-chat-input', 'embed-chat-send')">🍹 What should I order first?</button>
+                                    <button class="btn btn-secondary" style="text-align: left; justify-content: flex-start; font-size: 0.88rem; padding: 0.75rem 1rem;" onclick="askAI('Do you have drinks without kava or kratom?', 'embed-chat-input', 'embed-chat-send')">🍉 Do you have drinks without kava or kratom?</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= PAGE 4: KAVA VS. KRATOM ================= -->
+        <div id="view-kava-vs-kratom" class="spa-view" style="display: none;">
+            <section>
+                <div class="container">
+                    <div class="section-head" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+                        <h1>Kava vs. Kratom: What’s the Difference?</h1>
+                        <p>Both are botanical beverages, but they come from different plants, traditions, and serving styles. Here is a simple first-timer breakdown.</p>
+                    </div>
+
+                    <!-- Comparison Table -->
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; overflow-x: auto; padding: 1.5rem; backdrop-filter: var(--card-blur); margin-bottom: 4rem;">
+                        <table style="width: 100%; border-collapse: collapse; text-align: left; color: var(--text-cream); min-width: 600px;">
+                            <thead>
+                                <tr style="border-bottom: 2px solid var(--card-border);">
+                                    <th style="padding: 1.25rem; font-family: var(--font-display); font-size: 1.2rem; color: #ffffff; width: 20%;">Feature</th>
+                                    <th style="padding: 1.25rem; font-family: var(--font-display); font-size: 1.2rem; color: var(--electric-blue); width: 40%;">Kava</th>
+                                    <th style="padding: 1.25rem; font-family: var(--font-display); font-size: 1.2rem; color: var(--gold-accent); width: 40%;">Kratom</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid var(--card-border);">
+                                    <td style="padding: 1.25rem; font-weight: 700; color: #ffffff;">Plant Source</td>
+                                    <td style="padding: 1.25rem; color: var(--text-muted);">Root of the <em>Piper methysticum</em> shrub.</td>
+                                    <td style="padding: 1.25rem; color: var(--text-muted);">Leaves of the <em>Mitragyna speciosa</em> tree.</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--card-border);">
+                                    <td style="padding: 1.25rem; font-weight: 700; color: #ffffff;">Traditional Origin</td>
+                                    <td style="padding: 1.25rem; color: var(--text-muted);">Pacific Islands (Fiji, Tonga, Vanuatu) as a social welcome ritual.</td>
+                                    <td style="padding: 1.25rem; color: var(--text-muted);">Southeast Asia (Thailand, Indonesia) as a traditional botanical tea.</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--card-border);">
+                                    <td style="padding: 1.25rem; font-weight: 700; color: #ffffff;">How We Serve It</td>
+                                    <td style="padding: 1.25rem; color: var(--text-muted);">Crafted in dessert-style, creamy <strong>Kava Clouds</strong>.</td>
+                                    <td style="padding: 1.25rem; color: var(--text-muted);">Served in fruit-forward, iced <strong>Kratom Refreshers</strong>.</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--card-border);">
+                                    <td style="padding: 1.25rem; font-weight: 700; color: #ffffff;">Flavor Profile</td>
+                                    <td style="padding: 1.25rem; color: var(--text-muted);">Naturally earthy and peppery. Masked by creamy textures.</td>
+                                    <td style="padding: 1.25rem; color: var(--text-muted);">Bitter herbal tea profile. Blended with fruit and citrus juice.</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--card-border);">
+                                    <td style="padding: 1.25rem; font-weight: 700; color: #ffffff;">Age Policy</td>
+                                    <td style="padding: 1.25rem; color: var(--text-muted);">Available to responsible adults.</td>
+                                    <td style="padding: 1.25rem; color: var(--text-muted);"><span style="color:#f87171;font-weight:700;">Strictly 21+ only. Valid ID required.</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--card-border);">
+                                    <td style="padding: 1.25rem; font-weight: 700; color: #ffffff;">First-Time Recommendation</td>
+                                    <td style="padding: 1.25rem; color: var(--text-muted);">Banana Pudding Kava Cloud</td>
+                                    <td style="padding: 1.25rem; color: var(--text-muted);">Passionfruit Mint Kratom Refresher (21+)</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 1.25rem; font-weight: 700; color: #ffffff;">Responsible Use</td>
+                                    <td style="padding: 1.25rem; color: #f87171; font-size: 0.85rem;">Do not mix with alcohol. Consult a professional if taking medications.</td>
+                                    <td style="padding: 1.25rem; color: #f87171; font-size: 0.85rem;">For adults 21+ only. Do not mix with alcohol. Limit consumption.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Still not sure which one fits your mood?</p>
+                        <button onclick="askAI('What is the difference between kava and kratom?', 'float-chat-input', 'float-chat-send')" class="btn">Ask the Kava Guide</button>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= PAGE 5: EVENTS ================= -->
+        <div id="view-events" class="spa-view" style="display: none;">
+            <section>
+                <div class="container">
+                    <div class="section-head">
+                        <h1>Kava Lounge Events in West Palm Beach</h1>
+                        <p>Weekly nights at Tribal — shells, karaoke, pool, and Lotería. Free Wi‑Fi, free parking, and a first drink free when you arrive (ask our team).</p>
+                    </div>
+
+                    <div class="promo-banner" style="margin-bottom: 3rem;">
+                        <h2>This Week at Tribal</h2>
+                        <p class="promo-sub">Recurring weekly lineup — no ticket required unless noted at the door.</p>
+                        <div class="promo-windows">
+                            <div class="promo-window">
+                                <strong>Tue</strong>
+                                <span>$2 Shells · 2–5 PM</span>
+                            </div>
+                            <div class="promo-window">
+                                <strong>Wed</strong>
+                                <span>Karaoke Night</span>
+                            </div>
+                            <div class="promo-window">
+                                <strong>Thu</strong>
+                                <span>Pool Tournament</span>
+                            </div>
+                            <div class="promo-window">
+                                <strong>Fri</strong>
+                                <span>Lotería</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <div class="event-day">Every Tuesday · 2:00 PM – 5:00 PM</div>
+                            <div class="badge badge-kava" style="margin-bottom: 1rem;">Promo</div>
+                            <h3>$2 Tuesdays — Single Shells</h3>
+                            <p style="margin-bottom: 1.5rem;">Single shells for <strong style="color: var(--gold-accent);">$2</strong> from 2 PM to 5 PM. Classic kava shell special — pull up early and stack the afternoon.</p>
+                            <span style="font-size: 0.85rem; color: var(--electric-blue); font-weight: 700;">📅 Weekly · 2:00 PM – 5:00 PM</span>
+                        </div>
+                        <div class="card">
+                            <div class="event-day">Every Wednesday Night</div>
+                            <div class="badge badge-nonbotanical" style="margin-bottom: 1rem;">Live</div>
+                            <h3>Karaoke Night</h3>
+                            <p style="margin-bottom: 1.5rem;">Sing your set at West Palm Beach’s non-alcoholic lounge stage. Sip a kava cloud, grab a refresher, and take the mic.</p>
+                            <span style="font-size: 0.85rem; color: var(--electric-blue); font-weight: 700;">📅 Every Wednesday night</span>
+                        </div>
+                        <div class="card">
+                            <div class="event-day">Every Thursday</div>
+                            <div class="badge badge-beginner" style="margin-bottom: 1rem;">Games</div>
+                            <h3>Pool Tournament</h3>
+                            <p style="margin-bottom: 1.5rem;">Weekly pool tournament on our tables. Bring your game, sip something creamy or fruity, and compete with the room.</p>
+                            <span style="font-size: 0.85rem; color: var(--electric-blue); font-weight: 700;">📅 Every Thursday</span>
+                        </div>
+                        <div class="card">
+                            <div class="event-day">Every Friday</div>
+                            <div class="badge badge-kratom" style="margin-bottom: 1rem;">Community</div>
+                            <h3>Lotería Night</h3>
+                            <p style="margin-bottom: 1.5rem;">Friday night Lotería at Tribal — classic cards, big room energy, and botanical drinks. All welcome (kratom 21+ only).</p>
+                            <span style="font-size: 0.85rem; color: var(--electric-blue); font-weight: 700;">📅 Every Friday</span>
+                        </div>
+                    </div>
+
+
+                    <div class="section-head" style="margin-top: 3rem;">
+                        <h2 style="font-family: var(--font-display); font-size: 1.75rem;">More happenings (rotating)</h2>
+                        <p style="color: var(--text-muted);">Seasonal and special nights — ask the team or follow Instagram for dates.</p>
+                    </div>
+                    <div class="grid grid-3" style="margin-bottom: 2rem;">
+                        <div class="card">
+                            <div class="badge badge-beginner" style="margin-bottom: 0.75rem;">First-timers</div>
+                            <h3>First-Timer Night</h3>
+                            <p style="margin-top:0.5rem;">Guided menu walkthrough energy for people who’ve never ordered kava or kratom. RSVP via Instagram DM or ask in-lounge.</p>
+                        </div>
+                        <div class="card">
+                            <div class="badge badge-nonbotanical" style="margin-bottom: 0.75rem;">Vibe</div>
+                            <h3>Study &amp; Sip</h3>
+                            <p style="margin-top:0.5rem;">Laptop-friendly hours with free Wi‑Fi and seating built for long hangs — not just weekend nights.</p>
+                        </div>
+                        <div class="card">
+                            <div class="badge badge-kava" style="margin-bottom: 0.75rem;">Menu</div>
+                            <h3>Flavor Drop Day</h3>
+                            <p style="margin-top:0.5rem;">Seasonal signatures and limited clouds. Follow @TribalKavaLounge for drop dates.</p>
+                        </div>
+                    </div>
+                    <div style="text-align:center; margin-bottom: 2rem;">
+                        <a href="/private-events" class="btn btn-secondary">Book a private night</a>
+                        <a href="/" class="btn" style="margin-left:0.5rem;">Join VIP for updates</a>
+                    </div>
+
+                    <!-- Private Event Card -->
+                    <div style="background: rgba(255, 255, 255, 0.01); border: 1px solid var(--card-border); border-radius: 20px; padding: 3rem; text-align: center; margin-top: 4rem;">
+                        <h3>Host Your Private Event</h3>
+                        <p style="color: var(--text-muted); max-width: 600px; margin: 0.5rem auto 2rem;">Interested in booking Tribal Kava Lounge for birthdays, art galleries, study groups, or corporate gatherings?</p>
+                        <a href="/private-events" class="btn btn-accent">Private Events</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= PAGE 6: VISIT US ================= -->
+        <div id="view-visit" class="spa-view" style="display: none;">
+            <section>
+                <div class="container" style="max-width: 1000px;">
+                    <div class="section-head">
+                        <h1>Visit Our Kava Lounge in West Palm Beach</h1>
+                        <p>We are located in the heart of West Palm Beach on Military Trail — an easy drive from Lake Worth, Greenacres, Palm Springs, and Haverhill. Come check out our modern, botanical-inspired lounge.</p>
+                    </div>
+
+                    <div class="lounge-banner">
+                        <img src="/images/hero-placeholder.jpg" alt="Tribal Kava Lounge — opening soon in West Palm Beach" width="1600" height="900" loading="lazy">
+                    </div>
+
+                    <div class="grid grid-2" style="align-items: start; margin-bottom: 5rem;">
+                        <div class="card">
+                            <h3>Lounge Location &amp; Contact</h3>
+                            <p style="margin: 1.5rem 0 0.5rem;">📍 <strong>Address:</strong> 770 S Military Trail, Unit A1, West Palm Beach, FL 33415</p>
+                            <p style="margin-bottom: 0.5rem;">⏰ <strong>Lounge Hours:</strong> Sun–Thu 8:00 AM–12:00 AM &bull; Fri–Sat 8:00 AM–1:00 AM</p>
+                            <p style="margin-bottom: 0.5rem;">📞 <strong>Phone:</strong> <a href="tel:+15613550561" style="color: var(--text-cream);">(561) 355-0561</a></p>
+                            <p style="margin-bottom: 0.5rem;">✉️ <strong>Email:</strong> <a href="mailto:join@tribalkavalounge.co" style="color: var(--text-cream);">Join@TribalKavaLounge.Co</a></p>
+                            <p style="margin-bottom: 2rem;">📸 <strong>Instagram:</strong> <a href="https://www.instagram.com/TribalKavaLounge" target="_blank" style="color: var(--text-cream);">@TribalKavaLounge</a> · <strong>Web:</strong> <a href="https://tribalkavalounge.com" target="_blank" style="color: var(--text-cream);">TribalKavaLounge.com</a></p>
+
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <a href="tel:+15613550561" class="btn btn-accent">Call (561) 355-0561</a>
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=770+S+Military+Trail+Unit+A1,+West+Palm+Beach,+FL+33415" target="_blank" class="btn">Get Directions</a>
+                                <a href="https://www.instagram.com/TribalKavaLounge" target="_blank" class="btn btn-secondary">Follow Us</a>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h3>Parking &amp; Amenities</h3>
+                            <p style="margin-top: 1rem; margin-bottom: 1rem;">🅿️ <strong>Parking:</strong> Unlimited free parking in the open lot on-site.</p>
+                            <p style="margin-bottom: 1rem;">💻 <strong>Free Wi‑Fi:</strong> Stay connected for study sessions, remote work, or hanging with friends.</p>
+                            <p style="margin-bottom: 1rem;">🍹 <strong>First drink free:</strong> Your first drink is on us — ask our team when you arrive.</p>
+                            <p style="margin-bottom: 1rem;">🎱 <strong>Pool tables:</strong> Shoot a game while you sip.</p>
+                            <p style="margin-bottom: 1rem;">🛋️ <strong>Multiple seating sections:</strong> Lounge, hang, study, or date-night vibes across the room.</p>
+                            <p style="margin-bottom: 1rem;">🛍️ <strong>Smoke shop:</strong> Coming soon.</p>
+                            <p>🕐 <strong>Ordering:</strong> Online ordering coming soon — join the VIP list to know when it drops.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="card" style="margin-bottom: 3rem; overflow:hidden; padding:0;">
+                        <iframe title="Tribal Kava Lounge map" width="100%" height="320" style="border:0; display:block; filter: grayscale(0.2) contrast(1.05);" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            src="https://maps.google.com/maps?q=770+S+Military+Trail+Unit+A1,+West+Palm+Beach,+FL+33415&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+                    </div>
+
+                    <!-- What to expect -->
+                    <div class="card" style="margin-bottom: 4rem; background: linear-gradient(135deg, rgba(var(--electric-blue-rgb), 0.05) 0%, rgba(var(--purple-glow-rgb), 0.05) 100%); border-color: rgba(255,255,255,0.1);">
+                        <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">What to expect when you walk in</h2>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem;">
+                            No secret handshakes, no smoke-shop vibes. Just walk up to our clean, bar-style counter, browse the clear flavor tags, and talk to our friendly team. They will ask you whether you prefer something creamy, fruity, or a non-botanical Agua Fresca, and guide you to your perfect first sip.
+                        </p>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <p style="color: var(--text-muted); margin-bottom: 1rem;">First time visiting? Ask what to order before you arrive:</p>
+                        <button onclick="askAI('What should I order first?', 'float-chat-input', 'float-chat-send')" class="btn btn-secondary">Ask the Kava Guide</button>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= PAGE 7: FAQ ================= -->
+        <div id="view-faq" class="spa-view" style="display: none;">
+            <section>
+                <div class="container">
+                    <div class="section-head">
+                        <h1>Kava &amp; Kratom FAQ</h1>
+                        <p>Got questions? We have answers. Check out our beginner-focused guide to botanical drinks below.</p>
+                    </div>
+
+                    <div class="accordion">
+                        <!-- FAQ Item 1 -->
+                        <div class="accordion-item">
+                            <button class="accordion-trigger">
+                                What is kava?
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            </button>
+                            <div class="accordion-content">
+                                Kava is a traditional beverage made from the ground root of the kava plant, native to the South Pacific. It has been used for centuries as a social drink. While traditional kava is earthy and bitter, we craft our creamy Kava Clouds to make your first experience smooth and delicious.
+                            </div>
+                        </div>
+                        <!-- FAQ Item 2 -->
+                        <div class="accordion-item">
+                            <button class="accordion-trigger">
+                                What is kratom?
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            </button>
+                            <div class="accordion-content">
+                                Kratom is a botanical tea brewed from the leaves of the Mitragyna speciosa tree, native to Southeast Asia. We serve it in chilled, fruit-forward refreshers. All our kratom drinks are strictly for adults 21+ only with valid ID.
+                            </div>
+                        </div>
+                        <!-- FAQ Item 3 -->
+                        <div class="accordion-item">
+                            <button class="accordion-trigger">
+                                Is kratom 21+?
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            </button>
+                            <div class="accordion-content">
+                                Yes. All kratom refreshers and products are strictly for adults 21 and older. We enforce this policy at the counter, and a valid government ID is required to order.
+                            </div>
+                        </div>
+                        <!-- FAQ Item 4 -->
+                        <div class="accordion-item">
+                            <button class="accordion-trigger">
+                                Are the drinks alcoholic?
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            </button>
+                            <div class="accordion-content">
+                                No. We are a completely non-alcoholic botanical lounge. We offer a modern "third place" social venue where you can enjoy dessert-style kava and iced refreshers without alcohol.
+                            </div>
+                        </div>
+                        <!-- FAQ Item 5 -->
+                        <div class="accordion-item">
+                            <button class="accordion-trigger">
+                                Does kava taste earthy?
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            </button>
+                            <div class="accordion-content">
+                                Raw, traditional kava root has a strong, bitter, earthy flavor. However, our signature Kava Clouds blend the root with creamy dessert profiles like banana pudding, coconut, and vanilla, rendering the flavor smooth and delicious for beginners.
+                            </div>
+                        </div>
+                        <!-- FAQ Item 6 -->
+                        <div class="accordion-item">
+                            <button class="accordion-trigger">
+                                What should a first-timer order?
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            </button>
+                            <div class="accordion-content">
+                                We recommend our creamy *Banana Pudding Kava Cloud* if you like sweet, coffee-shop style beverages, or our *Passionfruit Mint Kratom Refresher* (21+) if you prefer a fruity, crisp tea-style sip. If you prefer no botanicals, try our pink *Guava Lime Agua Fresca*.
+                            </div>
+                        </div>
+                        <!-- FAQ Item 7 -->
+                        <div class="accordion-item">
+                            <button class="accordion-trigger">
+                                Do you have drinks without kava or kratom?
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            </button>
+                            <div class="accordion-content">
+                                Yes! We serve freshly squeezed Agua Fresca Refreshers (like Pink Guava Lime) which are entirely free of kava or kratom so everyone in your friend group can enjoy their visit.
+                            </div>
+                        </div>
+                        <!-- FAQ Item 8 -->
+                        <div class="accordion-item">
+                            <button class="accordion-trigger">
+                                Can I bring friends who have never tried it?
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            </button>
+                            <div class="accordion-content">
+                                Absolutely! Tribal Kava Lounge is a welcoming, community-focused social lounge designed specifically with beginners in mind.
+                            </div>
+                        </div>
+                        <!-- FAQ Item 9 -->
+                        <div class="accordion-item">
+                            <button class="accordion-trigger">
+                                Should I mix these drinks with alcohol?
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            </button>
+                            <div class="accordion-content">
+                                No. We strongly advise against mixing kava or kratom products with alcohol, medications, or any other substances.
+                            </div>
+                        </div>
+                        <!-- FAQ Item 10 -->
+                        <div class="accordion-item">
+                            <button class="accordion-trigger">
+                                Can pregnant or nursing customers use kava or kratom?
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            </button>
+                            <div class="accordion-content">
+                                No. If you are pregnant, nursing, taking medications, or have health concerns, you should speak with a qualified professional before using kava or kratom.
+                            </div>
+                        </div>
+                        <!-- FAQ Item 11 -->
+                        <div class="accordion-item">
+                            <button class="accordion-trigger">
+                                Do you use extracts or brewed tea?
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            </button>
+                            <div class="accordion-content">
+                                Both — we carry brewed kratom tea, kratom refreshers, kratom shots, and adult-use kratom extracts. All kratom products are 21+ with valid ID; ask our team before ordering extracts.
+                            </div>
+                        </div>
+                        <!-- FAQ Item 12 -->
+                        <div class="accordion-item">
+                            <button class="accordion-trigger">
+                                Do you offer events?
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            </button>
+                            <div class="accordion-content">
+                                Yes — weekly nights: <strong>$2 Tuesdays</strong> (single shells $2 from 2–5 PM), <strong>Wednesday Karaoke</strong>, <strong>Thursday Pool Tournament</strong>, and <strong>Friday Lotería</strong>. See the Events page for details.
+                            </div>
+                        </div>
+                        <!-- FAQ Item 13 -->
+                        <div class="accordion-item">
+                            <button class="accordion-trigger">
+                                Do you have Wi-Fi? Can I work or study here?
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            </button>
+                            <div class="accordion-content">
+                                Yes — free Wi‑Fi is available. Settle into one of our multiple seating sections with a laptop or books. We also have pool tables, unlimited free parking in the open lot, and your first drink is free (ask our team when you arrive).
+                            </div>
+                        </div>
+                        <!-- FAQ Item 14 -->
+                        <div class="accordion-item">
+                            <button class="accordion-trigger">
+                                What amenities do you offer?
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            </button>
+                            <div class="accordion-content">
+                                Free Wi‑Fi, first drink free, unlimited free parking in the open lot, pool tables, and multiple seating sections. A smoke shop is coming soon. Online ordering is also coming soon — join the VIP list for updates.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 4rem; padding: 2rem; border-top: 1px solid var(--card-border);">
+                        <p style="color: var(--text-muted); margin-bottom: 1rem;">Still have questions?</p>
+                        <button onclick="askAI('What should I order first?', 'float-chat-input', 'float-chat-send')" class="btn">Ask the Kava Guide</button>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= WHAT IS KAVA (SEO) ================= -->
+        <div id="view-what-is-kava" class="spa-view" style="display: none;">
+            <section>
+                <div class="container" style="max-width: 800px;">
+                    <div class="section-head" style="text-align:left; margin-left:0;">
+                        <p class="daily-kicker">Beginner guide · West Palm Beach</p>
+                        <h1>What Is Kava?</h1>
+                        <p>A clear, non-medical intro to kava drinks — culture, preparation, flavor, and how we serve them at Tribal Kava Lounge.</p>
+                    </div>
+
+                    <article class="daily-article-body" style="margin-top: 1rem;">
+                        <h2>The short version</h2>
+                        <p>Kava is a traditional plant-based beverage made from the root of the kava plant (<em>Piper methysticum</em>), with deep roots in Pacific Island social culture. It is <strong>not alcohol</strong>. At Tribal Kava Lounge in West Palm Beach, we serve kava as traditional-style shells and as creamy dessert-style <strong>Kava Clouds</strong> designed for first-timers.</p>
+
+                        <h2>Where kava comes from</h2>
+                        <p>Kava has a long history of communal drinking in places like Fiji, Vanuatu, Tonga, and other Pacific communities. The plant is grown for its root, which is traditionally prepared into a shared drink for gatherings — not as a cocktail bar ingredient, but as a social ritual.</p>
+
+                        <h2>How kava is prepared</h2>
+                        <p>Traditionally, kava root is ground and mixed with water, then strained. The result is an earthy, bitter botanical beverage. Modern lounges often keep the root tradition while offering flavored formats so new guests are not forced to start with the hardest sip first.</p>
+
+                        <h2>What it tastes like</h2>
+                        <p>Raw traditional kava is often described as earthy, peppery, or “dirt smoothie” energy. That is normal for the plant — and exactly why we built <strong>Kava Clouds</strong> (Banana Pudding, Tres Leches, Blue Razz Coconut, Dubai Chocolate Pistachio, and more). Flavor first. No mystery menu energy.</p>
+
+                        <h2>Kava at Tribal Kava Lounge</h2>
+                        <ul>
+                            <li><strong>Kava shells</strong> — traditional-style format. <strong>$2 Tuesdays</strong>: single shells $2 from 2–5 PM.</li>
+                            <li><strong>Kava Clouds</strong> — creamy, dessert-style drinks (typically <strong>$10</strong>).</li>
+                            <li>Non-alcoholic lounge vibe with free Wi‑Fi, free parking, pool tables, and multiple seating sections.</li>
+                        </ul>
+
+                        <h2>What kava is not</h2>
+                        <p>Kava is not liquor. We do not market it as medicine, a treatment, or a guaranteed-effect product. People report different experiences, and experiences can vary. We focus on culture, flavor, hospitality, and responsible adult use.</p>
+
+                        <h2>Responsible use</h2>
+                        <p>Do not mix kava with alcohol or other substances. If you are pregnant, nursing, taking medications, or have health concerns, speak with a qualified professional before using kava. Products are not intended to diagnose, treat, cure, or prevent any disease.</p>
+
+                        <div class="card" style="margin-top: 2.5rem; padding: 1.75rem;">
+                            <h3 style="margin-bottom: 0.75rem;">Ready for your first sip?</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 1.25rem;">Start with the beginner guide, browse the menu, or visit us on Military Trail (Unit A1).</p>
+                            <div style="display:flex; flex-wrap:wrap; gap:0.75rem;">
+                                <a href="/new-here" class="btn btn-accent">New Here? Start Here</a>
+                                <a href="/menu" class="btn">View Menu</a>
+                                <a href="/visit" class="btn btn-secondary">Visit Us</a>
+                                <a href="/kava-vs-kratom" class="btn btn-secondary">Kava vs. Kratom</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= WHAT IS KRATOM (SEO) ================= -->
+        <div id="view-what-is-kratom" class="spa-view" style="display: none;">
+            <section>
+                <div class="container" style="max-width: 800px;">
+                    <div class="section-head" style="text-align:left; margin-left:0;">
+                        <p class="daily-kicker">Adults 21+ · Beginner guide</p>
+                        <h1>What Is Kratom Tea?</h1>
+                        <p>A straight-talk intro to kratom as a botanical beverage — formats, flavor, Florida 21+ rules, and how we serve it in West Palm Beach.</p>
+                    </div>
+
+                    <article class="daily-article-body" style="margin-top: 1rem;">
+                        <div class="badge badge-21" style="margin-bottom: 1.25rem;">Kratom products: 21+ only · Valid ID required</div>
+
+                        <h2>The short version</h2>
+                        <p>Kratom beverages are made from the leaves of <em>Mitragyna speciosa</em>, a tropical tree native to Southeast Asia. At Tribal Kava Lounge, we serve kratom as <strong>brewed tea</strong> (red, white, and green leaf styles), <strong>fruit-forward refreshers</strong>, <strong>shots</strong>, and <strong>adult-use extracts</strong>. All kratom products are for adults <strong>21+</strong> with valid ID.</p>
+
+                        <h2>How we serve kratom</h2>
+                        <ul>
+                            <li><strong>Kratom tea</strong> — traditional-style brewed red, white, and green leaf tea. Ask our team for tea pricing.</li>
+                            <li><strong>Kratom refreshers</strong> — iced, fruit-forward formats like Mango Chili Lime Kratomade and Passionfruit Mint (~$14).</li>
+                            <li><strong>Kratom shots</strong> — compact format (~$6).</li>
+                            <li><strong>Kratom extracts</strong> — adult-use extract options (~$15–25). Ask our team before ordering.</li>
+                        </ul>
+
+                        <h2>Flavor, not hype</h2>
+                        <p>We describe kratom by <strong>format and flavor</strong> — not medical claims, not intensity hype, not “energy/pain/anxiety” marketing. If someone on the internet is pitching kratom like a pharmacy product, that is not our voice. Ours is lounge, menu, and hospitality.</p>
+
+                        <h2>Florida 21+ rule (plain language)</h2>
+                        <p>Florida law restricts kratom products to adults 21 and older. That covers tea, refreshers, shots, extracts, and other edible forms. We check ID. No exceptions because “it’s just tea.”</p>
+
+                        <h2>What kratom is not</h2>
+                        <p>Kratom is not alcohol. It is not a medicine we prescribe. We do not claim it treats, cures, or prevents anything. Products are not intended to diagnose, treat, cure, or prevent any disease. People report different experiences; experiences can vary.</p>
+
+                        <h2>Responsible use</h2>
+                        <p>Kratom products are for adults 21+ only. Valid ID required. Do not mix kava or kratom with alcohol or other substances. If you are pregnant, nursing, taking medications, or have health concerns, speak with a qualified professional before using kratom. We do not recommend using kratom as a daily habit or to self-treat any condition.</p>
+
+                        <h2>Not into botanicals?</h2>
+                        <p>Bring the whole group. Our <strong>Agua Fresca</strong> menu (like Guava Lime, ~$13) is zero kava, zero kratom — so everyone has a drink.</p>
+
+                        <div class="card" style="margin-top: 2.5rem; padding: 1.75rem;">
+                            <h3 style="margin-bottom: 0.75rem;">Explore the menu or visit</h3>
+                            <div style="display:flex; flex-wrap:wrap; gap:0.75rem;">
+                                <a href="/menu" class="btn btn-accent">View Menu</a>
+                                <a href="/new-here" class="btn">New Here?</a>
+                                <a href="/kava-vs-kratom" class="btn btn-secondary">Kava vs. Kratom</a>
+                                <a href="/visit" class="btn btn-secondary">Visit Us</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= PLAN YOUR VISIT ================= -->
+        <div id="view-plan-your-visit" class="spa-view" style="display: none;">
+            <section>
+                <div class="container" style="max-width: 1000px;">
+                    <div class="section-head">
+                        <h1>Plan Your Visit</h1>
+                        <p>Everything you need before you pull into the lot — hours, parking, first-timer tips, groups, and what to expect at Tribal Kava Lounge.</p>
+                    </div>
+
+                    <div class="grid grid-2" style="align-items:start; margin-bottom: 3rem;">
+                        <div class="card">
+                            <h3>Essentials</h3>
+                            <p style="margin-top:1rem;"><strong>Address:</strong> 770 S Military Trail, Unit A1, West Palm Beach, FL 33415</p>
+                            <p><strong>Hours:</strong> Sun–Thu 8:00 AM–12:00 AM · Fri–Sat 8:00 AM–1:00 AM</p>
+                            <p><strong>Phone:</strong> <a href="tel:+15613550561" style="color:var(--text-cream);">(561) 355-0561</a></p>
+                            <p><strong>Email:</strong> <a href="mailto:join@tribalkavalounge.co" style="color:var(--text-cream);">Join@TribalKavaLounge.Co</a></p>
+                            <p><strong>Parking:</strong> Unlimited free parking in the open lot on-site.</p>
+                            <p style="margin-bottom:1.5rem;"><strong>Walk-ins:</strong> Welcome — no reservation required for everyday visits.</p>
+                            <div style="display:flex; flex-wrap:wrap; gap:0.75rem;">
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=770+S+Military+Trail+Unit+A1,+West+Palm+Beach,+FL+33415" target="_blank" class="btn btn-accent">Get Directions</a>
+                                <a href="/menu" class="btn">View Menu</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h3>What to expect</h3>
+                            <ul style="margin-top:1rem; color:var(--text-muted); line-height:1.7; padding-left:1.1rem;">
+                                <li>Walk up to a clean bar-style counter — no secret handshake.</li>
+                                <li>Tell us creamy, fruity, traditional shell, or zero-botanical agua fresca.</li>
+                                <li>Kratom is 21+ with valid ID (tea, refreshers, shots, extracts).</li>
+                                <li>First drink free — ask our team when you arrive.</li>
+                                <li>Free Wi‑Fi, pool tables, multiple seating sections.</li>
+                                <li>Vibe: premium non-alcoholic lounge, not a smoke shop or clinic.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-3" style="margin-bottom: 3rem;">
+                        <div class="card">
+                            <h3>First-timers</h3>
+                            <p style="margin-top:0.75rem;">Start with a Kava Cloud (Banana Pudding is the crowd-pleaser) or Guava Lime Agua Fresca if you want zero botanicals. Read the full beginner hub first if you like homework.</p>
+                            <a href="/new-here" class="daily-read-link" style="display:inline-block;margin-top:1rem;">New Here? →</a>
+                        </div>
+                        <div class="card">
+                            <h3>Groups &amp; birthdays</h3>
+                            <p style="margin-top:0.75rem;">Bring the crew. Agua frescas keep non-botanical friends happy. For larger private bookings, use the private events page.</p>
+                            <a href="/private-events" class="daily-read-link" style="display:inline-block;margin-top:1rem;">Private events →</a>
+                        </div>
+                        <div class="card">
+                            <h3>Weekly nights</h3>
+                            <p style="margin-top:0.75rem;">$2 Tuesdays (shells 2–5 PM) · Wed Karaoke · Thu Pool Tournament · Fri Lotería. Details on Events.</p>
+                            <a href="/events" class="daily-read-link" style="display:inline-block;margin-top:1rem;">Events calendar →</a>
+                        </div>
+                    </div>
+
+                    <div style="text-align:center;">
+                        <button onclick="askAI('What should I order first?', 'float-chat-input', 'float-chat-send')" class="btn btn-secondary">Ask the Kava Guide</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= PRIVATE EVENTS ================= -->
+        <div id="view-private-events" class="spa-view" style="display: none;">
+            <section>
+                <div class="container" style="max-width: 960px;">
+                    <div class="section-head">
+                        <h1>Host Something Different.</h1>
+                        <p>From birthdays to creator meetups, our lounge gives your group a non-alcoholic social setting with signature drinks, music, and a relaxed late-night vibe.</p>
+                    </div>
+
+                    <div class="grid grid-2" style="margin-bottom: 3rem;">
+                        <div class="card"><h3>Birthdays</h3><p style="margin-top:0.75rem;">Skip the sticky bar. Creamy clouds, fruit refreshers, and room for the whole group.</p></div>
+                        <div class="card"><h3>Creator meetups</h3><p style="margin-top:0.75rem;">Content-friendly drinks, lounge lighting, and a Military Trail address that’s easy to find.</p></div>
+                        <div class="card"><h3>Study groups</h3><p style="margin-top:0.75rem;">Free Wi‑Fi, seating sections, and non-alcoholic focus for long sessions.</p></div>
+                        <div class="card"><h3>Brand pop-ups &amp; community</h3><p style="margin-top:0.75rem;">Open mics, vendor nights, corporate gatherings — non-wellness, non-medical, hospitality first.</p></div>
+                    </div>
+
+                    <div class="card" style="margin-bottom: 2rem;">
+                        <h3>Event packages</h3>
+                        <p style="margin-top:0.75rem; color:var(--text-muted);">Capacity and package details are confirmed case-by-case. Tell us your date, headcount, and vibe — we’ll reply with what’s available.</p>
+                        <p style="margin-top:0.75rem; color:var(--text-muted);"><strong>Placeholder:</strong> full package menu coming soon. Inquiry is open now.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Private event inquiry</h3>
+                        <p style="margin-top:0.5rem; margin-bottom:1.25rem; color:var(--text-muted);">Email us details — we read every request.</p>
+                        <form action="mailto:join@tribalkavalounge.co" method="GET" enctype="text/plain" style="display:flex; flex-direction:column; gap:0.85rem;">
+                            <input type="hidden" name="subject" value="Private Event Inquiry — Tribal Kava Lounge">
+                            <input name="body" type="text" class="btn btn-secondary" style="text-align:left; padding:1rem; width:100%; border-radius:10px;" placeholder="Name, date, headcount, event type, phone" required>
+                            <button type="submit" class="btn btn-accent" style="padding:1rem;">Email Inquiry to Join@TribalKavaLounge.Co</button>
+                        </form>
+                        <p style="margin-top:1rem; font-size:0.9rem; color:var(--text-muted);">Or call <a href="tel:+15613550561" style="color:var(--text-cream);">(561) 355-0561</a>.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= PRESS ================= -->
+        <div id="view-press" class="spa-view" style="display: none;">
+            <section>
+                <div class="container" style="max-width: 960px;">
+                    <div class="section-head">
+                        <h1>Press &amp; Social Proof</h1>
+                        <p>Reviews, social features, and community energy — updated as Tribal grows in West Palm Beach.</p>
+                    </div>
+
+                    <div class="grid grid-2" style="margin-bottom: 2.5rem;">
+                        <div class="card">
+                            <h3>Google reviews</h3>
+                            <p style="margin-top:0.75rem; color:var(--text-muted);">Review wall coming soon. If you already visited, a short Google review helps other locals find us.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Tribal+Kava+Lounge+770+S+Military+Trail+Unit+A1+West+Palm+Beach+FL+33415" target="_blank" class="btn btn-secondary" style="margin-top:1rem;">Find us on Google</a>
+                        </div>
+                        <div class="card">
+                            <h3>Instagram</h3>
+                            <p style="margin-top:0.75rem; color:var(--text-muted);">Follow <strong>@TribalKavaLounge</strong> for drink drops, event nights, and lounge life. Tag us for the photo wall.</p>
+                            <a href="https://www.instagram.com/TribalKavaLounge" target="_blank" class="btn" style="margin-top:1rem;">@TribalKavaLounge</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="margin-bottom: 2rem;">
+                        <h3>As seen on / local press</h3>
+                        <p style="margin-top:0.75rem; color:var(--text-muted);">Press mentions and “as seen on” logos will live here. Media inquiries: <a href="mailto:join@tribalkavalounge.co" style="color:var(--text-cream);">Join@TribalKavaLounge.Co</a> · (561) 355-0561</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Opening-week reactions</h3>
+                        <p style="margin-top:0.75rem; color:var(--text-muted);">Customer quotes and UGC placeholders — we’ll feature real guest words (with permission) as they come in. No fake reviews. Ever.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= GIFT CARDS ================= -->
+        <div id="view-gift-cards" class="spa-view" style="display: none;">
+            <section>
+                <div class="container" style="max-width: 720px; text-align:center;">
+                    <div class="section-head">
+                        <h1>Gift Cards</h1>
+                        <p>Digital gift cards are <strong>coming soon</strong> — not a launch feature yet. Join the VIP list to be first when “send someone their first sip” goes live.</p>
+                    </div>
+                    <div class="card" style="padding: 2.5rem;">
+                        <p style="color:var(--text-muted); margin-bottom:1.5rem;">In the meantime: bring a friend, grab a Cloud or Agua Fresca, and ask about first-drink free when you arrive.</p>
+                        <div style="display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:center;">
+                            <a href="/#vip" class="btn btn-accent">Join the VIP List</a>
+                            <a href="/visit" class="btn">Visit Us</a>
+                            <a href="/menu" class="btn btn-secondary">View Menu</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= THE DAILY KAVA: INDEX ================= -->
+        <div id="view-the-daily-kava" class="spa-view" style="display: none;">
+            <section>
+                <div class="container">
+                    <div class="section-head" style="max-width: 760px; margin-left: auto; margin-right: auto;">
+                        <p class="daily-kicker">The Daily Kava</p>
+                        <h1>Stories, education, and lounge life — without the brochure voice.</h1>
+                        <p>Beginner guides, Military Trail dispatches, flavor honesty, and weekly event chaos from Tribal Kava Lounge in West Palm Beach. Written like a human. Moderately funny. Compliance-friendly.</p>
+                    </div>
+                    <div id="daily-kava-grid" class="daily-grid"></div>
+                    <p class="daily-index-note">New posts will land here as we grow the catalog. Kratom content is always 21+ with ID. We talk culture, flavor, and format — not medical claims.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= THE DAILY KAVA: ARTICLE ================= -->
+        <div id="view-the-daily-kava-article" class="spa-view" style="display: none;">
+            <section>
+                <div class="container" style="max-width: 760px;">
+                    <article id="daily-kava-article-root" class="daily-article"></article>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <!-- GLOBAL FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Tribal Kava</h3>
+                <p>A premium non-alcoholic botanical social lounge in West Palm Beach. Explore creamy kava clouds and fruit-forward refreshers.</p>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">Serving West Palm Beach, Lake Worth, Greenacres, Palm Springs, and Haverhill.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="https://www.instagram.com/TribalKavaLounge" target="_blank" style="color: var(--text-cream); text-decoration: none; font-size: 0.9rem;">Instagram: @TribalKavaLounge</a>
+                    <a href="mailto:join@tribalkavalounge.co" style="color: var(--text-cream); text-decoration: none; font-size: 0.9rem;">Join@TribalKavaLounge.Co</a>
+                    <a href="https://tribalkavalounge.com" target="_blank" style="color: var(--text-cream); text-decoration: none; font-size: 0.9rem;">TribalKavaLounge.com</a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/menu">Menu</a></li>
+                    <li><a href="/new-here">New Here?</a></li>
+                    <li><a href="/kava-vs-kratom">Kava vs. Kratom</a></li>
+                    <li><a href="/what-is-kava">What Is Kava?</a></li>
+                    <li><a href="/what-is-kratom">What Is Kratom?</a></li>
+                    <li><a href="/the-daily-kava">The Daily Kava</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="/events">Events</a></li>
+                    <li><a href="/plan-your-visit">Plan Your Visit</a></li>
+                    <li><a href="/private-events">Private Events</a></li>
+                    <li><a href="/press">Press</a></li>
+                    <li><a href="/gift-cards">Gift Cards</a></li>
+                    <li><a href="/visit">Visit Us</a></li>
+                    <li><a href="/faq">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Our Location</h4>
+                <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 0.5rem;">
+                    770 S Military Trail, Unit A1<br>West Palm Beach, FL 33415
+                </p>
+                <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+                    ⏰ Sun–Thu 8 AM–12 AM &bull; Fri–Sat 8 AM–1 AM
+                </p>
+                <p style="font-size: 0.88rem; color: var(--text-muted);">
+                    ✉️ <a href="mailto:join@tribalkavalounge.co" style="color: var(--text-muted);">Join@TribalKavaLounge.Co</a>
+                </p>
+                <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.35rem;">
+                    📞 <a href="tel:+15613550561" style="color: var(--text-muted);">(561) 355-0561</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Compliance & safety disclaimers -->
+        <div class="footer-disclaimer-box">
+            <p class="footer-disclaimer">
+                <strong>Disclaimer:</strong> Kratom products are for adults 21+ only. Valid ID required. Products are not intended to diagnose, treat, cure, or prevent any disease. Do not mix kava or kratom with alcohol or other substances. Consult a qualified professional if pregnant, nursing, taking medications, or if you have health concerns.
+            </p>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Tribal Kava Lounge. All rights reserved.</p>
+            <p>Designed with compliance, SEO, and first-time education.</p>
+        </div>
+    </footer>
+
+    <!-- SITEWIDE FLOATING AI ASSISTANT -->
+    <div class="floating-chat-bubble" id="floating-chat-bubble" aria-label="Ask the Kava Guide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <div class="floating-chat-prompt">
+            New to kava or kratom? I can help.
+        </div>
+    </div>
+
+    <!-- Floating Chat Window -->
+    <div class="floating-chat-window" id="floating-chat-window">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <h4>Ask the Kava Guide</h4>
+                <p>Your first-sip concierge</p>
+            </div>
+            <button class="chat-close-btn" id="chat-close-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        
+        <div class="chat-messages" id="float-chat-messages">
+            <div class="chat-msg bot">
+                Hi there! Welcome to Tribal Kava Lounge. I'm here to help you navigate our botanical menu. Ask me anything about what we serve, kava basics, or what to order first!
+            </div>
+        </div>
+        
+        <div class="chat-starters">
+            <div class="chat-starter-chip" onclick="askAI('What is kava?', 'float-chat-input', 'float-chat-send')">What is kava?</div>
+            <div class="chat-starter-chip" onclick="askAI('What is kratom?', 'float-chat-input', 'float-chat-send')">What is kratom?</div>
+            <div class="chat-starter-chip" onclick="askAI('What should I order first?', 'float-chat-input', 'float-chat-send')">What to order?</div>
+            <div class="chat-starter-chip" onclick="askAI('Does kava get you drunk?', 'float-chat-input', 'float-chat-send')">Is it alcohol?</div>
+        </div>
+        
+        <div class="chat-input-area">
+            <input type="text" id="float-chat-input" class="chat-input" placeholder="Ask the Kava Guide...">
+            <button id="float-chat-send" class="chat-send-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Custom Script File -->
+    <script src="/daily-kava.js"></script>
+    <script src="/app.js"></script>
+</body>
+</html>

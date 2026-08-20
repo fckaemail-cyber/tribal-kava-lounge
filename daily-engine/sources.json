@@ -1,0 +1,53 @@
+{
+  "feeds": [
+    {
+      "id": "gnews-kava-bar",
+      "type": "google_news",
+      "query": "kava bar",
+      "category": "trend"
+    },
+    {
+      "id": "gnews-kava-lounge",
+      "type": "google_news",
+      "query": "kava lounge",
+      "category": "trend"
+    },
+    {
+      "id": "gnews-kratom-regulation",
+      "type": "google_news",
+      "query": "kratom regulation",
+      "category": "regulation"
+    },
+    {
+      "id": "gnews-kratom-fda",
+      "type": "google_news",
+      "query": "kratom FDA",
+      "category": "regulation"
+    },
+    {
+      "id": "gnews-kava-pacific",
+      "type": "google_news",
+      "query": "kava Fiji OR Vanuatu OR Tonga",
+      "category": "culture"
+    },
+    {
+      "id": "gnews-non-alc",
+      "type": "google_news",
+      "query": "non-alcoholic bar trend",
+      "category": "trend"
+    },
+    {
+      "id": "gnews-florida-kratom",
+      "type": "google_news",
+      "query": "kratom Florida",
+      "category": "local"
+    },
+    {
+      "id": "fda-press",
+      "type": "rss",
+      "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml",
+      "category": "regulation",
+      "filter_keywords": ["kratom", "kava"]
+    }
+  ]
+}

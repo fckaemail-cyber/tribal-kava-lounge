@@ -1,0 +1,8 @@
+_compare/
+.DS_Store
+.netlify/
+
+# Daily engine runtime
+daily-engine/state/
+daily-engine/drafts/
+daily-engine/logs/
