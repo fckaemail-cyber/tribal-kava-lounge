@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "file": "drafts/digest-2026-08-20.md",
+      "created_at": "2026-08-20T16:12:29.977339+00:00",
+      "status": "passed",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiogFBVV95cUxOek9GclBfRGxjblEzUDhyalNUX2ZvU0V4ckRndHo0ZUNpRG5VV09kbzBpVWtrVkFnN0pLLXVpbnBPa2IzNkxiVFNIa08telZiQzZLOHFKQUZrd3cxZEpBb3h4QXdGa09Rck1WLV9VNUVKdTMxNW12VWVRYTV0d1BxbW9RX19XQTQ2aVJfQS1xNTdjRjhRQ3NhRWo5RUQ4clVWQ3fSAacBQVVfeXFMTzMxMVBrQzM2MllFaFBLV3ZLUEtjY3FsZjBwS20zUGg4TTh4c0gySGVnZTlIYlhvaFNFcGItelpqYUZndDFrcDkzelRHTllqV1lvSnoxS1h6Tk9fdjRMei16SExnN2VPRTJmR1hSUHVCdkxVRFVOSy1pbzdSX1ByVngwLW5Md3JyN3I1N3FFWGN2bHJFci1QWUEtbzlSaDJ2NWs3TjFGV0U?oc=5",
+        "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNb3VxTVdtVDltY0tfM294V3dlUkprY3hTMTNMbnVFSjZZTDBXVHE1WjF0LVRLVWtKTTR2NUR1R29XLWlJWFpVbkFnRFlKRVF4QldtZnNTbkNlaXdCQTh2SnF5bTNHZEd1dmRZcUZNSy1zY2hiYUgyVWNrcnNwRUREY3dWcGg1SDZtWEVQbTluSkp1OTNnQVpKVjVkZFNrNU5FSU5sOUlrY3ZiX1JJTG4zdXpldUYxeC1USy1tcm43djVUZ0ZLV202bWt2M01oVUh2OUprejhxbWlXYTQ?oc=5",
+        "https://news.google.com/rss/articles/CBMiswFBVV95cUxOekhSREIzN1oxdFh2XzRvbkhwdWtsc05CQ1BROG02Q2ZoWXg5UFlqQW9Rb3pka1oxRVBjSzFoekJiTXVxQTRLakZFV3BDWGVwTjdPUUR2UjloME4tWWthc255Z2Z1MDZDaklYdEtwZExSMnNSXzFYODVhRnlGZWQyQURQWWpPTVFBRW50MmY0UlN3T251U2dJM0FEM1ZHeHNqc2lFNV9wdlhCMXZ5Y0MyNzFIMA?oc=5",
+        "https://news.google.com/rss/articles/CBMimwFBVV95cUxOcndzdVZlVWlpaVVSS1pEMy1tUHE3Ym1NNG9HUFFjenB1cWF6V2xuUHZNVUJqTXZCT1JaU3BmUlRlYjlVeHNqd01rVTN4SUphRnRja09EU2FPTUFRZ2hqZ00xbldSQWhUbFpnaEczWHRiS1FvanNESWstenRVUHhvYlg5ci00ZTlFWVo4Zzg2UklYY1A2enN5Tlh0OA?oc=5",
+        "https://news.google.com/rss/articles/CBMiywFBVV95cUxQcktjUmlDaTktN01sbTYzeUFjaTVWNlMtRUktWk4walBMcFJ2X1p3NG5IS1dZWFRKRXNNU2JjczZBbjFEZ3h4MU91OC1mbElPdjgyb3hMSUYyRkYzbGFpaU91NklKNElLSnZMYU95SHprYWFXUXI3emRIVWwybmtNemlFcXdIV1BkNnVJRWNsdHhjeDE4ZGZpMDBSZWYwbFA3R0RRWWNlYnItTFh6VXlZRmpMUWFXdVpoRFk0bFB3V0JEdXJ2Y3lfLUJ3cw?oc=5"
+      ],
+      "compliance": {
+        "pass": true,
+        "score": 100,
+        "flags": [],
+        "required_additions": [],
+        "context": "daily",
+        "summary": "PASS"
+      },
+      "checked_at": "2026-08-20T16:12:29.982565+00:00"
+    }
+  ]
+}
