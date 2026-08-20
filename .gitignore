@@ -5,3 +5,4 @@ _compare/
 # Daily engine runtime (logs only — state/ and drafts/ are intentionally
 # TRACKED: the daily-kava workflow commits them for manual review + dedup)
 daily-engine/logs/
+__pycache__/
