@@ -398,6 +398,71 @@ const dailyKavaPosts = [
       <p>And if you want a botanical drink that's actually about community and not "benefits"? You know where to find us.</p>
       <p><a href="/menu">See our botanical menu</a> · <a href="/the-daily-kava">More industry insights</a></p>
     `
+  },
+  {
+    slug: 'daily-digest-2026-08-20',
+    title: 'The Daily Kava Digest — 2026-08-20',
+    dek: 'A short, original roundup of links worth knowing for West Palm Beach kava lounge culture — culture, regulation, and non-alcoholic social trends. We su...',
+    date: '2026-08-20',
+    category: 'Industry',
+    readMin: 5,
+    tags: ["industry"],
+    body: `
+      <h1>The Daily Kava Digest — 2026-08-20</h1>
+
+<em>Draft generated 2026-08-20 15:57 UTC — human approval required before publish.</em>
+
+<p>A short, original roundup of links worth knowing for West Palm Beach kava lounge culture — culture, regulation, and non-alcoholic social trends. We summarize in our own words and link out. We do not republish full articles.</p>
+
+<h2>1. 2 arrested after toddler takes kratom pills, dies: Florida officers - WFLA</h2>
+
+<strong>Category:</strong> local · <strong>Source feed:</strong> gnews-florida-kratom · <strong>Outlet:</strong> WFLA
+
+<p>Snippet context (not republished body): 2 arrested after toddler takes kratom pills, dies: Florida officers&nbsp;&nbsp;WFLA</p>
+
+<p>What it means for Military Trail: worth a glance if you care about botanical lounge culture in Florida — then come sip something creamy or fruity in person. <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxOek9GclBfRGxjblEzUDhyalNUX2ZvU0V4ckRndHo0ZUNpRG5VV09kbzBpVWtrVkFnN0pLLXVpbnBPa2IzNkxiVFNIa08telZiQzZLOHFKQUZrd3cxZEpBb3h4QXdGa09Rck1WLV9VNUVKdTMxNW12VWVRYTV0d1BxbW9RX19XQTQ2aVJfQS1xNTdjRjhRQ3NhRWo5RUQ4clVWQ3fSAacBQVVfeXFMTzMxMVBrQzM2MllFaFBLV3ZLUEtjY3FsZjBwS20zUGg4TTh4c0gySGVnZTlIYlhvaFNFcGItelpqYUZndDFrcDkzelRHTllqV1lvSnoxS1h6Tk9fdjRMei16SExnN2VPRTJmR1hSUHVCdkxVRFVOSy1pbzdSX1ByVngwLW5Md3JyN3I1N3FFWGN2bHJFci1QWUEtbzlSaDJ2NWs3TjFGV0U?oc=5">Read the source</a></p>
+
+<h2>2. Mother urges Florida lawmakers to ban kratom after son's toxicology report - wtsp.com</h2>
+
+<strong>Category:</strong> local · <strong>Source feed:</strong> gnews-florida-kratom · <strong>Outlet:</strong> wtsp.com
+
+<p>Snippet context (not republished body): Mother urges Florida lawmakers to ban kratom after son's toxicology report&nbsp;&nbsp;wtsp.com</p>
+
+<p>What it means for Military Trail: worth a glance if you care about botanical lounge culture in Florida — then come sip something creamy or fruity in person. <a href="https://news.google.com/rss/articles/CBMi2wFBVV95cUxNb3VxTVdtVDltY0tfM294V3dlUkprY3hTMTNMbnVFSjZZTDBXVHE1WjF0LVRLVWtKTTR2NUR1R29XLWlJWFpVbkFnRFlKRVF4QldtZnNTbkNlaXdCQTh2SnF5bTNHZEd1dmRZcUZNSy1zY2hiYUgyVWNrcnNwRUREY3dWcGg1SDZtWEVQbTluSkp1OTNnQVpKVjVkZFNrNU5FSU5sOUlrY3ZiX1JJTG4zdXpldUYxeC1USy1tcm43djVUZ0ZLV202bWt2M01oVUh2OUprejhxbWlXYTQ?oc=5">Read the source</a></p>
+
+<h2>3. More 7-OH related products made illegal in Florida by a new emergency rule - Florida Phoenix</h2>
+
+<strong>Category:</strong> local · <strong>Source feed:</strong> gnews-florida-kratom · <strong>Outlet:</strong> Florida Phoenix
+
+<p>Snippet context (not republished body): More 7-OH related products made illegal in Florida by a new emergency rule&nbsp;&nbsp;Florida Phoenix</p>
+
+<p>What it means for Military Trail: worth a glance if you care about botanical lounge culture in Florida — then come sip something creamy or fruity in person. <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOekhSREIzN1oxdFh2XzRvbkhwdWtsc05CQ1BROG02Q2ZoWXg5UFlqQW9Rb3pka1oxRVBjSzFoekJiTXVxQTRLakZFV3BDWGVwTjdPUUR2UjloME4tWWthc255Z2Z1MDZDaklYdEtwZExSMnNSXzFYODVhRnlGZWQyQURQWWpPTVFBRW50MmY0UlN3T251U2dJM0FEM1ZHeHNqc2lFNV9wdlhCMXZ5Y0MyNzFIMA?oc=5">Read the source</a></p>
+
+<h2>4. UF study finds kratom-derived products are frequently mislabeled - UF Health</h2>
+
+<strong>Category:</strong> local · <strong>Source feed:</strong> gnews-florida-kratom · <strong>Outlet:</strong> UF Health
+
+<p>Snippet context (not republished body): UF study finds kratom-derived products are frequently mislabeled&nbsp;&nbsp;UF Health</p>
+
+<p>What it means for Military Trail: worth a glance if you care about botanical lounge culture in Florida — then come sip something creamy or fruity in person. <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxOcndzdVZlVWlpaVVSS1pEMy1tUHE3Ym1NNG9HUFFjenB1cWF6V2xuUHZNVUJqTXZCT1JaU3BmUlRlYjlVeHNqd01rVTN4SUphRnRja09EU2FPTUFRZ2hqZ00xbldSQWhUbFpnaEczWHRiS1FvanNESWstenRVUHhvYlg5ci00ZTlFWVo4Zzg2UklYY1A2enN5Tlh0OA?oc=5">Read the source</a></p>
+
+<h2>5. Dangers of kratom abuse make strong argument for a ban in Florida - Tallahassee Democrat</h2>
+
+<strong>Category:</strong> local · <strong>Source feed:</strong> gnews-florida-kratom · <strong>Outlet:</strong> Tallahassee Democrat
+
+<p>Snippet context (not republished body): Dangers of kratom abuse make strong argument for a ban in Florida&nbsp;&nbsp;Tallahassee Democrat</p>
+
+<p>What it means for Military Trail: worth a glance if you care about botanical lounge culture in Florida — then come sip something creamy or fruity in person. <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxQcktjUmlDaTktN01sbTYzeUFjaTVWNlMtRUktWk4walBMcFJ2X1p3NG5IS1dZWFRKRXNNU2JjczZBbjFEZ3h4MU91OC1mbElPdjgyb3hMSUYyRkYzbGFpaU91NklKNElLSnZMYU95SHprYWFXUXI3emRIVWwybmtNemlFcXdIV1BkNnVJRWNsdHhjeDE4ZGZpMDBSZWYwbFA3R0RRWWNlYnItTFh6VXlZRmpMUWFXdVpoRFk0bFB3V0JEdXJ2Y3lfLUJ3cw?oc=5">Read the source</a></p>
+
+<p>---</p>
+
+<strong>Local CTAs:</strong> <a href="https://tribalkavalounge.com/menu">Menu</a> · <a href="https://tribalkavalounge.com/new-here">New Here?</a> · <a href="https://tribalkavalounge.com/visit">Visit</a>
+
+<strong>Responsible use:</strong> Kratom products are for adults 21+ only. Valid ID required. Products are not intended to diagnose, treat, cure, or prevent any disease. Do not mix kava or kratom with alcohol or other substances. If you are pregnant, nursing, taking medications, or have health concerns, speak with a qualified professional.
+
+<em>Tribal Kava Lounge — 770 S Military Trail, Unit A1, West Palm Beach, FL 33415 · (561) 355-0561</em>
+
+    `
   }
 ];
 
