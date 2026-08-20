@@ -27,49 +27,22 @@ jobs:
         run: npm install -g netlify-cli
         
       - name: Run daily engine (fetch + draft + check)
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
           cd daily-engine
           python3 run_daily.py run
           
-      - name: Auto-approve passing drafts
-        run: |
-          cd daily-engine
-          # Auto-approve any drafts that passed compliance
-          for draft in drafts/*.md; do
-            if [ -f "$draft" ]; then
-              python3 run_daily.py approve --file "$draft" || true
-            fi
-          done
-          
-      - name: Publish approved drafts to daily-kava.js
-        run: |
-          cd daily-engine
-          python3 auto_publish.py
-          
-      - name: Commit and push changes
+      - name: Commit draft changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add daily-engine/
-          git add daily-kava.js
-          git add sitemap.xml
-          git commit -m "chore: auto-publish daily kava post $(date +%Y-%m-%d)" || exit 0
+          git add daily-engine/state/
+          git add daily-engine/drafts/
+          git commit -m "chore: daily draft $(date +%Y-%m-%d) - awaiting review" || exit 0
           git push
-          
-      - name: Deploy to Netlify
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: |
-          # Use draft deploy (production deploy requires elevated permissions)
-          netlify deploy --dir=. --auth=$NETLIFY_AUTH_TOKEN --site=$NETLIFY_SITE_ID --message "Auto-deploy from GitHub Actions"
           
       - name: Summary
         run: |
-          echo "## Daily Kava Auto-Publish Complete" >> $GITHUB_STEP_SUMMARY
+          echo "## Daily Kava Draft Created" >> $GITHUB_STEP_SUMMARY
           echo "- Time: $(date -u)" >> $GITHUB_STEP_SUMMARY
-          echo "- Status: Draft deployed (promote to production in Netlify dashboard)" >> $GITHUB_STEP_SUMMARY
-          echo "- Site: https://tribalkavalounge.com" >> $GITHUB_STEP_SUMMARY
+          echo "- Status: Draft created and awaiting manual review" >> $GITHUB_STEP_SUMMARY
+          echo "- Next: Review draft in daily-engine/drafts/, then manually approve and publish" >> $GITHUB_STEP_SUMMARY

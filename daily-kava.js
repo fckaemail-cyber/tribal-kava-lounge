@@ -31,7 +31,8 @@ const dailyKavaPosts = [
       <p class="daily-note"><strong>Responsible use:</strong> Don’t mix kava with alcohol or other substances. If you’re pregnant, nursing, taking medications, or have health concerns, talk to a qualified professional before using kava.</p>
       <p><a href="/menu">See the full menu</a> · <a href="/new-here">New here? Start here</a> · <a href="/visit">Visit us in West Palm Beach</a></p>
     `
-  },
+  }
+];
   {
     slug: 'kratom-tea-for-adults-who-dont-want-a-lecture',
     title: 'Kratom Tea for Adults Who Don’t Want a Lecture',
@@ -59,7 +60,8 @@ const dailyKavaPosts = [
       <p class="daily-note"><strong>Responsible use:</strong> Kratom products are 21+ only. Valid ID required. Do not mix with alcohol or other substances. Products are not intended to diagnose, treat, cure, or prevent any disease. If pregnant, nursing, taking medications, or you have health concerns, speak with a qualified professional first.</p>
       <p><a href="/menu">Browse kratom on the menu</a> · <a href="/kava-vs-kratom">Kava vs. kratom</a></p>
     `
-  },
+  }
+];
   {
     slug: 'kava-vs-kratom-speed-round',
     title: 'Kava vs. Kratom: The Speed Round',
@@ -82,7 +84,8 @@ const dailyKavaPosts = [
       <p>Still stuck? That’s why we built the New Here? page and the Kava Guide. Confusion is free. Bad first sips are optional.</p>
       <p><a href="/kava-vs-kratom">Full comparison page</a> · <a href="/new-here">New Here?</a></p>
     `
-  },
+  }
+];
   {
     slug: 'raw-kava-tastes-like-a-dirt-smoothie',
     title: 'Yes, Raw Kava Can Taste Like a Dirt Smoothie. That’s Why Clouds Exist.',
@@ -101,7 +104,8 @@ const dailyKavaPosts = [
       <p>Tell us what you usually drink. Coffee-shop sweet? Fruity iced? Chocolate situation? We’ll point you at a Cloud. Want classic shells? Say the word — especially on <strong>$2 Tuesdays (2–5 PM)</strong>.</p>
       <p><a href="/menu">Cloud menu</a> · <a href="/events">$2 Tuesdays & weekly nights</a></p>
     `
-  },
+  }
+];
   {
     slug: 'first-time-kava-bar-etiquette',
     title: 'First Time at a Kava Bar: Etiquette for People Who Hate Etiquette',
@@ -124,7 +128,8 @@ const dailyKavaPosts = [
       <p>Unit A1, 770 S Military Trail, West Palm Beach. If you get lost, call <a href="tel:+15613550561">(561) 355-0561</a> or follow the “I swear I parked already” energy into the open lot.</p>
       <p><a href="/new-here">New Here? hub</a> · <a href="/visit">Visit + amenities</a></p>
     `
-  },
+  }
+];
   {
     slug: 'non-alcoholic-night-out-west-palm',
     title: 'A Non-Alcoholic Night Out in West Palm That Doesn’t Feel Like Detention',
@@ -142,7 +147,8 @@ const dailyKavaPosts = [
       <p>Serving West Palm Beach and the nearby orbit: Lake Worth, Greenacres, Palm Springs, Haverhill. If you’re already on Military Trail, you’re basically here.</p>
       <p><a href="/events">Weekly events</a> · <a href="/visit">Plan your visit</a></p>
     `
-  },
+  }
+];
   {
     slug: 'two-dollar-tuesdays-explained',
     title: '$2 Tuesdays, Explained (Yes, Really $2)',
@@ -166,7 +172,8 @@ const dailyKavaPosts = [
       <p>Outside the window, ask the bar for standard shell pricing. Specialty Clouds stay $10. Refreshers $14. Life continues.</p>
       <p><a href="/menu">Menu + prices</a> · <a href="/events">Full weekly lineup</a></p>
     `
-  },
+  }
+];
   {
     slug: 'wednesday-is-karaoke-deal-with-it',
     title: 'Wednesday Is Karaoke. Deal With It.',
@@ -186,7 +193,8 @@ const dailyKavaPosts = [
       </ul>
       <p><a href="/events">Events calendar</a> · <a href="tel:+15613550561">Call (561) 355-0561</a></p>
     `
-  },
+  }
+];
   {
     slug: 'thursday-pool-tournament-diplomacy',
     title: 'Thursday Pool Tournament Diplomacy',
@@ -206,7 +214,8 @@ const dailyKavaPosts = [
       </ul>
       <p><a href="/events">See the weekly slate</a> · <a href="/visit">Parking is free and unlimited</a></p>
     `
-  },
+  }
+];
   {
     slug: 'friday-night-loteria',
     title: 'Friday Night Lotería (Bring Your Lucky Superstitions)',
@@ -221,7 +230,8 @@ const dailyKavaPosts = [
       <p>All welcome. Kratom remains 21+ with ID. Agua Frescas exist so nobody feels left out of the beverage plot.</p>
       <p><a href="/events">Events</a> · <a href="/menu">Drinks for the whole crew</a></p>
     `
-  },
+  }
+];
   {
     slug: 'military-trail-kava-corridor',
     title: 'Welcome to the Military Trail Kava Corridor',
@@ -243,7 +253,8 @@ const dailyKavaPosts = [
       <p><strong>770 S Military Trail, Unit A1, West Palm Beach, FL 33415.</strong> Easy from Lake Worth, Greenacres, Palm Springs, Haverhill. Call <a href="tel:+15613550561">(561) 355-0561</a> if your GPS gets philosophical.</p>
       <p><a href="/visit">Get directions</a> · <a href="https://www.instagram.com/TribalKavaLounge" target="_blank" rel="noopener">@TribalKavaLounge</a></p>
     `
-  },
+  }
+];
   {
     slug: 'bring-the-friend-who-doesnt-do-botanicals',
     title: 'Bring the Friend Who “Doesn’t Do Botanicals”',
@@ -258,7 +269,8 @@ const dailyKavaPosts = [
       <p>Hospitality means the whole table gets a drink identity. Not a lecture.</p>
       <p><a href="/menu">Agua Fresca menu</a> · <a href="/new-here">First-timer guide</a></p>
     `
-  },
+  }
+];
   {
     slug: 'kava-bars-across-america-2026',
     title: 'Kava Bars Are Popping Up Across America. Here\'s Why.',
@@ -285,7 +297,8 @@ const dailyKavaPosts = [
       <p class="daily-note"><strong>Responsible use:</strong> Kratom products are 21+ only where required by law. Do not mix kava or kratom with alcohol. If pregnant, nursing, or on medications, consult a professional.</p>
       <p><a href="/new-here">New to botanical lounges? Start here</a> · <a href="/menu">See what we're pouring</a></p>
     `
-  },
+  }
+];
   {
     slug: 'kratom-regulation-florida-what-changed',
     title: 'Kratom in Florida: What Changed in 2023 and What It Means for Lounges',
@@ -315,7 +328,8 @@ const dailyKavaPosts = [
       <p class="daily-note"><strong>Responsible use:</strong> Kratom is 21+ in Florida. Valid ID required. Do not mix with alcohol. Not for pregnant/nursing individuals or those on medications. Consult a professional if you have health concerns.</p>
       <p><a href="/kratom-tea-for-adults-who-dont-want-a-lecture">More on how we serve kratom</a> · <a href="/kava-vs-kratom">Kava vs. kratom comparison</a></p>
     `
-  },
+  }
+];
   {
     slug: 'non-alcoholic-social-spaces-why-they-matter',
     title: 'Why Cities Need Non-Alcoholic Social Spaces (And Why Kava Bars Fit)',
@@ -344,7 +358,8 @@ const dailyKavaPosts = [
       <p>But for the people they serve, botanical lounges are filling a gap that's been widening for decades. That's worth paying attention to.</p>
       <p><a href="/visit">Come see what we mean</a> · <a href="/events">See what's happening this week</a></p>
     `
-  },
+  }
+];
   {
     slug: 'kava-culture-pacific-islands-to-florida',
     title: 'From Pacific Islands to Florida: A Brief History of Kava Culture',
@@ -369,7 +384,8 @@ const dailyKavaPosts = [
       <p class="daily-note"><strong>Responsible use:</strong> Don't mix kava with alcohol or other substances. If pregnant, nursing, or on medications, consult a professional.</p>
       <p><a href="/what-is-kava">More on what kava is</a> · <a href="/menu">See how we serve it</a></p>
     `
-  },
+  }
+];
   {
     slug: 'botanical-drink-trends-2026',
     title: 'The Botanical Drink Boom: What\'s Trending in 2026',
@@ -397,71 +413,6 @@ const dailyKavaPosts = [
       <p>Most functional beverages are fine. Some are overpriced. Very few are going to change your life. If you like the taste, if the price is reasonable, and if the brand isn't making medical claims, you're probably okay.</p>
       <p>And if you want a botanical drink that's actually about community and not "benefits"? You know where to find us.</p>
       <p><a href="/menu">See our botanical menu</a> · <a href="/the-daily-kava">More industry insights</a></p>
-    `
-  },
-  {
-    slug: 'daily-digest-2026-08-20',
-    title: 'The Daily Kava Digest — 2026-08-20',
-    dek: 'A short, original roundup of links worth knowing for West Palm Beach kava lounge culture — culture, regulation, and non-alcoholic social trends. We su...',
-    date: '2026-08-20',
-    category: 'Industry',
-    readMin: 5,
-    tags: ["industry"],
-    body: `
-      <h1>The Daily Kava Digest — 2026-08-20</h1>
-
-<em>Draft generated 2026-08-20 15:57 UTC — human approval required before publish.</em>
-
-<p>A short, original roundup of links worth knowing for West Palm Beach kava lounge culture — culture, regulation, and non-alcoholic social trends. We summarize in our own words and link out. We do not republish full articles.</p>
-
-<h2>1. 2 arrested after toddler takes kratom pills, dies: Florida officers - WFLA</h2>
-
-<strong>Category:</strong> local · <strong>Source feed:</strong> gnews-florida-kratom · <strong>Outlet:</strong> WFLA
-
-<p>Snippet context (not republished body): 2 arrested after toddler takes kratom pills, dies: Florida officers&nbsp;&nbsp;WFLA</p>
-
-<p>What it means for Military Trail: worth a glance if you care about botanical lounge culture in Florida — then come sip something creamy or fruity in person. <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxOek9GclBfRGxjblEzUDhyalNUX2ZvU0V4ckRndHo0ZUNpRG5VV09kbzBpVWtrVkFnN0pLLXVpbnBPa2IzNkxiVFNIa08telZiQzZLOHFKQUZrd3cxZEpBb3h4QXdGa09Rck1WLV9VNUVKdTMxNW12VWVRYTV0d1BxbW9RX19XQTQ2aVJfQS1xNTdjRjhRQ3NhRWo5RUQ4clVWQ3fSAacBQVVfeXFMTzMxMVBrQzM2MllFaFBLV3ZLUEtjY3FsZjBwS20zUGg4TTh4c0gySGVnZTlIYlhvaFNFcGItelpqYUZndDFrcDkzelRHTllqV1lvSnoxS1h6Tk9fdjRMei16SExnN2VPRTJmR1hSUHVCdkxVRFVOSy1pbzdSX1ByVngwLW5Md3JyN3I1N3FFWGN2bHJFci1QWUEtbzlSaDJ2NWs3TjFGV0U?oc=5">Read the source</a></p>
-
-<h2>2. Mother urges Florida lawmakers to ban kratom after son's toxicology report - wtsp.com</h2>
-
-<strong>Category:</strong> local · <strong>Source feed:</strong> gnews-florida-kratom · <strong>Outlet:</strong> wtsp.com
-
-<p>Snippet context (not republished body): Mother urges Florida lawmakers to ban kratom after son's toxicology report&nbsp;&nbsp;wtsp.com</p>
-
-<p>What it means for Military Trail: worth a glance if you care about botanical lounge culture in Florida — then come sip something creamy or fruity in person. <a href="https://news.google.com/rss/articles/CBMi2wFBVV95cUxNb3VxTVdtVDltY0tfM294V3dlUkprY3hTMTNMbnVFSjZZTDBXVHE1WjF0LVRLVWtKTTR2NUR1R29XLWlJWFpVbkFnRFlKRVF4QldtZnNTbkNlaXdCQTh2SnF5bTNHZEd1dmRZcUZNSy1zY2hiYUgyVWNrcnNwRUREY3dWcGg1SDZtWEVQbTluSkp1OTNnQVpKVjVkZFNrNU5FSU5sOUlrY3ZiX1JJTG4zdXpldUYxeC1USy1tcm43djVUZ0ZLV202bWt2M01oVUh2OUprejhxbWlXYTQ?oc=5">Read the source</a></p>
-
-<h2>3. More 7-OH related products made illegal in Florida by a new emergency rule - Florida Phoenix</h2>
-
-<strong>Category:</strong> local · <strong>Source feed:</strong> gnews-florida-kratom · <strong>Outlet:</strong> Florida Phoenix
-
-<p>Snippet context (not republished body): More 7-OH related products made illegal in Florida by a new emergency rule&nbsp;&nbsp;Florida Phoenix</p>
-
-<p>What it means for Military Trail: worth a glance if you care about botanical lounge culture in Florida — then come sip something creamy or fruity in person. <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOekhSREIzN1oxdFh2XzRvbkhwdWtsc05CQ1BROG02Q2ZoWXg5UFlqQW9Rb3pka1oxRVBjSzFoekJiTXVxQTRLakZFV3BDWGVwTjdPUUR2UjloME4tWWthc255Z2Z1MDZDaklYdEtwZExSMnNSXzFYODVhRnlGZWQyQURQWWpPTVFBRW50MmY0UlN3T251U2dJM0FEM1ZHeHNqc2lFNV9wdlhCMXZ5Y0MyNzFIMA?oc=5">Read the source</a></p>
-
-<h2>4. UF study finds kratom-derived products are frequently mislabeled - UF Health</h2>
-
-<strong>Category:</strong> local · <strong>Source feed:</strong> gnews-florida-kratom · <strong>Outlet:</strong> UF Health
-
-<p>Snippet context (not republished body): UF study finds kratom-derived products are frequently mislabeled&nbsp;&nbsp;UF Health</p>
-
-<p>What it means for Military Trail: worth a glance if you care about botanical lounge culture in Florida — then come sip something creamy or fruity in person. <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxOcndzdVZlVWlpaVVSS1pEMy1tUHE3Ym1NNG9HUFFjenB1cWF6V2xuUHZNVUJqTXZCT1JaU3BmUlRlYjlVeHNqd01rVTN4SUphRnRja09EU2FPTUFRZ2hqZ00xbldSQWhUbFpnaEczWHRiS1FvanNESWstenRVUHhvYlg5ci00ZTlFWVo4Zzg2UklYY1A2enN5Tlh0OA?oc=5">Read the source</a></p>
-
-<h2>5. Dangers of kratom abuse make strong argument for a ban in Florida - Tallahassee Democrat</h2>
-
-<strong>Category:</strong> local · <strong>Source feed:</strong> gnews-florida-kratom · <strong>Outlet:</strong> Tallahassee Democrat
-
-<p>Snippet context (not republished body): Dangers of kratom abuse make strong argument for a ban in Florida&nbsp;&nbsp;Tallahassee Democrat</p>
-
-<p>What it means for Military Trail: worth a glance if you care about botanical lounge culture in Florida — then come sip something creamy or fruity in person. <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxQcktjUmlDaTktN01sbTYzeUFjaTVWNlMtRUktWk4walBMcFJ2X1p3NG5IS1dZWFRKRXNNU2JjczZBbjFEZ3h4MU91OC1mbElPdjgyb3hMSUYyRkYzbGFpaU91NklKNElLSnZMYU95SHprYWFXUXI3emRIVWwybmtNemlFcXdIV1BkNnVJRWNsdHhjeDE4ZGZpMDBSZWYwbFA3R0RRWWNlYnItTFh6VXlZRmpMUWFXdVpoRFk0bFB3V0JEdXJ2Y3lfLUJ3cw?oc=5">Read the source</a></p>
-
-<p>---</p>
-
-<strong>Local CTAs:</strong> <a href="https://tribalkavalounge.com/menu">Menu</a> · <a href="https://tribalkavalounge.com/new-here">New Here?</a> · <a href="https://tribalkavalounge.com/visit">Visit</a>
-
-<strong>Responsible use:</strong> Kratom products are for adults 21+ only. Valid ID required. Products are not intended to diagnose, treat, cure, or prevent any disease. Do not mix kava or kratom with alcohol or other substances. If you are pregnant, nursing, taking medications, or have health concerns, speak with a qualified professional.
-
-<em>Tribal Kava Lounge — 770 S Military Trail, Unit A1, West Palm Beach, FL 33415 · (561) 355-0561</em>
-
     `
   }
 ];
