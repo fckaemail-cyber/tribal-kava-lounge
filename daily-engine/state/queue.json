@@ -19,7 +19,28 @@
         "context": "daily",
         "summary": "PASS"
       },
-      "checked_at": "2026-08-20T16:12:29.982565+00:00"
+      "checked_at": "2026-08-21T11:15:09.927219+00:00"
+    },
+    {
+      "file": "drafts/digest-2026-08-21.md",
+      "created_at": "2026-08-21T11:15:09.921827+00:00",
+      "status": "passed",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMingFBVV95cUxPNTdJRzlBRldVOXB4MkkyNVRLM3ZpU3p6eUtkWGRKc3o0dG41SjVSMmpDR245SjluTDYtRTk5NmVHS2hDZHgwWGZhdkhKaXBhT3BkU3ZmdFRnU2wzbVNCZVd5bU1JQVI5OG5mVEZ6X01vbE5acXhlQWN5T2djcm95ZWhWWnZDUGpiOTZvRXN6WmZrSDNqdjRUQVZxbEozdw?oc=5",
+        "https://news.google.com/rss/articles/CBMidkFVX3lxTFBKU2w0QVIyTktZc2ZOZHpueFRPZ2dQc19RZ1RYQTczLUhVSkRoYkx1dDVROTQtaEVLMU4xRm9hZ0gwRnBDZXJlai1ILWV1Nkp2OTd1RXo2cE9oUlNpQXVvWWstLTRDSlhYR1B4V2pLeFdOWXgzSEE?oc=5",
+        "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBEWEFvYWR5LTNyc0ZMRmNubFZtZTExd3JmQngtVjF5RkhPSVhHOHVvYlJ4N2NfTzdVM2ppNWM5U3U0LTU5QmREQ2NrbGg0SExVZkt0U25NeEFfdFJLVXc?oc=5",
+        "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOaTFxNzVzamNlY2dnUXFLSHR1ZHZJYVpZU1I2UWxvRlNhUzNsb19PMWJ1VlctUmIzcmo3N0k1eUxYS2k4SlVMMDMtb09xY1g2eGZFUGh6UjJRT05POXpZU3JnanRfTmltVjZaWk5VdnVvakZsTmNBbnh2c3VRQ3MzaWtaUjFDZXVUdVJ1aTMxRnFaZDNES1FCUzhjOWt4VEZiTTdhSTNNZ2pMcG8?oc=5",
+        "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOME82ZlpZMU56WVVyQXpaWEdvb3VlTi1QaW1fVDg4V2k0WWdyemtRYWk4dEs4ZF8wdV9OSHFKV01hZUlhWkVIWjdIR01xb1gtRm1RYkVDWkUwOEJ5THNHM2o0bnJqdkpaQUFfcjVvUkJPejlRUXJBMmxLUmdZeHFkdVpaUVRwMDlhWTRIWUR5WFJORGN6MkdmdE5DMXFYakY5TjVKYjdaVmo5eGM?oc=5"
+      ],
+      "compliance": {
+        "pass": true,
+        "score": 100,
+        "flags": [],
+        "required_additions": [],
+        "context": "daily",
+        "summary": "PASS"
+      },
+      "checked_at": "2026-08-21T11:15:09.929782+00:00"
     }
   ]
 }
