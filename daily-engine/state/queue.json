@@ -19,7 +19,7 @@
         "context": "daily",
         "summary": "PASS"
       },
-      "checked_at": "2026-08-21T11:15:09.927219+00:00"
+      "checked_at": "2026-08-23T11:10:33.196719+00:00"
     },
     {
       "file": "drafts/digest-2026-08-21.md",
@@ -40,7 +40,28 @@
         "context": "daily",
         "summary": "PASS"
       },
-      "checked_at": "2026-08-21T11:15:09.929782+00:00"
+      "checked_at": "2026-08-23T11:10:33.199335+00:00"
+    },
+    {
+      "file": "drafts/digest-2026-08-23.md",
+      "created_at": "2026-08-23T11:10:33.191102+00:00",
+      "status": "passed",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMihgFBVV95cUxQSzhsZDZQeXl5NDE3UUJGd3lJNDBMY0J2TUNaa05mOHNDaHZhRkdzZ2FNdHhscURsNmZnU3pEbmY0UDZwM0dJdjc5SWstX0pPS0QtbGxpWUdtNVVnQkhiZ2t5anQtVUR4NTN5MERuWTJ4MkxSNXM4ZXVNVVphemY1eVZqUTBYUQ?oc=5",
+        "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQdnE2Mi1JUDRfYnh4Y3VVem4xUS0xX0FLQmpqSEZrYTAyNlliQmtwMWtNYlpHRVN4dFpHdGJ2TU1ibkNuRmlocUg4R0dpeGl4Z1AtVWVTMWtJM21GZk03ZGtVc052Z2p2eExHSFZhZjR3VlBYNXZjd3h0SGw0NW5RMzhjdmtuaktpMzFRVFA2V1lCcXpzajNscTFaVUppdmN1dXZWNl9CN1FFQ1E?oc=5",
+        "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8wVHowVEY1bEZVNUZmaG9fZFpCTmUwb3YxUmh3QzhhNjRuX3lxN2RlcUJHZ004eTU3T2llWUY2bVI4V21mODBUdFJ3SzFITXN5NFFvU0dTYTNQeThK?oc=5",
+        "https://news.google.com/rss/articles/CBMimwFBVV95cUxPc3BxZDR4dU5DUnpDV3NyTHkyWkdrV25PXzBwcEx4dDJWbEVZWmJVQ3REZ29PbTJCRDQ1Mml3YTdhdF92azZ3TElIYlhpUklmV1ZmWGdPWjZUMUxWTXhUVGNGQmNKZHUxY3hwM3ZPZldLRkliTTU3alJfQ1pROFNjQWF4aXBJRTBDRGk2V3NwWEk2X3hITko3RXItUQ?oc=5",
+        "https://news.google.com/rss/articles/CBMigwFBVV95cUxNYzJWVERNRUJWRTd1WVh2YURWaW5MelhNdTBxTTJNX0JZeUVQWGd1Yy1OS3BVZVNxOUxIc1VpRTdLaEticTJOWlQ2R2N1NnJYaG5aWTJMdWVYYlpvRHE2dFBQVFNBUU42TThwdXRyY1Z0TmhhazMydXlkZUJxN3FGeEdHVQ?oc=5"
+      ],
+      "compliance": {
+        "pass": true,
+        "score": 100,
+        "flags": [],
+        "required_additions": [],
+        "context": "daily",
+        "summary": "PASS"
+      },
+      "checked_at": "2026-08-23T11:10:33.201727+00:00"
     }
   ]
 }
