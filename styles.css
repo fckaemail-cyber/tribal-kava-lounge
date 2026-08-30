@@ -1,6 +1,7 @@
 /* Tribal Kava Lounge Design System & Core Styles */
 
 :root {
+    color-scheme: dark;
     /* Color Palette */
     --bg-dark: #07090e;
     --text-cream: #fafaf5;
@@ -1124,9 +1125,9 @@ section {
     letter-spacing: -0.06em;
     margin: 1.5rem 0;
     max-width: 850px;
-    background: linear-gradient(135deg, #ffffff 30%, #f8e4b6 62%, rgba(255,255,255,0.72) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #f8f2e5;
+    background: none;
+    -webkit-text-fill-color: currentColor;
 }
 
 .hero-badge {
