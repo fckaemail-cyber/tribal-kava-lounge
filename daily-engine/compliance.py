@@ -102,7 +102,10 @@ def check_text(text: str, *, context: str = "daily") -> dict[str, Any]:
     scan = _strip_allowed(text)
 
     if context == "daily":
-        editorial = check_candidate({"title": text, "summary": ""})
+        # Story body only: the responsible-use footer may mention regulated products
+        # and is not editorial content.
+        editorial_body = text.split("\n---", 1)[0]
+        editorial = check_candidate({"title": editorial_body, "summary": ""})
         flags.extend(editorial["flags"])
 
     for pattern, label in PROHIBITED:
