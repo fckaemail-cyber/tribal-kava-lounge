@@ -15,10 +15,14 @@ const [html, robots, sitemap, config, analytics, siteConfig, app, styles] = awai
   read('index.html'), read('robots.txt'), read('dist/sitemap.xml'), read('staticwebapp.config.json'),
   read('analytics.js'), read('site-config.js'), read('app.js'), read('styles.css')
 ]);
+const logo = await readFile(path.join(root, 'images/tribal-logo-cutout.png'));
 
 assert.match(html, /https:\/\/www\.thetribalkavalounge\.com\//, 'canonical domain must use www');
 assert.match(html, /daily-kava\.js/, 'public Daily Kava feed must be loaded');
 assert.match(html, /analytics\.js/, 'conversion tracker must be loaded');
+assert.match(html, /\/images\/tribal-logo-cutout\.png/, 'transparent Tribal logo must be used');
+assert.doesNotMatch(html, /\/images\/tribal-logo\.jpg/, 'legacy logo photo must not be rendered');
+assert.equal(logo[25], 6, 'Tribal logo PNG must contain an RGBA alpha channel');
 assert.match(html, /js\.monitor\.azure\.com\/scripts\/b\/ai\.3\.gbl\.min\.js/, 'Application Insights browser SDK must be loaded');
 assert.match(siteConfig, /applicationInsightsConnectionString:\s*'InstrumentationKey=/, 'Tribal Application Insights must be configured');
 assert.match(analytics, /azureInsights\.trackEvent/, 'conversion events must be sent to Application Insights');
