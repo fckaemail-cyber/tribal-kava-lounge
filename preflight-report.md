@@ -69,8 +69,7 @@ az deployment group what-if --resource-group tribal-kava-automation-rg \
 
 ## Final job gate
 
-**READY — job deployment may proceed after the managed environment reaches a
-terminal `Succeeded` state.**
+**DEPLOYED AND VERIFIED.**
 
 - ACR build `ca1` completed successfully.
 - Image `tribal-kava-daily:20260830.1` exists at digest
@@ -81,6 +80,13 @@ terminal `Succeeded` state.**
 - `job.bicep` passed `az deployment group validate`.
 - Job What-If reports one create (`tribal-kava-daily-job`), five existing
   resources ignored, zero modifications, and zero deletions.
+- The base deployment reached `Succeeded` after 12 minutes 41 seconds.
+- The protected test execution `tribal-kava-daily-job-o6yvsad` reached
+  `Succeeded` in 39 seconds.
+- That execution fetched seven new URLs, produced
+  `daily-engine/drafts/digest-2026-08-30.md`, passed all compliance checks at
+  score 100, and pushed commit `3e5e3b4` to the migration branch.
 
-The GitHub schedule will be removed only after a manual Azure execution
-succeeds and pushes its expected draft/state commit.
+The GitHub schedule is removed after this successful test; its workflow remains
+available only as an operator-triggered fallback. The Azure job owns the daily
+11:00 UTC schedule.

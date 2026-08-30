@@ -1,10 +1,9 @@
-name: Daily Kava Auto-Publish
+name: Manual Kava Draft Fallback
 
 on:
-  schedule:
-    # Run daily at 11:00 UTC (6 AM ET / 7 AM EDT)
-    - cron: '0 11 * * *'
-  workflow_dispatch: # Allow manual trigger
+  # Scheduling moved to the isolated Azure Container Apps job. Keep this only
+  # as an operator-triggered fallback so the two systems cannot run at once.
+  workflow_dispatch:
 
 concurrency:
   group: daily-kava-${{ github.ref }}
@@ -44,7 +43,7 @@ jobs:
       - name: Summary
         run: |
           {
-            echo "## Daily Kava Draft Created"
+            echo "## Manual Kava Draft Created"
             echo "- Time: $(date -u)"
             echo "- Status: Draft created and awaiting manual review"
             echo "- Next: Review draft in daily-engine/drafts/, then manually approve and publish"
