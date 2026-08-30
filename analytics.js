@@ -5,6 +5,9 @@
   const config = window.TRIBAL_SITE_CONFIG || {};
   const measurementId = String(config.googleAnalyticsId || '').trim();
   const hasAnalytics = /^G-[A-Z0-9]+$/i.test(measurementId);
+  const applicationInsightsConnectionString = String(config.applicationInsightsConnectionString || '').trim();
+  const ApplicationInsights = window.Microsoft?.ApplicationInsights?.ApplicationInsights;
+  let azureInsights = null;
   const campaignKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
   const campaignStorageKey = 'tribal_campaign_attribution';
 
@@ -32,6 +35,22 @@
   }
 
   const attribution = currentCampaign();
+
+  if (/^InstrumentationKey=/i.test(applicationInsightsConnectionString) && typeof ApplicationInsights === 'function') {
+    try {
+      azureInsights = new ApplicationInsights({
+        config: {
+          connectionString: applicationInsightsConnectionString,
+          enableAutoRouteTracking: false,
+          enableCorsCorrelation: true
+        }
+      });
+      azureInsights.loadAppInsights();
+    } catch (error) {
+      console.warn('Tribal telemetry could not initialize.', error);
+      azureInsights = null;
+    }
+  }
 
   if (hasAnalytics) {
     window.dataLayer = window.dataLayer || [];
@@ -61,8 +80,28 @@
       window.gtag('event', eventName, payload);
     }
 
+    if (azureInsights) {
+      if (eventName === 'page_view') {
+        azureInsights.trackPageView({
+          name: payload.page_title || document.title,
+          uri: payload.page_location || window.location.href,
+          properties: payload
+        });
+      } else {
+        azureInsights.trackEvent({ name: eventName }, payload);
+      }
+    }
+
     window.dispatchEvent(new CustomEvent('tribal:conversion', {
-      detail: { eventName, payload, analyticsConnected: hasAnalytics }
+      detail: {
+        eventName,
+        payload,
+        analyticsConnected: hasAnalytics || Boolean(azureInsights),
+        providers: {
+          applicationInsights: Boolean(azureInsights),
+          googleAnalytics: hasAnalytics
+        }
+      }
     }));
   }
 

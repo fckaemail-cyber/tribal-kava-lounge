@@ -11,13 +11,20 @@ for (const file of ['app.js', 'daily-kava.js', 'site-config.js', 'analytics.js']
   execFileSync(process.execPath, ['--check', path.join(root, file)], { stdio: 'pipe' });
 }
 
-const [html, robots, sitemap, config] = await Promise.all([
-  read('index.html'), read('robots.txt'), read('dist/sitemap.xml'), read('staticwebapp.config.json')
+const [html, robots, sitemap, config, analytics, siteConfig, app, styles] = await Promise.all([
+  read('index.html'), read('robots.txt'), read('dist/sitemap.xml'), read('staticwebapp.config.json'),
+  read('analytics.js'), read('site-config.js'), read('app.js'), read('styles.css')
 ]);
 
 assert.match(html, /https:\/\/www\.thetribalkavalounge\.com\//, 'canonical domain must use www');
 assert.match(html, /daily-kava\.js/, 'public Daily Kava feed must be loaded');
 assert.match(html, /analytics\.js/, 'conversion tracker must be loaded');
+assert.match(html, /js\.monitor\.azure\.com\/scripts\/b\/ai\.3\.gbl\.min\.js/, 'Application Insights browser SDK must be loaded');
+assert.match(siteConfig, /applicationInsightsConnectionString:\s*'InstrumentationKey=/, 'Tribal Application Insights must be configured');
+assert.match(analytics, /azureInsights\.trackEvent/, 'conversion events must be sent to Application Insights');
+assert.match(analytics, /azureInsights\.trackPageView/, 'page views must be sent to Application Insights');
+assert.doesNotMatch(app, /stay quiet on mobile/, 'the Kava Guide prompt must not be disabled on mobile');
+assert.match(styles, /width:\s*min\(210px, calc\(100vw - 6\.75rem\)\)/, 'mobile Kava Guide prompt must fit the viewport');
 assert.doesNotMatch(html, /Joined VIP list!/, 'VIP path must not fake a successful signup');
 assert.match(html, /data-conversion="directions"/, 'directions conversion must exist');
 assert.match(html, /data-conversion="vip_sms"/, 'SMS VIP conversion must exist');

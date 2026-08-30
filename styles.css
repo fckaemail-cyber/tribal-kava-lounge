@@ -2076,6 +2076,15 @@ footer {
 
   .mobile-conversion-dock a:last-child { border-right: 0; }
   .floating-chat-bubble { bottom: 5.25rem; }
+  .floating-chat-prompt {
+    right: 3.85rem;
+    width: min(210px, calc(100vw - 6.75rem));
+    padding: 0.65rem 0.8rem;
+    white-space: normal;
+    font-size: 0.76rem;
+    line-height: 1.35;
+    text-align: left;
+  }
   .floating-chat-window { bottom: 9rem; height: min(68vh, 560px); }
   .vip-actions .btn { width: 100%; }
 }

@@ -906,13 +906,15 @@ document.addEventListener('DOMContentLoaded', () => {
             setFloatingChatOpen(shouldOpen, shouldOpen);
         });
         
-        // Give the page room to breathe before offering help, and stay quiet on mobile.
+        // Give the page room to breathe before offering help. On mobile, use the
+        // same guide with a shorter delay and a compact prompt.
+        const isMobileViewport = window.matchMedia('(max-width: 768px)').matches;
         setTimeout(() => {
-            if (window.matchMedia('(min-width: 769px)').matches && chatWindow.hidden) {
+            if (chatWindow.hidden) {
                 bubble.classList.add('show-prompt');
-                window.setTimeout(() => bubble.classList.remove('show-prompt'), 8000);
+                window.setTimeout(() => bubble.classList.remove('show-prompt'), 7000);
             }
-        }, 30000);
+        }, isMobileViewport ? 18000 : 30000);
     }
     
     const chatClose = document.getElementById('chat-close-btn');
