@@ -952,6 +952,7 @@ section {
 .drink-art-mango span { background: linear-gradient(180deg, #fde047, #f97316 62%, #7f1d1d); }
 .drink-art-passion span { background: linear-gradient(180deg, #f0abfc, #ec4899 58%, #065f46); }
 
+.showcase-card h2,
 .showcase-card h3 {
     font-family: var(--font-display);
     font-size: 1.45rem;

@@ -1,7 +1,7 @@
 # The Daily Kava — Content Engine (Phase 3 first slice)
 
 Automates **discovery → draft → compliance check → human approval queue**.  
-**Nothing auto-publishes to the live site.** You approve drafts, then paste/merge into `daily-kava.js` (or a future CMS).
+**Nothing auto-publishes to the live site.** You approve drafts, then paste/merge into `daily-kava.js` and deploy the reviewed site to Azure.
 
 ## Quick start
 
@@ -51,7 +51,8 @@ Without an API key, drafts use a **compliant template** from feed titles + links
 2. Edit voice/facts as needed
 3. Re-run `python3 run_daily.py check --file drafts/your-file.md`
 4. Mark approved: `python3 run_daily.py approve drafts/your-file.md`
-5. Manually add the post to `../daily-kava.js` and deploy (publish step is intentional)
+5. Manually add the post to `../daily-kava.js`
+6. From the repository root, run `npm run deploy:azure` (publish step is intentional)
 
 ## Cron (optional)
 
@@ -62,4 +63,4 @@ Without an API key, drafts use a **compliant template** from feed titles + links
 
 ## Compliance note
 
-Kratom/kava content is claim-sensitive. This pipeline **never** posts to Instagram/Netlify by itself. Fan-out captions can be drafted later behind the same checker + human gate.
+Kratom/kava content is claim-sensitive. This pipeline **never** posts to Instagram or the live Azure site by itself. Fan-out captions can be drafted later behind the same checker + human gate.

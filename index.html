@@ -12,7 +12,8 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"></noscript>
     
     <link rel="canonical" href="https://www.thetribalkavalounge.com/" id="seo-canonical">
     <meta property="og:type" content="website" id="og-type">
@@ -148,7 +149,7 @@
     </div>
 
     <!-- MAIN VIEWS WRAPPER -->
-    <div class="content-wrapper">
+    <main class="content-wrapper">
 
         <!-- ================= PAGE 1: HOME ================= -->
         <div id="view-home" class="spa-view">
@@ -178,7 +179,7 @@
                         <div class="showcase-card showcase-card-main">
                             <span class="showcase-kicker">Signature sip</span>
                             <div class="cup cup-blue"><span></span></div>
-                            <h3>Blue Razz Coconut Cloud</h3>
+                            <h2>Blue Razz Coconut Cloud</h2>
                             <p>Bright, photogenic, coconut-cream energy.</p>
                         </div>
                         <div class="showcase-card showcase-card-float one">
@@ -1686,7 +1687,7 @@
             </section>
         </div>
 
-    </div>
+    </main>
 
     <!-- GLOBAL FOOTER -->
     <footer>
@@ -1765,7 +1766,7 @@
     </nav>
 
     <!-- SITEWIDE FLOATING AI ASSISTANT -->
-    <button type="button" class="floating-chat-bubble" id="floating-chat-bubble" aria-label="Open the Kava Guide">
+    <button type="button" class="floating-chat-bubble" id="floating-chat-bubble" aria-label="Open the Kava Guide — new to kava or kratom? I can help.">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         <span class="floating-chat-prompt">
             New to kava or kratom? I can help.
@@ -1806,9 +1807,9 @@
     </div>
 
     <!-- Launch configuration, content, site behavior, then conversion tracking -->
-    <script src="/site-config.js"></script>
-    <script src="/daily-kava.js"></script>
-    <script src="/app.js"></script>
-    <script src="/analytics.js"></script>
+    <script src="/site-config.js" defer></script>
+    <script src="/daily-kava.js" defer></script>
+    <script src="/app.js" defer></script>
+    <script src="/analytics.js" defer></script>
 </body>
 </html>

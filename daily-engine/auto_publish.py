@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""
-Auto-publish approved drafts to daily-kava.js and trigger Netlify deploy.
-Runs after daily-engine creates and approves drafts.
-"""
+"""Stage human-approved drafts in daily-kava.js for an Azure site deploy."""
 
 import json
 import re
@@ -200,7 +197,7 @@ def main():
     save_queue(queue)
     
     print(f"\nPublished {published_count} post(s).")
-    print("Next: Run 'netlify deploy --prod' to push changes live.")
+    print("Next: From the repository root, run 'npm run deploy:azure' to push changes live.")
     
     return 0 if published_count > 0 else 1
 

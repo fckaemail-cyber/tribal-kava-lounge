@@ -1,7 +1,7 @@
 #!/bin/zsh
 set -euo pipefail
 
-for required_command in az npx npm; do
+for required_command in az npm; do
   if ! command -v "$required_command" >/dev/null 2>&1; then
     echo "Missing required command: $required_command" >&2
     exit 1
@@ -21,6 +21,5 @@ if [[ -z "$TRIBAL_DEPLOYMENT_TOKEN" ]]; then
   exit 1
 fi
 
-npx --yes @azure/static-web-apps-cli deploy ./dist \
-  --env production \
+npm exec --yes --package @azure/static-web-apps-cli -- swa deploy ./dist \
   --deployment-token "$TRIBAL_DEPLOYMENT_TOKEN"
