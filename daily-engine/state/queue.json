@@ -19,7 +19,7 @@
         "context": "daily",
         "summary": "PASS"
       },
-      "checked_at": "2026-08-29T15:22:20.311346+00:00"
+      "checked_at": "2026-08-30T13:41:46.571332+00:00"
     },
     {
       "file": "drafts/digest-2026-08-21.md",
@@ -40,7 +40,7 @@
         "context": "daily",
         "summary": "PASS"
       },
-      "checked_at": "2026-08-29T15:22:20.313904+00:00"
+      "checked_at": "2026-08-30T13:41:46.573746+00:00"
     },
     {
       "file": "drafts/digest-2026-08-23.md",
@@ -61,7 +61,7 @@
         "context": "daily",
         "summary": "PASS"
       },
-      "checked_at": "2026-08-29T15:22:20.316245+00:00"
+      "checked_at": "2026-08-30T13:41:46.576039+00:00"
     },
     {
       "file": "drafts/digest-2026-08-24.md",
@@ -82,7 +82,7 @@
         "context": "daily",
         "summary": "PASS"
       },
-      "checked_at": "2026-08-29T15:22:20.318926+00:00"
+      "checked_at": "2026-08-30T13:41:46.578578+00:00"
     },
     {
       "file": "drafts/digest-2026-08-25.md",
@@ -103,7 +103,7 @@
         "context": "daily",
         "summary": "PASS"
       },
-      "checked_at": "2026-08-29T15:22:20.321441+00:00"
+      "checked_at": "2026-08-30T13:41:46.581086+00:00"
     },
     {
       "file": "drafts/digest-2026-08-26.md",
@@ -124,7 +124,7 @@
         "context": "daily",
         "summary": "PASS"
       },
-      "checked_at": "2026-08-29T15:22:20.324109+00:00"
+      "checked_at": "2026-08-30T13:41:46.583547+00:00"
     },
     {
       "file": "drafts/digest-2026-08-28.md",
@@ -145,7 +145,7 @@
         "context": "daily",
         "summary": "PASS"
       },
-      "checked_at": "2026-08-29T15:22:20.326487+00:00"
+      "checked_at": "2026-08-30T13:41:46.608077+00:00"
     },
     {
       "file": "drafts/digest-2026-08-29.md",
@@ -166,7 +166,28 @@
         "context": "daily",
         "summary": "PASS"
       },
-      "checked_at": "2026-08-29T15:22:20.328963+00:00"
+      "checked_at": "2026-08-30T13:41:46.610418+00:00"
+    },
+    {
+      "file": "drafts/digest-2026-08-30.md",
+      "created_at": "2026-08-30T13:41:46.565279+00:00",
+      "status": "passed",
+      "source_urls": [
+        "https://news.google.com/rss/articles/CBMiekFVX3lxTFA0S1doaF9SSjFwNWVKdHkzNDAxNGZocjBPQU1VOXVRcmNXYUNKMzZhNUc3ZjhpekFFTGdTdTExU0Rub0x1MkowWTNIUkNMVlRac05pV1BmRkxmcXVmaVMwUVdSVW1PTUdmLWZiaUg2WUZOVHZBcHVfRld3?oc=5",
+        "https://news.google.com/rss/articles/CBMi-wFBVV95cUxPdkhBZEFXbXhhZmpHNURwdThBRzJIdUhFTGdvV1hHdGJ5dllsMTNQaHdlY2FJTC10NmIwbk5MSzZydXhUdzVIWGFieUVjcWhrSnZKSWJoT3I3NU00WU5kSGRzN295V1haalRwdWcyaXJPMTRTbVVwb2tMY2hyNUNpdG9DWm90U2hPaHpQOC1TRjQ2emdqdzNWcTZhTTVBdF9NQ2hIbHNqU0dNMkVkSG1iOGxIcml0cXF0Z3hhYy1JRGp2ZklHYnk3TGZPU3RJdnlUQmo3ekxoTFJjTXlCQkhobnI5Z3VGclY0czJJdi1NbG5ZSWN5bzRVTG9XMA?oc=5",
+        "https://news.google.com/rss/articles/CBMilwFBVV95cUxNaXk0eW9SbzMyQ3Rwb3FNenowdElwSEx2SW5hU3N4VlNwNFVDUXJDdjFjVmFpTXZFMjhGaXdEbUFQY1JzT2dWanppcGUzWWc0ZkVqcVh2Sm1hUmFWSDczc3UwRUo0cG51SDgtVXoweXVBYm9rNDVoX3c1RlpyM3RObFE0dmlReDRIbllkR3hjWFE3bFhyRldF?oc=5",
+        "https://news.google.com/rss/articles/CBMilAFBVV95cUxNV2hDakl3SVNtNFZMUHpxRXlCZGxGdXJLcG1OQkt1aVBjcC1WaVQ5eEVlank2YXhGT09ldE1JazRkM2x4WWFrWjVNaTBHZnlfb1l6eTVDS1BVN3l1dzdZVkZfd0pWS2s4dlZiaHR0Z3p3M3NsUlpxYnFIS2FFZ1M3VDluaVlVMFk4Qm1WOEc0VjFfM2FY?oc=5",
+        "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNbnhucEhQZmhITVowZnk0NW9RR2hYcFZDbndVQ1drc1lnNk5KV1VYSzFxZHdpODRxanZlRHZrS3NlWkZCN3V3MnpTYVNGdk43eVJrdGk2RXlGYk5UUHhqbXdVdXZnT2diUE9pTlJ2R0dmYnJkd1l4Q0JDbGd5dTR0NXhrdkp5TUJzVklF?oc=5"
+      ],
+      "compliance": {
+        "pass": true,
+        "score": 100,
+        "flags": [],
+        "required_additions": [],
+        "context": "daily",
+        "summary": "PASS"
+      },
+      "checked_at": "2026-08-30T13:41:46.613044+00:00"
     }
   ]
 }
