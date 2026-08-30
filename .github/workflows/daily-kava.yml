@@ -33,8 +33,8 @@ jobs:
           
       - name: Commit draft changes
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "fckaemail-cyber"
+          git config user.email "f.ckaemail@gmail.com"
           git add daily-engine/state/
           git add daily-engine/drafts/
           git commit -m "chore: daily draft $(date +%Y-%m-%d) - awaiting review" || exit 0
