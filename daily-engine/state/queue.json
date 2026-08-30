@@ -246,20 +246,38 @@
       "compliance": {
         "pass": false,
         "score": 0,
-        "context": "daily",
-        "summary": "REJECTED — superseded Daily editorial policy",
         "flags": [
           {
             "severity": "error",
-            "rule": "editorial-policy",
-            "match": "Stored draft contains disallowed legal, regulatory, kratom, health, scare, or negative coverage and generic takeaways."
+            "rule": "editorial-7-oh-coverage",
+            "match": "7-OH"
+          },
+          {
+            "severity": "error",
+            "rule": "editorial-legal-or-political-coverage",
+            "match": "regulation"
+          },
+          {
+            "severity": "error",
+            "rule": "editorial-regulatory-or-enforcement-coverage",
+            "match": "penalties"
+          },
+          {
+            "severity": "error",
+            "rule": "editorial-negative-or-scare-coverage",
+            "match": "addiction"
+          },
+          {
+            "severity": "error",
+            "rule": "editorial-kratom-news-is-outside-the-daily-editorial-scope",
+            "match": "kratom"
           }
         ],
-        "required_additions": [
-          "Replace with fresh, positive culture, flavor, community, lounge-life, local-event, or non-alcoholic social coverage; write specific original takeaways."
-        ]
+        "required_additions": [],
+        "context": "daily",
+        "summary": "FAIL (5 error(s))"
       },
-      "checked_at": "2026-08-30T14:00:00+00:00"
+      "checked_at": "2026-08-30T15:17:22.703429+00:00"
     }
   ]
 }

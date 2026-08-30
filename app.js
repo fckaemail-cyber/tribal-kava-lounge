@@ -1,5 +1,7 @@
 /* Client-Side Logic, SPA Routing, Interactive AI Guide & SEO Metadata Injector */
 
+const SITE_ORIGIN = (window.TRIBAL_SITE_CONFIG && window.TRIBAL_SITE_CONFIG.canonicalOrigin) || 'https://www.thetribalkavalounge.com';
+
 // SEO Metadata Database
 const seoDatabase = {
     'home': {
@@ -9,14 +11,20 @@ const seoDatabase = {
         slug: '/',
         schema: {
             "@context": "https://schema.org",
-            "@type": "BarOrPub",
+            "@type": ["CafeOrCoffeeShop", "LocalBusiness"],
             "name": "Tribal Kava Lounge",
-            "image": "https://thetribalkavalounge.com/images/lounge-hero.jpg",
-            "@id": "https://thetribalkavalounge.com/#lounge",
-            "url": "https://thetribalkavalounge.com",
+            "image": `${SITE_ORIGIN}/images/lounge-interior.jpg`,
+            "@id": `${SITE_ORIGIN}/#lounge`,
+            "url": SITE_ORIGIN,
             "telephone": "+1-561-355-0561",
             "email": "join@tribalkavalounge.co",
             "priceRange": "$$",
+            "hasMap": "https://www.google.com/maps/search/?api=1&query=Tribal+Kava+Lounge+770+S+Military+Trail+Unit+A1+West+Palm+Beach+FL+33415",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1-561-355-0561",
+                "contactType": "customer service"
+            },
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "770 S Military Trail, Unit A1",
@@ -54,7 +62,7 @@ const seoDatabase = {
             "@context": "https://schema.org",
             "@type": "Menu",
             "name": "Tribal Kava Lounge Botanical Beverage Menu",
-            "mainEntityOfPage": "https://thetribalkavalounge.com/menu",
+            "mainEntityOfPage": `${SITE_ORIGIN}/menu`,
             "hasMenuSection": [
                 {
                     "@type": "MenuSection",
@@ -135,13 +143,13 @@ const seoDatabase = {
                     "@type": "ListItem",
                     "position": 1,
                     "name": "Home",
-                    "item": "https://thetribalkavalounge.com"
+                    "item": SITE_ORIGIN
                 },
                 {
                     "@type": "ListItem",
                     "position": 2,
                     "name": "Kava vs. Kratom",
-                    "item": "https://thetribalkavalounge.com/kava-vs-kratom"
+                    "item": `${SITE_ORIGIN}/kava-vs-kratom`
                 }
             ]
         }
@@ -175,7 +183,7 @@ const seoDatabase = {
         slug: '/visit',
         schema: {
             "@context": "https://schema.org",
-            "@type": "BarOrPub",
+            "@type": ["CafeOrCoffeeShop", "LocalBusiness"],
             "name": "Tribal Kava Lounge",
             "address": {
                 "@type": "PostalAddress",
@@ -217,7 +225,7 @@ const seoDatabase = {
             "@type": "Article",
             "headline": "What Is Kava?",
             "description": "Beginner guide to kava drinks — culture, preparation, and flavor at Tribal Kava Lounge in West Palm Beach.",
-            "mainEntityOfPage": "https://thetribalkavalounge.com/what-is-kava",
+            "mainEntityOfPage": `${SITE_ORIGIN}/what-is-kava`,
             "author": { "@type": "Organization", "name": "Tribal Kava Lounge" },
             "publisher": { "@type": "Organization", "name": "Tribal Kava Lounge", "telephone": "+1-561-355-0561" }
         }
@@ -232,7 +240,7 @@ const seoDatabase = {
             "@type": "Article",
             "headline": "What Is Kratom Tea?",
             "description": "Beginner guide to kratom beverages for adults 21+ at Tribal Kava Lounge.",
-            "mainEntityOfPage": "https://thetribalkavalounge.com/what-is-kratom",
+            "mainEntityOfPage": `${SITE_ORIGIN}/what-is-kratom`,
             "author": { "@type": "Organization", "name": "Tribal Kava Lounge" },
             "publisher": { "@type": "Organization", "name": "Tribal Kava Lounge" }
         }
@@ -246,7 +254,7 @@ const seoDatabase = {
             "@context": "https://schema.org",
             "@type": "WebPage",
             "name": "Plan Your Visit",
-            "url": "https://thetribalkavalounge.com/plan-your-visit"
+            "url": `${SITE_ORIGIN}/plan-your-visit`
         }
     },
     'private-events': {
@@ -258,7 +266,7 @@ const seoDatabase = {
             "@context": "https://schema.org",
             "@type": "WebPage",
             "name": "Private Events",
-            "url": "https://thetribalkavalounge.com/private-events"
+            "url": `${SITE_ORIGIN}/private-events`
         }
     },
     'press': {
@@ -270,7 +278,7 @@ const seoDatabase = {
             "@context": "https://schema.org",
             "@type": "WebPage",
             "name": "Press & Social Proof",
-            "url": "https://thetribalkavalounge.com/press"
+            "url": `${SITE_ORIGIN}/press`
         }
     },
     'gift-cards': {
@@ -282,12 +290,12 @@ const seoDatabase = {
             "@context": "https://schema.org",
             "@type": "WebPage",
             "name": "Gift Cards",
-            "url": "https://thetribalkavalounge.com/gift-cards"
+            "url": `${SITE_ORIGIN}/gift-cards`
         }
     },
     'the-daily-kava': {
-        title: 'The Daily Kava | Stories, Education & Lounge Life | Tribal Kava Lounge',
-        description: 'The Daily Kava — Tribal Kava Lounge’s blog for beginner guides, kava culture, West Palm Beach lounge life, events, and honest flavor talk. No wellness brochure voice.',
+        title: 'West Palm Beach Kava Stories & Local Guides | The Daily Kava',
+        description: 'Fun, useful guides to kava, alcohol-free nightlife, date ideas, late-night study spots, events, and first visits in West Palm Beach.',
         h1: 'The Daily Kava',
         slug: '/the-daily-kava',
         schema: {
@@ -295,7 +303,7 @@ const seoDatabase = {
             "@type": "Blog",
             "name": "The Daily Kava",
             "description": "Education, stories, and lounge life from Tribal Kava Lounge in West Palm Beach.",
-            "url": "https://thetribalkavalounge.com/the-daily-kava",
+            "url": `${SITE_ORIGIN}/the-daily-kava`,
             "publisher": {
                 "@type": "Organization",
                 "name": "Tribal Kava Lounge",
@@ -458,6 +466,10 @@ function handleRoute() {
     } else {
         window.scrollTo(0, 0);
     }
+
+    window.dispatchEvent(new CustomEvent('tribal:navigation', {
+        detail: { route, path: window.location.pathname }
+    }));
 }
 
 function getDailyKavaSorted() {
@@ -492,6 +504,28 @@ function renderDailyKavaHomeLatest(limit = 3) {
     grid.innerHTML = getDailyKavaSorted().slice(0, limit).map(dailyKavaCardHTML).join('');
 }
 
+function escapeDailyKavaText(value) {
+    const el = document.createElement('span');
+    el.textContent = value || '';
+    return el.innerHTML;
+}
+
+function dailyKavaFAQHTML(faq = []) {
+    if (!faq.length) return '';
+
+    return `
+        <section class="daily-faq" aria-labelledby="daily-faq-heading">
+            <h2 id="daily-faq-heading">Quick answers</h2>
+            ${faq.map(item => `
+                <details>
+                    <summary>${escapeDailyKavaText(item.question)}</summary>
+                    <p>${escapeDailyKavaText(item.answer)}</p>
+                </details>
+            `).join('')}
+        </section>
+    `;
+}
+
 function renderDailyKavaArticle(slug) {
     const post = typeof getDailyKavaPost === 'function' ? getDailyKavaPost(slug) : null;
     const root = document.getElementById('daily-kava-article-root');
@@ -506,36 +540,79 @@ function renderDailyKavaArticle(slug) {
         <h1 class="daily-article-title">${post.title}</h1>
         <p class="daily-article-dek">${post.dek}</p>
         <div class="daily-article-body">${post.body}</div>
+        ${dailyKavaFAQHTML(post.faq)}
         <div class="daily-article-footer">
             <p>More from <a href="/the-daily-kava">The Daily Kava</a> · <a href="/menu">Menu</a> · <a href="/visit">Visit</a> · <a href="tel:+15613550561">(561) 355-0561</a></p>
             <p class="daily-note" style="margin-top: 1rem;">Kratom products are 21+ only. Valid ID required. Not intended to diagnose, treat, cure, or prevent any disease. Do not mix kava or kratom with alcohol or other substances.</p>
         </div>
     `;
 
-    document.title = `${post.title} | The Daily Kava | Tribal Kava Lounge`;
+    const articleTitle = post.seoTitle || `${post.title} | The Daily Kava`;
+    const articleDescription = post.metaDescription || post.dek;
+    const articleUrl = `${SITE_ORIGIN}/the-daily-kava/${post.slug}`;
+
+    document.title = articleTitle;
     let metaDescTag = document.querySelector('meta[name="description"]');
     if (!metaDescTag) {
         metaDescTag = document.createElement('meta');
         metaDescTag.setAttribute('name', 'description');
         document.head.appendChild(metaDescTag);
     }
-    metaDescTag.setAttribute('content', post.dek);
+    metaDescTag.setAttribute('content', articleDescription);
+
+    const canon = document.getElementById('seo-canonical');
+    if (canon) canon.setAttribute('href', articleUrl);
+    const ogType = document.getElementById('og-type');
+    if (ogType) ogType.setAttribute('content', 'article');
+    const ogTitle = document.getElementById('og-title');
+    if (ogTitle) ogTitle.setAttribute('content', articleTitle);
+    const ogDesc = document.getElementById('og-desc');
+    if (ogDesc) ogDesc.setAttribute('content', articleDescription);
+    const ogUrl = document.getElementById('og-url');
+    if (ogUrl) ogUrl.setAttribute('content', articleUrl);
 
     let schemaScript = document.getElementById('seo-json-ld');
     if (schemaScript) schemaScript.remove();
     schemaScript = document.createElement('script');
     schemaScript.id = 'seo-json-ld';
     schemaScript.type = 'application/ld+json';
-    schemaScript.text = JSON.stringify({
-        "@context": "https://schema.org",
+    const schemaGraph = [{
         "@type": "BlogPosting",
         "headline": post.title,
-        "description": post.dek,
+        "description": articleDescription,
         "datePublished": post.date,
+        "dateModified": post.modified || post.date,
         "author": { "@type": "Organization", "name": "Tribal Kava Lounge" },
-        "publisher": { "@type": "Organization", "name": "Tribal Kava Lounge" },
-        "mainEntityOfPage": `https://thetribalkavalounge.com/the-daily-kava/${post.slug}`,
-        "articleSection": post.category
+        "publisher": {
+            "@type": "Organization",
+            "name": "Tribal Kava Lounge",
+            "url": SITE_ORIGIN
+        },
+        "mainEntityOfPage": articleUrl,
+        "url": articleUrl,
+        "isPartOf": { "@type": "Blog", "name": "The Daily Kava", "url": `${SITE_ORIGIN}/the-daily-kava` },
+        "articleSection": post.category,
+        "keywords": (post.keywords || post.tags || []).join(', '),
+        "about": [
+            { "@type": "Place", "name": "West Palm Beach, Florida" },
+            { "@type": "Thing", "name": "Kava lounge" }
+        ]
+    }];
+
+    if (post.faq && post.faq.length) {
+        schemaGraph.push({
+            "@type": "FAQPage",
+            "mainEntity": post.faq.map(item => ({
+                "@type": "Question",
+                "name": item.question,
+                "acceptedAnswer": { "@type": "Answer", "text": item.answer }
+            }))
+        });
+    }
+
+    schemaScript.text = JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": schemaGraph
     }, null, 2);
     document.head.appendChild(schemaScript);
 
@@ -589,7 +666,7 @@ function injectSEO(route) {
     if (dbSchema) dbSchema.textContent = JSON.stringify(meta.schema, null, 2);
 
     // Canonical + Open Graph
-    const absUrl = 'https://thetribalkavalounge.com' + (meta.slug === '/' ? '/' : meta.slug);
+    const absUrl = SITE_ORIGIN + (meta.slug === '/' ? '/' : meta.slug);
     const canon = document.getElementById('seo-canonical');
     if (canon) canon.setAttribute('href', absUrl);
     const ogTitle = document.getElementById('og-title');
@@ -598,6 +675,8 @@ function injectSEO(route) {
     if (ogDesc) ogDesc.setAttribute('content', meta.description);
     const ogUrl = document.getElementById('og-url');
     if (ogUrl) ogUrl.setAttribute('content', absUrl);
+    const ogType = document.getElementById('og-type');
+    if (ogType) ogType.setAttribute('content', 'website');
 }
 
 // AI Assistant Response Logic

@@ -10,7 +10,7 @@ Optimized content, categories, posts, and setup checklists for **Tribal Kava Lou
 | **Address** | 770 S Military Trail, Unit A1, West Palm Beach, FL 33415 |
 | **Phone** | (561) 355-0561 |
 | **Email** | Join@TribalKavaLounge.Co |
-| **Website** | `https://tribalkavalounge.com` |
+| **Website** | `https://www.thetribalkavalounge.com` |
 | **Hours** | Sun–Thu 8:00 AM–12:00 AM · Fri–Sat 8:00 AM–1:00 AM |
 | **Instagram** | @TribalKavaLounge — https://www.instagram.com/TribalKavaLounge |
 
@@ -47,25 +47,25 @@ Optimized content, categories, posts, and setup checklists for **Tribal Kava Lou
 
 ### Post 1: Opening / Welcome
 * **Type:** What's New  
-* **CTA:** Learn more → `https://tribalkavalounge.com/new-here`  
+* **CTA:** Learn more → `https://www.thetribalkavalounge.com/new-here`
 * **Copy:**  
   > West Palm Beach has a new non-alcoholic social lounge! Tribal Kava Lounge is open on Military Trail (Unit A1). Dessert-style Kava Clouds, iced Kratom Refreshers (21+), and Agua Frescas — free open-lot parking, free Wi‑Fi, and a first drink free when you ask. Follow @TribalKavaLounge.
 
 ### Post 2: $2 Tuesdays
 * **Type:** Offer / Event  
-* **CTA:** `https://tribalkavalounge.com/events`  
+* **CTA:** `https://www.thetribalkavalounge.com/events`
 * **Copy:**  
   > $2 Tuesdays: single shells $2 from 2–5 PM. Classic kava shell special on Military Trail. Kratom is 21+ with ID.
 
 ### Post 3: Weekly lineup
 * **Type:** Event  
-* **CTA:** `https://tribalkavalounge.com/events`  
+* **CTA:** `https://www.thetribalkavalounge.com/events`
 * **Copy:**  
   > This week at Tribal: Tue $2 shells (2–5) · Wed Karaoke · Thu Pool Tournament · Fri Lotería. Non-alcoholic lounge energy in West Palm Beach.
 
 ### Post 4: What is kava?
 * **Type:** What's New  
-* **CTA:** `https://tribalkavalounge.com/what-is-kava`  
+* **CTA:** `https://www.thetribalkavalounge.com/what-is-kava`
 * **Copy:**  
   > New to kava? Start here — culture, flavor, and how we serve shells + Kava Clouds. No brochure voice.
 
@@ -102,12 +102,12 @@ Optimized content, categories, posts, and setup checklists for **Tribal Kava Lou
 
 ## 8. Go-live checklist (GBP + domain)
 
-* [ ] DNS A/CNAME live (see `DNS_SETUP.md`) → site loads on `https://tribalkavalounge.com`
-* [ ] GBP website field = `https://tribalkavalounge.com`
+* [ ] DNS A/CNAME live (see `DNS_SETUP.md`) → site loads on `https://www.thetribalkavalounge.com`
+* [ ] GBP website field = `https://www.thetribalkavalounge.com`
 * [ ] GBP address matches site NAP exactly
 * [ ] Phone matches `(561) 355-0561`
 * [ ] Hours match site
-* [ ] Menu link or PDF (optional) → `https://tribalkavalounge.com/menu`
+* [ ] Menu link or PDF (optional) → `https://www.thetribalkavalounge.com/menu`
 * [ ] First 4 posts published
 * [ ] Q&A seeded
 * [ ] Photos uploaded

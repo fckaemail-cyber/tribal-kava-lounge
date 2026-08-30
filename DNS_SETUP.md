@@ -1,84 +1,59 @@
-# DNS Setup — tribalkavalounge.com
+# GoDaddy DNS launch — thetribalkavalounge.com
 
-**Status (checked 2026-07-10):** Apex still points at Network Solutions parking (`208.91.197.27`). Nameservers remain Worldnic (`ns63` / `ns64.worldnic.com`). Netlify site is ready; **you must change DNS at Network Solutions** for the custom domain to go live.
+The finished site is live with HTTPS on Azure at:
 
-**Netlify site ID:** `1296a8dc-a399-4fa4-9be8-13963f335311`  
-**Likely Netlify subdomain:** `tribal-kava-lounge-wpb.netlify.app` (confirm in Netlify → Domain management)
+`https://green-plant-0a6f9d30f.7.azurestaticapps.net`
 
----
+The GoDaddy domain is still parked. These are the only domain changes needed.
 
-## Goal
+## 1. Point `www` to Azure
 
-| Host | Type | Value |
-|------|------|--------|
-| `@` (apex / tribalkavalounge.com) | **A** | `75.2.60.5` |
-| `www` | **CNAME** | `tribal-kava-lounge-wpb.netlify.app` |
+Open [GoDaddy Domain Portfolio](https://dcc.godaddy.com/control/portfolio), sign in, select `thetribalkavalounge.com`, then open **DNS**.
 
-Also in Netlify Domain management:
+Replace the current `www` record with:
 
-1. Add custom domain: `tribalkavalounge.com`
-2. Add domain alias: `www.tribalkavalounge.com`
-3. Enable HTTPS (Let’s Encrypt) after DNS propagates
+| Type | Name | Value | TTL |
+|---|---|---|---|
+| CNAME | `www` | `green-plant-0a6f9d30f.7.azurestaticapps.net` | Default |
 
----
+Do not include `https://` in the CNAME value. Leave email/MX records untouched.
 
-## Network Solutions steps
+## 2. Forward the root domain
 
-1. Log in → **My Domain Names** → `tribalkavalounge.com` → **Manage** → **DNS** / **Advanced DNS**
-2. **Remove or disable** parking/“Under Construction” records that point the apex to `208.91.x.x` or Worldnic parking hosts
-3. Add / edit:
+In GoDaddy **Forwarding → Domain**, permanently forward:
 
-```
-Type: A
-Host: @
-Data: 75.2.60.5
-TTL: 3600 (or default)
-```
+`thetribalkavalounge.com` → `https://www.thetribalkavalounge.com`
 
-```
-Type: CNAME
-Host: www
-Data: tribal-kava-lounge-wpb.netlify.app
-TTL: 3600
-```
+Choose:
 
-4. Save. Propagation: often 15–60 minutes; can take up to 24–48 hours.
-5. Verify:
+- **Permanent (301)**
+- **Forward only**
+- **HTTPS on**
+- **No masking**
+
+This setup uses `www` as the canonical site because GoDaddy does not provide the apex-record flattening Azure Static Web Apps expects.
+
+## 3. Finish the Azure binding
+
+After the CNAME resolves, run:
 
 ```bash
-dig +short tribalkavalounge.com A
-# expect: 75.2.60.5
-
-dig +short www.tribalkavalounge.com CNAME
-# expect: tribal-kava-lounge-wpb.netlify.app. (or similar Netlify target)
+az staticwebapp hostname set \
+  --name tribal-kava-lounge-site \
+  --resource-group tribal-kava-site-rg \
+  --hostname www.thetribalkavalounge.com
 ```
 
-6. Open `https://tribalkavalounge.com/menu` — should load (path routes, not hash).
+Azure provisions and renews the TLS certificate. DNS commonly updates within an hour, but can take up to 48 hours.
 
----
+## Verification
 
-## Optional: Netlify DNS (full transfer)
+```bash
+dig +short www.thetribalkavalounge.com CNAME
+# green-plant-0a6f9d30f.7.azurestaticapps.net.
 
-If you prefer Netlify to manage DNS entirely:
+curl -I https://www.thetribalkavalounge.com
+# HTTP 200 and a valid Azure-managed certificate
+```
 
-1. Netlify → Domains → Add domain → Use Netlify DNS  
-2. At Network Solutions, change nameservers to the four Netlify NS hosts Netlify shows  
-3. Netlify auto-creates apex + www records  
-
-Only do this if you are comfortable moving DNS away from Worldnic.
-
----
-
-## Do not change (unless you know why)
-
-- MX / email records for `TribalKavaLounge.Co` (email may live on a different host)
-- Unrelated subdomains
-
----
-
-## After DNS is live
-
-- [ ] HTTPS certificate shows as provisioned in Netlify  
-- [ ] `https://tribalkavalounge.com` and `https://www.tribalkavalounge.com` both work  
-- [ ] Google Business Profile website URL = `https://tribalkavalounge.com`  
-- [ ] Submit sitemap: `https://tribalkavalounge.com/sitemap.xml` in Google Search Console  
+The site’s canonical URLs, sitemap, robots file, and Business Profile links already use `https://www.thetribalkavalounge.com`.
