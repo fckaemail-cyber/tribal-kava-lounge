@@ -21,7 +21,9 @@ from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 
-from compliance import check_text
+from compliance import check_text, check_candidate
+
+# Daily editorial policy: celebrate culture, flavor, community, lounge life,\n# and fresh non-alcoholic social culture. Fear, health, legal, and regulatory\n# coverage is not eligible for publication.
 
 ROOT = Path(__file__).resolve().parent
 STATE_DIR = ROOT / "state"
@@ -142,6 +144,10 @@ def cmd_fetch() -> int:
                 blob = f"{entry['title']} {entry.get('summary','')}".lower()
                 if not any(k in blob for k in keywords):
                     continue
+            editorial = check_candidate(entry, category=category)
+            if not editorial["pass"]:
+                print(f"[skip] {fid}: {editorial['summary']} — {entry['title'][:90]}")
+                continue
             url_key = entry["url"]
             url_hash = hashlib.sha256(url_key.encode()).hexdigest()[:16]
             if url_key in seen["urls"] or url_hash in seen["urls"]:
@@ -175,7 +181,7 @@ def _template_draft(items: list[dict], day: str) -> str:
         "",
         f"*Draft generated {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')} — human approval required before publish.*",
         "",
-        "A short, original roundup of links worth knowing for West Palm Beach kava lounge culture — culture, regulation, and non-alcoholic social trends. We summarize in our own words and link out. We do not republish full articles.",
+        "A short, original roundup of culture, flavor, community, lounge life, and fresh non-alcoholic social trends worth knowing in West Palm Beach. We summarize in our own words and link out.",
         "",
     ]
     for i, it in enumerate(items[:5], 1):
@@ -191,8 +197,7 @@ def _template_draft(items: list[dict], day: str) -> str:
             lines.append(f"Snippet context (not republished body): {it['summary'][:240]}")
             lines.append("")
         lines.append(
-            f"What it means for Military Trail: worth a glance if you care about botanical lounge culture in Florida — "
-            f"then come sip something creamy or fruity in person. [Read the source]({it['url']})"
+            f"What it means for the lounge: add a specific, original 1–2 sentence takeaway about the culture, flavor, community, or social angle before approval. [Read the source]({it['url']})"
         )
         lines.append("")
 
@@ -253,6 +258,12 @@ def cmd_draft(use_llm: bool = False) -> int:
     pool = _load_json(CANDIDATES_PATH, {"items": []}).get("items", [])
     if not pool:
         print("No candidates. Run: python3 run_daily.py fetch")
+        return 1
+
+    # Re-screen the pool in case an older candidate predates the editorial filter.
+    pool = [c for c in pool if check_candidate(c, category=c.get("category", ""))["pass"]]
+    if not pool:
+        print("No publishable candidates after the Daily editorial filter.")
         return 1
 
     # Prefer not-yet-drafted URLs
