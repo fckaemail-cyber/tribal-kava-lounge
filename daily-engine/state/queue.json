@@ -3,7 +3,7 @@
     {
       "file": "drafts/digest-2026-08-20.md",
       "created_at": "2026-08-20T16:12:29.977339+00:00",
-      "status": "passed",
+      "status": "failed",
       "source_urls": [
         "https://news.google.com/rss/articles/CBMiogFBVV95cUxOek9GclBfRGxjblEzUDhyalNUX2ZvU0V4ckRndHo0ZUNpRG5VV09kbzBpVWtrVkFnN0pLLXVpbnBPa2IzNkxiVFNIa08telZiQzZLOHFKQUZrd3cxZEpBb3h4QXdGa09Rck1WLV9VNUVKdTMxNW12VWVRYTV0d1BxbW9RX19XQTQ2aVJfQS1xNTdjRjhRQ3NhRWo5RUQ4clVWQ3fSAacBQVVfeXFMTzMxMVBrQzM2MllFaFBLV3ZLUEtjY3FsZjBwS20zUGg4TTh4c0gySGVnZTlIYlhvaFNFcGItelpqYUZndDFrcDkzelRHTllqV1lvSnoxS1h6Tk9fdjRMei16SExnN2VPRTJmR1hSUHVCdkxVRFVOSy1pbzdSX1ByVngwLW5Md3JyN3I1N3FFWGN2bHJFci1QWUEtbzlSaDJ2NWs3TjFGV0U?oc=5",
         "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNb3VxTVdtVDltY0tfM294V3dlUkprY3hTMTNMbnVFSjZZTDBXVHE1WjF0LVRLVWtKTTR2NUR1R29XLWlJWFpVbkFnRFlKRVF4QldtZnNTbkNlaXdCQTh2SnF5bTNHZEd1dmRZcUZNSy1zY2hiYUgyVWNrcnNwRUREY3dWcGg1SDZtWEVQbTluSkp1OTNnQVpKVjVkZFNrNU5FSU5sOUlrY3ZiX1JJTG4zdXpldUYxeC1USy1tcm43djVUZ0ZLV202bWt2M01oVUh2OUprejhxbWlXYTQ?oc=5",
@@ -12,19 +12,27 @@
         "https://news.google.com/rss/articles/CBMiywFBVV95cUxQcktjUmlDaTktN01sbTYzeUFjaTVWNlMtRUktWk4walBMcFJ2X1p3NG5IS1dZWFRKRXNNU2JjczZBbjFEZ3h4MU91OC1mbElPdjgyb3hMSUYyRkYzbGFpaU91NklKNElLSnZMYU95SHprYWFXUXI3emRIVWwybmtNemlFcXdIV1BkNnVJRWNsdHhjeDE4ZGZpMDBSZWYwbFA3R0RRWWNlYnItTFh6VXlZRmpMUWFXdVpoRFk0bFB3V0JEdXJ2Y3lfLUJ3cw?oc=5"
       ],
       "compliance": {
-        "pass": true,
-        "score": 100,
-        "flags": [],
-        "required_additions": [],
+        "pass": false,
+        "score": 0,
         "context": "daily",
-        "summary": "PASS"
+        "summary": "REJECTED — superseded Daily editorial policy",
+        "flags": [
+          {
+            "severity": "error",
+            "rule": "editorial-policy",
+            "match": "Stored draft contains disallowed legal, regulatory, kratom, health, scare, or negative coverage and generic takeaways."
+          }
+        ],
+        "required_additions": [
+          "Replace with fresh, positive culture, flavor, community, lounge-life, local-event, or non-alcoholic social coverage; write specific original takeaways."
+        ]
       },
-      "checked_at": "2026-08-30T13:41:46.571332+00:00"
+      "checked_at": "2026-08-30T14:00:00+00:00"
     },
     {
       "file": "drafts/digest-2026-08-21.md",
       "created_at": "2026-08-21T11:15:09.921827+00:00",
-      "status": "passed",
+      "status": "failed",
       "source_urls": [
         "https://news.google.com/rss/articles/CBMingFBVV95cUxPNTdJRzlBRldVOXB4MkkyNVRLM3ZpU3p6eUtkWGRKc3o0dG41SjVSMmpDR245SjluTDYtRTk5NmVHS2hDZHgwWGZhdkhKaXBhT3BkU3ZmdFRnU2wzbVNCZVd5bU1JQVI5OG5mVEZ6X01vbE5acXhlQWN5T2djcm95ZWhWWnZDUGpiOTZvRXN6WmZrSDNqdjRUQVZxbEozdw?oc=5",
         "https://news.google.com/rss/articles/CBMidkFVX3lxTFBKU2w0QVIyTktZc2ZOZHpueFRPZ2dQc19RZ1RYQTczLUhVSkRoYkx1dDVROTQtaEVLMU4xRm9hZ0gwRnBDZXJlai1ILWV1Nkp2OTd1RXo2cE9oUlNpQXVvWWstLTRDSlhYR1B4V2pLeFdOWXgzSEE?oc=5",
@@ -33,19 +41,27 @@
         "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOME82ZlpZMU56WVVyQXpaWEdvb3VlTi1QaW1fVDg4V2k0WWdyemtRYWk4dEs4ZF8wdV9OSHFKV01hZUlhWkVIWjdIR01xb1gtRm1RYkVDWkUwOEJ5THNHM2o0bnJqdkpaQUFfcjVvUkJPejlRUXJBMmxLUmdZeHFkdVpaUVRwMDlhWTRIWUR5WFJORGN6MkdmdE5DMXFYakY5TjVKYjdaVmo5eGM?oc=5"
       ],
       "compliance": {
-        "pass": true,
-        "score": 100,
-        "flags": [],
-        "required_additions": [],
+        "pass": false,
+        "score": 0,
         "context": "daily",
-        "summary": "PASS"
+        "summary": "REJECTED — superseded Daily editorial policy",
+        "flags": [
+          {
+            "severity": "error",
+            "rule": "editorial-policy",
+            "match": "Stored draft contains disallowed legal, regulatory, kratom, health, scare, or negative coverage and generic takeaways."
+          }
+        ],
+        "required_additions": [
+          "Replace with fresh, positive culture, flavor, community, lounge-life, local-event, or non-alcoholic social coverage; write specific original takeaways."
+        ]
       },
-      "checked_at": "2026-08-30T13:41:46.573746+00:00"
+      "checked_at": "2026-08-30T14:00:00+00:00"
     },
     {
       "file": "drafts/digest-2026-08-23.md",
       "created_at": "2026-08-23T11:10:33.191102+00:00",
-      "status": "passed",
+      "status": "failed",
       "source_urls": [
         "https://news.google.com/rss/articles/CBMihgFBVV95cUxQSzhsZDZQeXl5NDE3UUJGd3lJNDBMY0J2TUNaa05mOHNDaHZhRkdzZ2FNdHhscURsNmZnU3pEbmY0UDZwM0dJdjc5SWstX0pPS0QtbGxpWUdtNVVnQkhiZ2t5anQtVUR4NTN5MERuWTJ4MkxSNXM4ZXVNVVphemY1eVZqUTBYUQ?oc=5",
         "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQdnE2Mi1JUDRfYnh4Y3VVem4xUS0xX0FLQmpqSEZrYTAyNlliQmtwMWtNYlpHRVN4dFpHdGJ2TU1ibkNuRmlocUg4R0dpeGl4Z1AtVWVTMWtJM21GZk03ZGtVc052Z2p2eExHSFZhZjR3VlBYNXZjd3h0SGw0NW5RMzhjdmtuaktpMzFRVFA2V1lCcXpzajNscTFaVUppdmN1dXZWNl9CN1FFQ1E?oc=5",
@@ -54,19 +70,27 @@
         "https://news.google.com/rss/articles/CBMigwFBVV95cUxNYzJWVERNRUJWRTd1WVh2YURWaW5MelhNdTBxTTJNX0JZeUVQWGd1Yy1OS3BVZVNxOUxIc1VpRTdLaEticTJOWlQ2R2N1NnJYaG5aWTJMdWVYYlpvRHE2dFBQVFNBUU42TThwdXRyY1Z0TmhhazMydXlkZUJxN3FGeEdHVQ?oc=5"
       ],
       "compliance": {
-        "pass": true,
-        "score": 100,
-        "flags": [],
-        "required_additions": [],
+        "pass": false,
+        "score": 0,
         "context": "daily",
-        "summary": "PASS"
+        "summary": "REJECTED — superseded Daily editorial policy",
+        "flags": [
+          {
+            "severity": "error",
+            "rule": "editorial-policy",
+            "match": "Stored draft contains disallowed legal, regulatory, kratom, health, scare, or negative coverage and generic takeaways."
+          }
+        ],
+        "required_additions": [
+          "Replace with fresh, positive culture, flavor, community, lounge-life, local-event, or non-alcoholic social coverage; write specific original takeaways."
+        ]
       },
-      "checked_at": "2026-08-30T13:41:46.576039+00:00"
+      "checked_at": "2026-08-30T14:00:00+00:00"
     },
     {
       "file": "drafts/digest-2026-08-24.md",
       "created_at": "2026-08-24T11:16:54.856817+00:00",
-      "status": "passed",
+      "status": "failed",
       "source_urls": [
         "https://news.google.com/rss/articles/CBMiygFBVV95cUxPcHRXV1lnV0JBWG92QkwtbXhOM0JZUU9ldFFsME8xRzJKUFJfRE95Nk5JYXlvaml3Q0Z4RVNlZEZYSEVqS2hDblN1dGVZdVZYYjZud2d2M2M2QWNFb1FpYkE3QUVxT3oxSnI3Uk9Rc3EtdVJWUzczVklXcERybDllUXZpNFJKZXNzWk8zUkhvVENTZUpYNnBCME1NZUoxV2FhS09xSDg2NnB2YzlmN280UUVVcFU2UVk0RTVVZ3BYMjdBekkyWWdxZ3pR?oc=5",
         "https://news.google.com/rss/articles/CBMiogFBVV95cUxOcWdITXJ0aFI0cm4tU1JHOGdiNTh3NmY1OGlKZHhHT1Fxd0JfcGVMNVNmRzRwQWhIMU53MTkyblR6RkJ3VmpCbU1SXzVUMlFBNVpBLS1IN2c1VDAyVlg4VEJxUFF5eEloTE5vWS1jUzR4UHpnS0REeWdaR3dueU1UVWl1ZzNqbzhZQUFOVko0VWpMenVvRmpUVUJIZF9hYVZ3REE?oc=5",
@@ -75,19 +99,27 @@
         "https://news.google.com/rss/articles/CBMiywFBVV95cUxQY09Edmg0NTVtdXpEM1hUVS1WWWNyMmhjLVBtN1d4YkQyY2NZX1FiWDBJMWZERlN2NWpSUHEtY1B4SjJKSVVndmxfeUwyRzVwQ2VWaUpPQWYxSkRMb28wdUNKVTZDR1RrOGZpclJtWU0wM3ByZTJZN181OVByUlFnTXdvX3VfcEVOYjZJV1EyVnlnLTd5RFplS0JfdkViZDdudnkzOUFpQU94ZTM2SXVZQW1pYjBRelFxRVZTS1BxTzZ5aEhTUDhiZC0xbw?oc=5"
       ],
       "compliance": {
-        "pass": true,
-        "score": 100,
-        "flags": [],
-        "required_additions": [],
+        "pass": false,
+        "score": 0,
         "context": "daily",
-        "summary": "PASS"
+        "summary": "REJECTED — superseded Daily editorial policy",
+        "flags": [
+          {
+            "severity": "error",
+            "rule": "editorial-policy",
+            "match": "Stored draft contains disallowed legal, regulatory, kratom, health, scare, or negative coverage and generic takeaways."
+          }
+        ],
+        "required_additions": [
+          "Replace with fresh, positive culture, flavor, community, lounge-life, local-event, or non-alcoholic social coverage; write specific original takeaways."
+        ]
       },
-      "checked_at": "2026-08-30T13:41:46.578578+00:00"
+      "checked_at": "2026-08-30T14:00:00+00:00"
     },
     {
       "file": "drafts/digest-2026-08-25.md",
       "created_at": "2026-08-25T11:15:30.673201+00:00",
-      "status": "passed",
+      "status": "failed",
       "source_urls": [
         "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUHFkMGo0VlNXTDU2aDBLemlQOHh2bHdQejg5cmtsakJVdEFRdnhRcTNIV2JaRFF6NkpmTUlBZndzMy0zNThaeGlzaGJnX0tacURlR21Bd1JidjExVmRfZk91aU5hdmpoRUlTNlN4bkwxWjkwbHljT1FPQTZsWHB5SUdEa2dMa0N5bW1tVC1TMDZBYkljbmFkdnVqTnBkQkZ5ZjBoN1hrLVI?oc=5",
         "https://news.google.com/rss/articles/CBMivgFBVV95cUxQVWRoaDJuUmUtbGNfVS1Lang3bzF3YWN5NEV0b1h5eFotX2pheUZCZ0xpc3FJcDc5Q0ZxZ28xWUdnWHczUFljWnFvTkUyMXNtYmZhZEI1SjdydlR3bV9SWWRyRTdnSXoxTVcwQ1lhQVN4SEZ4T0RkUzFoT05GY0x2LXVzOVA1TG55REsxTXBEeEdGVndIQlFybnZyQkxFSzVYanhEdHU0a0R3X1BXWFpuc1VuOHhLVC1QOERCUnZR0gG-AUFVX3lxTE5rd0o3aFU0eDNja0pxMGR1NFR6X2phNkRUbDZKOXZkYkZkdmdpUWhobzVMOGswUFM1TkstbUFBQTN1LXVBZnRpek0zaTFrbDNvQXQwV2xiN0ZIWFlYUHM4LXV1OFZKSVlpeTBpNDZwWTI0dldVaXZ3dUZqRHNlM0hUTENEZTFsQ21LbVQ4VWtZMzVvLUNxamsxRHY1V3NCU1VhZWZmRjVRR3VJd3pOWm9SUE5QYUhNc0cteVRXSVE?oc=5",
@@ -96,19 +128,27 @@
         "https://news.google.com/rss/articles/CBMikgFBVV95cUxOUnRiSEtTMS1VWU5ON3JVa0JXbEtkcDllR2lXb09PaXhDMjBsNzMzMzhEc0JKNlE5OVQ5RmxaTTBHVTlEdGZ5cTgyUUc4Y2pnQVhYNmkyN2NjNy1vWkF6U2t2WjVxT0pOVkJXLTB2MUlIYUlZOXM5R25mOEQtVUNfc0xwWWt3akZ1X0hMOVVLMl9aQQ?oc=5"
       ],
       "compliance": {
-        "pass": true,
-        "score": 100,
-        "flags": [],
-        "required_additions": [],
+        "pass": false,
+        "score": 0,
         "context": "daily",
-        "summary": "PASS"
+        "summary": "REJECTED — superseded Daily editorial policy",
+        "flags": [
+          {
+            "severity": "error",
+            "rule": "editorial-policy",
+            "match": "Stored draft contains disallowed legal, regulatory, kratom, health, scare, or negative coverage and generic takeaways."
+          }
+        ],
+        "required_additions": [
+          "Replace with fresh, positive culture, flavor, community, lounge-life, local-event, or non-alcoholic social coverage; write specific original takeaways."
+        ]
       },
-      "checked_at": "2026-08-30T13:41:46.581086+00:00"
+      "checked_at": "2026-08-30T14:00:00+00:00"
     },
     {
       "file": "drafts/digest-2026-08-26.md",
       "created_at": "2026-08-26T11:18:34.769622+00:00",
-      "status": "passed",
+      "status": "failed",
       "source_urls": [
         "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPdmVYbmJzTGhla3VMUlBKbENUdGo1QTRMYzNqdF9zaUt1ME1DY1hIS2J1YldneGFPbHNJZTBaTTg2d1BsS19LeHlYVGV0dmFZSW1WWF90TFdESFZmSzdCOFFQUmtpcnpDTmU3d2MwbnIwa0J3LXpMdW5SODlNU0g4cWlLVXg4V0xiblkyZDlPVWZNb0R3dlJHc3R4T0U5dlpvQ0M1Ml95dHFCSUVnRi13Qy1oMFc1UzB6bXBmV2dVNkxmRDhVT0JxbVFtaTkzSUZaRVVNclo5YnFkT2FZUXhoaGtFNkVLbHBEREZudFNKenRPUQ?oc=5",
         "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOTDlPS0tXMVJ6UUVleHVoNjFZY1oxaWg2dVhxcXZVakV0XzItSWJvU2llWG9ic0JlNndVeTdQc1V2d3FuX0czZVB2R0dQTEJWRTMyVWdyaHJZUFRGNkhNdFZ6d29FcjBVeFNHNlU2Y2VNSWtjb0VZRFFFdDREVnllcnRaQlFrdDdueGhaMVN3UDNNSXdPS2hwVFlUQTRSUkxWcHhrcEFfdHUtbEdocHA3cUlxSTl5Ty1zQ1R1RS0tdnJOM2dFcGl1T0d2YzQ4WjBleXlTTlNtWFl3MFh5QnpoLWg0dHBJR1U?oc=5",
@@ -117,19 +157,27 @@
         "https://news.google.com/rss/articles/CBMifEFVX3lxTFB2SWlmVDY0d19nVkV6b3NTZjdsYk10NWlZVDM0Y3VncHV4NE9LakpXeENYd2NDOWpjOUhZSzUxVlBVTW1DNENtaUF2RUl0cXpLeGwzNmVBcWd2QXVfbWdWbjlCSFVWc19EdUFLSm9KMnlTV25xM3lwUFlqbWo?oc=5"
       ],
       "compliance": {
-        "pass": true,
-        "score": 100,
-        "flags": [],
-        "required_additions": [],
+        "pass": false,
+        "score": 0,
         "context": "daily",
-        "summary": "PASS"
+        "summary": "REJECTED — superseded Daily editorial policy",
+        "flags": [
+          {
+            "severity": "error",
+            "rule": "editorial-policy",
+            "match": "Stored draft contains disallowed legal, regulatory, kratom, health, scare, or negative coverage and generic takeaways."
+          }
+        ],
+        "required_additions": [
+          "Replace with fresh, positive culture, flavor, community, lounge-life, local-event, or non-alcoholic social coverage; write specific original takeaways."
+        ]
       },
-      "checked_at": "2026-08-30T13:41:46.583547+00:00"
+      "checked_at": "2026-08-30T14:00:00+00:00"
     },
     {
       "file": "drafts/digest-2026-08-28.md",
       "created_at": "2026-08-28T21:17:39.245191+00:00",
-      "status": "passed",
+      "status": "failed",
       "source_urls": [
         "https://news.google.com/rss/articles/CBMie0FVX3lxTE9wRG82VFRBdVg4aEVqU0cySHpSM2tHbVFDbHpPSUYxdmY4LUJJSGc2RXNHazVlQnUtM21MUGpTTHRnQkVaRFUtYTdTXzAwZjJIX2dJREtSbmJ6UklDMzVOYkxvQ296SFAzSzN3WXBoYkt4RnFJdjZLMjlidw?oc=5",
         "https://news.google.com/rss/articles/CBMivgFBVV95cUxOQ0tJOXM2TW16MEV4SS1BLWpXUkVGV3lCYWxfd3NaQW1aelprX1k4VHNBODA5ZXB6cjAtOE5FUmxaeWoxUU5vXzRsZTJqNFZyYVFLb0hKbzBrX09jY2I3Wi1iOFBzSEdqeElnUi1BZmRvX0RWRVZBTVNYcU15OWFpbXpfbnoxSlVscVBxRFZUU1dBNEdYa04tQ1FjaDBhUW16dlVkbmRBSHQyOHZSbVdub2NYaVV4NkFxQWZMbldn?oc=5",
@@ -138,19 +186,27 @@
         "https://news.google.com/rss/articles/CBMihgFBVV95cUxONVZ2V2tMbVVreWdqcWh2S09DTGtNcFB3OFNEV05VLUFETnNqbERqNGNHenZQdUctU3ZBZXNzMmJxTDdJSW1fdllUdDc5dnBuYmZjYWRwM3NYa2YtZm5CWXV1VW1hanJZT1BzZEJoWVZXcU53eUNXRlVPcFFONHVHZ0pOeExNQQ?oc=5"
       ],
       "compliance": {
-        "pass": true,
-        "score": 100,
-        "flags": [],
-        "required_additions": [],
+        "pass": false,
+        "score": 0,
         "context": "daily",
-        "summary": "PASS"
+        "summary": "REJECTED — superseded Daily editorial policy",
+        "flags": [
+          {
+            "severity": "error",
+            "rule": "editorial-policy",
+            "match": "Stored draft contains disallowed legal, regulatory, kratom, health, scare, or negative coverage and generic takeaways."
+          }
+        ],
+        "required_additions": [
+          "Replace with fresh, positive culture, flavor, community, lounge-life, local-event, or non-alcoholic social coverage; write specific original takeaways."
+        ]
       },
-      "checked_at": "2026-08-30T13:41:46.608077+00:00"
+      "checked_at": "2026-08-30T14:00:00+00:00"
     },
     {
       "file": "drafts/digest-2026-08-29.md",
       "created_at": "2026-08-29T15:22:20.305702+00:00",
-      "status": "passed",
+      "status": "failed",
       "source_urls": [
         "https://news.google.com/rss/articles/CBMid0FVX3lxTFBQdFlqel92eVFjWGpsWnNEQ0JqOUFnVnpRTnlWR3V2dlU1cnBaNmVGcm42LU5KSExJV1pMMTVldnBQSUc2ZEZJUjYyNlU1SVU1UlhlcnIzRXg2ZnRYR25YRGFtUTFKbFd6bVEwZkNnX0tVRTlsNHFv?oc=5",
         "https://news.google.com/rss/articles/CBMigAFBVV95cUxNb3J1MThSbE90WUtYRnVuVUhPYlJsMUNsaTdjaU1vSTVET1VFdko1amowclhuREJDTWRjR21zUTF3dGRNTkFVeGljR2JDak95ajB4Si1yMWR2VnJDSENFcTVkeVQ5UWtNbEwyMUp3TEltRnphWDRNR0hWdWIybTJrVA?oc=5",
@@ -159,19 +215,27 @@
         "https://news.google.com/rss/articles/CBMikwJBVV95cUxQMlpyekVwSHpsQngtNXJfYkNxaVdTdHVkSDJIMHBsTUJlQjZpdTlfV0pDSFI4VXdqaVBUQ1lSZlZ0a3RwZXEwSjJ6eTJJTGF6Ym45RTFVYVRLUUloa3NILVVfTTJDUkNOTXkzSGdXNnkxZDRNaXk5QU5IWEFJM3o2VEo1YUdNTElNMnI2UGR1ZmEtVEhQQnFOWWNqNXB4cW9CLUpFZWZ4WUhTampuOENRcGY3aTI5TU10WTk0bUU0cE93Z1h6RDM1M1dTc0tQckJGNDVJS0ZoTzdSVVdkSExYMy1ESllXMG4wZXprLWNlb2tBd3MzaVBaNVNvQWEtQ2pyb25ZOVViVXZpLUhaZThpa3NuSQ?oc=5"
       ],
       "compliance": {
-        "pass": true,
-        "score": 100,
-        "flags": [],
-        "required_additions": [],
+        "pass": false,
+        "score": 0,
         "context": "daily",
-        "summary": "PASS"
+        "summary": "REJECTED — superseded Daily editorial policy",
+        "flags": [
+          {
+            "severity": "error",
+            "rule": "editorial-policy",
+            "match": "Stored draft contains disallowed legal, regulatory, kratom, health, scare, or negative coverage and generic takeaways."
+          }
+        ],
+        "required_additions": [
+          "Replace with fresh, positive culture, flavor, community, lounge-life, local-event, or non-alcoholic social coverage; write specific original takeaways."
+        ]
       },
-      "checked_at": "2026-08-30T13:41:46.610418+00:00"
+      "checked_at": "2026-08-30T14:00:00+00:00"
     },
     {
       "file": "drafts/digest-2026-08-30.md",
       "created_at": "2026-08-30T13:41:46.565279+00:00",
-      "status": "passed",
+      "status": "failed",
       "source_urls": [
         "https://news.google.com/rss/articles/CBMiekFVX3lxTFA0S1doaF9SSjFwNWVKdHkzNDAxNGZocjBPQU1VOXVRcmNXYUNKMzZhNUc3ZjhpekFFTGdTdTExU0Rub0x1MkowWTNIUkNMVlRac05pV1BmRkxmcXVmaVMwUVdSVW1PTUdmLWZiaUg2WUZOVHZBcHVfRld3?oc=5",
         "https://news.google.com/rss/articles/CBMi-wFBVV95cUxPdkhBZEFXbXhhZmpHNURwdThBRzJIdUhFTGdvV1hHdGJ5dllsMTNQaHdlY2FJTC10NmIwbk5MSzZydXhUdzVIWGFieUVjcWhrSnZKSWJoT3I3NU00WU5kSGRzN295V1haalRwdWcyaXJPMTRTbVVwb2tMY2hyNUNpdG9DWm90U2hPaHpQOC1TRjQ2emdqdzNWcTZhTTVBdF9NQ2hIbHNqU0dNMkVkSG1iOGxIcml0cXF0Z3hhYy1JRGp2ZklHYnk3TGZPU3RJdnlUQmo3ekxoTFJjTXlCQkhobnI5Z3VGclY0czJJdi1NbG5ZSWN5bzRVTG9XMA?oc=5",
@@ -180,14 +244,22 @@
         "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNbnhucEhQZmhITVowZnk0NW9RR2hYcFZDbndVQ1drc1lnNk5KV1VYSzFxZHdpODRxanZlRHZrS3NlWkZCN3V3MnpTYVNGdk43eVJrdGk2RXlGYk5UUHhqbXdVdXZnT2diUE9pTlJ2R0dmYnJkd1l4Q0JDbGd5dTR0NXhrdkp5TUJzVklF?oc=5"
       ],
       "compliance": {
-        "pass": true,
-        "score": 100,
-        "flags": [],
-        "required_additions": [],
+        "pass": false,
+        "score": 0,
         "context": "daily",
-        "summary": "PASS"
+        "summary": "REJECTED — superseded Daily editorial policy",
+        "flags": [
+          {
+            "severity": "error",
+            "rule": "editorial-policy",
+            "match": "Stored draft contains disallowed legal, regulatory, kratom, health, scare, or negative coverage and generic takeaways."
+          }
+        ],
+        "required_additions": [
+          "Replace with fresh, positive culture, flavor, community, lounge-life, local-event, or non-alcoholic social coverage; write specific original takeaways."
+        ]
       },
-      "checked_at": "2026-08-30T13:41:46.613044+00:00"
+      "checked_at": "2026-08-30T14:00:00+00:00"
     }
   ]
 }
