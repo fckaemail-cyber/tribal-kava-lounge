@@ -49,6 +49,35 @@ PROHIBITED = [
 ]
 
 
+
+# Daily editorial gate — separate from product-claim compliance.
+# These topics are disallowed in Daily stories even when reported neutrally.
+EDITORIAL_REJECT_PATTERNS = [
+    (r"\b(?:7[\s-]?oh|7-hydroxymitragynine)\b", "7-OH coverage"),
+    (r"\b(?:regulation|regulatory|legislation|legislative|bill|law|laws|legal|policy|political|lobby(?:ing|ist)?)\b", "legal or political coverage"),
+    (r"\b(?:fda|dea|ban(?:ned|s)?|crackdown|fine|penalt(?:y|ies)|enforcement|court|lawsuit|recall|warning)\b", "regulatory or enforcement coverage"),
+    (r"\b(?:addiction|addicted|withdrawal|overdose|death|died|fatal|hospitali[sz]|poison|contaminat(?:ed|ion)|danger(?:ous)?|risk|scare|harm)\b", "negative or scare coverage"),
+    (r"\b(?:kratom|mitragynine)\b", "kratom news is outside the Daily editorial scope"),
+    (r"\b(?:anxiety|depression|pain|sleep|insomnia|health benefit|medical)\b", "health or medical framing"),
+]
+
+def check_candidate(item: dict[str, Any], *, category: str = "") -> dict[str, Any]:
+    """Reject Daily candidates that conflict with Tribal's positive editorial scope."""
+    text = " ".join(str(item.get(k, "")) for k in ("title", "summary", "source"))
+    flags = []
+    for pattern, label in EDITORIAL_REJECT_PATTERNS:
+        match = re.search(pattern, text, flags=re.I)
+        if match:
+            flags.append({"severity": "error", "rule": "editorial-" + label.lower().replace(" ", "-"), "match": match.group(0)})
+    if category.lower() in {"regulation", "legal", "politics"}:
+        flags.append({"severity": "error", "rule": "editorial-disallowed-category", "match": category})
+    return {
+        "pass": not flags,
+        "flags": flags,
+        "summary": "PASS" if not flags else "REJECTED: " + flags[0]["rule"],
+    }
+
+
 def _strip_allowed(text: str) -> str:
     out = text
     for pat in ALLOWED_DISCLAIMER_PATTERNS:
@@ -71,6 +100,10 @@ def check_text(text: str, *, context: str = "daily") -> dict[str, Any]:
     flags: list[dict[str, str]] = []
     lower = text.lower()
     scan = _strip_allowed(text)
+
+    if context == "daily":
+        editorial = check_candidate({"title": text, "summary": ""})
+        flags.extend(editorial["flags"])
 
     for pattern, label in PROHIBITED:
         for m in re.finditer(pattern, scan, flags=re.I):
