@@ -21,6 +21,7 @@ assert.match(html, /analytics\.js/, 'conversion tracker must be loaded');
 assert.doesNotMatch(html, /Joined VIP list!/, 'VIP path must not fake a successful signup');
 assert.match(html, /data-conversion="directions"/, 'directions conversion must exist');
 assert.match(html, /data-conversion="vip_sms"/, 'SMS VIP conversion must exist');
+assert.match(html, /data-conversion="order_online"/, 'DoorDash order conversion must exist');
 assert.match(robots, /www\.thetribalkavalounge\.com\/sitemap\.xml/, 'robots sitemap must be canonical');
 assert.doesNotMatch(sitemap, /kratom-regulation|botanical-drink-trends|kava-bars-across-america/, 'unsafe legacy Daily URLs must not be indexed');
 assert.equal((sitemap.match(/<url>/g) || []).length, 27, 'sitemap must include 14 site routes and 13 Daily stories');

@@ -6,8 +6,8 @@ const SITE_ORIGIN = (window.TRIBAL_SITE_CONFIG && window.TRIBAL_SITE_CONFIG.cano
 const seoDatabase = {
     'home': {
         title: 'Tribal Kava Lounge | Kava Bar & Kratom Tea in West Palm Beach, FL',
-        description: 'New to kava or kratom? Visit Tribal Kava Lounge in West Palm Beach for dessert-style kava clouds, fruit-forward kratom refreshers, agua fresca-inspired drinks, and a beginner-friendly non-alcoholic lounge experience. Kratom 21+ only.',
-        h1: 'Kava Clouds & Kratom Refreshers in West Palm Beach',
+        description: 'Visit Tribal Kava Lounge in West Palm Beach for traditional kava shells, brewed kratom tea, crafted drinks, games, events, and a welcoming alcohol-free night out. Kratom 21+ only.',
+        h1: 'A Kava Lounge for a Better Night Out in West Palm Beach',
         slug: '/',
         schema: {
             "@context": "https://schema.org",
@@ -19,6 +19,11 @@ const seoDatabase = {
             "telephone": "+1-561-355-0561",
             "email": "join@tribalkavalounge.co",
             "priceRange": "$$",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "269"
+            },
             "hasMap": "https://www.google.com/maps/search/?api=1&query=Tribal+Kava+Lounge+770+S+Military+Trail+Unit+A1+West+Palm+Beach+FL+33415",
             "contactPoint": {
                 "@type": "ContactPoint",
@@ -49,14 +54,14 @@ const seoDatabase = {
                 }
             ],
             "sameAs": [
-                "https://www.instagram.com/TribalKavaLounge"
+                "https://www.instagram.com/tribalkavalounge"
             ]
         }
     },
     'menu': {
-        title: 'Menu | Kava Clouds, Kratom Refreshers & Agua Frescas in West Palm Beach',
-        description: 'Explore dessert-style kava drinks, fruit-forward kratom refreshers, agua fresca-inspired sips, and viral signature drinks at Tribal Kava Lounge in West Palm Beach. Kratom products are 21+ only.',
-        h1: 'Kava, Kratom & Agua Fresca Drink Menu',
+        title: 'Menu | Kava Shells, Kratom Tea & Crafted Drinks in West Palm Beach',
+        description: 'See current in-lounge prices for kava shells, brewed kratom tea, crafted kava and kratom drinks, shots, extracts, and fruit drinks at Tribal Kava Lounge. Kratom is 21+ only.',
+        h1: 'Kava, Tea & Crafted Drink Menu',
         slug: '/menu',
         schema: {
             "@context": "https://schema.org",
@@ -67,22 +72,22 @@ const seoDatabase = {
                 {
                     "@type": "MenuSection",
                     "name": "Kava Shells",
-                    "description": "Traditional-style kava shells. $2 Tuesdays: single shells $2 from 2:00 PM–5:00 PM."
+                    "description": "Traditional kava shells: single $6, double $9, triple $13, and K.O. shell $10. $2 Tuesdays: single shells $2 from 2:00 PM–5:00 PM."
                 },
                 {
                     "@type": "MenuSection",
-                    "name": "Kava Clouds",
-                    "description": "Creamy, dessert-style kava drinks made to feel smooth and approachable."
+                    "name": "Crafted Kava",
+                    "description": "Dessert-inspired kava drinks with clear $10 pricing."
                 },
                 {
                     "@type": "MenuSection",
-                    "name": "Kratom Tea",
-                    "description": "Traditional-style brewed red, white, and green leaf kratom tea. 21+ only. Valid ID required."
+                    "name": "Brewed Kratom Tea",
+                    "description": "Red, white, or green leaf tea: small $6.50 or large 16 oz $8.75. 21+ only. Valid ID required."
                 },
                 {
                     "@type": "MenuSection",
-                    "name": "Kratom Refreshers",
-                    "description": "Brewed botanical tea served in bright, fruit-forward refresher flavors. 21+ only. Valid ID required."
+                    "name": "Crafted Kratom Drinks",
+                    "description": "Fruit-forward crafted drinks with brewed kratom tea. 21+ only. Valid ID required."
                 },
                 {
                     "@type": "MenuSection",
@@ -92,12 +97,12 @@ const seoDatabase = {
                 {
                     "@type": "MenuSection",
                     "name": "Kratom Extracts",
-                    "description": "Adult-use kratom extract options. 21+ only. Valid ID required. Ask our team before ordering."
+                    "description": "Kratom Punch: 16 oz $15 or 24 oz $20. Kratom extract boost +$5. Adult-use extract options $15–25. 21+ only. Valid ID required."
                 },
                 {
                     "@type": "MenuSection",
-                    "name": "Agua Fresca Refreshers",
-                    "description": "Fresh, colorful, non-kava/non-kratom options for anyone in the group."
+                    "name": "Fruit Drinks",
+                    "description": "Fresh, colorful drinks without kava or kratom."
                 }
             ]
         }
@@ -156,7 +161,7 @@ const seoDatabase = {
     },
     'events': {
         title: 'Events at Tribal Kava Lounge | Kava Lounge Events in West Palm Beach',
-        description: 'Join us for first-timer nights, open mic nights, study sessions, vendor pop-ups, flavor drops, and community events at Tribal Kava Lounge in West Palm Beach.',
+        description: 'See Friday Lotería with Tony, karaoke, $2 Tuesday shells, and rotating game, poker, Art Club, and Sip & Paint nights at Tribal Kava Lounge in West Palm Beach.',
         h1: 'Kava Lounge Events in West Palm Beach',
         slug: '/events',
         schema: {
@@ -166,12 +171,12 @@ const seoDatabase = {
                 {
                     "@type": "ListItem",
                     "position": 1,
-                    "name": "First-Timer Night"
+                    "name": "Friday Lotería at 9 PM"
                 },
                 {
                     "@type": "ListItem",
                     "position": 2,
-                    "name": "Open Mic Night"
+                    "name": "Karaoke and Rotating Community Events"
                 }
             ]
         }
@@ -321,29 +326,29 @@ const aiKnowledgeBase = {
     effectsDisclaimer: "People report different experiences, and effects can vary. We do not guarantee effects or recommend kava or kratom for any medical purpose. We recommend asking our team for beginner-friendly options and using these beverages responsibly.",
     
     // Knowledge keys
-    'what is kava': "Kava is a traditional plant-based beverage made from the root of the kava plant (Piper methysticum), historically native to the Pacific Islands. Traditionally, kava is ground and strained with water, leaving an earthy, bitter taste. At Tribal Kava Lounge, we craft **Kava Clouds**—dessert-style, creamy kava beverages like our *Banana Pudding Kava Cloud*—to make the texture and flavor approachable and familiar for beginners.",
-    'what is kratom': "Kratom is a botanical beverage made from the leaves of the Mitragyna speciosa tree, native to Southeast Asia. We serve it as traditional-style brewed tea in **red, white, and green** leaf styles, plus fruit-forward refreshers (like our *Mango Chili Lime Kratomade*), compact shots, and adult-use extracts. **Please note:** All kratom products are strictly for adults 21+ only. Valid ID is required. For extracts, please ask our team in person before ordering.",
-    'do you have kratom extracts or shots': "Yes — we carry brewed kratom tea (red, white, and green), kratom refreshers, kratom shots, and adult-use kratom extracts. All kratom products are for adults 21+ with valid ID. For extracts, please ask our team in person before ordering.",
+    'what is kava': "Kava is a traditional plant-based beverage made from the root of the kava plant (Piper methysticum), historically native to the Pacific Islands. Traditionally, kava is ground and strained with water, leaving an earthy taste. At Tribal Kava Lounge, we serve traditional shells and dessert-inspired crafted kava drinks like Banana Pudding to make a first order approachable.",
+    'what is kratom': "Kratom is a botanical beverage made from the leaves of the Mitragyna speciosa tree, native to Southeast Asia. We serve red, white, and green leaf brewed tea, fruit-forward crafted drinks like Mango Chili Lime, compact shots, and adult-use extracts. All kratom products are strictly for adults 21+ only. Valid ID is required.",
+    'do you have kratom extracts or shots': "Yes — we carry brewed kratom tea, crafted kratom drinks, kratom shots, and adult-use kratom extracts. All kratom products are for adults 21+ with valid ID. For extracts, please ask our team in person before ordering.",
     'kratom tea strains': "Yes — our **kratom tea** menu includes **red, white, and green** leaf styles, brewed traditional-style. All kratom tea is **21+ only** with valid ID. Ask our team which style fits the flavor profile you want.",
     'two dollar tuesday': "Yes — **$2 Tuesdays!** Single shells are **$2 from 2:00 PM–5:00 PM** every Tuesday. Come through and grab a shell.",
-    'menu prices': "Here's our pricing: **Kava Clouds $10** · **Kratom Refreshers $14** · **Kratom or Kava Shots $6** · **Extracts $15–25** · **Agua Frescas $13**. Plus **$2 Tuesdays** — single shells $2 from 2–5 PM. Kratom is 21+ only.",
-    'weekly events': "Weekly lineup: **Tuesday** = $2 single shells (2–5 PM) · **Wednesday** = Karaoke night · **Thursday** = Pool tournament · **Friday** = Lotería. Check the Events page or ask our team for start times.",
-    'karaoke': "Yes — **Wednesday night is Karaoke** at Tribal Kava Lounge. Come sing, sip, and hang.",
-    'pool tournament': "Yes — **Thursday is Pool Tournament** night. We have pool tables — come compete and vibe.",
-    'loteria': "Yes — **Friday is Lotería** night at Tribal Kava Lounge. Classic game night energy — join us.",
-    'online ordering': "Online ordering and gift cards are coming soon! Join the VIP list on our homepage to be the first to know when they drop. In the meantime, come visit us in person at 770 S Military Trail, Unit A1, West Palm Beach.",
+    'menu prices': "Here are our current in-lounge prices: **Kava shells:** single $6, double $9, triple $13, K.O. $10 · **Brewed kratom tea:** small $6.50 or large 16 oz $8.75 · **Kratom Punch:** 16 oz $15 or 24 oz $20 · **Kratom extract boost +$5** · **Crafted kava $10** · **Crafted kratom drinks $14** · **Kava or kratom shots $6** · **Kratom extracts $15–25** · **Fruit drinks $13**. Plus **$2 Tuesdays** — single shells $2 from 2–5 PM. Kratom is 21+ only.",
+    'weekly events': "Weekly lineup: **Tuesday** = $2 single shells (2–5 PM) · recurring **Karaoke** nights · **Friday** = Lotería at 9 PM, hosted by Tony with $1 boards. Mario Kart, poker, Art Club, and Sip & Paint rotate in; check Instagram for the next date.",
+    'karaoke': "Yes — Tribal hosts recurring Karaoke nights. Check **@TribalKavaLounge** on Instagram for the next confirmed start time.",
+    'pool tournament': "We have pool tables, but there is no current recurring tournament time published. Check @TribalKavaLounge on Instagram for the next scheduled game or tournament night.",
+    'loteria': "Yes — Tony hosts **Lotería every Friday at 9 PM**. Boards are $1 each.",
+    'online ordering': "Online ordering is live through DoorDash from the Order Online buttons on this site. Digital gift cards are still coming soon. You can also visit us at 770 S Military Trail, Unit A1, West Palm Beach.",
     'does kava get you drunk': "Kava is not alcohol, so it does not get you drunk like beer, wine, or liquor. It is a traditional botanical beverage made from kava root. Some people may feel different after drinking kava, so we treat it as a responsible-use beverage. Do not mix it with alcohol or other substances.",
     'is kratom alcohol': "No, kratom is not alcohol. It is a botanical tea brewed from tree leaves. However, it should be treated as a responsible-use botanical beverage. Do not mix it with alcohol or other substances.",
     'is kratom 21+': "Yes. All kratom products are strictly for adults 21+ only. A valid government-issued ID is required at the counter.",
     'can i drink kratom every day': "We do not recommend using kratom as a daily habit or using it to self-treat any health condition. Long-term use may not be right for everyone. For health or medication questions, speak with a qualified professional.",
     'what should i order first': "We recommend ordering based on your flavor preferences:\n\n" +
-                               "🍨 **If you want sweet and creamy:** Try our *Banana Pudding Kava Cloud* or *La Nube Tres Leches*.\n" +
-                               "🍓 **If you want fruity and refreshing:** Try our *Passionfruit Mint Kratom Refresher* (21+) or *Guava Lime Agua Fresca* (non-botanical).\n" +
-                               "🌌 **If you want bold and photo-ready:** Try the *Blue Razz Coconut Cloud*.\n\n" +
+                               "🍨 **If you want sweet and creamy:** Try *Banana Pudding* or *La Nube Tres Leches*.\n" +
+                               "🍓 **If you want fruity and refreshing:** Try *Passionfruit Mint* (21+) or *Guava Lime* (no botanicals).\n" +
+                               "🌌 **If you want bold:** Try *Blue Razz Coconut*.\n\n" +
                                "Please feel free to ask our baristas at the lounge! They love guiding first-timers.",
-    'what is beginner friendly': "All our **Kava Clouds** (especially the *Banana Pudding Kava Cloud*) are designed to be extremely beginner-friendly because they mask the natural earthiness of kava. For non-kava/non-kratom options, our **Agua Fresca Refreshers** (like *Guava Lime*) are perfect if you just want to sit back and vibe with friends.",
+    'what is beginner friendly': "For a sweet first kava drink, try *Banana Pudding* or *La Nube Tres Leches*. If you want no kava or kratom, *Guava Lime* is an easy fruit-forward choice. Our team can also walk you through a traditional single shell.",
     'difference between kava and kratom': "Kava and Kratom come from different botanical sources. **Kava** is made from the root of a shrub and has a long history of traditional social use in the Pacific Islands. **Kratom** is brewed from the leaves of a tropical tree native to Southeast Asia and is served as a botanical tea. Kava is available to adults, while Kratom is strictly 21+ only.",
-    'do you have drinks without kava or kratom': "Yes! We serve delicious **Agua Fresca Refreshers** (such as *Guava Lime* and *Watermelon Cucumber Lime*) which are completely botanical-free so anyone in your group can find a drink they love.",
+    'do you have drinks without kava or kratom': "Yes! Our fruit drinks include *Guava Lime*, *Watermelon Cucumber Lime*, and *Jamaica Passionfruit*. They contain no kava or kratom.",
     'where are you located': "We are located at **770 S Military Trail, Unit A1, West Palm Beach, FL 33415** — an easy drive from Lake Worth, Greenacres, Palm Springs, and Haverhill. Free open-lot parking with unlimited spaces. Stop by and vibe!",
     'what are your hours': "We are open **Sunday–Thursday 8:00 AM–12:00 AM** and **Friday–Saturday 8:00 AM–1:00 AM**.",
     'parking': "Yes — **unlimited free parking** in the open lot right at the lounge. Pull in, park, and come find Unit A1.",
@@ -353,7 +358,7 @@ const aiKnowledgeBase = {
     'pool tables': "Yes — we have **pool tables** so you can shoot a game while you sip.",
     'smoke shop': "A **smoke shop is coming soon** at Tribal Kava Lounge. Follow **@TribalKavaLounge** on Instagram for the drop.",
     'how do i contact you': "Call us at **(561) 355-0561**, email **Join@TribalKavaLounge.Co**, follow **@TribalKavaLounge** on Instagram, or visit **TribalKavaLounge.com**. We're at 770 S Military Trail, Unit A1, West Palm Beach, FL 33415.",
-    'do you have events': "Yes! Weekly nights: **$2 Tuesdays** (single shells $2, 2–5 PM), **Wednesday Karaoke**, **Thursday Pool Tournament**, and **Friday Lotería**. We also host first-timer hangs and more — check the Events page!",
+    'do you have events': "Yes! We have **$2 Tuesday shells** from 2–5 PM, recurring **Karaoke**, and **Friday Lotería at 9 PM** hosted by Tony. Game nights, poker, Art Club, and Sip & Paint rotate in — check the Events page and Instagram for current dates.",
     'can i bring friends who have never tried it': "Absolutely! Tribal Kava Lounge is built for first-timers. We serve non-botanical options like Agua Frescas, and our team is happy to answer questions at the bar to make everyone feel comfortable.",
     'the daily kava': "Yes — **The Daily Kava** is our blog: beginner guides, lounge stories, and West Palm Beach life with a little humor. Read it on the site under **The Daily Kava**.",
 };
@@ -636,11 +641,6 @@ function injectSEO(route) {
     }
     metaDescTag.setAttribute('content', meta.description);
     
-    // Do NOT overwrite visible marketing H1 — keep brand copy in the HTML.
-    // SEO title + meta description + JSON-LD carry the search-facing strings.
-    const activeH1 = document.querySelector(`#view-${route} h1`);
-    const pageH1 = activeH1 ? activeH1.textContent.trim() : meta.h1;
-    
     // Inject/Replace Schema Script
     let schemaScript = document.getElementById('seo-json-ld');
     if (schemaScript) {
@@ -652,19 +652,6 @@ function injectSEO(route) {
     schemaScript.text = JSON.stringify(meta.schema, null, 2);
     document.head.appendChild(schemaScript);
     
-    // Update Developer SEO Overlay Dashboard
-    const dbTitle = document.getElementById('seo-db-title');
-    const dbDesc = document.getElementById('seo-db-desc');
-    const dbH1 = document.getElementById('seo-db-h1');
-    const dbSlug = document.getElementById('seo-db-slug');
-    const dbSchema = document.getElementById('seo-db-schema');
-    
-    if (dbTitle) dbTitle.textContent = meta.title;
-    if (dbDesc) dbDesc.textContent = meta.description;
-    if (dbH1) dbH1.textContent = pageH1 + (meta.h1 && meta.h1 !== pageH1 ? `  ·  SEO target: ${meta.h1}` : '');
-    if (dbSlug) dbSlug.textContent = meta.slug;
-    if (dbSchema) dbSchema.textContent = JSON.stringify(meta.schema, null, 2);
-
     // Canonical + Open Graph
     const absUrl = SITE_ORIGIN + (meta.slug === '/' ? '/' : meta.slug);
     const canon = document.getElementById('seo-canonical');
@@ -793,7 +780,7 @@ function generateBotResponse(userInput) {
     }
     
     // 4. Default fallback
-    return "I would love to help you with that! At Tribal Kava Lounge, we focus on serving premium kava clouds, kratom refreshers, and botanical drinks in a non-alcoholic lounge. For first-timers, I recommend starting with our *Banana Pudding Kava Cloud* or *Guava Lime Agua Fresca*. Feel free to ask our counter staff when you visit, or ask me something like 'What is kava?' or 'Where are you located?'";
+    return "I would love to help you with that! Tribal Kava Lounge serves traditional kava shells, brewed kratom tea, crafted drinks, and fruit drinks in an alcohol-free lounge. For a first order, try Banana Pudding or Guava Lime, or ask our team to walk you through a traditional shell. You can also ask me 'What is kava?' or 'Where are you located?'";
 }
 
 // Append Chat Messages
@@ -803,7 +790,7 @@ function appendMessage(sender, text, targetChatElementId) {
     
     const msgDiv = document.createElement('div');
     msgDiv.classList.add('chat-msg', sender);
-    msgDiv.textContent = text;
+    msgDiv.textContent = sender === 'bot' ? text.replace(/\*\*/g, '').replace(/\*/g, '') : text;
     chatContainer.appendChild(msgDiv);
     
     // Auto Scroll to bottom
@@ -829,11 +816,54 @@ function sendMessage(inputElementId, targetChatElementId) {
     }, 600);
 }
 
+function setFloatingChatOpen(shouldOpen, focusInput = false) {
+    const bubble = document.getElementById('floating-chat-bubble');
+    const chatWindow = document.getElementById('floating-chat-window');
+    if (!bubble || !chatWindow) return;
+
+    bubble.classList.remove('show-prompt');
+    bubble.setAttribute('aria-expanded', String(shouldOpen));
+
+    if (shouldOpen) {
+        chatWindow.hidden = false;
+        window.requestAnimationFrame(() => chatWindow.classList.add('open'));
+        if (focusInput) {
+            window.setTimeout(() => document.getElementById('float-chat-input')?.focus(), 80);
+        }
+        return;
+    }
+
+    chatWindow.classList.remove('open');
+    chatWindow.hidden = true;
+}
+
+function updateBusinessStatus() {
+    const status = document.getElementById('business-open-status');
+    if (!status) return;
+
+    const parts = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/New_York',
+        weekday: 'long',
+        hour: '2-digit',
+        minute: '2-digit',
+        hourCycle: 'h23'
+    }).formatToParts(new Date());
+    const values = Object.fromEntries(parts.map(part => [part.type, part.value]));
+    const minutes = (Number(values.hour) * 60) + Number(values.minute);
+    const lateSpill = minutes < 60 && (values.weekday === 'Saturday' || values.weekday === 'Sunday');
+    const daytimeOpen = minutes >= 480;
+    const isOpen = daytimeOpen || lateSpill;
+    const closesAtOne = lateSpill || (daytimeOpen && (values.weekday === 'Friday' || values.weekday === 'Saturday'));
+
+    status.textContent = isOpen
+        ? `Open now · Closes ${closesAtOne ? '1 AM' : 'at midnight'}`
+        : 'Closed · Opens at 8 AM';
+    status.classList.toggle('is-open', isOpen);
+    status.classList.toggle('is-closed', !isOpen);
+}
+
 // Event Listeners Initialization
 document.addEventListener('DOMContentLoaded', () => {
-    if (new URLSearchParams(window.location.search).get('seo') === '1') {
-        document.body.classList.add('seo-debug');
-    }
     // Router Init — path-based + intercept in-app links
     window.addEventListener('popstate', handleRoute);
     document.addEventListener('click', (e) => {
@@ -872,25 +902,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatWindow = document.getElementById('floating-chat-window');
     if (bubble && chatWindow) {
         bubble.addEventListener('click', () => {
-            chatWindow.classList.toggle('open');
-            bubble.classList.remove('show-prompt');
+            const shouldOpen = bubble.getAttribute('aria-expanded') !== 'true';
+            setFloatingChatOpen(shouldOpen, shouldOpen);
         });
         
-        // Auto-show prompt after 4 seconds
+        // Give the page room to breathe before offering help, and stay quiet on mobile.
         setTimeout(() => {
-            if (!chatWindow.classList.contains('open')) {
+            if (window.matchMedia('(min-width: 769px)').matches && chatWindow.hidden) {
                 bubble.classList.add('show-prompt');
+                window.setTimeout(() => bubble.classList.remove('show-prompt'), 8000);
             }
-        }, 4000);
+        }, 30000);
     }
     
     const chatClose = document.getElementById('chat-close-btn');
     if (chatClose && chatWindow) {
         chatClose.addEventListener('click', (e) => {
             e.stopPropagation();
-            chatWindow.classList.remove('open');
+            setFloatingChatOpen(false);
+            bubble?.focus();
         });
     }
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && chatWindow && !chatWindow.hidden) {
+            setFloatingChatOpen(false);
+            bubble?.focus();
+        }
+    });
+
+    updateBusinessStatus();
+    window.setInterval(updateBusinessStatus, 60000);
     
     // Set up send buttons & inputs for both chat interfaces
     const floatSend = document.getElementById('float-chat-send');
@@ -939,27 +981,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const answerBox = document.getElementById('quiz-result-box');
             if (answerBox) {
                 answerBox.style.display = 'block';
-                document.getElementById('quiz-recommendation-text').innerHTML = `💡 **Recommended Drink:** <span style="color:var(--text-cream);font-weight:700;">${recommendation}</span>`;
+                document.getElementById('quiz-recommendation-text').innerHTML = `<strong>Recommended drink:</strong> <span style="color:var(--text-cream);font-weight:700;">${recommendation}</span>`;
             }
         });
     });
     
-    // Developer SEO Dashboard Toggle
-    const seoToggle = document.getElementById('seo-toggle-btn');
-    const seoDashboard = document.getElementById('seo-dashboard');
-    const seoClose = document.getElementById('seo-db-close');
-    
-    if (seoToggle && seoDashboard) {
-        seoToggle.addEventListener('click', () => {
-            seoDashboard.classList.toggle('visible');
-        });
-    }
-    if (seoClose && seoDashboard) {
-        seoClose.addEventListener('click', () => {
-            seoDashboard.classList.remove('visible');
-        });
-    }
-
     // Coming Soon overlay dismiss
     const comingSoonOverlay = document.getElementById('coming-soon-overlay');
     const previewBtn = document.getElementById('coming-soon-preview');
@@ -975,13 +1001,10 @@ window.askAI = function(questionText, targetInputId, targetSendId) {
     const input = document.getElementById(targetInputId);
     const sendBtn = document.getElementById(targetSendId);
     if (input && sendBtn) {
+        if (targetInputId === 'float-chat-input') {
+            setFloatingChatOpen(true);
+        }
         input.value = questionText;
         sendBtn.click();
-        
-        // Open the floating chat window if using the floating chat
-        if (targetInputId === 'float-chat-input') {
-            document.getElementById('floating-chat-window').classList.add('open');
-            document.getElementById('floating-chat-bubble').classList.remove('show-prompt');
-        }
     }
 };

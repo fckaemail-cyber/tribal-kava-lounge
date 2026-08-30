@@ -76,6 +76,7 @@
     if (href.startsWith('mailto:')) return href.includes('event') ? 'event_inquiry' : 'email';
     if (/google\.[^/]+\/maps|maps\.google/i.test(href)) return 'directions';
     if (/instagram\.com/i.test(href)) return 'instagram';
+    if (/order\.online|doordash\.com/i.test(href)) return 'order_online';
     if (/\/private-events(?:$|[?#])/.test(href)) return 'event_interest';
     if (/\/events(?:$|[?#])/.test(href)) return 'events_view';
     if (/\/menu(?:$|[?#])/.test(href)) return 'menu_view';
@@ -98,6 +99,9 @@
 
     if (['phone_call', 'directions', 'vip_sms', 'vip_email', 'email', 'event_inquiry', 'event_interest'].includes(conversion)) {
       send('generate_lead', Object.assign({ lead_type: conversion }, details));
+    }
+    if (conversion === 'order_online') {
+      send('begin_checkout', Object.assign({ checkout_type: 'doordash_outbound' }, details));
     }
   });
 
