@@ -26,7 +26,8 @@ const origin = 'https://www.thetribalkavalounge.com';
 const staticPaths = [
   '/', '/menu', '/new-here', '/kava-vs-kratom', '/what-is-kava', '/what-is-kratom',
   '/events', '/visit', '/plan-your-visit', '/private-events', '/press', '/gift-cards',
-  '/faq', '/nearby', '/events/two-dollar-tuesday', '/events/friday-loteria', '/events/karaoke',
+  '/faq', '/nearby', '/nearby/west-palm-beach', '/nearby/lake-worth', '/nearby/greenacres',
+  '/events/two-dollar-tuesday', '/events/friday-loteria', '/events/karaoke',
   '/events/mario-kart', '/events/poker-night', '/events/art-club', '/events/sip-and-paint',
   '/the-daily-kava'
 ];

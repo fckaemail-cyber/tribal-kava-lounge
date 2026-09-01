@@ -59,11 +59,15 @@ assert.equal((html.match(/href="\/events\/(?:two-dollar-tuesday|friday-loteria|k
 assert.equal((app.match(/embedUrl:\s*'https:\/\/www\.instagram\.com\/p\//g) || []).length, 5, 'five event pages must embed their official scheduling proof');
 assert.match(html, /instagram\.com\/p\/DZC5nDruES3\/embed\/captioned/, 'official Instagram proof must be embedded');
 assert.match(html, /id="view-nearby"/, 'nearby-area search coverage page must exist');
+assert.match(html, /id="view-nearby-detail"/, 'dedicated nearby-area route view must exist');
+assert.equal((sitemap.match(/\/nearby\/(?:west-palm-beach|lake-worth|greenacres)/g) || []).length, 3, 'all three dedicated local-search pages must be indexed');
+assert.equal((app.match(/seoKey: 'nearby-(?:west-palm-beach|lake-worth|greenacres)'/g) || []).length, 3, 'all three local-search pages must have distinct metadata');
+assert.doesNotMatch(html, /Online ordering is also coming soon/, 'FAQ must not contradict the live DoorDash link');
 assert.match(robots, /www\.thetribalkavalounge\.com\/sitemap\.xml/, 'robots sitemap must be canonical');
 assert.doesNotMatch(sitemap, /kratom-regulation|botanical-drink-trends|kava-bars-across-america/, 'unsafe legacy Daily URLs must not be indexed');
 assert.match(sitemap, /\/the-daily-kava\/crafted-kava-drinks/, 'new crafted-kava article URL must be indexed');
 assert.doesNotMatch(sitemap, /\/the-daily-kava\/what-is-a-kava-cloud/, 'retired Cloud article URL must not be indexed');
-assert.equal((sitemap.match(/<url>/g) || []).length, 35, 'sitemap must include 22 site routes and 13 Daily stories');
+assert.equal((sitemap.match(/<url>/g) || []).length, 38, 'sitemap must include 25 site routes and 13 Daily stories');
 assert.equal((sitemap.match(/\/the-daily-kava\//g) || []).length, 13, 'all 13 Daily stories must be indexed');
 assert.doesNotMatch(sitemap, /<loc>https:\/\/(?!www\.thetribalkavalounge\.com)/, 'sitemap URLs must use the canonical host');
 assert.ok(JSON.parse(config).navigationFallback, 'Azure SPA fallback must be configured');

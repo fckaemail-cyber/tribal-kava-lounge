@@ -524,12 +524,118 @@ const eventDatabase = {
     }
 };
 
+const nearbyAreaDatabase = {
+    'west-palm-beach': {
+        seoKey: 'nearby-west-palm-beach',
+        areaName: 'West Palm Beach',
+        eyebrow: 'Our one and only location · West Palm Beach',
+        title: 'Kava Lounge in West Palm Beach',
+        intro: 'Tribal Kava Lounge is physically located at 770 S Military Trail, Unit A1 in West Palm Beach—not a directory listing or a second location.',
+        description: 'Visit Tribal Kava Lounge at 770 S Military Trail, Unit A1 in West Palm Beach for kava shells, brewed tea, crafted drinks, events, free parking, and late-night lounge hours.',
+        origin: 'West Palm Beach, FL',
+        visitTitle: 'Come for a first sip or stay for the room',
+        visitCopy: 'Order a traditional shell, use the three-question drink finder, meet friends for Lotería, or settle into a seating section with free Wi-Fi. The bar is built for first-timers as much as regulars.',
+        planTitle: 'Finding Unit A1',
+        planCopy: 'Use live directions rather than relying on an old address. Look for Unit A1 at 770 South Military Trail and use the open-lot parking on site.',
+        localTitle: 'West Palm Beach hours',
+        localCopy: 'Open Sunday through Thursday from 8 AM to midnight and Friday through Saturday from 8 AM to 1 AM. Check the live open-status banner before leaving.',
+        faq: [
+            ['Is Tribal Kava Lounge actually in West Palm Beach?', 'Yes. The lounge is at 770 S Military Trail, Unit A1, West Palm Beach, FL 33415.'],
+            ['Does the West Palm Beach location have parking?', 'Yes. Guests can use the open-lot parking at the lounge.']
+        ]
+    },
+    'lake-worth': {
+        seoKey: 'nearby-lake-worth',
+        areaName: 'Lake Worth Beach',
+        eyebrow: 'Serving Lake Worth Beach · located in West Palm Beach',
+        title: 'Kava Lounge Near Lake Worth',
+        intro: 'Looking from Lake Worth Beach? Tribal has one location: 770 S Military Trail, Unit A1 in West Palm Beach. Use the route button below for current navigation from Lake Worth.',
+        description: 'Looking for a kava lounge near Lake Worth Beach? Get live directions to Tribal Kava Lounge in West Palm Beach for clear prices, free parking, events, and late-night hours.',
+        origin: 'Lake Worth Beach, FL',
+        visitTitle: 'A useful stop when the group wants different things',
+        visitCopy: 'One person can try a shell, another can choose a fruit drink without kava or kratom, and the first-timer can use the drink finder before reaching the counter. Pool tables, Wi-Fi, and multiple seating sections make a longer visit easy.',
+        planTitle: 'Before leaving Lake Worth',
+        planCopy: 'Open the live route so traffic and your exact starting point are accounted for. The destination should read 770 S Military Trail, Unit A1, West Palm Beach—not the retired South Military Trail address.',
+        localTitle: 'Late-night option without alcohol',
+        localCopy: 'The lounge stays open until midnight Sunday through Thursday and 1 AM Friday and Saturday. Kava, brewed tea, crafted drinks, and fruit drinks are non-alcoholic; kratom is 21+ with valid ID.',
+        faq: [
+            ['Is there a Tribal Kava Lounge location in Lake Worth?', 'No. Tribal has one location at 770 S Military Trail, Unit A1 in West Palm Beach and serves guests coming from Lake Worth Beach.'],
+            ['Can I order before driving from Lake Worth?', 'Yes. The Order Online buttons open the active Tribal DoorDash storefront.']
+        ]
+    },
+    'greenacres': {
+        seoKey: 'nearby-greenacres',
+        areaName: 'Greenacres',
+        eyebrow: 'Serving Greenacres · located in West Palm Beach',
+        title: 'Kava Lounge Near Greenacres',
+        intro: 'Tribal welcomes Greenacres guests at its single West Palm Beach location: 770 S Military Trail, Unit A1. Use live directions for the route from wherever you are starting.',
+        description: 'Find a kava lounge near Greenacres at Tribal Kava Lounge in West Palm Beach. Explore clear menu prices, beginner guidance, events, free parking, and live directions.',
+        origin: 'Greenacres, FL',
+        visitTitle: 'Easy for first-timers and mixed groups',
+        visitCopy: 'Choose traditional kava, a crafted botanical drink, or a fruit drink with no kava or kratom. If the menu is new territory, the drink finder narrows it down by flavor, botanical preference, and vibe.',
+        planTitle: 'Before leaving Greenacres',
+        planCopy: 'Use the route button for current navigation to Unit A1. When you arrive, use the open-lot parking and look for the Tribal Kava Lounge entrance rather than an old online address.',
+        localTitle: 'Events worth checking first',
+        localCopy: 'Friday Lotería with Tony runs at 9 PM, Tuesday single shells are $2 from 2–5 PM, and karaoke, games, poker, and art nights rotate. Check each event page before making a special trip.',
+        faq: [
+            ['Is Tribal Kava Lounge located in Greenacres?', 'No. Tribal is located at 770 S Military Trail, Unit A1 in West Palm Beach and welcomes guests from Greenacres.'],
+            ['Where can I confirm events before leaving Greenacres?', 'Use the Events page for shareable details and the linked official Instagram posts for the latest rotating dates.']
+        ]
+    }
+};
+
 Object.entries(eventDatabase).forEach(([slug, event]) => {
     seoDatabase[event.seoKey] = {
         title: `${event.title} | Tribal Kava Lounge West Palm Beach`,
         description: event.intro,
         slug: `/events/${slug}`,
         schema: event.schema
+    };
+});
+
+Object.entries(nearbyAreaDatabase).forEach(([slug, area]) => {
+    const pageUrl = `${SITE_ORIGIN}/nearby/${slug}`;
+    seoDatabase[area.seoKey] = {
+        title: `${area.title} | Tribal Kava Lounge`,
+        description: area.description,
+        slug: `/nearby/${slug}`,
+        schema: {
+            '@context': 'https://schema.org',
+            '@graph': [
+                {
+                    '@type': 'WebPage',
+                    '@id': `${pageUrl}#webpage`,
+                    url: pageUrl,
+                    name: area.title,
+                    description: area.description,
+                    about: { '@id': `${SITE_ORIGIN}/#lounge` }
+                },
+                {
+                    '@type': 'BreadcrumbList',
+                    itemListElement: [
+                        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_ORIGIN}/` },
+                        { '@type': 'ListItem', position: 2, name: 'Nearby areas', item: `${SITE_ORIGIN}/nearby` },
+                        { '@type': 'ListItem', position: 3, name: area.areaName, item: pageUrl }
+                    ]
+                },
+                {
+                    '@type': ['CafeOrCoffeeShop', 'LocalBusiness'],
+                    '@id': `${SITE_ORIGIN}/#lounge`,
+                    name: 'Tribal Kava Lounge',
+                    url: SITE_ORIGIN,
+                    telephone: '+1-561-355-0561',
+                    address: {
+                        '@type': 'PostalAddress',
+                        streetAddress: '770 S Military Trail, Unit A1',
+                        addressLocality: 'West Palm Beach',
+                        addressRegion: 'FL',
+                        postalCode: '33415',
+                        addressCountry: 'US'
+                    },
+                    areaServed: { '@type': 'City', name: area.areaName }
+                }
+            ]
+        }
     };
 });
 
@@ -588,7 +694,7 @@ const medicalTriggers = [
 // Path-based SPA Router (SEO-friendly URLs; Netlify /* → index.html)
 const VALID_ROUTES = new Set([
     'home', 'menu', 'new-here', 'kava-vs-kratom', 'events', 'visit', 'faq',
-    'event-detail', 'nearby', 'the-daily-kava', 'the-daily-kava-article',
+    'event-detail', 'nearby', 'nearby-detail', 'the-daily-kava', 'the-daily-kava-article',
     'what-is-kava', 'what-is-kratom',
     'plan-your-visit', 'private-events', 'press', 'gift-cards'
 ]);
@@ -609,6 +715,7 @@ function parsePathRoute() {
     let route = path === '/' ? 'home' : path.replace(/^\//, '');
     let dailySlug = null;
     let eventSlug = null;
+    let nearbySlug = null;
 
     if (route.startsWith('the-daily-kava/')) {
         dailySlug = route.slice('the-daily-kava/'.length).replace(/\/$/, '');
@@ -620,7 +727,12 @@ function parsePathRoute() {
         route = 'event-detail';
     }
 
-    return { route, dailySlug, eventSlug, path };
+    if (route.startsWith('nearby/')) {
+        nearbySlug = route.slice('nearby/'.length).replace(/\/$/, '');
+        route = 'nearby-detail';
+    }
+
+    return { route, dailySlug, eventSlug, nearbySlug, path };
 }
 
 function pathForRoute(route, dailySlug) {
@@ -637,7 +749,7 @@ function navigateTo(path, { replace = false } = {}) {
 }
 
 function handleRoute() {
-    let { route, dailySlug, eventSlug } = parsePathRoute();
+    let { route, dailySlug, eventSlug, nearbySlug } = parsePathRoute();
 
     document.querySelectorAll('.spa-view').forEach(view => {
         view.style.display = 'none';
@@ -651,6 +763,7 @@ function handleRoute() {
         route = 'home';
         dailySlug = null;
         eventSlug = null;
+        nearbySlug = null;
         if (window.location.pathname !== '/') {
             history.replaceState(null, '', '/');
         }
@@ -674,6 +787,12 @@ function handleRoute() {
             navigateTo('/events', { replace: true });
             return;
         }
+    } else if (route === 'nearby-detail') {
+        const ok = renderNearbyArea(nearbySlug);
+        if (!ok) {
+            navigateTo('/nearby', { replace: true });
+            return;
+        }
     } else {
         injectSEO(route);
     }
@@ -682,10 +801,12 @@ function handleRoute() {
     document.querySelectorAll('.nav-menu a, .mobile-nav-links a').forEach(link => {
         const href = link.getAttribute('href') || '';
         const isDaily = route === 'the-daily-kava' || route === 'the-daily-kava-article';
+        const isNearby = route === 'nearby' || route === 'nearby-detail';
         const matches =
             (route === 'home' && (href === '/' || href === '')) ||
             href === `/${route}` ||
-            (isDaily && href === '/the-daily-kava');
+            (isDaily && href === '/the-daily-kava') ||
+            (isNearby && href === '/nearby');
         link.classList.toggle('active', !!matches);
     });
 
@@ -736,6 +857,72 @@ function renderEventDetail(slug) {
         ` : ''}
     `;
     injectSEO(event.seoKey);
+    return true;
+}
+
+function renderNearbyArea(slug) {
+    const area = nearbyAreaDatabase[slug];
+    const root = document.getElementById('nearby-detail-root');
+    if (!area || !root) return false;
+
+    const directionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(area.origin)}&destination=770+S+Military+Trail+Unit+A1,+West+Palm+Beach,+FL+33415`;
+    const otherAreas = Object.entries(nearbyAreaDatabase)
+        .filter(([candidate]) => candidate !== slug)
+        .map(([candidate, item]) => `<a href="/nearby/${candidate}">${item.areaName}<span>View local guide →</span></a>`)
+        .join('');
+
+    root.innerHTML = `
+        <a class="daily-back" href="/nearby">← All nearby areas</a>
+        <header class="local-area-hero">
+            <p class="menu-eyebrow">${area.eyebrow}</p>
+            <h1>${area.title}</h1>
+            <p>${area.intro}</p>
+        </header>
+        <div class="local-truth-strip" role="note">
+            <strong>One real location</strong>
+            <span>770 S Military Trail, Unit A1, West Palm Beach, FL 33415</span>
+        </div>
+        <div class="local-guide-layout">
+            <article class="local-guide-main">
+                <section>
+                    <h2>${area.visitTitle}</h2>
+                    <p>${area.visitCopy}</p>
+                </section>
+                <section>
+                    <h2>${area.planTitle}</h2>
+                    <p>${area.planCopy}</p>
+                </section>
+                <section>
+                    <h2>${area.localTitle}</h2>
+                    <p>${area.localCopy}</p>
+                </section>
+                <section class="local-area-faq" aria-labelledby="local-faq-title">
+                    <h2 id="local-faq-title">Quick answers for ${area.areaName}</h2>
+                    ${area.faq.map(([question, answer]) => `<details><summary>${question}</summary><p>${answer}</p></details>`).join('')}
+                </section>
+            </article>
+            <aside class="local-guide-rail" aria-label="Plan your Tribal Kava Lounge visit">
+                <p class="menu-eyebrow">Plan the visit</p>
+                <h2>Open late. Park free.</h2>
+                <dl>
+                    <div><dt>Sun–Thu</dt><dd>8 AM–12 AM</dd></div>
+                    <div><dt>Fri–Sat</dt><dd>8 AM–1 AM</dd></div>
+                    <div><dt>Parking</dt><dd>Open lot · free</dd></div>
+                    <div><dt>Kratom</dt><dd>21+ · valid ID</dd></div>
+                </dl>
+                <div class="local-guide-actions">
+                    <a href="${directionsUrl}" target="_blank" rel="noopener" class="btn btn-accent" data-conversion="directions">Directions from ${area.areaName}</a>
+                    <a href="/menu" class="btn btn-secondary" data-conversion="menu_view">See Menu & Prices</a>
+                    <a href="https://www.doordash.com/business/tribal-kava-bar-w-p-b-17836977/" target="_blank" rel="noopener" class="btn" data-conversion="order_online">Order Online</a>
+                </div>
+            </aside>
+        </div>
+        <nav class="local-area-links" aria-label="Other nearby area guides">
+            <p class="menu-eyebrow">More local guides</p>
+            <div>${otherAreas}</div>
+        </nav>
+    `;
+    injectSEO(area.seoKey);
     return true;
 }
 
