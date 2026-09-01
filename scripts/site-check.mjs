@@ -27,6 +27,7 @@ const preRenderedLakeWorth = await readFile(path.join(root, 'dist/nearby/lake-wo
 const preRenderedDaily = await readFile(path.join(root, 'dist/the-daily-kava/kava-bar-west-palm-beach-first-visit/index.html'), 'utf8');
 
 assert.match(html, /https:\/\/www\.thetribalkavalounge\.com\//, 'canonical domain must use www');
+assert.match(html, /<meta name="google-site-verification" content="zXsp7qWCsUyKjaGf-yWfi92M_A_csa1mz6SO2WbTjP0">/, 'Google Search Console verification must remain in the public home page');
 assert.match(preRenderedMenu, /<link rel="canonical" href="https:\/\/www\.thetribalkavalounge\.com\/menu"/, 'menu must ship its own canonical before JavaScript runs');
 assert.match(preRenderedMenu, /<title>Menu \| Kava Shells, Kratom Tea &amp; Crafted Drinks in West Palm Beach<\/title>/, 'menu must ship route-specific title metadata');
 assert.match(preRenderedLoteria, /<link rel="canonical" href="https:\/\/www\.thetribalkavalounge\.com\/events\/friday-loteria"/, 'Lotería must ship its own canonical before JavaScript runs');
