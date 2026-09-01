@@ -64,7 +64,7 @@ const seoDatabase = {
     },
     'menu': {
         title: 'Menu | Kava Shells, Kratom Tea & Crafted Drinks in West Palm Beach',
-        description: 'See current in-lounge prices for kava shells, brewed kratom tea, crafted kava and kratom drinks, shots, extracts, and fruit drinks at Tribal Kava Lounge. Kratom is 21+ only.',
+        description: 'See current in-lounge prices plus the verified DoorDash pickup menu for kava shells, botanical tea, slushies, shots, flavors, and boosts at Tribal Kava Lounge. Kratom is 21+ only.',
         h1: 'Kava, Tea & Crafted Drink Menu',
         slug: '/menu',
         schema: {
@@ -107,6 +107,16 @@ const seoDatabase = {
                     "@type": "MenuSection",
                     "name": "Fruit Drinks",
                     "description": "Fresh, colorful drinks without kava or kratom."
+                },
+                {
+                    "@type": "MenuSection",
+                    "name": "DoorDash Pickup Menu",
+                    "description": "Verified August 31, 2026: Single Shell $6.24, Double Shell $10.40, Botanical Slushie $14.58, Botanical Shot $7.01, Iced Tea small $10.25 or large $12.42, and Hot Tea small $7.27 or large $12.42. Marketplace pricing may differ from in-lounge pricing."
+                },
+                {
+                    "@type": "MenuSection",
+                    "name": "DoorDash Tea and Flavor Options",
+                    "description": "Tea choices include red, green, or white leaf; 18 optional flavors; and optional Boost +$6.45, 5 ml +$11.34, or 10 ml +$22.15. Kratom products are 21+ only with valid ID."
                 }
             ]
         }
@@ -974,7 +984,7 @@ function renderNearbyArea(slug) {
                 <div class="local-guide-actions">
                     <a href="${directionsUrl}" target="_blank" rel="noopener" class="btn btn-accent" data-conversion="directions">Directions from ${area.areaName}</a>
                     <a href="/menu" class="btn btn-secondary" data-conversion="menu_view">See Menu & Prices</a>
-                    <a href="https://www.doordash.com/business/tribal-kava-bar-w-p-b-17836977/" target="_blank" rel="noopener" class="btn" data-conversion="order_online">Order Online</a>
+                    <a href="https://www.doordash.com/store/tribal-kava-bar-w.p.b-west-palm-beach-41073365/98494168/?pickup=true" target="_blank" rel="noopener" class="btn" data-conversion="order_online">Order Online</a>
                 </div>
             </aside>
         </div>
@@ -1616,60 +1626,61 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Three-question drink finder. Recommendations are restricted to items and
-    // prices listed on the current public menu.
+    // Three-question drink finder. Kava and kratom recommendations map to exact
+    // builds on the verified DoorDash pickup menu; non-botanical picks remain
+    // clearly identified as in-lounge items.
     const drinkFinder = document.getElementById('drink-finder');
     if (drinkFinder) {
         const recommendations = {
             kava: {
                 creamy: {
-                    first: ['Banana Pudding', '$10', 'Creamy banana and vanilla with a kava base—an approachable first crafted kava.'],
-                    regular: ['La Nube Tres Leches', '$10', 'Soft vanilla, cream, and cinnamon notes with a kava base.'],
-                    bold: ['Dubai Chocolate Pistachio', '$10', 'Dark chocolate and toasted pistachio in a richer crafted kava.']
+                    first: ['Single Shell · French Vanilla', '$6.24 on DoorDash', 'A traditional kava shell softened with the required French Vanilla syrup and no extra flavor. This exact build is available for pickup.', true],
+                    regular: ['Double Shell · Brown Cinnamon Sugar + Horchata', '$10.40 on DoorDash', 'A two-shell kava pour with Brown Cinnamon Sugar syrup and one optional Horchata flavor.', true],
+                    bold: ['Double Shell · Hazelnut + Tiger’s Blood', '$10.40 on DoorDash', 'A two-shell kava pour with Hazelnut syrup and a bright Tiger’s Blood flavor.', true]
                 },
                 fruity: {
-                    first: ['Blue Razz Coconut', '$10', 'Blue raspberry and coconut cream in a bright crafted kava.'],
-                    regular: ['Blue Razz Coconut', '$10', 'A fruit-forward crafted kava with coconut cream.'],
-                    bold: ['Strawberry Shortcake', '$10', 'Strawberry, cream, and cake-inspired flavor with a kava base.']
+                    first: ['Single Shell · French Vanilla + Strawberry', '$6.24 on DoorDash', 'A single kava shell with French Vanilla syrup and one optional Strawberry flavor.', true],
+                    regular: ['Double Shell · None + Passion Mango', '$10.40 on DoorDash', 'A two-shell kava pour with no syrup flavor and a bright Passion Mango addition.', true],
+                    bold: ['Double Shell · None + Tiger’s Blood', '$10.40 on DoorDash', 'A two-shell kava pour with no syrup flavor and the bolder Tiger’s Blood addition.', true]
                 },
                 classic: {
-                    first: ['Single Kava Shell', '$6', 'The straightforward first pour. Ask the team to walk you through the shell tradition.'],
-                    regular: ['Double Kava Shell', '$9', 'A classic two-shell pour without extra flavoring.'],
-                    bold: ['K.O. Shell', '$10', 'The stronger house shell. Ask the team whether it fits your visit.']
+                    first: ['Single Shell · None', '$6.24 on DoorDash', 'The direct online kava order: one shell, required syrup choice set to None, and no optional flavor.', true],
+                    regular: ['Double Shell · None', '$10.40 on DoorDash', 'A two-shell kava pour with the required syrup choice set to None and no optional flavor.', true],
+                    bold: ['Double Shell · Brown Cinnamon Sugar', '$10.40 on DoorDash', 'A two-shell kava pour with Brown Cinnamon Sugar syrup and no extra flavor.', true]
                 }
             },
             kratom: {
                 creamy: {
-                    first: ['Kratom Punch · 16 oz', '$15', 'A fruit-forward kratom punch. Kratom is 21+ and valid ID is required.'],
-                    regular: ['Kratom Punch · 16 oz', '$15', 'The standard fruit-forward kratom punch. Kratom is 21+ and valid ID is required.'],
-                    bold: ['Kratom Punch · 24 oz', '$20', 'The larger fruit-forward punch. Kratom is 21+ and valid ID is required.']
+                    first: ['Hot Tea · Red · Small + Horchata', '$7.27 on DoorDash', 'A small hot botanical tea with red leaf and Horchata flavor. Kratom is 21+ and valid ID is required.', true],
+                    regular: ['Iced Tea · Red · Large + Horchata', '$12.42 on DoorDash', 'A large iced botanical tea with red leaf and Horchata flavor. Kratom is 21+ and valid ID is required.', true],
+                    bold: ['Iced Tea · White · Large + Piña Colada', '$12.42 on DoorDash', 'A large iced botanical tea with white leaf and Piña Colada flavor. Kratom is 21+ and valid ID is required.', true]
                 },
                 fruity: {
-                    first: ['Passionfruit Mint', '$14', 'Passionfruit, mint, and citrus with brewed kratom tea. 21+ with valid ID.'],
-                    regular: ['Mango Chili Lime', '$14', 'Mango, lime, and a sweet-heat finish with brewed kratom tea. 21+ with valid ID.'],
-                    bold: ['Blackberry Dragonfruit Fizz', '$14', 'Blackberry, dragonfruit, and sparkle with brewed kratom tea. 21+ with valid ID.']
+                    first: ['Iced Tea · Red · Large + Strawberry', '$12.42 on DoorDash', 'A DoorDash popular build with red leaf, large size, and Strawberry. Kratom is 21+ and valid ID is required.', true],
+                    regular: ['Iced Tea · Red · Large + Watermelon', '$12.42 on DoorDash', 'A DoorDash popular build with red leaf, large size, and Watermelon. Kratom is 21+ and valid ID is required.', true],
+                    bold: ['Iced Tea · Green · Large + Passion Mango', '$12.42 on DoorDash', 'A DoorDash popular build with green leaf, large size, and Passion Mango. Kratom is 21+ and valid ID is required.', true]
                 },
                 classic: {
-                    first: ['Small Brewed Kratom Tea', '$6.50', 'Choose red, white, or green leaf. Kratom is 21+ and valid ID is required.'],
-                    regular: ['Large Brewed Kratom Tea · 16 oz', '$8.75', 'Choose red, white, or green leaf. Kratom is 21+ and valid ID is required.'],
-                    bold: ['Large Brewed Kratom Tea · 16 oz', '$8.75', 'A larger classic brewed tea. Kratom is 21+ and valid ID is required.']
+                    first: ['Hot Tea · Red · Small', '$7.27 on DoorDash', 'A small hot botanical tea with red leaf and no optional flavor or boost. Kratom is 21+ and valid ID is required.', true],
+                    regular: ['Iced Tea · Red · Large', '$12.42 on DoorDash', 'A large iced botanical tea with red leaf and no optional flavor or boost. Kratom is 21+ and valid ID is required.', true],
+                    bold: ['Iced Tea · White · Large + Tiger’s Blood', '$12.42 on DoorDash', 'A large iced botanical tea with white leaf and Tiger’s Blood flavor. Kratom is 21+ and valid ID is required.', true]
                 }
             },
             none: {
                 creamy: {
-                    first: ['Guava Lime', '$13', 'Pink guava and fresh key lime with no kava or kratom.'],
-                    regular: ['Watermelon Cucumber Lime', '$13', 'Watermelon, cucumber, and lime with no kava or kratom.'],
-                    bold: ['Jamaica Passionfruit', '$13', 'Hibiscus tea and tropical passionfruit with no kava or kratom.']
+                    first: ['Guava Lime', '$13 in-lounge', 'Pink guava and fresh key lime with no kava or kratom. This one is currently listed on the in-lounge menu, not DoorDash.', false],
+                    regular: ['Watermelon Cucumber Lime', '$13 in-lounge', 'Watermelon, cucumber, and lime with no kava or kratom. This one is currently listed on the in-lounge menu, not DoorDash.', false],
+                    bold: ['Jamaica Passionfruit', '$13 in-lounge', 'Hibiscus tea and tropical passionfruit with no kava or kratom. This one is currently listed on the in-lounge menu, not DoorDash.', false]
                 },
                 fruity: {
-                    first: ['Guava Lime', '$13', 'Pink guava and fresh key lime with no kava or kratom.'],
-                    regular: ['Watermelon Cucumber Lime', '$13', 'Watermelon, cucumber, and lime with no kava or kratom.'],
-                    bold: ['Jamaica Passionfruit', '$13', 'Hibiscus tea and tropical passionfruit with no kava or kratom.']
+                    first: ['Guava Lime', '$13 in-lounge', 'Pink guava and fresh key lime with no kava or kratom. This one is currently listed on the in-lounge menu, not DoorDash.', false],
+                    regular: ['Watermelon Cucumber Lime', '$13 in-lounge', 'Watermelon, cucumber, and lime with no kava or kratom. This one is currently listed on the in-lounge menu, not DoorDash.', false],
+                    bold: ['Jamaica Passionfruit', '$13 in-lounge', 'Hibiscus tea and tropical passionfruit with no kava or kratom. This one is currently listed on the in-lounge menu, not DoorDash.', false]
                 },
                 classic: {
-                    first: ['Guava Lime', '$13', 'A clean fruit-forward first order with no kava or kratom.'],
-                    regular: ['Watermelon Cucumber Lime', '$13', 'A crisp familiar combination with no kava or kratom.'],
-                    bold: ['Jamaica Passionfruit', '$13', 'A bright hibiscus and passionfruit signature with no kava or kratom.']
+                    first: ['Guava Lime', '$13 in-lounge', 'A clean fruit-forward first order with no kava or kratom. This one is currently listed on the in-lounge menu, not DoorDash.', false],
+                    regular: ['Watermelon Cucumber Lime', '$13 in-lounge', 'A crisp familiar combination with no kava or kratom. This one is currently listed on the in-lounge menu, not DoorDash.', false],
+                    bold: ['Jamaica Passionfruit', '$13 in-lounge', 'A bright hibiscus and passionfruit signature with no kava or kratom. This one is currently listed on the in-lounge menu, not DoorDash.', false]
                 }
             }
         };
@@ -1689,10 +1700,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             error.hidden = true;
-            const [name, price, description] = recommendations[botanical][flavor][vibe];
+            const [name, price, description, availableOnline] = recommendations[botanical][flavor][vibe];
             document.getElementById('drink-finder-result-name').textContent = name;
             document.getElementById('drink-finder-result-price').textContent = price;
             document.getElementById('drink-finder-result-description').textContent = description;
+            const primaryAction = document.getElementById('drink-finder-primary-action');
+            if (availableOnline) {
+                primaryAction.href = 'https://www.doordash.com/store/tribal-kava-bar-w.p.b-west-palm-beach-41073365/98494168/?pickup=true';
+                primaryAction.textContent = 'Order this on DoorDash';
+                primaryAction.target = '_blank';
+                primaryAction.rel = 'noopener';
+                primaryAction.dataset.conversion = 'order_online';
+            } else {
+                primaryAction.href = '/menu#clean-menu-fruit';
+                primaryAction.textContent = 'See in-lounge fruit drinks';
+                primaryAction.removeAttribute('target');
+                primaryAction.removeAttribute('rel');
+                primaryAction.dataset.conversion = 'menu_view';
+            }
             const result = document.getElementById('drink-finder-result');
             result.hidden = false;
             result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1701,7 +1726,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 flavor,
                 vibe,
                 recommended_item: name,
-                recommended_price: price
+                recommended_price: price,
+                available_online: availableOnline
             });
         });
     }

@@ -50,10 +50,17 @@ assert.doesNotMatch(html, /Joined VIP list!/, 'VIP path must not fake a successf
 assert.match(html, /data-conversion="directions"/, 'directions conversion must exist');
 assert.match(html, /data-conversion="vip_sms"/, 'SMS VIP conversion must exist');
 assert.match(html, /data-conversion="order_online"/, 'DoorDash order conversion must exist');
-assert.match(html, /doordash\.com\/business\/tribal-kava-bar-w-p-b-17836977\//, 'Active DoorDash storefront must be linked');
+assert.match(html, /doordash\.com\/store\/tribal-kava-bar-w\.p\.b-west-palm-beach-41073365\/98494168\/\?pickup=true/, 'Active DoorDash storefront must be linked');
 assert.doesNotMatch(html, /order\.online\/store\/637148/, 'Inactive legacy DoorDash storefront must not be linked');
+assert.equal((html.match(/data-online-menu-item=/g) || []).length, 6, 'all six live DoorDash items must be published');
+assert.match(html, /18 live flavor choices/, 'all live DoorDash flavors must be summarized');
+assert.match(html, /Boost \+\$6\.45 · 5 ml \+\$11\.34 · 10 ml \+\$22\.15/, 'DoorDash tea boost prices must be visible');
+assert.match(html, /DoorDash marketplace prices are shown here separately from the in-lounge prices above/, 'DoorDash and in-lounge pricing must stay clearly separated');
 assert.equal((html.match(/class="drink-finder-step"/g) || []).length, 3, 'drink finder must ask exactly three questions');
 assert.match(app, /tribalTrack\?\.\('drink_recommendation'/, 'drink recommendations must be tracked');
+assert.match(app, /available_online: availableOnline/, 'drink recommendation telemetry must distinguish DoorDash from in-lounge items');
+assert.match(html, /id="drink-finder-primary-action"/, 'drink finder must expose a result-specific primary action');
+assert.match(app, /Single Shell · French Vanilla[\s\S]*?\$6\.24 on DoorDash/, 'drink finder must recommend a specific purchasable DoorDash build');
 assert.doesNotMatch(html, /quiz-card|data-recommendation/, 'legacy one-click drink quiz must be removed');
 assert.match(styles, /\.hero-ctas \.btn:nth-child\(n \+ 3\)\s*\{\s*display:\s*none;/, 'mobile hero must prioritize two conversion actions');
 assert.equal((html.match(/href="\/events\/(?:two-dollar-tuesday|friday-loteria|karaoke|mario-kart|poker-night|art-club|sip-and-paint)"/g) || []).length, 7, 'all seven verified events must have shareable routes');
