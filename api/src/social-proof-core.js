@@ -1,4 +1,4 @@
-const GOOGLE_LISTING_URL = 'https://www.google.com/maps/search/?api=1&query=Tribal+Kava+Lounge+770+S+Military+Trail+Unit+A1+West+Palm+Beach+FL+33415';
+const GOOGLE_LISTING_URL = 'https://www.google.com/maps/search/?api=1&query=Tribal+Kava+Lounge&query_place_id=ChIJFe_zmzQp2YgRh1ooSVUot9Y';
 const INSTAGRAM_PROFILE_URL = 'https://www.instagram.com/tribalkavalounge/';
 const SNAPSHOT_DATE = '2026-08-31T00:00:00-04:00';
 const GOOGLE_TEXT_QUERY = 'Tribal Kava Lounge 770 S Military Trail Unit A1 West Palm Beach FL 33415';

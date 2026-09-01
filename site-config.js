@@ -7,5 +7,5 @@ window.TRIBAL_SITE_CONFIG = Object.freeze({
   phone: '+15613550561',
   email: 'join@tribalkavalounge.co',
   orderUrl: 'https://www.doordash.com/store/tribal-kava-bar-w.p.b-west-palm-beach-41073365/98494168/?pickup=true',
-  directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=770+S+Military+Trail+Unit+A1,+West+Palm+Beach,+FL+33415'
+  directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=770+S+Military+Trail+Unit+A1,+West+Palm+Beach,+FL+33415&destination_place_id=ChIJFe_zmzQp2YgRh1ooSVUot9Y'
 });

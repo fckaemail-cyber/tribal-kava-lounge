@@ -28,7 +28,7 @@ const seoDatabase = {
                 "ratingValue": "4.8",
                 "reviewCount": "269"
             },
-            "hasMap": "https://www.google.com/maps/search/?api=1&query=Tribal+Kava+Lounge+770+S+Military+Trail+Unit+A1+West+Palm+Beach+FL+33415",
+            "hasMap": "https://www.google.com/maps/search/?api=1&query=Tribal+Kava+Lounge&query_place_id=ChIJFe_zmzQp2YgRh1ooSVUot9Y",
             "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+1-561-355-0561",
@@ -911,7 +911,7 @@ function renderEventDetail(slug) {
             <p>${event.detail}</p>
             <div class="event-detail-actions">
                 <a href="${event.sourceUrl}" ${external ? 'target="_blank" rel="noopener"' : ''} class="btn btn-secondary" data-conversion="events_view">${event.sourceLabel}</a>
-                <a href="https://www.google.com/maps/dir/?api=1&amp;destination=770+S+Military+Trail+Unit+A1,+West+Palm+Beach,+FL+33415" target="_blank" rel="noopener" class="btn btn-accent" data-conversion="directions">Get Directions</a>
+                <a href="https://www.google.com/maps/dir/?api=1&amp;destination=770+S+Military+Trail+Unit+A1,+West+Palm+Beach,+FL+33415&amp;destination_place_id=ChIJFe_zmzQp2YgRh1ooSVUot9Y" target="_blank" rel="noopener" class="btn btn-accent" data-conversion="directions">Get Directions</a>
                 ${event.calendarUrl ? `<a href="${event.calendarUrl}" class="btn" data-conversion="calendar_download">Add Weekly Calendar</a>` : ''}
                 <a href="sms:+15613550561?&amp;body=EVENTS%20%E2%80%94%20Please%20send%20me%20the%20next%20Tribal%20Kava%20event%20details." class="btn" data-conversion="event_inquiry">Text for Updates</a>
             </div>
@@ -936,7 +936,7 @@ function renderNearbyArea(slug) {
     const root = document.getElementById('nearby-detail-root');
     if (!area || !root) return false;
 
-    const directionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(area.origin)}&destination=770+S+Military+Trail+Unit+A1,+West+Palm+Beach,+FL+33415`;
+    const directionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(area.origin)}&destination=770+S+Military+Trail+Unit+A1,+West+Palm+Beach,+FL+33415&destination_place_id=ChIJFe_zmzQp2YgRh1ooSVUot9Y`;
     const otherAreas = Object.entries(nearbyAreaDatabase)
         .filter(([candidate]) => candidate !== slug)
         .map(([candidate, item]) => `<a href="/nearby/${candidate}">${item.areaName}<span>View local guide →</span></a>`)
