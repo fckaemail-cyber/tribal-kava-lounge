@@ -6,6 +6,7 @@
     "build": "node scripts/build-site.mjs",
     "test": "npm run build && node scripts/site-check.mjs",
     "deploy:azure": "zsh scripts/deploy-azure.sh",
+    "submit:indexnow": "node scripts/submit-indexnow.mjs",
     "serve": "npx --yes @azure/static-web-apps-cli start dist"
   }
 }

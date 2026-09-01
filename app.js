@@ -13,7 +13,7 @@ const seoDatabase = {
             "@context": "https://schema.org",
             "@type": ["CafeOrCoffeeShop", "LocalBusiness"],
             "name": "Tribal Kava Lounge",
-            "image": `${SITE_ORIGIN}/images/lounge-interior.jpg`,
+            "logo": `${SITE_ORIGIN}/images/tribal-logo-cutout.png`,
             "@id": `${SITE_ORIGIN}/#lounge`,
             "url": SITE_ORIGIN,
             "telephone": "+1-561-355-0561",
@@ -121,7 +121,7 @@ const seoDatabase = {
                     "name": "What is kava?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Kava is a traditional plant-based beverage made from the root of the kava plant. Traditional kava has an earthy taste, but our Kava Clouds are designed to make the experience smoother and more familiar with creamy dessert-style flavors."
+                        "text": "Kava is a traditional plant-based beverage made from the root of the kava plant. Traditional kava has an earthy taste, but our crafted kava drinks are designed to make the experience smoother and more familiar with creamy dessert-style flavors."
                     }
                 },
                 {
@@ -129,7 +129,7 @@ const seoDatabase = {
                     "name": "What is kratom?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Kratom is a botanical beverage made from kratom leaves. We serve it as traditional-style brewed tea, fruit-forward refreshers, compact shots, and adult-use extracts. All kratom products are 21+ only with valid ID."
+                        "text": "Kratom is a botanical beverage made from kratom leaves. We serve it as traditional-style brewed tea, fruit-forward drinks, compact shots, and adult-use extracts. All kratom products are 21+ only with valid ID."
                     }
                 }
             ]
@@ -222,7 +222,7 @@ const seoDatabase = {
 
     'what-is-kava': {
         title: 'What Is Kava? Beginner Guide to Kava Drinks | Tribal Kava Lounge',
-        description: 'What is kava? Learn culture, preparation, and flavor — plus how Tribal Kava Lounge serves kava shells and dessert-style Kava Clouds in West Palm Beach.',
+        description: 'What is kava? Learn culture, preparation, and flavor — plus how Tribal Kava Lounge serves kava shells and dessert-style crafted kava drinks in West Palm Beach.',
         h1: 'What Is Kava?',
         slug: '/what-is-kava',
         schema: {
@@ -237,7 +237,7 @@ const seoDatabase = {
     },
     'what-is-kratom': {
         title: 'What Is Kratom Tea? Beginner Guide for Adults 21+ | Tribal Kava Lounge',
-        description: 'What is kratom tea? Formats we serve (tea, refreshers, shots, extracts), Florida 21+ rules, flavor-first copy, and responsible-use notes. West Palm Beach.',
+        description: 'What is kratom tea? Formats we serve (tea, drinks, shots, extracts), Florida 21+ rules, flavor-first copy, and responsible-use notes. West Palm Beach.',
         h1: 'What Is Kratom Tea?',
         slug: '/what-is-kratom',
         schema: {
@@ -298,6 +298,34 @@ const seoDatabase = {
             "url": `${SITE_ORIGIN}/gift-cards`
         }
     },
+    'nearby': {
+        title: 'Kava Bar Near Lake Worth, Greenacres & Palm Springs | Tribal Kava Lounge',
+        description: 'Looking for a kava bar near Lake Worth, Greenacres, Palm Springs, or Haverhill? Visit Tribal Kava Lounge at 770 S Military Trail in West Palm Beach.',
+        h1: 'A Nearby Kava Lounge for Lake Worth, Greenacres & Palm Springs',
+        slug: '/nearby',
+        schema: {
+            '@context': 'https://schema.org',
+            '@type': ['CafeOrCoffeeShop', 'LocalBusiness'],
+            name: 'Tribal Kava Lounge',
+            url: `${SITE_ORIGIN}/nearby`,
+            telephone: '+1-561-355-0561',
+            address: {
+                '@type': 'PostalAddress',
+                streetAddress: '770 S Military Trail, Unit A1',
+                addressLocality: 'West Palm Beach',
+                addressRegion: 'FL',
+                postalCode: '33415',
+                addressCountry: 'US'
+            },
+            areaServed: [
+                { '@type': 'City', name: 'West Palm Beach' },
+                { '@type': 'City', name: 'Lake Worth Beach' },
+                { '@type': 'City', name: 'Greenacres' },
+                { '@type': 'City', name: 'Palm Springs' },
+                { '@type': 'Place', name: 'Haverhill' }
+            ]
+        }
+    },
     'the-daily-kava': {
         title: 'West Palm Beach Kava Stories & Local Guides | The Daily Kava',
         description: 'Fun, useful guides to kava, alcohol-free nightlife, date ideas, late-night study spots, events, and first visits in West Palm Beach.',
@@ -317,6 +345,111 @@ const seoDatabase = {
         }
     }
 };
+
+const eventDatabase = {
+    'two-dollar-tuesday': {
+        seoKey: 'event-two-dollar-tuesday',
+        eyebrow: 'Every Tuesday · 2–5 PM',
+        title: '$2 Tuesday Kava Shells',
+        intro: 'Single kava shells are $2 every Tuesday from 2:00 PM to 5:00 PM at Tribal Kava Lounge in West Palm Beach.',
+        detail: 'No ticket and no mystery fine print. Stop in during the window, order a single traditional kava shell, and ask the team if it is your first visit.',
+        sourceLabel: 'See all weekly events',
+        sourceUrl: '/events',
+        schema: {
+            '@context': 'https://schema.org',
+            '@type': 'Event',
+            name: '$2 Tuesday Kava Shells at Tribal Kava Lounge',
+            description: 'Single kava shells are $2 every Tuesday from 2 PM to 5 PM.',
+            eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+            eventStatus: 'https://schema.org/EventScheduled',
+            location: {
+                '@type': 'Place',
+                name: 'Tribal Kava Lounge',
+                address: {
+                    '@type': 'PostalAddress',
+                    streetAddress: '770 S Military Trail, Unit A1',
+                    addressLocality: 'West Palm Beach',
+                    addressRegion: 'FL',
+                    postalCode: '33415',
+                    addressCountry: 'US'
+                }
+            },
+            eventSchedule: {
+                '@type': 'Schedule',
+                repeatFrequency: 'P1W',
+                byDay: 'https://schema.org/Tuesday',
+                startTime: '14:00',
+                endTime: '17:00',
+                scheduleTimezone: 'America/New_York'
+            },
+            organizer: { '@type': 'Organization', name: 'Tribal Kava Lounge', url: SITE_ORIGIN },
+            url: `${SITE_ORIGIN}/events/two-dollar-tuesday`
+        }
+    },
+    'friday-loteria': {
+        seoKey: 'event-friday-loteria',
+        eyebrow: 'Every Friday · 9 PM',
+        title: 'Friday Lotería with Tony',
+        intro: 'Tony hosts Lotería every Friday at 9:00 PM at Tribal Kava Lounge. Boards are $1 each.',
+        detail: 'Bring a friend or join a table when you arrive. It is a recurring community night with prizes, jokes, and the very serious business of hoping your board gets called.',
+        sourceLabel: 'See the Friday Lotería post',
+        sourceUrl: 'https://www.instagram.com/tribalkavalounge/p/DYfKCLxO1Fp/',
+        schema: {
+            '@context': 'https://schema.org',
+            '@type': 'Event',
+            name: 'Friday Lotería with Tony at Tribal Kava Lounge',
+            description: 'Weekly Friday Lotería at 9 PM. Hosted by Tony; boards are $1 each.',
+            eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+            eventStatus: 'https://schema.org/EventScheduled',
+            location: {
+                '@type': 'Place',
+                name: 'Tribal Kava Lounge',
+                address: {
+                    '@type': 'PostalAddress',
+                    streetAddress: '770 S Military Trail, Unit A1',
+                    addressLocality: 'West Palm Beach',
+                    addressRegion: 'FL',
+                    postalCode: '33415',
+                    addressCountry: 'US'
+                }
+            },
+            eventSchedule: {
+                '@type': 'Schedule',
+                repeatFrequency: 'P1W',
+                byDay: 'https://schema.org/Friday',
+                startTime: '21:00',
+                scheduleTimezone: 'America/New_York'
+            },
+            organizer: { '@type': 'Organization', name: 'Tribal Kava Lounge', url: SITE_ORIGIN },
+            url: `${SITE_ORIGIN}/events/friday-loteria`
+        }
+    },
+    'karaoke': {
+        seoKey: 'event-karaoke',
+        eyebrow: 'Recurring night · time announced on Instagram',
+        title: 'Karaoke Night at Tribal',
+        intro: 'Karaoke is part of Tribal’s recurring event lineup. The next confirmed date and start time are posted by @TribalKavaLounge.',
+        detail: 'This page stays honest when the schedule moves: check the official Instagram before making the trip, then bring the song choice you have been “casually practicing” for three weeks.',
+        sourceLabel: 'Check the next confirmed karaoke time',
+        sourceUrl: 'https://www.instagram.com/tribalkavalounge',
+        schema: {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: 'Karaoke Night at Tribal Kava Lounge',
+            description: 'Karaoke event information for Tribal Kava Lounge in West Palm Beach; confirm the next date on the official Instagram.',
+            url: `${SITE_ORIGIN}/events/karaoke`
+        }
+    }
+};
+
+Object.values(eventDatabase).forEach((event) => {
+    seoDatabase[event.seoKey] = {
+        title: `${event.title} | Tribal Kava Lounge West Palm Beach`,
+        description: event.intro,
+        slug: `/events/${Object.keys(eventDatabase).find(key => eventDatabase[key] === event)}`,
+        schema: event.schema
+    };
+});
 
 // AI Guide Knowledge Base Responses
 const aiKnowledgeBase = {
@@ -359,7 +492,7 @@ const aiKnowledgeBase = {
     'smoke shop': "A **smoke shop is coming soon** at Tribal Kava Lounge. Follow **@TribalKavaLounge** on Instagram for the drop.",
     'how do i contact you': "Call us at **(561) 355-0561**, email **Join@TribalKavaLounge.Co**, follow **@TribalKavaLounge** on Instagram, or visit **TribalKavaLounge.com**. We're at 770 S Military Trail, Unit A1, West Palm Beach, FL 33415.",
     'do you have events': "Yes! We have **$2 Tuesday shells** from 2–5 PM, recurring **Karaoke**, and **Friday Lotería at 9 PM** hosted by Tony. Game nights, poker, Art Club, and Sip & Paint rotate in — check the Events page and Instagram for current dates.",
-    'can i bring friends who have never tried it': "Absolutely! Tribal Kava Lounge is built for first-timers. We serve non-botanical options like Agua Frescas, and our team is happy to answer questions at the bar to make everyone feel comfortable.",
+    'can i bring friends who have never tried it': "Absolutely! Tribal Kava Lounge is built for first-timers. We serve non-botanical options like fruit drinks, and our team is happy to answer questions at the bar to make everyone feel comfortable.",
     'the daily kava': "Yes — **The Daily Kava** is our blog: beginner guides, lounge stories, and West Palm Beach life with a little humor. Read it on the site under **The Daily Kava**.",
 };
 
@@ -373,7 +506,7 @@ const medicalTriggers = [
 // Path-based SPA Router (SEO-friendly URLs; Netlify /* → index.html)
 const VALID_ROUTES = new Set([
     'home', 'menu', 'new-here', 'kava-vs-kratom', 'events', 'visit', 'faq',
-    'the-daily-kava', 'the-daily-kava-article',
+    'event-detail', 'nearby', 'the-daily-kava', 'the-daily-kava-article',
     'what-is-kava', 'what-is-kratom',
     'plan-your-visit', 'private-events', 'press', 'gift-cards'
 ]);
@@ -393,13 +526,19 @@ function parsePathRoute() {
 
     let route = path === '/' ? 'home' : path.replace(/^\//, '');
     let dailySlug = null;
+    let eventSlug = null;
 
     if (route.startsWith('the-daily-kava/')) {
         dailySlug = route.slice('the-daily-kava/'.length).replace(/\/$/, '');
         route = 'the-daily-kava-article';
     }
 
-    return { route, dailySlug, path };
+    if (route.startsWith('events/')) {
+        eventSlug = route.slice('events/'.length).replace(/\/$/, '');
+        route = 'event-detail';
+    }
+
+    return { route, dailySlug, eventSlug, path };
 }
 
 function pathForRoute(route, dailySlug) {
@@ -416,7 +555,7 @@ function navigateTo(path, { replace = false } = {}) {
 }
 
 function handleRoute() {
-    let { route, dailySlug } = parsePathRoute();
+    let { route, dailySlug, eventSlug } = parsePathRoute();
 
     document.querySelectorAll('.spa-view').forEach(view => {
         view.style.display = 'none';
@@ -429,6 +568,7 @@ function handleRoute() {
         document.getElementById('view-home').style.display = 'block';
         route = 'home';
         dailySlug = null;
+        eventSlug = null;
         if (window.location.pathname !== '/') {
             history.replaceState(null, '', '/');
         }
@@ -444,6 +584,12 @@ function handleRoute() {
         const ok = renderDailyKavaArticle(dailySlug);
         if (!ok) {
             navigateTo('/the-daily-kava', { replace: true });
+            return;
+        }
+    } else if (route === 'event-detail') {
+        const ok = renderEventDetail(eventSlug);
+        if (!ok) {
+            navigateTo('/events', { replace: true });
             return;
         }
     } else {
@@ -475,6 +621,30 @@ function handleRoute() {
     window.dispatchEvent(new CustomEvent('tribal:navigation', {
         detail: { route, path: window.location.pathname }
     }));
+}
+
+function renderEventDetail(slug) {
+    const event = eventDatabase[slug];
+    const root = document.getElementById('event-detail-root');
+    if (!event || !root) return false;
+
+    const external = event.sourceUrl.startsWith('http');
+    root.innerHTML = `
+        <a class="daily-back" href="/events">← All events</a>
+        <p class="event-detail-eyebrow">${event.eyebrow}</p>
+        <h1>${event.title}</h1>
+        <p class="event-detail-intro">${event.intro}</p>
+        <div class="event-detail-card">
+            <p>${event.detail}</p>
+            <div class="event-detail-actions">
+                <a href="${event.sourceUrl}" ${external ? 'target="_blank" rel="noopener"' : ''} class="btn btn-secondary" data-conversion="events_view">${event.sourceLabel}</a>
+                <a href="https://www.google.com/maps/dir/?api=1&amp;destination=770+S+Military+Trail+Unit+A1,+West+Palm+Beach,+FL+33415" target="_blank" rel="noopener" class="btn btn-accent" data-conversion="directions">Get Directions</a>
+                <a href="sms:+15613550561?&amp;body=EVENTS%20%E2%80%94%20Please%20send%20me%20the%20next%20Tribal%20Kava%20event%20details." class="btn" data-conversion="event_inquiry">Text for Updates</a>
+            </div>
+        </div>
+    `;
+    injectSEO(event.seoKey);
+    return true;
 }
 
 function getDailyKavaSorted() {
@@ -971,22 +1141,95 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Interactive Quiz Option Selection
-    document.querySelectorAll('.quiz-card').forEach(card => {
-        card.addEventListener('click', () => {
-            // Remove active classes
-            document.querySelectorAll('.quiz-card').forEach(c => c.style.borderColor = 'var(--card-border)');
-            
-            // Activate clicked
-            card.style.borderColor = 'var(--electric-blue)';
-            const recommendation = card.getAttribute('data-recommendation');
-            const answerBox = document.getElementById('quiz-result-box');
-            if (answerBox) {
-                answerBox.style.display = 'block';
-                document.getElementById('quiz-recommendation-text').innerHTML = `<strong>Recommended drink:</strong> <span style="color:var(--text-cream);font-weight:700;">${recommendation}</span>`;
+    // Three-question drink finder. Recommendations are restricted to items and
+    // prices listed on the current public menu.
+    const drinkFinder = document.getElementById('drink-finder');
+    if (drinkFinder) {
+        const recommendations = {
+            kava: {
+                creamy: {
+                    first: ['Banana Pudding', '$10', 'Creamy banana and vanilla with a kava base—an approachable first crafted kava.'],
+                    regular: ['La Nube Tres Leches', '$10', 'Soft vanilla, cream, and cinnamon notes with a kava base.'],
+                    bold: ['Dubai Chocolate Pistachio', '$10', 'Dark chocolate and toasted pistachio in a richer crafted kava.']
+                },
+                fruity: {
+                    first: ['Blue Razz Coconut', '$10', 'Blue raspberry and coconut cream in a bright crafted kava.'],
+                    regular: ['Blue Razz Coconut', '$10', 'A fruit-forward crafted kava with coconut cream.'],
+                    bold: ['Strawberry Shortcake', '$10', 'Strawberry, cream, and cake-inspired flavor with a kava base.']
+                },
+                classic: {
+                    first: ['Single Kava Shell', '$6', 'The straightforward first pour. Ask the team to walk you through the shell tradition.'],
+                    regular: ['Double Kava Shell', '$9', 'A classic two-shell pour without extra flavoring.'],
+                    bold: ['K.O. Shell', '$10', 'The stronger house shell. Ask the team whether it fits your visit.']
+                }
+            },
+            kratom: {
+                creamy: {
+                    first: ['Kratom Punch · 16 oz', '$15', 'A fruit-forward kratom punch. Kratom is 21+ and valid ID is required.'],
+                    regular: ['Kratom Punch · 16 oz', '$15', 'The standard fruit-forward kratom punch. Kratom is 21+ and valid ID is required.'],
+                    bold: ['Kratom Punch · 24 oz', '$20', 'The larger fruit-forward punch. Kratom is 21+ and valid ID is required.']
+                },
+                fruity: {
+                    first: ['Passionfruit Mint', '$14', 'Passionfruit, mint, and citrus with brewed kratom tea. 21+ with valid ID.'],
+                    regular: ['Mango Chili Lime', '$14', 'Mango, lime, and a sweet-heat finish with brewed kratom tea. 21+ with valid ID.'],
+                    bold: ['Blackberry Dragonfruit Fizz', '$14', 'Blackberry, dragonfruit, and sparkle with brewed kratom tea. 21+ with valid ID.']
+                },
+                classic: {
+                    first: ['Small Brewed Kratom Tea', '$6.50', 'Choose red, white, or green leaf. Kratom is 21+ and valid ID is required.'],
+                    regular: ['Large Brewed Kratom Tea · 16 oz', '$8.75', 'Choose red, white, or green leaf. Kratom is 21+ and valid ID is required.'],
+                    bold: ['Large Brewed Kratom Tea · 16 oz', '$8.75', 'A larger classic brewed tea. Kratom is 21+ and valid ID is required.']
+                }
+            },
+            none: {
+                creamy: {
+                    first: ['Guava Lime', '$13', 'Pink guava and fresh key lime with no kava or kratom.'],
+                    regular: ['Watermelon Cucumber Lime', '$13', 'Watermelon, cucumber, and lime with no kava or kratom.'],
+                    bold: ['Jamaica Passionfruit', '$13', 'Hibiscus tea and tropical passionfruit with no kava or kratom.']
+                },
+                fruity: {
+                    first: ['Guava Lime', '$13', 'Pink guava and fresh key lime with no kava or kratom.'],
+                    regular: ['Watermelon Cucumber Lime', '$13', 'Watermelon, cucumber, and lime with no kava or kratom.'],
+                    bold: ['Jamaica Passionfruit', '$13', 'Hibiscus tea and tropical passionfruit with no kava or kratom.']
+                },
+                classic: {
+                    first: ['Guava Lime', '$13', 'A clean fruit-forward first order with no kava or kratom.'],
+                    regular: ['Watermelon Cucumber Lime', '$13', 'A crisp familiar combination with no kava or kratom.'],
+                    bold: ['Jamaica Passionfruit', '$13', 'A bright hibiscus and passionfruit signature with no kava or kratom.']
+                }
             }
+        };
+
+        drinkFinder.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const formData = new FormData(drinkFinder);
+            const botanical = formData.get('botanical');
+            const flavor = formData.get('flavor');
+            const vibe = formData.get('vibe');
+            const error = document.getElementById('drink-finder-error');
+
+            if (!botanical || !flavor || !vibe) {
+                error.hidden = false;
+                drinkFinder.querySelector('input:invalid')?.focus();
+                return;
+            }
+
+            error.hidden = true;
+            const [name, price, description] = recommendations[botanical][flavor][vibe];
+            document.getElementById('drink-finder-result-name').textContent = name;
+            document.getElementById('drink-finder-result-price').textContent = price;
+            document.getElementById('drink-finder-result-description').textContent = description;
+            const result = document.getElementById('drink-finder-result');
+            result.hidden = false;
+            result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            window.tribalTrack?.('drink_recommendation', {
+                botanical,
+                flavor,
+                vibe,
+                recommended_item: name,
+                recommended_price: price
+            });
         });
-    });
+    }
     
     // Coming Soon overlay dismiss
     const comingSoonOverlay = document.getElementById('coming-soon-overlay');

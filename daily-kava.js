@@ -10,22 +10,22 @@ const dailyKavaPosts = [
     metaDescription: 'Visit Tribal Kava Lounge on Military Trail in West Palm Beach. See hours, parking, first-timer tips, drinks, events, and directions.',
     dek: 'The useful answer: we are on Military Trail, parking is free, the menu is beginner-friendly, and nobody expects you to know the secret handshake.',
     date: '2026-08-30',
-    modified: '2026-08-30',
+    modified: '2026-08-31',
     category: 'West Palm Beach',
     readMin: 5,
     tags: ['kava bar west palm beach', 'military trail', 'first visit'],
     keywords: ['kava bar West Palm Beach', 'kava lounge West Palm Beach', 'kava near me', 'Military Trail lounge'],
     body: `
-      <p><strong>Tribal Kava Lounge is a non-alcoholic kava lounge at 770 S Military Trail, Unit A1, West Palm Beach, Florida 33415.</strong> We serve classic kava shells, creamy Kava Clouds, and fresh Agua Frescas in a room built for first visits, long conversations, and people who refuse to yell over a nightclub speaker.</p>
+      <p><strong>Tribal Kava Lounge is a non-alcoholic kava lounge at 770 S Military Trail, Unit A1, West Palm Beach, Florida 33415.</strong> We serve classic kava shells, crafted kava drinks with creamy flavors, and fresh fruit drinks in a room built for first visits, long conversations, and people who refuse to yell over a nightclub speaker.</p>
       <h2>What should a first-time guest expect?</h2>
-      <p>Walk in, tell the team what flavors you already like, and let them translate the menu into normal-person language. Sweet and creamy? Start with a Kava Cloud. Curious about the traditional format? Ask about a shell. Joining friends but skipping botanicals? An Agua Fresca keeps you in the group chat.</p>
+      <p>Walk in, tell the team what flavors you already like, and let them translate the menu into normal-person language. Sweet and creamy? Start with a crafted kava drink. Curious about the traditional format? Ask about a shell. Joining friends but skipping botanicals? A fruit drink keeps you in the group chat.</p>
       <p>No studying before arrival. There will not be a quiz. The only homework is deciding whether banana pudding counts as a personality.</p>
       <h2>Where is Tribal Kava Lounge?</h2>
       <p>We are in Unit A1 at <strong>770 S Military Trail</strong>, convenient to West Palm Beach, Lake Worth, Greenacres, Palm Springs, and Haverhill. The open lot has free on-site parking, so your evening does not begin with a parking-garage scavenger hunt.</p>
       <h2>When are you open?</h2>
       <p>Hours are <strong>8:00 AM–12:00 AM Sunday through Thursday</strong> and <strong>8:00 AM–1:00 AM Friday and Saturday</strong>. That covers morning laptop time, afternoon meetups, and the late-night friend who says “one more game” while already holding the pool cue.</p>
       <h2>What can you do besides order a drink?</h2>
-      <p>Use the free Wi‑Fi, play pool, settle into one of several seating areas, or plan around the weekly lineup: $2 shells Tuesday afternoon, karaoke Wednesday, a pool tournament Thursday, and Lotería Friday.</p>
+      <p>Use the free Wi‑Fi, play pool, settle into one of several seating areas, or plan around the confirmed lineup: $2 shells Tuesday afternoon, recurring karaoke announced on Instagram, and Lotería Friday.</p>
       <p><a href="/menu">Browse the menu</a> · <a href="/new-here">Read the beginner guide</a> · <a href="/visit">Get directions</a></p>
     `,
     faq: [
@@ -41,13 +41,13 @@ const dailyKavaPosts = [
     metaDescription: 'Looking for non-alcoholic nightlife in West Palm Beach? Find late hours, kava drinks, pool, karaoke, Lotería, and free parking.',
     dek: 'Dim lights, actual activities, late hours, and drinks with personality. Nobody has to pretend sparkling water is the event.',
     date: '2026-08-30',
-    modified: '2026-08-30',
+    modified: '2026-08-31',
     category: 'Nightlife',
     readMin: 5,
     tags: ['non-alcoholic nightlife', 'west palm beach', 'things to do'],
     keywords: ['non alcoholic nightlife West Palm Beach', 'alcohol free bar West Palm Beach', 'things to do at night West Palm Beach'],
     body: `
-      <p><strong>Yes, West Palm Beach has nightlife that does not revolve around alcohol.</strong> At Tribal Kava Lounge, the night can include kava drinks, Agua Frescas, pool tables, karaoke, Lotería, and enough seating to choose between “meet everyone” and “talk to exactly three people.”</p>
+      <p><strong>Yes, West Palm Beach has nightlife that does not revolve around alcohol.</strong> At Tribal Kava Lounge, the night can include kava drinks, fruit drinks, pool tables, karaoke, Lotería, and enough seating to choose between “meet everyone” and “talk to exactly three people.”</p>
       <h2>What makes a non-alcoholic night out feel like a real night out?</h2>
       <p>It needs more than a beverage list. It needs a room with a pulse: music, games, recurring events, late hours, and people who are not being hurried out because the café closed at 8:03 PM.</p>
       <p>Tribal stays open until midnight Sunday through Thursday and 1:00 AM Friday and Saturday. In other words, your plans can begin after dinner instead of ending with it.</p>
@@ -59,15 +59,15 @@ const dailyKavaPosts = [
         <li><strong>Friday:</strong> Lotería and big-table social chaos.</li>
       </ul>
       <h2>Can the whole group find something to order?</h2>
-      <p>Yes. The menu includes classic kava shells, dessert-style Kava Clouds, and zero-botanical Agua Frescas. The friend who came “just to hang” gets a real drink instead of a cup of tap water and a supporting-actor credit.</p>
+      <p>Yes. The menu includes classic kava shells, dessert-style crafted kava drinks, and zero-botanical fruit drinks. The friend who came “just to hang” gets a real drink instead of a cup of tap water and a supporting-actor credit.</p>
       <h2>Is it downtown?</h2>
       <p>Tribal is on South Military Trail in West Palm Beach, away from downtown parking puzzles. The address is 770 S Military Trail, Unit A1, with free parking in the open lot.</p>
       <p><a href="/events">See weekly events</a> · <a href="/menu">Pick a drink</a> · <a href="/visit">Plan the night</a></p>
     `,
     faq: [
-      { question: 'Is there non-alcoholic nightlife in West Palm Beach?', answer: 'Yes. Tribal Kava Lounge offers a non-alcoholic lounge setting with kava, Agua Frescas, pool, karaoke, Lotería, and late hours.' },
+      { question: 'Is there non-alcoholic nightlife in West Palm Beach?', answer: 'Yes. Tribal Kava Lounge offers a non-alcoholic lounge setting with kava, fruit drinks, pool, karaoke, Lotería, and late hours.' },
       { question: 'How late is Tribal Kava Lounge open?', answer: 'Tribal is open until midnight Sunday through Thursday and until 1 AM Friday and Saturday.' },
-      { question: 'Does the lounge have weekly events?', answer: 'Yes. The weekly lineup includes Tuesday shell specials, Wednesday karaoke, Thursday pool tournaments, and Friday Lotería.' }
+      { question: 'Does the lounge have weekly events?', answer: 'Yes. The confirmed lineup includes Tuesday shell specials, recurring karaoke announced on Instagram, and Friday Lotería.' }
     ]
   },
   {
@@ -77,7 +77,7 @@ const dailyKavaPosts = [
     metaDescription: 'Plan an alcohol-free date night in West Palm Beach with kava drinks, pool, karaoke, cozy seating, late hours, and free parking.',
     dek: 'A drink, an activity, somewhere to sit, and no waiter presenting the check while you are still telling the good story.',
     date: '2026-08-30',
-    modified: '2026-08-30',
+    modified: '2026-08-31',
     category: 'Date Night',
     readMin: 4,
     tags: ['date night', 'west palm beach', 'alcohol free'],
@@ -85,20 +85,20 @@ const dailyKavaPosts = [
     body: `
       <p><strong>For an alcohol-free date night in West Palm Beach, Tribal Kava Lounge combines drinks, games, events, and late hours in one stop.</strong> It works for first dates, established-couple dates, and “we left the house, please applaud” dates.</p>
       <h2>Why does a lounge work better than another dinner reservation?</h2>
-      <p>Dinner has a script: sit, order, eat, receive the check, wonder whether continuing the conversation in the parking lot looks strange. A lounge gives the evening room to breathe. Order a Kava Cloud or Agua Fresca, find a comfortable seating section, and add pool or an event when the conversation needs a side quest.</p>
+      <p>Dinner has a script: sit, order, eat, receive the check, wonder whether continuing the conversation in the parking lot looks strange. A lounge gives the evening room to breathe. Order a crafted kava drink or fruit drink, find a comfortable seating section, and add pool or an event when the conversation needs a side quest.</p>
       <h2>Which night should you choose?</h2>
-      <p><strong>Wednesday karaoke</strong> reveals confidence, musical taste, and whether either person can locate a key. <strong>Thursday pool</strong> adds friendly competition. <strong>Friday Lotería</strong> is ideal if your preferred love language is yelling at a card.</p>
+      <p><strong>Karaoke on announced nights</strong> reveals confidence, musical taste, and whether either person can locate a key. <strong>Friday Lotería</strong> is ideal if your preferred love language is yelling at a card.</p>
       <p>For a quieter plan, come earlier, use one of the seating areas, and let dessert-style drinks do the visual heavy lifting.</p>
       <h2>What should two first-timers order?</h2>
-      <p>Pick two different Kava Clouds and trade tastes, or pair one Cloud with an Agua Fresca. If you want the classic route, ask the team to explain kava shells. This is a bar where asking questions makes you prepared, not uncool.</p>
+      <p>Pick two different crafted kava drinks and trade tastes, or pair one crafted kava drink with a fruit drink. If you want the classic route, ask the team to explain kava shells. This is a bar where asking questions makes you prepared, not uncool.</p>
       <h2>What are the practical details?</h2>
       <p>Tribal is at 770 S Military Trail, Unit A1. Parking is free. Hours run until midnight Sunday through Thursday and 1:00 AM Friday and Saturday. Translation: no downtown garage fee, no sprinting through a forty-five-minute date, no problem.</p>
       <p><a href="/menu">See date-night drinks</a> · <a href="/events">Choose an event</a> · <a href="/visit">Get directions</a></p>
     `,
     faq: [
-      { question: 'What is a good alcohol-free date idea in West Palm Beach?', answer: 'A lounge date at Tribal can include kava drinks or Agua Frescas, pool, weekly events, late hours, and several seating areas.' },
+      { question: 'What is a good alcohol-free date idea in West Palm Beach?', answer: 'A lounge date at Tribal can include kava drinks or fruit drinks, pool, weekly events, late hours, and several seating areas.' },
       { question: 'Is parking free for date night?', answer: 'Yes. Tribal Kava Lounge has free on-site parking in its open lot.' },
-      { question: 'Is there anything to do besides sit and talk?', answer: 'Yes. Guests can play pool or visit during karaoke, pool tournament, or Lotería nights.' }
+      { question: 'Is there anything to do besides sit and talk?', answer: 'Yes. Guests can play pool or visit during karaoke, rotating game nights, or Friday Lotería.' }
     ]
   },
   {
@@ -108,7 +108,7 @@ const dailyKavaPosts = [
     metaDescription: 'Find a late-night study and laptop spot in West Palm Beach with free Wi-Fi, seating, drinks, parking, and hours until midnight or later.',
     dek: 'Free Wi‑Fi, actual tables, late hours, and drinks that do not arrive in a paper cup with your name spelled as a small cry for help.',
     date: '2026-08-30',
-    modified: '2026-08-30',
+    modified: '2026-08-31',
     category: 'Study & Work',
     readMin: 4,
     tags: ['study spot', 'free wifi', 'west palm beach'],
@@ -122,7 +122,7 @@ const dailyKavaPosts = [
         <li>Free Wi‑Fi</li>
         <li>Multiple seating areas</li>
         <li>Free open-lot parking</li>
-        <li>Kava shells, Kava Clouds, and Agua Frescas</li>
+        <li>Kava shells, crafted kava drinks, and fruit drinks</li>
         <li>Hours from 8:00 AM until midnight or later</li>
       </ul>
       <h2>Can a study group meet here?</h2>
@@ -144,7 +144,7 @@ const dailyKavaPosts = [
     metaDescription: 'Looking for kava near Lake Worth, Greenacres, Palm Springs, or Haverhill? Visit Tribal Kava Lounge on Military Trail in West Palm Beach.',
     dek: 'One useful local guide instead of four suspiciously identical pages pretending every city needs its own paragraph about parking.',
     date: '2026-08-30',
-    modified: '2026-08-30',
+    modified: '2026-08-31',
     category: 'Nearby',
     readMin: 4,
     tags: ['lake worth', 'greenacres', 'palm springs', 'haverhill'],
@@ -154,7 +154,7 @@ const dailyKavaPosts = [
       <h2>Why does the Military Trail location work for nearby guests?</h2>
       <p>Military Trail connects the communities west of downtown without requiring a ceremonial lap around a parking garage. Tribal has an open on-site lot, so the final step is “park and walk in,” a beloved two-part process.</p>
       <h2>What is worth driving over for?</h2>
-      <p>The menu covers traditional-style kava shells, creamy Kava Clouds, and bright Agua Frescas. Weekly events add a reason to choose a particular night: Tuesday shell specials, Wednesday karaoke, Thursday pool, and Friday Lotería.</p>
+      <p>The menu covers traditional-style kava shells, crafted kava drinks with creamy flavors, and bright fruit drinks. Events add a reason to choose a particular night: Tuesday shell specials, recurring karaoke with times announced on Instagram, and Friday Lotería.</p>
       <h2>Is Tribal open late?</h2>
       <p>Yes. The lounge is open from 8:00 AM to midnight Sunday through Thursday, then 8:00 AM to 1:00 AM Friday and Saturday. That makes it useful for an afternoon meetup, an after-dinner plan, or the friend group that decides what it is doing only after everyone has already left home.</p>
       <h2>What should a first-timer do?</h2>
@@ -168,33 +168,33 @@ const dailyKavaPosts = [
     ]
   },
   {
-    slug: 'what-is-a-kava-cloud',
-    title: 'What Is a Kava Cloud? The Dessert-Drink Answer',
-    seoTitle: 'What Is a Kava Cloud? Beginner Drink Guide',
-    metaDescription: 'A Kava Cloud is Tribal Kava Lounge’s creamy, dessert-style take on a kava drink. Learn the flavors, format, and first-order basics.',
+    slug: 'crafted-kava-drinks',
+    title: 'Crafted Kava Drinks: The Dessert-Style Answer',
+    seoTitle: 'Crafted Kava Drinks | Beginner Kava Menu Guide',
+    metaDescription: 'Tribal Kava Lounge’s crafted kava drinks pair a kava base with creamy, familiar flavors. Learn the menu and first-order basics.',
     dek: 'Kava underneath. Dessert-shop confidence on top. Much easier to introduce than a bowl of beige mystery.',
     date: '2026-08-30',
-    modified: '2026-08-30',
+    modified: '2026-08-31',
     category: 'Kava 101',
     readMin: 4,
-    tags: ['kava cloud', 'kava drinks', 'beginners'],
-    keywords: ['what is a kava cloud', 'kava cloud drink', 'beginner kava drink', 'kava drinks West Palm Beach'],
+    tags: ['crafted kava', 'kava drinks', 'beginners'],
+    keywords: ['crafted kava drinks', 'dessert-style kava drink', 'beginner kava drink', 'kava drinks West Palm Beach'],
     body: `
-      <p><strong>A Kava Cloud is Tribal Kava Lounge’s creamy, dessert-style kava drink.</strong> It combines a kava base with familiar flavor profiles so a first order can feel more like choosing dessert and less like identifying an unknown root in a lineup.</p>
-      <h2>Why call it a Cloud?</h2>
-      <p>Texture and presentation. Clouds are smooth, creamy, and built around flavors people already recognize. The name also sounds better than “botanical beige, but make it fashion.”</p>
+      <p><strong>A crafted kava drink is Tribal Kava Lounge’s creamy, dessert-style kava drink.</strong> It combines a kava base with familiar flavor profiles so a first order can feel more like choosing dessert and less like identifying an unknown root in a lineup.</p>
+      <h2>What makes it “crafted”?</h2>
+      <p>Texture, presentation, and familiar flavor. These drinks are smooth, creamy, and built around flavors people already recognize. That also sounds better than “botanical beige, but make it fashion.”</p>
       <h2>What flavors are on the menu?</h2>
-      <p>Featured Kava Clouds include Banana Pudding, Tres Leches, Strawberry Shortcake, Blue Razz Coconut, and Dubai Chocolate Pistachio. The lineup gives sweet, fruity, and chocolate-first people somewhere obvious to begin.</p>
-      <h2>How is a Cloud different from a kava shell?</h2>
-      <p>A shell is the classic, more direct kava format. A Cloud is the lounge’s flavor-forward version. Both begin with kava; the difference is the presentation and taste experience.</p>
-      <h2>Which Cloud should a first-timer order?</h2>
+      <p>Featured crafted kava drinks include Banana Pudding, Tres Leches, Strawberry Shortcake, Blue Razz Coconut, and Dubai Chocolate Pistachio. The lineup gives sweet, fruity, and chocolate-first people somewhere obvious to begin.</p>
+      <h2>How is a crafted drink different from a kava shell?</h2>
+      <p>A shell is the classic, more direct kava format. A crafted kava drink is the lounge’s flavor-forward version. Both begin with kava; the difference is the presentation and taste experience.</p>
+      <h2>Which crafted kava drink should a first-timer order?</h2>
       <p>Choose the flavor you would order anywhere else. Banana-pudding person? The answer has already introduced itself. Prefer bright and colorful? Blue Razz Coconut is not known for entering quietly. Want something rich? Dubai Chocolate Pistachio has a full name because subtlety was not invited.</p>
-      <p><a href="/menu">See every featured Kava Cloud</a> · <a href="/what-is-kava">Learn what kava is</a> · <a href="/new-here">Plan a first order</a></p>
+      <p><a href="/menu">See every featured crafted kava drink</a> · <a href="/what-is-kava">Learn what kava is</a> · <a href="/new-here">Plan a first order</a></p>
     `,
     faq: [
-      { question: 'What is a Kava Cloud?', answer: 'A Kava Cloud is a creamy, dessert-style drink made with a kava base and familiar flavors.' },
-      { question: 'Is a Kava Cloud the same as a kava shell?', answer: 'No. A shell is a more traditional-style format, while a Cloud is creamy and flavor-forward.' },
-      { question: 'What Kava Cloud flavors does Tribal serve?', answer: 'Featured flavors include Banana Pudding, Tres Leches, Strawberry Shortcake, Blue Razz Coconut, and Dubai Chocolate Pistachio.' }
+      { question: 'What is a crafted kava drink?', answer: 'A crafted kava drink is a creamy, dessert-style drink made with a kava base and familiar flavors.' },
+      { question: 'Is a crafted kava drink the same as a kava shell?', answer: 'No. A shell is a more traditional-style format, while a crafted kava drink is creamy and flavor-forward.' },
+      { question: 'What crafted kava drink flavors does Tribal serve?', answer: 'Featured flavors include Banana Pudding, Tres Leches, Strawberry Shortcake, Blue Razz Coconut, and Dubai Chocolate Pistachio.' }
     ]
   },
   {
@@ -204,7 +204,7 @@ const dailyKavaPosts = [
     metaDescription: 'First time at a kava lounge? Get quick answers about what to order, taste, parking, hours, events, Wi-Fi, groups, and what to expect.',
     dek: 'What do I order? Where do I sit? Is there a secret greeting? We answer the useful questions and retire the imaginary ones.',
     date: '2026-08-30',
-    modified: '2026-08-30',
+    modified: '2026-08-31',
     category: 'First Visit',
     readMin: 6,
     tags: ['first time kava lounge', 'faq', 'what to expect'],
@@ -212,13 +212,13 @@ const dailyKavaPosts = [
     body: `
       <p><strong>Your first kava-lounge visit is simple: walk in, ask for a flavor recommendation, order at the bar, and choose a seat.</strong> There is no secret greeting. Nobody bangs a shell on the table and asks you to explain island geography.</p>
       <h2>What should I order first?</h2>
-      <p>If you like sweet drinks, begin with a Kava Cloud. If you want the classic format, ask about a shell. If you want no botanicals at all, choose an Agua Fresca. Flavor preference is a better starting point than pretending you studied the menu in advance.</p>
+      <p>If you like sweet drinks, begin with a crafted kava drink. If you want the classic format, ask about a shell. If you want no botanicals at all, choose a fruit drink. Flavor preference is a better starting point than pretending you studied the menu in advance.</p>
       <h2>What does kava taste like?</h2>
-      <p>Traditional-style kava is earthy, peppery, and direct. Kava Clouds layer in creamy, recognizable flavors for a softer first introduction.</p>
+      <p>Traditional-style kava is earthy, peppery, and direct. Crafted kava drinks layer in creamy, recognizable flavors for a softer first introduction.</p>
       <h2>Can I come alone?</h2>
       <p>Yes. Grab a seat, bring a book or laptop, play pool, or visit during an event. Coming alone is normal. Staring at the door until a fictional entourage appears is optional.</p>
       <h2>Can I bring a group?</h2>
-      <p>Yes. Multiple seating sections help small groups spread out, and the menu includes Agua Frescas for friends who want to join without ordering kava.</p>
+      <p>Yes. Multiple seating sections help small groups spread out, and the menu includes fruit drinks for friends who want to join without ordering kava.</p>
       <h2>Do you have Wi‑Fi and parking?</h2>
       <p>Yes to both: free Wi‑Fi inside and free parking in the open lot outside.</p>
       <h2>Where and when?</h2>
@@ -226,40 +226,38 @@ const dailyKavaPosts = [
       <p><a href="/new-here">Open the complete beginner guide</a> · <a href="/menu">View the menu</a> · <a href="/plan-your-visit">Plan the visit</a></p>
     `,
     faq: [
-      { question: 'What should I order the first time I visit a kava lounge?', answer: 'Start with a flavor you already enjoy. Tribal offers creamy Kava Clouds, classic shells, and zero-botanical Agua Frescas.' },
+      { question: 'What should I order the first time I visit a kava lounge?', answer: 'Start with a flavor you already enjoy. Tribal offers crafted kava drinks, classic shells, and zero-botanical fruit drinks.' },
       { question: 'Can I visit a kava lounge alone?', answer: 'Yes. Guests can sit, read, work with free Wi-Fi, play pool, or join a weekly event.' },
       { question: 'Do I need to know anything before arriving?', answer: 'No. Tell the team it is your first visit and ask for a flavor-first menu walkthrough.' }
     ]
   },
   {
     slug: 'weekly-events-west-palm-beach-kava-lounge',
-    title: 'Four Nights, Four Personalities: Tribal’s Weekly Event Lineup',
+    title: 'The Real Weekly Lineup at Tribal, Minus the Imaginary Calendar',
     seoTitle: 'Weekly Kava Lounge Events in West Palm Beach',
-    metaDescription: 'Find weekly events in West Palm Beach: $2 kava shells Tuesday, karaoke Wednesday, pool Thursday, and Lotería Friday at Tribal.',
-    dek: 'Tuesday saves money. Wednesday tests the microphone. Thursday settles things on felt. Friday lets the cards decide.',
+    metaDescription: 'Find confirmed weekly events at Tribal Kava Lounge: $2 kava shells Tuesday, recurring karaoke, and Lotería with Tony every Friday at 9 PM.',
+    dek: 'Tuesday saves money. Karaoke tests the microphone. Friday lets Tony and the cards decide.',
     date: '2026-08-30',
-    modified: '2026-08-30',
+    modified: '2026-08-31',
     category: 'Events',
     readMin: 4,
-    tags: ['events', 'karaoke', 'pool', 'loteria'],
-    keywords: ['weekly events West Palm Beach', 'karaoke West Palm Beach Wednesday', 'pool tournament West Palm Beach', 'Lotería West Palm Beach'],
+    tags: ['events', 'karaoke', 'loteria'],
+    keywords: ['weekly events West Palm Beach', 'karaoke West Palm Beach', 'Lotería West Palm Beach', 'Friday events West Palm Beach'],
     body: `
-      <p><strong>Tribal Kava Lounge hosts recurring events Tuesday through Friday in West Palm Beach.</strong> The weekly schedule gives you four different excuses to leave the house, which is generous because most group chats struggle to produce one.</p>
+      <p><strong>Tribal Kava Lounge has two fixed weekly anchors plus recurring karaoke in West Palm Beach.</strong> That is enough structure to make plans without inventing a calendar the lounge never promised.</p>
       <h2>What happens Tuesday?</h2>
       <p>Single kava shells are <strong>$2 from 2:00–5:00 PM</strong>. It is the easiest time to try the classic format, bring a curious friend, or turn an ordinary afternoon into something with a receipt you will actually enjoy reading.</p>
-      <h2>What happens Wednesday?</h2>
-      <p>Wednesday is karaoke night. Choose the song you know, not the song you respect academically. Your friends will thank you around verse two.</p>
-      <h2>What happens Thursday?</h2>
-      <p>Thursday brings the pool tournament. Show up ready to play, share the tables, and discover whether your confident pre-shot explanation survives contact with the cue ball.</p>
+      <h2>When is karaoke?</h2>
+      <p>Karaoke is recurring, but the next start time is announced by <a href="https://www.instagram.com/tribalkavalounge" target="_blank" rel="noopener">@TribalKavaLounge</a>. Check before leaving, then choose the song you know—not the song you respect academically.</p>
       <h2>What happens Friday?</h2>
-      <p>Friday is Lotería: cards, community, and a room that gets louder in exactly the right way. New players are welcome. Competitive aunts remain the benchmark.</p>
+      <p>Friday is Lotería at <strong>9 PM</strong>, hosted by Tony. Boards are <strong>$1 each</strong>. New players are welcome. Competitive aunts remain the benchmark.</p>
       <h2>Where are the events?</h2>
-      <p>All four happen at Tribal Kava Lounge, 770 S Military Trail, Unit A1, West Palm Beach. Parking is free in the open lot.</p>
+      <p>Everything happens at Tribal Kava Lounge, 770 S Military Trail, Unit A1, West Palm Beach. Parking is free in the open lot.</p>
       <p><a href="/events">Check the events page</a> · <a href="/menu">Choose an event-night drink</a> · <a href="/visit">Get directions</a></p>
     `,
     faq: [
-      { question: 'Does Tribal Kava Lounge have weekly events?', answer: 'Yes. Tribal hosts a Tuesday shell special, Wednesday karaoke, Thursday pool tournament, and Friday Lotería.' },
-      { question: 'When is karaoke in West Palm Beach at Tribal?', answer: 'Karaoke happens every Wednesday night at Tribal Kava Lounge.' },
+      { question: 'Does Tribal Kava Lounge have weekly events?', answer: 'Yes. Tribal hosts a Tuesday shell special, recurring karaoke announced on Instagram, and Friday Lotería with Tony at 9 PM.' },
+      { question: 'When is karaoke in West Palm Beach at Tribal?', answer: 'Karaoke is recurring; check @TribalKavaLounge on Instagram for the next confirmed date and start time.' },
       { question: 'When are kava shells $2?', answer: 'Single kava shells are $2 every Tuesday from 2 PM to 5 PM.' }
     ]
   },
@@ -267,10 +265,10 @@ const dailyKavaPosts = [
     slug: 'private-events-west-palm-beach-alcohol-free',
     title: 'Private Events in West Palm Beach Without Mandatory Champagne',
     seoTitle: 'Alcohol-Free Private Events in West Palm Beach',
-    metaDescription: 'Host an alcohol-free private event in West Palm Beach with lounge seating, botanical drinks, Agua Frescas, pool, and free parking.',
+    metaDescription: 'Host an alcohol-free private event in West Palm Beach with lounge seating, botanical drinks, fruit drinks, pool, and free parking.',
     dek: 'Birthdays, creator meetups, team nights, and celebrations where the venue has more personality than a beige conference room.',
     date: '2026-08-30',
-    modified: '2026-08-30',
+    modified: '2026-08-31',
     category: 'Groups',
     readMin: 4,
     tags: ['private events', 'west palm beach', 'groups'],
@@ -280,7 +278,7 @@ const dailyKavaPosts = [
       <h2>What kinds of events fit the space?</h2>
       <p>Think birthdays, small company gatherings, club meetups, content sessions, brand pop-ups, and friend-group celebrations. If the plan benefits from comfortable seating and an activity people can do with their hands, the room is already helping.</p>
       <h2>What can guests order?</h2>
-      <p>The menu includes classic kava shells, creamy Kava Clouds, and Agua Frescas. That range gives the host an easy answer when someone asks, “But what if I just want something fruity?” There is always someone. We respect their consistency.</p>
+      <p>The menu includes classic kava shells, crafted kava drinks, and fruit drinks. That range gives the host an easy answer when someone asks, “But what if I just want something fruity?” There is always someone. We respect their consistency.</p>
       <h2>What amenities are included?</h2>
       <p>Multiple seating sections, free Wi‑Fi, pool tables, and an open lot with free parking. The Military Trail address is easy to share and does not require a twelve-slide arrival guide.</p>
       <h2>How do I ask about a date?</h2>
@@ -297,30 +295,30 @@ const dailyKavaPosts = [
     slug: 'what-does-kava-taste-like',
     title: 'What Does Kava Taste Like? An Honest Answer With No Brochure Voice',
     seoTitle: 'What Does Kava Taste Like? Honest Beginner Guide',
-    metaDescription: 'Traditional kava tastes earthy, peppery, and slightly bitter. Learn how shells compare with creamy, flavored Kava Clouds for beginners.',
+    metaDescription: 'Traditional kava tastes earthy, peppery, and slightly bitter. Learn how shells compare with creamy, flavored crafted kava drinks for beginners.',
     dek: 'Earthy is accurate. “Like licking a garden” is dramatic. Both statements can coexist peacefully.',
     date: '2026-08-30',
-    modified: '2026-08-30',
+    modified: '2026-08-31',
     category: 'Kava 101',
     readMin: 4,
-    tags: ['kava taste', 'kava shells', 'kava clouds'],
+    tags: ['kava taste', 'kava shells', 'crafted kava drinks'],
     keywords: ['what does kava taste like', 'kava flavor', 'kava for beginners', 'kava shell taste'],
     body: `
       <p><strong>Traditional-style kava tastes earthy, peppery, and slightly bitter.</strong> It is a root drink, and the root has declined every opportunity to taste like a strawberry milkshake.</p>
       <h2>Why does kava taste earthy?</h2>
       <p>Kava is prepared from the root of the <em>Piper methysticum</em> plant. A direct preparation keeps that root-forward flavor in the cup. People who enjoy bold tea or black coffee often understand the assignment quickly. Others prefer a more familiar introduction.</p>
-      <h2>What is the difference between a shell and a Cloud?</h2>
-      <p>A shell gives you the classic, straightforward flavor. A Kava Cloud adds creamy texture and dessert-inspired profiles such as Banana Pudding, Tres Leches, Strawberry Shortcake, Blue Razz Coconut, or Dubai Chocolate Pistachio.</p>
+      <h2>What is the difference between a shell and a crafted kava drink?</h2>
+      <p>A shell gives you the classic, straightforward flavor. A crafted kava drink adds creamy texture and dessert-inspired profiles such as Banana Pudding, Tres Leches, Strawberry Shortcake, Blue Razz Coconut, or Dubai Chocolate Pistachio.</p>
       <p>Neither order is a character test. Choosing the flavored one does not disappoint an ancient committee. It means you wanted banana pudding.</p>
       <h2>How should a beginner choose?</h2>
-      <p>Start with your normal taste preferences. Sweet and creamy points toward a Cloud. Curious and traditional points toward a shell. Undecided points toward asking the team, which remains the most efficient technology in the building.</p>
+      <p>Start with your normal taste preferences. Sweet and creamy points toward a crafted kava drink. Curious and traditional points toward a shell. Undecided points toward asking the team, which remains the most efficient technology in the building.</p>
       <h2>Can I try a shell for less?</h2>
       <p>Every Tuesday from 2:00–5:00 PM, single shells are $2 at Tribal. It is a friendly window for meeting the classic flavor without turning the decision into a major financial summit.</p>
-      <p><a href="/menu">Compare shells and Clouds</a> · <a href="/what-is-kava">Read the kava beginner guide</a> · <a href="/events">See $2 Tuesday details</a></p>
+      <p><a href="/menu">Compare shells and crafted drinks</a> · <a href="/what-is-kava">Read the kava beginner guide</a> · <a href="/events">See $2 Tuesday details</a></p>
     `,
     faq: [
       { question: 'What does traditional kava taste like?', answer: 'Traditional-style kava is commonly described as earthy, peppery, and slightly bitter.' },
-      { question: 'Do Kava Clouds taste different from shells?', answer: 'Yes. Kava Clouds add creamy texture and familiar dessert-style flavors, while shells are more direct and root-forward.' },
+      { question: 'Do crafted kava drinks taste different from shells?', answer: 'Yes. Crafted kava drinks add creamy texture and familiar dessert-style flavors, while shells are more direct and root-forward.' },
       { question: 'What is a good first kava flavor?', answer: 'Choose a familiar flavor profile. Banana Pudding and Tres Leches suit creamy preferences, while Blue Razz Coconut is brighter and fruitier.' }
     ]
   },
@@ -331,15 +329,15 @@ const dailyKavaPosts = [
     metaDescription: 'Need things to do in West Palm Beach after 9 PM? Try late-night kava drinks, pool, karaoke, Lotería, Wi-Fi, and lounge seating.',
     dek: 'The museums are closed, dinner is over, and nobody wants to stand in a loud line. Good news: the night still has options.',
     date: '2026-08-30',
-    modified: '2026-08-30',
+    modified: '2026-08-31',
     category: 'After Dark',
     readMin: 4,
     tags: ['after 9 pm', 'west palm beach', 'late night'],
     keywords: ['things to do West Palm Beach after 9 PM', 'late night West Palm Beach', 'night activities West Palm Beach'],
     body: `
-      <p><strong>After 9 PM in West Palm Beach, Tribal Kava Lounge offers kava drinks, Agua Frescas, pool, weekly events, Wi‑Fi, and several seating areas until midnight or later.</strong> This is useful information for anyone whose evening does not naturally end when the entrées disappear.</p>
+      <p><strong>After 9 PM in West Palm Beach, Tribal Kava Lounge offers kava drinks, fruit drinks, pool, weekly events, Wi‑Fi, and several seating areas until midnight or later.</strong> This is useful information for anyone whose evening does not naturally end when the entrées disappear.</p>
       <h2>What can you actually do late at night?</h2>
-      <p>Play pool. Catch karaoke on Wednesday. Join the Thursday tournament. Learn Lotería on Friday. Bring a friend and compare Kava Clouds. Bring several friends and discover who becomes a rules expert after reading one card.</p>
+      <p>Play pool. Catch karaoke when the next time is announced. Learn Lotería on Friday. Bring a friend and compare crafted kava drinks. Bring several friends and discover who becomes a rules expert after reading one card.</p>
       <h2>What if you want a quieter night?</h2>
       <p>Choose a seating section, bring a book or laptop, and order something from the bar. Not every late-night plan needs a stage, a velvet rope, or a person holding a tiny flashlight near a clipboard.</p>
       <h2>How late is the lounge open?</h2>
@@ -349,9 +347,9 @@ const dailyKavaPosts = [
       <p><a href="/events">Find tonight’s event</a> · <a href="/menu">See late-night drinks</a> · <a href="/visit">Open directions</a></p>
     `,
     faq: [
-      { question: 'What can I do in West Palm Beach after 9 PM without going to a traditional bar?', answer: 'Visit Tribal Kava Lounge for kava drinks, Agua Frescas, pool, weekly events, Wi-Fi, and lounge seating.' },
+      { question: 'What can I do in West Palm Beach after 9 PM without going to a traditional bar?', answer: 'Visit Tribal Kava Lounge for kava drinks, fruit drinks, pool, weekly events, Wi-Fi, and lounge seating.' },
       { question: 'Is Tribal Kava Lounge open after 9 PM?', answer: 'Yes. Tribal stays open until midnight Sunday through Thursday and 1 AM Friday and Saturday.' },
-      { question: 'Are there activities at night?', answer: 'Yes. Depending on the night, guests can join karaoke, a pool tournament, or Lotería.' }
+      { question: 'Are there activities at night?', answer: 'Yes. Depending on the night, guests can join karaoke, play pool, catch a rotating game night, or join Friday Lotería.' }
     ]
   },
   {
@@ -361,7 +359,7 @@ const dailyKavaPosts = [
     metaDescription: 'Get $2 single kava shells every Tuesday from 2–5 PM at Tribal Kava Lounge on Military Trail in West Palm Beach, with free parking.',
     dek: 'Single shells. Two dollars. Tuesday afternoon. A promotion so direct it barely required a copywriter, yet here we are.',
     date: '2026-08-30',
-    modified: '2026-08-30',
+    modified: '2026-08-31',
     category: 'Tuesday',
     readMin: 3,
     tags: ['$2 tuesday', 'kava shells', 'west palm beach'],
@@ -369,13 +367,13 @@ const dailyKavaPosts = [
     body: `
       <p><strong>Every Tuesday from 2:00 PM to 5:00 PM, single kava shells are $2 at Tribal Kava Lounge in West Palm Beach.</strong> That is the deal. No treasure map, no phrase you have to whisper, no requirement to bring a cousin named Derek.</p>
       <h2>What is a kava shell?</h2>
-      <p>A shell is the classic, straightforward kava format. Compared with a creamy Kava Cloud, it keeps the earthy, root-forward flavor closer to center stage.</p>
+      <p>A shell is the classic, straightforward kava format. Compared with a creamy, crafted kava drink, it keeps the earthy, root-forward flavor closer to center stage.</p>
       <h2>Why is Tuesday good for a first visit?</h2>
       <p>The afternoon window makes it easy to try a shell, ask the team questions, use the Wi‑Fi, or meet a friend without building a full weekend operation. At $2 per single shell, curiosity gets a very reasonable cover charge.</p>
       <h2>Where does the special happen?</h2>
       <p>At Tribal Kava Lounge, 770 S Military Trail, Unit A1, West Palm Beach, FL 33415. Parking is free in the open lot.</p>
       <h2>What if I prefer a flavored drink?</h2>
-      <p>Browse the Kava Clouds on the regular menu. Tuesday belongs to the shell special, but Banana Pudding does not stop existing simply because the calendar changed.</p>
+      <p>Browse the crafted kava drinks on the regular menu. Tuesday belongs to the shell special, but Banana Pudding does not stop existing simply because the calendar changed.</p>
       <p><a href="/events">See Tuesday details</a> · <a href="/menu">Compare the full menu</a> · <a href="/visit">Get directions</a></p>
     `,
     faq: [
@@ -388,20 +386,20 @@ const dailyKavaPosts = [
     slug: 'kava-lounge-west-palm-beach-groups',
     title: 'Where to Meet Friends in West Palm Beach When Nobody Can Pick a Place',
     seoTitle: 'Group Hangout Spot in West Palm Beach | Tribal',
-    metaDescription: 'Meet friends in West Palm Beach at a non-alcoholic lounge with kava drinks, Agua Frescas, pool, events, Wi-Fi, seating, and parking.',
+    metaDescription: 'Meet friends in West Palm Beach at a non-alcoholic lounge with kava drinks, fruit drinks, pool, events, Wi-Fi, seating, and parking.',
     dek: 'One friend wants an activity. One wants a quiet seat. One just sent “I’m down for whatever.” We built for this exact administrative crisis.',
     date: '2026-08-30',
-    modified: '2026-08-30',
+    modified: '2026-08-31',
     category: 'Groups',
     readMin: 4,
     tags: ['group hangout', 'west palm beach', 'friends'],
     keywords: ['group hangout West Palm Beach', 'places to meet friends West Palm Beach', 'non alcoholic group activities'],
     body: `
-      <p><strong>Tribal Kava Lounge is a flexible group hangout in West Palm Beach with multiple seating areas, pool tables, weekly events, free Wi‑Fi, and a menu that includes both kava drinks and Agua Frescas.</strong> It solves the group-planning problem by giving everyone a different reason to agree.</p>
+      <p><strong>Tribal Kava Lounge is a flexible group hangout in West Palm Beach with multiple seating areas, pool tables, weekly events, free Wi‑Fi, and a menu that includes both kava drinks and fruit drinks.</strong> It solves the group-planning problem by giving everyone a different reason to agree.</p>
       <h2>What can a group do there?</h2>
-      <p>Play pool, catch an event, compare Kava Cloud flavors, settle into a larger seating section, or simply talk without a server needing the table back. The room supports activity people and sitting people, one of civilization’s more difficult alliances.</p>
+      <p>Play pool, catch an event, compare crafted kava drink flavors, settle into a larger seating section, or simply talk without a server needing the table back. The room supports activity people and sitting people, one of civilization’s more difficult alliances.</p>
       <h2>What if someone does not want kava?</h2>
-      <p>Order an Agua Fresca. Guava Lime and other fruit-forward options keep non-kava friends involved with a real menu choice.</p>
+      <p>Order a fruit drink. Guava Lime and other fruit-forward options keep non-kava friends involved with a real menu choice.</p>
       <h2>Which event works best for groups?</h2>
       <p>Karaoke Wednesday suits the bold group. Pool Thursday suits the competitive group. Lotería Friday suits the group that becomes competitive without prior notice. Tuesday’s $2 shell window works for the economically organized group, a rare but admirable species.</p>
       <h2>Are parking and hours group-friendly?</h2>
@@ -410,7 +408,7 @@ const dailyKavaPosts = [
     `,
     faq: [
       { question: 'Is Tribal Kava Lounge good for groups?', answer: 'Yes. Tribal has multiple seating sections, pool tables, weekly events, free Wi-Fi, and a varied drink menu.' },
-      { question: 'Are there options for friends who do not want kava?', answer: 'Yes. Agua Frescas provide fruit-forward, zero-botanical choices.' },
+      { question: 'Are there options for friends who do not want kava?', answer: 'Yes. fruit drinks provide fruit-forward, zero-botanical choices.' },
       { question: 'Can a group reserve a private event?', answer: 'Groups can submit an inquiry through the Tribal private-events page.' }
     ]
   }

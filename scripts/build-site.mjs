@@ -13,7 +13,8 @@ const files = [
   'analytics.js',
   'favicon.svg',
   'robots.txt',
-  'staticwebapp.config.json'
+  'staticwebapp.config.json',
+  '34a68ae0477ea10ed9d8a543952e0cdb.txt'
 ];
 
 await rm(output, { recursive: true, force: true });
@@ -25,7 +26,8 @@ const origin = 'https://www.thetribalkavalounge.com';
 const staticPaths = [
   '/', '/menu', '/new-here', '/kava-vs-kratom', '/what-is-kava', '/what-is-kratom',
   '/events', '/visit', '/plan-your-visit', '/private-events', '/press', '/gift-cards',
-  '/faq', '/the-daily-kava'
+  '/faq', '/nearby', '/events/two-dollar-tuesday', '/events/friday-loteria', '/events/karaoke',
+  '/the-daily-kava'
 ];
 const dailySource = await readFile(path.join(root, 'daily-kava.js'), 'utf8');
 const dailyEntries = [...dailySource.matchAll(/\n\s*slug:\s*'([^']+)'[\s\S]*?\n\s*modified:\s*'(\d{4}-\d{2}-\d{2})'/g)]

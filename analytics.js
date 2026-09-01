@@ -7,6 +7,7 @@
   const hasAnalytics = /^G-[A-Z0-9]+$/i.test(measurementId);
   const applicationInsightsConnectionString = String(config.applicationInsightsConnectionString || '').trim();
   const ApplicationInsights = window.Microsoft?.ApplicationInsights?.ApplicationInsights;
+  const isProductionHost = ['thetribalkavalounge.com', 'www.thetribalkavalounge.com'].includes(window.location.hostname);
   let azureInsights = null;
   const campaignKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
   const campaignStorageKey = 'tribal_campaign_attribution';
@@ -36,7 +37,7 @@
 
   const attribution = currentCampaign();
 
-  if (/^InstrumentationKey=/i.test(applicationInsightsConnectionString) && typeof ApplicationInsights === 'function') {
+  if (isProductionHost && /^InstrumentationKey=/i.test(applicationInsightsConnectionString) && typeof ApplicationInsights === 'function') {
     try {
       azureInsights = new ApplicationInsights({
         config: {
@@ -52,7 +53,7 @@
     }
   }
 
-  if (hasAnalytics) {
+  if (isProductionHost && hasAnalytics) {
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
     window.gtag('js', new Date());
@@ -76,7 +77,7 @@
       campaign_name: attribution.utm_campaign || '(not set)'
     }, parameters || {});
 
-    if (hasAnalytics && typeof window.gtag === 'function') {
+    if (isProductionHost && hasAnalytics && typeof window.gtag === 'function') {
       window.gtag('event', eventName, payload);
     }
 
@@ -96,10 +97,10 @@
       detail: {
         eventName,
         payload,
-        analyticsConnected: hasAnalytics || Boolean(azureInsights),
+        analyticsConnected: (isProductionHost && hasAnalytics) || Boolean(azureInsights),
         providers: {
           applicationInsights: Boolean(azureInsights),
-          googleAnalytics: hasAnalytics
+          googleAnalytics: isProductionHost && hasAnalytics
         }
       }
     }));

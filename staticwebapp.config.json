@@ -1,4 +1,11 @@
 {
+  "routes": [
+    {
+      "route": "/the-daily-kava/what-is-a-kava-cloud",
+      "redirect": "/the-daily-kava/crafted-kava-drinks",
+      "statusCode": 301
+    }
+  ],
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": [
