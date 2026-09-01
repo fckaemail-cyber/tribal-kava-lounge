@@ -846,6 +846,20 @@ section {
     font-size: 0.8rem;
 }
 
+.events-freshness {
+    margin: 1rem auto 0;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.events-calendar-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
 /* Text-first menu system: product photos return when real photography is ready. */
 .clean-menu-head {
     max-width: 760px;

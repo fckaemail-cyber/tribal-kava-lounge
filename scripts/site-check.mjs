@@ -11,11 +11,11 @@ for (const file of ['app.js', 'daily-kava.js', 'site-config.js', 'analytics.js']
   execFileSync(process.execPath, ['--check', path.join(root, file)], { stdio: 'pipe' });
 }
 
-const [html, robots, sitemap, config, analytics, siteConfig, app, styles, dailyKava, workbookConfig, workbookBicep, socialProofCore, socialProofFunction] = await Promise.all([
+const [html, robots, sitemap, config, analytics, siteConfig, app, styles, dailyKava, workbookConfig, workbookBicep, socialProofCore, socialProofFunction, eventCalendar] = await Promise.all([
   read('index.html'), read('robots.txt'), read('dist/sitemap.xml'), read('staticwebapp.config.json'),
   read('analytics.js'), read('site-config.js'), read('app.js'), read('styles.css'), read('daily-kava.js'),
   read('infra/azure/conversion-workbook.json'), read('infra/azure/conversion-workbook.bicep'),
-  read('api/src/social-proof-core.js'), read('api/src/functions/social-proof.js')
+  read('api/src/social-proof-core.js'), read('api/src/functions/social-proof.js'), read('dist/events.ics')
 ]);
 const logo = await readFile(path.join(root, 'images/tribal-logo-cutout.png'));
 const communityPhoto = await readFile(path.join(root, 'images/tribal-community-game-night.webp'));
@@ -59,6 +59,14 @@ assert.match(styles, /\.hero-ctas \.btn:nth-child\(n \+ 3\)\s*\{\s*display:\s*no
 assert.equal((html.match(/href="\/events\/(?:two-dollar-tuesday|friday-loteria|karaoke|mario-kart|poker-night|art-club|sip-and-paint)"/g) || []).length, 7, 'all seven verified events must have shareable routes');
 assert.equal((app.match(/embedUrl:\s*'https:\/\/www\.instagram\.com\/p\//g) || []).length, 5, 'five event pages must embed their official scheduling proof');
 assert.match(html, /instagram\.com\/p\/DZC5nDruES3\/embed\/captioned/, 'official Instagram proof must be embedded');
+assert.match(html, /href="\/events\.ics"[^>]*data-conversion="calendar_download"/, 'verified weekly events must offer a calendar subscription');
+assert.match(app, /'two-dollar-tuesday':[\s\S]*?'@type': 'WebPage'/, 'the Tuesday price promotion must not be marked up as an Event');
+assert.match(app, /'friday-loteria':[\s\S]*?startDate: nextFridayLoteria\.iso/, 'Friday Lotería must expose the next concrete occurrence to search engines');
+assert.match(app, /function nextWeeklyOccurrence\(/, 'recurring event dates must refresh automatically');
+assert.match(eventCalendar, /RRULE:FREQ=WEEKLY;BYDAY=TU/, 'calendar must repeat the verified Tuesday special');
+assert.match(eventCalendar, /RRULE:FREQ=WEEKLY;BYDAY=FR/, 'calendar must repeat verified Friday Lotería');
+assert.match(eventCalendar, /\r\n/, 'published iCalendar data must use RFC-compatible CRLF line endings');
+assert.equal(JSON.parse(config).mimeTypes['.ics'], 'text/calendar', 'Azure must serve the calendar with the correct MIME type');
 assert.match(html, /id="instagram-gallery"/, 'curated Instagram gallery mount must exist');
 assert.match(app, /fetch\('\/api\/social-proof'/, 'frontend must refresh social proof through the same-origin API');
 assert.match(app, /data-google-rating-summary/, 'Google rating summary must support live hydration');

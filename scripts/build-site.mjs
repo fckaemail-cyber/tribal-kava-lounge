@@ -11,6 +11,7 @@ const files = [
   'daily-kava.js',
   'site-config.js',
   'analytics.js',
+  'events.ics',
   'favicon.svg',
   'robots.txt',
   'staticwebapp.config.json',
@@ -21,6 +22,8 @@ await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
 await Promise.all(files.map((file) => cp(path.join(root, file), path.join(output, file))));
 await cp(path.join(root, 'images'), path.join(output, 'images'), { recursive: true });
+const calendarSource = await readFile(path.join(root, 'events.ics'), 'utf8');
+await writeFile(path.join(output, 'events.ics'), calendarSource.replace(/\r?\n/g, '\r\n'));
 
 const origin = 'https://www.thetribalkavalounge.com';
 const staticPaths = [

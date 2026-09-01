@@ -175,12 +175,44 @@ const seoDatabase = {
                 {
                     "@type": "ListItem",
                     "position": 1,
-                    "name": "Friday Lotería at 9 PM"
+                    "name": "$2 Tuesday Kava Shells",
+                    "url": `${SITE_ORIGIN}/events/two-dollar-tuesday`
                 },
                 {
                     "@type": "ListItem",
                     "position": 2,
-                    "name": "Karaoke and Rotating Community Events"
+                    "name": "Friday Lotería with Tony",
+                    "url": `${SITE_ORIGIN}/events/friday-loteria`
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Karaoke Night at Tribal",
+                    "url": `${SITE_ORIGIN}/events/karaoke`
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Mario Kart and Game Nights",
+                    "url": `${SITE_ORIGIN}/events/mario-kart`
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 5,
+                    "name": "Poker Night at Tribal",
+                    "url": `${SITE_ORIGIN}/events/poker-night`
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 6,
+                    "name": "Art Club for Adults",
+                    "url": `${SITE_ORIGIN}/events/art-club`
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 7,
+                    "name": "Sip and Paint at Tribal",
+                    "url": `${SITE_ORIGIN}/events/sip-and-paint`
                 }
             ]
         }
@@ -350,49 +382,67 @@ const seoDatabase = {
     }
 };
 
+const EVENT_TIME_ZONE = 'America/New_York';
+const EVENT_WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+function nextWeeklyOccurrence(weekday, hour, minute = 0) {
+    const now = new Date();
+    const parts = Object.fromEntries(new Intl.DateTimeFormat('en-US', {
+        timeZone: EVENT_TIME_ZONE,
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        weekday: 'short',
+        hour: '2-digit',
+        minute: '2-digit',
+        hourCycle: 'h23'
+    }).formatToParts(now).filter(({ type }) => type !== 'literal').map(({ type, value }) => [type, value]));
+    const currentWeekday = EVENT_WEEKDAYS.indexOf(parts.weekday);
+    const currentMinutes = Number(parts.hour) * 60 + Number(parts.minute);
+    const targetMinutes = hour * 60 + minute;
+    let daysAhead = (weekday - currentWeekday + 7) % 7;
+    if (daysAhead === 0 && currentMinutes >= targetMinutes) daysAhead = 7;
+
+    const targetDate = new Date(Date.UTC(Number(parts.year), Number(parts.month) - 1, Number(parts.day) + daysAhead));
+    const year = targetDate.getUTCFullYear();
+    const month = String(targetDate.getUTCMonth() + 1).padStart(2, '0');
+    const day = String(targetDate.getUTCDate()).padStart(2, '0');
+    const time = `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}:00`;
+    return {
+        iso: `${year}-${month}-${day}T${time}`,
+        label: new Intl.DateTimeFormat('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+            timeZone: 'UTC'
+        }).format(targetDate)
+    };
+}
+
+const nextTuesdaySpecial = nextWeeklyOccurrence(2, 14);
+const nextFridayLoteria = nextWeeklyOccurrence(5, 21);
+
 const eventDatabase = {
     'two-dollar-tuesday': {
         seoKey: 'event-two-dollar-tuesday',
-        eyebrow: 'Every Tuesday · 2–5 PM',
+        eyebrow: `Next Tuesday: ${nextTuesdaySpecial.label} · 2–5 PM`,
         title: '$2 Tuesday Kava Shells',
         intro: 'Single kava shells are $2 every Tuesday from 2:00 PM to 5:00 PM at Tribal Kava Lounge in West Palm Beach.',
         detail: 'No ticket and no mystery fine print. Stop in during the window, order a single traditional kava shell, and ask the team if it is your first visit.',
         sourceLabel: 'See all weekly events',
         sourceUrl: '/events',
+        calendarUrl: '/events.ics',
         schema: {
             '@context': 'https://schema.org',
-            '@type': 'Event',
+            '@type': 'WebPage',
             name: '$2 Tuesday Kava Shells at Tribal Kava Lounge',
             description: 'Single kava shells are $2 every Tuesday from 2 PM to 5 PM.',
-            eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-            eventStatus: 'https://schema.org/EventScheduled',
-            location: {
-                '@type': 'Place',
-                name: 'Tribal Kava Lounge',
-                address: {
-                    '@type': 'PostalAddress',
-                    streetAddress: '770 S Military Trail, Unit A1',
-                    addressLocality: 'West Palm Beach',
-                    addressRegion: 'FL',
-                    postalCode: '33415',
-                    addressCountry: 'US'
-                }
-            },
-            eventSchedule: {
-                '@type': 'Schedule',
-                repeatFrequency: 'P1W',
-                byDay: 'https://schema.org/Tuesday',
-                startTime: '14:00',
-                endTime: '17:00',
-                scheduleTimezone: 'America/New_York'
-            },
-            organizer: { '@type': 'Organization', name: 'Tribal Kava Lounge', url: SITE_ORIGIN },
             url: `${SITE_ORIGIN}/events/two-dollar-tuesday`
         }
     },
     'friday-loteria': {
         seoKey: 'event-friday-loteria',
-        eyebrow: 'Every Friday · 9 PM',
+        eyebrow: `Next game: ${nextFridayLoteria.label} · 9 PM`,
         title: 'Friday Lotería with Tony',
         intro: 'Tony hosts Lotería every Friday at 9:00 PM at Tribal Kava Lounge. Boards are $1 each.',
         detail: 'Bring a friend or join a table when you arrive. It is a recurring community night with prizes, jokes, and the very serious business of hoping your board gets called.',
@@ -400,13 +450,19 @@ const eventDatabase = {
         sourceUrl: 'https://www.instagram.com/tribalkavalounge/p/DcYv5nFuNhF/',
         embedUrl: 'https://www.instagram.com/p/DcYv5nFuNhF/embed/captioned/',
         proofTitle: 'Friday Lotería flyer from @TribalKavaLounge',
+        calendarUrl: '/events.ics',
         schema: {
             '@context': 'https://schema.org',
             '@type': 'Event',
             name: 'Friday Lotería with Tony at Tribal Kava Lounge',
             description: 'Weekly Friday Lotería at 9 PM. Hosted by Tony; boards are $1 each.',
+            startDate: nextFridayLoteria.iso,
             eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
             eventStatus: 'https://schema.org/EventScheduled',
+            image: [
+                `${SITE_ORIGIN}/images/tribal-community-game-night.webp`,
+                `${SITE_ORIGIN}/images/tribal-bar-game-night.webp`
+            ],
             location: {
                 '@type': 'Place',
                 name: 'Tribal Kava Lounge',
@@ -419,14 +475,9 @@ const eventDatabase = {
                     addressCountry: 'US'
                 }
             },
-            eventSchedule: {
-                '@type': 'Schedule',
-                repeatFrequency: 'P1W',
-                byDay: 'https://schema.org/Friday',
-                startTime: '21:00',
-                scheduleTimezone: 'America/New_York'
-            },
             organizer: { '@type': 'Organization', name: 'Tribal Kava Lounge', url: SITE_ORIGIN },
+            performer: { '@type': 'Person', name: 'Tony Robles' },
+            sameAs: 'https://www.instagram.com/tribalkavalounge/p/DcYv5nFuNhF/',
             url: `${SITE_ORIGIN}/events/friday-loteria`
         }
     },
@@ -523,6 +574,15 @@ const eventDatabase = {
         }
     }
 };
+
+function hydrateRecurringEventDates() {
+    document.querySelectorAll('[data-next-tuesday]').forEach((node) => {
+        node.textContent = `Next: ${nextTuesdaySpecial.label} · 2–5 PM`;
+    });
+    document.querySelectorAll('[data-next-loteria]').forEach((node) => {
+        node.textContent = `Next: ${nextFridayLoteria.label} · 9 PM`;
+    });
+}
 
 const nearbyAreaDatabase = {
     'west-palm-beach': {
@@ -842,6 +902,7 @@ function renderEventDetail(slug) {
             <div class="event-detail-actions">
                 <a href="${event.sourceUrl}" ${external ? 'target="_blank" rel="noopener"' : ''} class="btn btn-secondary" data-conversion="events_view">${event.sourceLabel}</a>
                 <a href="https://www.google.com/maps/dir/?api=1&amp;destination=770+S+Military+Trail+Unit+A1,+West+Palm+Beach,+FL+33415" target="_blank" rel="noopener" class="btn btn-accent" data-conversion="directions">Get Directions</a>
+                ${event.calendarUrl ? `<a href="${event.calendarUrl}" class="btn" data-conversion="calendar_download">Add Weekly Calendar</a>` : ''}
                 <a href="sms:+15613550561?&amp;body=EVENTS%20%E2%80%94%20Please%20send%20me%20the%20next%20Tribal%20Kava%20event%20details." class="btn" data-conversion="event_inquiry">Text for Updates</a>
             </div>
         </div>
@@ -1466,6 +1527,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     handleRoute();
+    hydrateRecurringEventDates();
     refreshSocialProof();
     window.addEventListener('tribal:navigation', () => {
         if (activeSocialProof) applyGoogleRatingToSchema(activeSocialProof.google);
