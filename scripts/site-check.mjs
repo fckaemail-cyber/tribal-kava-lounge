@@ -21,8 +21,17 @@ const logo = await readFile(path.join(root, 'images/tribal-logo-cutout.png'));
 const communityPhoto = await readFile(path.join(root, 'images/tribal-community-game-night.webp'));
 const barPhoto = await readFile(path.join(root, 'images/tribal-bar-game-night.webp'));
 const indexNowKey = await readFile(path.join(root, 'dist/34a68ae0477ea10ed9d8a543952e0cdb.txt'), 'utf8');
+const preRenderedMenu = await readFile(path.join(root, 'dist/menu/index.html'), 'utf8');
+const preRenderedLoteria = await readFile(path.join(root, 'dist/events/friday-loteria/index.html'), 'utf8');
+const preRenderedLakeWorth = await readFile(path.join(root, 'dist/nearby/lake-worth/index.html'), 'utf8');
+const preRenderedDaily = await readFile(path.join(root, 'dist/the-daily-kava/kava-bar-west-palm-beach-first-visit/index.html'), 'utf8');
 
 assert.match(html, /https:\/\/www\.thetribalkavalounge\.com\//, 'canonical domain must use www');
+assert.match(preRenderedMenu, /<link rel="canonical" href="https:\/\/www\.thetribalkavalounge\.com\/menu"/, 'menu must ship its own canonical before JavaScript runs');
+assert.match(preRenderedMenu, /<title>Menu \| Kava Shells, Kratom Tea &amp; Crafted Drinks in West Palm Beach<\/title>/, 'menu must ship route-specific title metadata');
+assert.match(preRenderedLoteria, /<link rel="canonical" href="https:\/\/www\.thetribalkavalounge\.com\/events\/friday-loteria"/, 'Lotería must ship its own canonical before JavaScript runs');
+assert.match(preRenderedLakeWorth, /<link rel="canonical" href="https:\/\/www\.thetribalkavalounge\.com\/nearby\/lake-worth"/, 'Lake Worth page must ship its own canonical before JavaScript runs');
+assert.match(preRenderedDaily, /<link rel="canonical" href="https:\/\/www\.thetribalkavalounge\.com\/the-daily-kava\/kava-bar-west-palm-beach-first-visit"/, 'Daily stories must ship their own canonicals before JavaScript runs');
 assert.match(html, /daily-kava\.js/, 'public Daily Kava feed must be loaded');
 assert.match(html, /analytics\.js/, 'conversion tracker must be loaded');
 assert.match(html, /\/images\/tribal-logo-cutout\.png/, 'transparent Tribal logo must be used');

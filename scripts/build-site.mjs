@@ -34,9 +34,16 @@ const staticPaths = [
   '/events/mario-kart', '/events/poker-night', '/events/art-club', '/events/sip-and-paint',
   '/the-daily-kava'
 ];
+const htmlTemplate = await readFile(path.join(root, 'index.html'), 'utf8');
+const appSource = await readFile(path.join(root, 'app.js'), 'utf8');
 const dailySource = await readFile(path.join(root, 'daily-kava.js'), 'utf8');
-const dailyEntries = [...dailySource.matchAll(/\n\s*slug:\s*'([^']+)'[\s\S]*?\n\s*modified:\s*'(\d{4}-\d{2}-\d{2})'/g)]
-  .map((match) => ({ path: `/the-daily-kava/${match[1]}`, lastmod: match[2] }));
+const dailyEntries = [...dailySource.matchAll(/\n\s*slug:\s*'([^']+)',\n\s*title:\s*'([^']+)',\n\s*seoTitle:\s*'([^']+)',\n\s*metaDescription:\s*'([^']+)'[\s\S]*?\n\s*modified:\s*'(\d{4}-\d{2}-\d{2})'/g)]
+  .map((match) => ({
+    path: `/the-daily-kava/${match[1]}`,
+    title: `${match[3]} | Tribal Kava Lounge`,
+    description: match[4],
+    lastmod: match[5]
+  }));
 const dailyPaths = dailyEntries.map((entry) => entry.path);
 const dailyLastmod = new Map(dailyEntries.map((entry) => [entry.path, entry.lastmod]));
 const urls = [...staticPaths, ...dailyPaths]
@@ -52,4 +59,70 @@ await writeFile(
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`
 );
 
-console.log(`Built ${files.length} files, ${dailyPaths.length} Daily Kava URLs, and images into ${output}`);
+const routeMetadata = new Map();
+const seoDatabaseStart = appSource.indexOf('const seoDatabase = {');
+const seoDatabaseEnd = appSource.indexOf('\n};', seoDatabaseStart);
+const seoDatabaseSource = appSource.slice(seoDatabaseStart, seoDatabaseEnd);
+for (const match of seoDatabaseSource.matchAll(/\n {4}'[^']+':\s*\{\n {8}title:\s*'([^']+)',\n {8}description:\s*'([^']+)',[\s\S]*?\n {8}slug:\s*'([^']+)',/g)) {
+  routeMetadata.set(match[3], { title: match[1], description: match[2] });
+}
+
+const eventDatabaseStart = appSource.indexOf('const eventDatabase = {');
+const eventDatabaseEnd = appSource.indexOf('\n};', eventDatabaseStart);
+const eventDatabaseSource = appSource.slice(eventDatabaseStart, eventDatabaseEnd);
+for (const match of eventDatabaseSource.matchAll(/\n {4}'([^']+)':\s*\{\n {8}seoKey:[^\n]+\n {8}eyebrow:[^\n]+\n {8}title:\s*'([^']+)',\n {8}intro:\s*'([^']+)',/g)) {
+  routeMetadata.set(`/events/${match[1]}`, {
+    title: `${match[2]} | Tribal Kava Lounge West Palm Beach`,
+    description: match[3]
+  });
+}
+
+const nearbyDatabaseStart = appSource.indexOf('const nearbyAreaDatabase = {');
+const nearbyDatabaseEnd = appSource.indexOf('\n};', nearbyDatabaseStart);
+const nearbyDatabaseSource = appSource.slice(nearbyDatabaseStart, nearbyDatabaseEnd);
+for (const match of nearbyDatabaseSource.matchAll(/\n {4}'([^']+)':\s*\{\n {8}seoKey:[^\n]+\n {8}areaName:[^\n]+\n {8}eyebrow:[^\n]+\n {8}title:\s*'([^']+)',\n {8}intro:[^\n]+\n {8}description:\s*'([^']+)',/g)) {
+  routeMetadata.set(`/nearby/${match[1]}`, {
+    title: `${match[2]} | Tribal Kava Lounge`,
+    description: match[3]
+  });
+}
+
+for (const entry of dailyEntries) {
+  routeMetadata.set(entry.path, { title: entry.title, description: entry.description });
+}
+
+const missingMetadata = [...staticPaths, ...dailyPaths].filter((route) => !routeMetadata.has(route));
+if (missingMetadata.length) {
+  throw new Error(`Missing pre-render metadata for: ${missingMetadata.join(', ')}`);
+}
+
+function escapeHtml(value) {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;');
+}
+
+function renderRouteHtml(route, metadata) {
+  const title = escapeHtml(metadata.title);
+  const description = escapeHtml(metadata.description);
+  const canonical = `${origin}${route === '/' ? '/' : route}`;
+  return htmlTemplate
+    .replace(/<title>[\s\S]*?<\/title>/, `<title>${title}</title>`)
+    .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${description}">`)
+    .replace(/<link rel="canonical" href="[^"]+" id="seo-canonical">/, `<link rel="canonical" href="${canonical}" id="seo-canonical">`)
+    .replace(/<meta property="og:title" content="[^"]*" id="og-title">/, `<meta property="og:title" content="${title}" id="og-title">`)
+    .replace(/<meta property="og:description" content="[^"]*" id="og-desc">/, `<meta property="og:description" content="${description}" id="og-desc">`)
+    .replace(/<meta property="og:url" content="[^"]*" id="og-url">/, `<meta property="og:url" content="${canonical}" id="og-url">`);
+}
+
+for (const route of [...staticPaths, ...dailyPaths]) {
+  const routeFile = route === '/'
+    ? path.join(output, 'index.html')
+    : path.join(output, route.slice(1), 'index.html');
+  await mkdir(path.dirname(routeFile), { recursive: true });
+  await writeFile(routeFile, renderRouteHtml(route, routeMetadata.get(route)));
+}
+
+console.log(`Built ${files.length} files, ${dailyPaths.length} Daily Kava URLs, ${routeMetadata.size} pre-rendered routes, and images into ${output}`);
