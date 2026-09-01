@@ -3,6 +3,7 @@
   "configurations": {
     "tribal-kava-lounge": {
       "appLocation": ".",
+      "apiLocation": "api",
       "outputLocation": "dist",
       "appBuildCommand": "npm run build"
     }

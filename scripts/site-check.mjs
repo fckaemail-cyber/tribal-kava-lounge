@@ -11,10 +11,11 @@ for (const file of ['app.js', 'daily-kava.js', 'site-config.js', 'analytics.js']
   execFileSync(process.execPath, ['--check', path.join(root, file)], { stdio: 'pipe' });
 }
 
-const [html, robots, sitemap, config, analytics, siteConfig, app, styles, dailyKava, workbookConfig, workbookBicep] = await Promise.all([
+const [html, robots, sitemap, config, analytics, siteConfig, app, styles, dailyKava, workbookConfig, workbookBicep, socialProofCore, socialProofFunction] = await Promise.all([
   read('index.html'), read('robots.txt'), read('dist/sitemap.xml'), read('staticwebapp.config.json'),
   read('analytics.js'), read('site-config.js'), read('app.js'), read('styles.css'), read('daily-kava.js'),
-  read('infra/azure/conversion-workbook.json'), read('infra/azure/conversion-workbook.bicep')
+  read('infra/azure/conversion-workbook.json'), read('infra/azure/conversion-workbook.bicep'),
+  read('api/src/social-proof-core.js'), read('api/src/functions/social-proof.js')
 ]);
 const logo = await readFile(path.join(root, 'images/tribal-logo-cutout.png'));
 const communityPhoto = await readFile(path.join(root, 'images/tribal-community-game-night.webp'));
@@ -32,7 +33,7 @@ assert.match(html, /\/images\/tribal-community-game-night\.webp/, 'authentic own
 assert.match(html, /\/images\/tribal-bar-game-night\.webp/, 'authentic owned lounge photography must appear in the gallery');
 assert.ok(communityPhoto.length > 50000, 'owned community photo must be a real optimized image asset');
 assert.ok(barPhoto.length > 50000, 'owned lounge photo must be a real optimized image asset');
-assert.match(html, /published by[\s\S]*@TribalKavaLounge on August 18, 2026/, 'owned photography must retain visible source provenance');
+assert.match(html, /verified[\s\S]*@TribalKavaLounge post published August 18, 2026/, 'owned photography must retain visible source provenance');
 assert.doesNotMatch(`${html}\n${app}\n${dailyKava}`, /Kava Clouds?|Kratom Refreshers?|Agua Frescas?|Viral Signatures?/, 'retired drink branding must not return');
 assert.equal(logo[25], 6, 'Tribal logo PNG must contain an RGBA alpha channel');
 assert.equal(indexNowKey.trim(), '34a68ae0477ea10ed9d8a543952e0cdb', 'IndexNow ownership key must ship at the site root');
@@ -58,6 +59,14 @@ assert.match(styles, /\.hero-ctas \.btn:nth-child\(n \+ 3\)\s*\{\s*display:\s*no
 assert.equal((html.match(/href="\/events\/(?:two-dollar-tuesday|friday-loteria|karaoke|mario-kart|poker-night|art-club|sip-and-paint)"/g) || []).length, 7, 'all seven verified events must have shareable routes');
 assert.equal((app.match(/embedUrl:\s*'https:\/\/www\.instagram\.com\/p\//g) || []).length, 5, 'five event pages must embed their official scheduling proof');
 assert.match(html, /instagram\.com\/p\/DZC5nDruES3\/embed\/captioned/, 'official Instagram proof must be embedded');
+assert.match(html, /id="instagram-gallery"/, 'curated Instagram gallery mount must exist');
+assert.match(app, /fetch\('\/api\/social-proof'/, 'frontend must refresh social proof through the same-origin API');
+assert.match(app, /data-google-rating-summary/, 'Google rating summary must support live hydration');
+assert.match(socialProofCore, /places\.googleapis\.com\/v1\/places/, 'social proof API must use Places API (New)');
+assert.match(socialProofCore, /graph\.instagram\.com/, 'social proof API must use the official Instagram graph host');
+assert.doesNotMatch(`${html}\n${app}`, /GOOGLE_PLACES_API_KEY|INSTAGRAM_ACCESS_TOKEN/, 'provider secret names must not appear in browser assets');
+assert.match(socialProofFunction, /Cache-Control.*max-age=300/, 'social proof API must cache provider responses');
+assert.equal(JSON.parse(config).platform.apiRuntime, 'node:20', 'Azure managed API runtime must be pinned');
 assert.match(html, /id="view-nearby"/, 'nearby-area search coverage page must exist');
 assert.match(html, /id="view-nearby-detail"/, 'dedicated nearby-area route view must exist');
 assert.equal((sitemap.match(/\/nearby\/(?:west-palm-beach|lake-worth|greenacres)/g) || []).length, 3, 'all three dedicated local-search pages must be indexed');
@@ -71,6 +80,10 @@ assert.equal((sitemap.match(/<url>/g) || []).length, 38, 'sitemap must include 2
 assert.equal((sitemap.match(/\/the-daily-kava\//g) || []).length, 13, 'all 13 Daily stories must be indexed');
 assert.doesNotMatch(sitemap, /<loc>https:\/\/(?!www\.thetribalkavalounge\.com)/, 'sitemap URLs must use the canonical host');
 assert.ok(JSON.parse(config).navigationFallback, 'Azure SPA fallback must be configured');
-assert.equal(JSON.parse(config).routes[0].statusCode, 301, 'retired Cloud article must redirect permanently');
+assert.equal(
+  JSON.parse(config).routes.find(({ route }) => route === '/the-daily-kava/what-is-a-kava-cloud')?.statusCode,
+  301,
+  'retired Cloud article must redirect permanently'
+);
 
 console.log('Site checks passed.');

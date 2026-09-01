@@ -4,6 +4,8 @@ _compare/
 dist/
 .swa/
 *-app.zip
+api/node_modules/
+api/local.settings.json
 
 # Daily engine runtime (logs only — state/ and drafts/ are intentionally
 # TRACKED: the daily-kava workflow commits them for manual review + dedup)

@@ -1311,6 +1311,136 @@ function updateBusinessStatus() {
     status.classList.toggle('is-closed', !isOpen);
 }
 
+let activeSocialProof = null;
+
+function socialProofDate(value) {
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return '';
+    return new Intl.DateTimeFormat('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+        timeZone: 'America/New_York'
+    }).format(date);
+}
+
+function trustedInstagramUrl(value) {
+    try {
+        const url = new URL(value, window.location.origin);
+        if (url.origin === window.location.origin && url.pathname.startsWith('/images/')) return url.href;
+        if (url.protocol !== 'https:') return '';
+        const hosts = ['instagram.com', 'cdninstagram.com', 'fbcdn.net'];
+        return hosts.some((host) => url.hostname === host || url.hostname.endsWith(`.${host}`)) ? url.href : '';
+    } catch (_) {
+        return '';
+    }
+}
+
+function applyGoogleRatingToSchema(google) {
+    const schemaScript = document.getElementById('seo-json-ld');
+    if (!schemaScript) return;
+    try {
+        const schema = JSON.parse(schemaScript.textContent);
+        const nodes = Array.isArray(schema['@graph']) ? schema['@graph'] : [schema];
+        const business = nodes.find((node) => {
+            const types = Array.isArray(node['@type']) ? node['@type'] : [node['@type']];
+            return types.includes('LocalBusiness');
+        });
+        if (!business) return;
+        business.aggregateRating = {
+            '@type': 'AggregateRating',
+            ratingValue: String(google.rating),
+            reviewCount: String(google.reviewCount)
+        };
+        schemaScript.textContent = JSON.stringify(schema, null, 2);
+    } catch (_) {
+        // Keep the route's original valid schema if third-party data is malformed.
+    }
+}
+
+function renderInstagramGallery(instagram, providerStatus) {
+    const gallery = document.getElementById('instagram-gallery');
+    const status = document.getElementById('instagram-gallery-status');
+    if (!gallery || !status || !Array.isArray(instagram?.items)) return;
+
+    const safeItems = instagram.items.map((item) => ({
+        imageUrl: trustedInstagramUrl(item.imageUrl),
+        permalink: trustedInstagramUrl(item.permalink),
+        alt: String(item.alt || 'From @TribalKavaLounge').slice(0, 180),
+        caption: String(item.caption || 'From @TribalKavaLounge').replace(/\s+/g, ' ').slice(0, 90)
+    })).filter((item) => item.imageUrl && item.permalink).slice(0, 6);
+
+    if (providerStatus !== 'live' || !safeItems.length) return;
+    gallery.replaceChildren(...safeItems.map((item) => {
+        const link = document.createElement('a');
+        link.className = 'owned-media-card';
+        link.href = item.permalink;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.dataset.conversion = 'instagram';
+
+        const image = document.createElement('img');
+        image.src = item.imageUrl;
+        image.alt = item.alt;
+        image.loading = 'lazy';
+        image.referrerPolicy = 'no-referrer';
+
+        const label = document.createElement('span');
+        const title = document.createElement('strong');
+        title.textContent = 'From @TribalKavaLounge';
+        const caption = document.createElement('small');
+        caption.textContent = item.caption;
+        label.append(title, caption);
+        link.append(image, label);
+        return link;
+    }));
+    gallery.classList.add('is-live');
+    const refreshed = socialProofDate(instagram.checkedAt);
+    status.textContent = `Curated Instagram media refreshed automatically${refreshed ? ` · ${refreshed}` : ''}.`;
+}
+
+function applySocialProof(payload) {
+    const rating = Number(payload?.google?.rating);
+    const reviewCount = Number(payload?.google?.reviewCount);
+    if (!Number.isFinite(rating) || rating < 0 || rating > 5 || !Number.isInteger(reviewCount) || reviewCount < 0) return;
+
+    const formattedRating = rating.toFixed(1);
+    document.querySelectorAll('[data-google-rating-summary]').forEach((node) => {
+        node.textContent = `${formattedRating} stars from ${reviewCount.toLocaleString('en-US')} Google reviews`;
+    });
+    document.querySelectorAll('[data-google-rating-value]').forEach((node) => { node.textContent = formattedRating; });
+    document.querySelectorAll('[data-google-review-count]').forEach((node) => { node.textContent = reviewCount.toLocaleString('en-US'); });
+    document.querySelectorAll('[data-google-rating-stars]').forEach((node) => {
+        node.setAttribute('aria-label', `${formattedRating} out of 5 stars`);
+    });
+
+    const googleLive = payload?.providerStatus?.google === 'live';
+    const refreshed = socialProofDate(payload?.google?.checkedAt);
+    document.querySelectorAll('[data-social-proof-note]').forEach((node) => {
+        node.textContent = googleLive
+            ? `Google rating and review count refreshed automatically${refreshed ? ` · ${refreshed}` : ''}. Review excerpts remain a curated editorial selection.`
+            : 'Showing the Google rating snapshot checked August 31, 2026. Open Google for the current live listing.';
+    });
+
+    applyGoogleRatingToSchema(payload.google);
+    renderInstagramGallery(payload.instagram, payload?.providerStatus?.instagram);
+}
+
+async function refreshSocialProof() {
+    try {
+        const response = await fetch('/api/social-proof', {
+            headers: { Accept: 'application/json' },
+            credentials: 'same-origin'
+        });
+        if (!response.ok) return;
+        const payload = await response.json();
+        activeSocialProof = payload;
+        applySocialProof(payload);
+    } catch (_) {
+        // The dated, visibly labeled HTML snapshots remain available offline.
+    }
+}
+
 // Event Listeners Initialization
 document.addEventListener('DOMContentLoaded', () => {
     // Router Init — path-based + intercept in-app links
@@ -1336,6 +1466,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     handleRoute();
+    refreshSocialProof();
+    window.addEventListener('tribal:navigation', () => {
+        if (activeSocialProof) applyGoogleRatingToSchema(activeSocialProof.google);
+    });
     
     // Hamburger menu toggle
     const hamburger = document.getElementById('nav-toggle');

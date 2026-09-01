@@ -22,5 +22,6 @@ if [[ -z "$TRIBAL_DEPLOYMENT_TOKEN" ]]; then
 fi
 
 npm exec --yes --package @azure/static-web-apps-cli -- swa deploy ./dist \
+  --api-location ./api \
   --env production \
   --deployment-token "$TRIBAL_DEPLOYMENT_TOKEN"

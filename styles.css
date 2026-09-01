@@ -1542,6 +1542,14 @@ section {
     gap: 1rem;
 }
 
+.owned-media-grid.is-live {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+}
+
+.owned-media-grid.is-live .owned-media-card {
+    min-height: 420px;
+}
+
 .owned-media-card {
     position: relative;
     min-height: 520px;
