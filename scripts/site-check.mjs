@@ -17,6 +17,8 @@ const [html, robots, sitemap, config, analytics, siteConfig, app, styles, dailyK
   read('infra/azure/conversion-workbook.json'), read('infra/azure/conversion-workbook.bicep')
 ]);
 const logo = await readFile(path.join(root, 'images/tribal-logo-cutout.png'));
+const communityPhoto = await readFile(path.join(root, 'images/tribal-community-game-night.webp'));
+const barPhoto = await readFile(path.join(root, 'images/tribal-bar-game-night.webp'));
 const indexNowKey = await readFile(path.join(root, 'dist/34a68ae0477ea10ed9d8a543952e0cdb.txt'), 'utf8');
 
 assert.match(html, /https:\/\/www\.thetribalkavalounge\.com\//, 'canonical domain must use www');
@@ -26,6 +28,11 @@ assert.match(html, /\/images\/tribal-logo-cutout\.png/, 'transparent Tribal logo
 assert.doesNotMatch(html, /\/images\/tribal-logo\.jpg/, 'legacy logo photo must not be rendered');
 assert.doesNotMatch(html, /\/images\/(?:lounge-interior|hero-placeholder)\.jpg/, 'inauthentic lounge placeholders must not be rendered');
 assert.doesNotMatch(app, /\/images\/lounge-interior\.jpg/, 'inauthentic lounge image must not appear in schema');
+assert.match(html, /\/images\/tribal-community-game-night\.webp/, 'authentic owned community photography must appear in the hero');
+assert.match(html, /\/images\/tribal-bar-game-night\.webp/, 'authentic owned lounge photography must appear in the gallery');
+assert.ok(communityPhoto.length > 50000, 'owned community photo must be a real optimized image asset');
+assert.ok(barPhoto.length > 50000, 'owned lounge photo must be a real optimized image asset');
+assert.match(html, /published by[\s\S]*@TribalKavaLounge on August 18, 2026/, 'owned photography must retain visible source provenance');
 assert.doesNotMatch(`${html}\n${app}\n${dailyKava}`, /Kava Clouds?|Kratom Refreshers?|Agua Frescas?|Viral Signatures?/, 'retired drink branding must not return');
 assert.equal(logo[25], 6, 'Tribal logo PNG must contain an RGBA alpha channel');
 assert.equal(indexNowKey.trim(), '34a68ae0477ea10ed9d8a543952e0cdb', 'IndexNow ownership key must ship at the site root');
@@ -48,14 +55,15 @@ assert.equal((html.match(/class="drink-finder-step"/g) || []).length, 3, 'drink 
 assert.match(app, /tribalTrack\?\.\('drink_recommendation'/, 'drink recommendations must be tracked');
 assert.doesNotMatch(html, /quiz-card|data-recommendation/, 'legacy one-click drink quiz must be removed');
 assert.match(styles, /\.hero-ctas \.btn:nth-child\(n \+ 3\)\s*\{\s*display:\s*none;/, 'mobile hero must prioritize two conversion actions');
-assert.equal((html.match(/href="\/events\/(?:two-dollar-tuesday|friday-loteria|karaoke)"/g) || []).length, 3, 'three recurring events must have shareable routes');
+assert.equal((html.match(/href="\/events\/(?:two-dollar-tuesday|friday-loteria|karaoke|mario-kart|poker-night|art-club|sip-and-paint)"/g) || []).length, 7, 'all seven verified events must have shareable routes');
+assert.equal((app.match(/embedUrl:\s*'https:\/\/www\.instagram\.com\/p\//g) || []).length, 5, 'five event pages must embed their official scheduling proof');
 assert.match(html, /instagram\.com\/p\/DZC5nDruES3\/embed\/captioned/, 'official Instagram proof must be embedded');
 assert.match(html, /id="view-nearby"/, 'nearby-area search coverage page must exist');
 assert.match(robots, /www\.thetribalkavalounge\.com\/sitemap\.xml/, 'robots sitemap must be canonical');
 assert.doesNotMatch(sitemap, /kratom-regulation|botanical-drink-trends|kava-bars-across-america/, 'unsafe legacy Daily URLs must not be indexed');
 assert.match(sitemap, /\/the-daily-kava\/crafted-kava-drinks/, 'new crafted-kava article URL must be indexed');
 assert.doesNotMatch(sitemap, /\/the-daily-kava\/what-is-a-kava-cloud/, 'retired Cloud article URL must not be indexed');
-assert.equal((sitemap.match(/<url>/g) || []).length, 31, 'sitemap must include 18 site routes and 13 Daily stories');
+assert.equal((sitemap.match(/<url>/g) || []).length, 35, 'sitemap must include 22 site routes and 13 Daily stories');
 assert.equal((sitemap.match(/\/the-daily-kava\//g) || []).length, 13, 'all 13 Daily stories must be indexed');
 assert.doesNotMatch(sitemap, /<loc>https:\/\/(?!www\.thetribalkavalounge\.com)/, 'sitemap URLs must use the canonical host');
 assert.ok(JSON.parse(config).navigationFallback, 'Azure SPA fallback must be configured');

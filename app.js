@@ -14,6 +14,10 @@ const seoDatabase = {
             "@type": ["CafeOrCoffeeShop", "LocalBusiness"],
             "name": "Tribal Kava Lounge",
             "logo": `${SITE_ORIGIN}/images/tribal-logo-cutout.png`,
+            "image": [
+                `${SITE_ORIGIN}/images/tribal-community-game-night.webp`,
+                `${SITE_ORIGIN}/images/tribal-bar-game-night.webp`
+            ],
             "@id": `${SITE_ORIGIN}/#lounge`,
             "url": SITE_ORIGIN,
             "telephone": "+1-561-355-0561",
@@ -392,8 +396,10 @@ const eventDatabase = {
         title: 'Friday Lotería with Tony',
         intro: 'Tony hosts Lotería every Friday at 9:00 PM at Tribal Kava Lounge. Boards are $1 each.',
         detail: 'Bring a friend or join a table when you arrive. It is a recurring community night with prizes, jokes, and the very serious business of hoping your board gets called.',
-        sourceLabel: 'See the Friday Lotería post',
-        sourceUrl: 'https://www.instagram.com/tribalkavalounge/p/DYfKCLxO1Fp/',
+        sourceLabel: 'See the official Friday Lotería post',
+        sourceUrl: 'https://www.instagram.com/tribalkavalounge/p/DcYv5nFuNhF/',
+        embedUrl: 'https://www.instagram.com/p/DcYv5nFuNhF/embed/captioned/',
+        proofTitle: 'Friday Lotería flyer from @TribalKavaLounge',
         schema: {
             '@context': 'https://schema.org',
             '@type': 'Event',
@@ -439,14 +445,90 @@ const eventDatabase = {
             description: 'Karaoke event information for Tribal Kava Lounge in West Palm Beach; confirm the next date on the official Instagram.',
             url: `${SITE_ORIGIN}/events/karaoke`
         }
+    },
+    'mario-kart': {
+        seoKey: 'event-mario-kart',
+        eyebrow: 'Rotating game night · next date on Instagram',
+        title: 'Mario Kart & Game Nights',
+        intro: 'Tribal has hosted real Mario Kart nights with Connor Taliaferro; the next tournament date is announced by @TribalKavaLounge.',
+        detail: 'The first verified Mario Kart night ran August 15 at 9 PM, followed by another tournament on August 27. The official recap below shows the actual bar and community—not a staged stock photo. Check Instagram for the next race before making a special trip.',
+        sourceLabel: 'See the official Mario Kart recap',
+        sourceUrl: 'https://www.instagram.com/tribalkavalounge/p/DcMhfR2kY2X/',
+        embedUrl: 'https://www.instagram.com/p/DcMhfR2kY2X/embed/captioned/',
+        proofTitle: 'Mario Kart community-night recap from @TribalKavaLounge',
+        schema: {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: 'Mario Kart and Game Nights at Tribal Kava Lounge',
+            description: 'Verified Mario Kart event history and current scheduling source for Tribal Kava Lounge in West Palm Beach.',
+            url: `${SITE_ORIGIN}/events/mario-kart`,
+            about: { '@type': 'Event', name: 'Mario Kart Game Night at Tribal Kava Lounge' }
+        }
+    },
+    'poker-night': {
+        seoKey: 'event-poker-night',
+        eyebrow: 'Rotating cards night · next date on Instagram',
+        title: 'Poker Night at Tribal',
+        intro: 'Tribal’s first verified poker night welcomed every skill level, with cards starting at 6 PM and community prizes.',
+        detail: 'The official June 14 flyer invited seasoned players and curious beginners for friendly competition, botanical drinks, community prizes, and bragging rights. That date has passed, so use the official post for proof and Instagram for the next confirmed table.',
+        sourceLabel: 'See the official Poker Night post',
+        sourceUrl: 'https://www.instagram.com/tribalkavalounge/p/DZVX-E0px7G/',
+        embedUrl: 'https://www.instagram.com/p/DZVX-E0px7G/embed/captioned/',
+        proofTitle: 'Poker Night flyer from @TribalKavaLounge',
+        schema: {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: 'Poker Night at Tribal Kava Lounge',
+            description: 'Verified Poker Night history and current scheduling source for Tribal Kava Lounge in West Palm Beach.',
+            url: `${SITE_ORIGIN}/events/poker-night`,
+            about: { '@type': 'Event', name: 'Poker Night at Tribal Kava Lounge' }
+        }
+    },
+    'art-club': {
+        seoKey: 'event-art-club',
+        eyebrow: 'Rotating creative night · next date on Instagram',
+        title: 'Art Club for Adults',
+        intro: 'Art Club has brought grown-up project time and guided painting to Tribal in partnership with Mingle & Grind.',
+        detail: 'The verified August 26 flyer offered a bring-your-own-project session and a guided option with supplies, food, and snacks. That date has passed. Follow the source post and Tribal’s Instagram for the next confirmed creative night.',
+        sourceLabel: 'See the original Art Club post',
+        sourceUrl: 'https://www.instagram.com/mingle_and_grind/p/DbY2B49v2R_/',
+        embedUrl: 'https://www.instagram.com/p/DbY2B49v2R_/embed/captioned/',
+        proofTitle: 'Art Club flyer from event partner Mingle & Grind',
+        schema: {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: 'Art Club for Adults at Tribal Kava Lounge',
+            description: 'Verified Art Club history and current scheduling source for Tribal Kava Lounge in West Palm Beach.',
+            url: `${SITE_ORIGIN}/events/art-club`,
+            about: { '@type': 'Event', name: 'Art Club for Adults at Tribal Kava Lounge' }
+        }
+    },
+    'sip-and-paint': {
+        seoKey: 'event-sip-and-paint',
+        eyebrow: 'Rotating creative event · next date on Instagram',
+        title: 'Sip & Paint at Tribal',
+        intro: 'Tribal’s verified Sip & Paint paired an afternoon of art with a complimentary double kava shell or small cold tea.',
+        detail: 'The August 8 event was hosted by Jules from 11 AM to 4 PM. Its $15 entry included painting materials and a complimentary double shell or small cold tea. That date has passed, so check the official post and Instagram for the next session.',
+        sourceLabel: 'See the official Sip & Paint post',
+        sourceUrl: 'https://www.instagram.com/tribalkavalounge/p/DbTyHIUphWx/',
+        embedUrl: 'https://www.instagram.com/p/DbTyHIUphWx/embed/captioned/',
+        proofTitle: 'Sip & Paint flyer from @TribalKavaLounge',
+        schema: {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: 'Sip and Paint at Tribal Kava Lounge',
+            description: 'Verified Sip and Paint history and current scheduling source for Tribal Kava Lounge in West Palm Beach.',
+            url: `${SITE_ORIGIN}/events/sip-and-paint`,
+            about: { '@type': 'Event', name: 'Sip and Paint at Tribal Kava Lounge' }
+        }
     }
 };
 
-Object.values(eventDatabase).forEach((event) => {
+Object.entries(eventDatabase).forEach(([slug, event]) => {
     seoDatabase[event.seoKey] = {
         title: `${event.title} | Tribal Kava Lounge West Palm Beach`,
         description: event.intro,
-        slug: `/events/${Object.keys(eventDatabase).find(key => eventDatabase[key] === event)}`,
+        slug: `/events/${slug}`,
         schema: event.schema
     };
 });
@@ -642,6 +724,16 @@ function renderEventDetail(slug) {
                 <a href="sms:+15613550561?&amp;body=EVENTS%20%E2%80%94%20Please%20send%20me%20the%20next%20Tribal%20Kava%20event%20details." class="btn" data-conversion="event_inquiry">Text for Updates</a>
             </div>
         </div>
+        ${event.embedUrl ? `
+            <div class="event-proof-card">
+                <div>
+                    <p class="menu-eyebrow">Verified event proof</p>
+                    <h2>${event.proofTitle}</h2>
+                    <p>The embedded post is the scheduling source. If its date has passed, use the source link above or the text button for the next confirmed night.</p>
+                </div>
+                <iframe class="instagram-embed" title="${event.proofTitle}" src="${event.embedUrl}" loading="lazy" allowtransparency="true"></iframe>
+            </div>
+        ` : ''}
     `;
     injectSEO(event.seoKey);
     return true;
