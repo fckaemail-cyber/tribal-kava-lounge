@@ -114,9 +114,12 @@ assert.match(html, /id="instagram-gallery"/, 'curated Instagram gallery mount mu
 assert.match(app, /fetch\('\/api\/social-proof'/, 'frontend must refresh social proof through the same-origin API');
 assert.match(app, /data-google-rating-summary/, 'Google rating summary must support live hydration');
 assert.match(socialProofCore, /places\.googleapis\.com\/v1\/places/, 'social proof API must use Places API (New)');
+assert.doesNotMatch(socialProofCore, /places:searchText/, 'the verified Tribal place ID must avoid an unnecessary Text Search request');
+assert.match(socialProofCore, /GOOGLE_PLACE_ID = 'ChIJFe_zmzQp2YgRh1ooSVUot9Y'/, 'social proof must default to the verified Tribal place ID');
+assert.match(socialProofCore, /X-Goog-FieldMask': 'rating,userRatingCount'/, 'Google social proof must request only fields used by the public contract');
 assert.match(socialProofCore, /graph\.instagram\.com/, 'social proof API must use the official Instagram graph host');
 assert.doesNotMatch(`${html}\n${app}`, /GOOGLE_PLACES_API_KEY|INSTAGRAM_ACCESS_TOKEN/, 'provider secret names must not appear in browser assets');
-assert.match(socialProofFunction, /Cache-Control.*max-age=300/, 'social proof API must cache provider responses');
+assert.match(socialProofFunction, /Cache-Control.*max-age=300, s-maxage=3600, stale-while-revalidate=86400/, 'social proof API must cache provider responses in browsers and shared caches');
 assert.equal(JSON.parse(config).platform.apiRuntime, 'node:20', 'Azure managed API runtime must be pinned');
 assert.match(html, /id="view-nearby"/, 'nearby-area search coverage page must exist');
 assert.match(html, /id="view-nearby-detail"/, 'dedicated nearby-area route view must exist');

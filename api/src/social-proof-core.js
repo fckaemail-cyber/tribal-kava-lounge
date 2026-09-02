@@ -1,7 +1,7 @@
 const GOOGLE_LISTING_URL = 'https://www.google.com/maps/search/?api=1&query=Tribal+Kava+Lounge&query_place_id=ChIJFe_zmzQp2YgRh1ooSVUot9Y';
+const GOOGLE_PLACE_ID = 'ChIJFe_zmzQp2YgRh1ooSVUot9Y';
 const INSTAGRAM_PROFILE_URL = 'https://www.instagram.com/tribalkavalounge/';
 const SNAPSHOT_DATE = '2026-08-31T00:00:00-04:00';
-const GOOGLE_TEXT_QUERY = 'Tribal Kava Lounge 770 S Military Trail Unit A1 West Palm Beach FL 33415';
 const DEFAULT_CURATED_CODES = 'DcMhfR2kY2X';
 
 const fallbackInstagramItems = Object.freeze([
@@ -76,33 +76,16 @@ async function jsonResponse(response, provider) {
   return response.json();
 }
 
-async function findGooglePlaceId(apiKey, fetchImpl, signal) {
-  const response = await fetchImpl('https://places.googleapis.com/v1/places:searchText', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Goog-Api-Key': apiKey,
-      'X-Goog-FieldMask': 'places.id,places.displayName,places.formattedAddress'
-    },
-    body: JSON.stringify({ textQuery: GOOGLE_TEXT_QUERY, maxResultCount: 1 }),
-    signal
-  });
-  const payload = await jsonResponse(response, 'Google Places text search');
-  const placeId = trimmed(payload?.places?.[0]?.id);
-  if (!placeId) throw new Error('Google Places text search did not return a place ID');
-  return placeId;
-}
-
 async function googleSocialProof(env, fetchImpl, signal) {
   const apiKey = trimmed(env.GOOGLE_PLACES_API_KEY);
   if (!apiKey) return snapshotGoogle();
 
-  const placeId = trimmed(env.GOOGLE_PLACE_ID) || await findGooglePlaceId(apiKey, fetchImpl, signal);
+  const placeId = trimmed(env.GOOGLE_PLACE_ID) || GOOGLE_PLACE_ID;
   const response = await fetchImpl(`https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}`, {
     headers: {
       'Content-Type': 'application/json',
       'X-Goog-Api-Key': apiKey,
-      'X-Goog-FieldMask': 'id,displayName,rating,userRatingCount,googleMapsUri'
+      'X-Goog-FieldMask': 'rating,userRatingCount'
     },
     signal
   });
@@ -117,7 +100,7 @@ async function googleSocialProof(env, fetchImpl, signal) {
     mode: 'live',
     rating,
     reviewCount,
-    url: trustedUrl(payload.googleMapsUri, ['google.com']) || GOOGLE_LISTING_URL,
+    url: GOOGLE_LISTING_URL,
     placeId,
     checkedAt: new Date().toISOString()
   };
