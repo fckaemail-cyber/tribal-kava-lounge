@@ -81,6 +81,8 @@ assert.match(html, /id="drink-finder-primary-action"/, 'drink finder must expose
 assert.match(app, /Single Shell · French Vanilla[\s\S]*?\$6\.24 on DoorDash/, 'drink finder must recommend a specific purchasable DoorDash build');
 assert.doesNotMatch(html, /quiz-card|data-recommendation/, 'legacy one-click drink quiz must be removed');
 assert.match(styles, /\.hero-ctas \.btn:nth-child\(n \+ 3\)\s*\{\s*display:\s*none;/, 'mobile hero must prioritize two conversion actions');
+assert.match(styles, /\.hero-badge\s*\{[\s\S]*?max-width:\s*100%;[\s\S]*?white-space:\s*normal;/, 'mobile hero badge must wrap instead of widening the viewport');
+assert.match(styles, /grid-template-columns:\s*minmax\(0, 0\.92fr\) minmax\(0, 1\.08fr\);/, 'mobile hero CTA columns must not overflow and must give Directions enough room');
 assert.equal((html.match(/href="\/events\/(?:two-dollar-tuesday|friday-loteria|karaoke|mario-kart|poker-night|art-club|sip-and-paint)"/g) || []).length, 7, 'all seven verified events must have shareable routes');
 assert.equal((app.match(/embedUrl:\s*'https:\/\/www\.instagram\.com\/p\//g) || []).length, 5, 'five event pages must embed their official scheduling proof');
 assert.match(html, /instagram\.com\/p\/DZC5nDruES3\/embed\/captioned/, 'official Instagram proof must be embedded');
