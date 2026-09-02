@@ -65,6 +65,10 @@ assert.match(workbookConfig, /Google, Instagram, QR, and direct action sources/,
 assert.match(workbookConfig, /campaign_medium\) != 'qa'/, 'dashboard must exclude controlled QA traffic');
 assert.doesNotMatch(app, /stay quiet on mobile/, 'the Kava Guide prompt must not be disabled on mobile');
 assert.match(styles, /width:\s*min\(210px, calc\(100vw - 6\.75rem\)\)/, 'mobile Kava Guide prompt must fit the viewport');
+assert.match(html, /id="floating-chat-bubble"[^>]*hidden/, 'the Kava Guide launcher must not compete with the initial hero');
+assert.match(app, /new IntersectionObserver[\s\S]*?entry\.intersectionRatio >= 0\.18[\s\S]*?revealFloatingChat\(\)/, 'the Kava Guide launcher must reveal after the hero');
+assert.match(app, /isMobileViewport \? 25000 : 30000/, 'the Kava Guide must remain available on mobile after a patient delay');
+assert.match(styles, /\.floating-chat-bubble\.is-ready[\s\S]*?pointer-events:\s*auto;/, 'the delayed Kava Guide launcher must become interactive when revealed');
 assert.doesNotMatch(html, /Joined VIP list!/, 'VIP path must not fake a successful signup');
 assert.match(html, /data-conversion="directions"/, 'directions conversion must exist');
 assert.match(html, /query_place_id=ChIJFe_zmzQp2YgRh1ooSVUot9Y/, 'Google review links must target the verified Tribal Business Profile');

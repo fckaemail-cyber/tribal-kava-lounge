@@ -1338,11 +1338,23 @@ function sendMessage(inputElementId, targetChatElementId) {
     }, 600);
 }
 
+function revealFloatingChat(showPrompt = false) {
+    const bubble = document.getElementById('floating-chat-bubble');
+    if (!bubble) return;
+
+    bubble.hidden = false;
+    window.requestAnimationFrame(() => {
+        bubble.classList.add('is-ready');
+        if (showPrompt) bubble.classList.add('show-prompt');
+    });
+}
+
 function setFloatingChatOpen(shouldOpen, focusInput = false) {
     const bubble = document.getElementById('floating-chat-bubble');
     const chatWindow = document.getElementById('floating-chat-window');
     if (!bubble || !chatWindow) return;
 
+    if (shouldOpen) revealFloatingChat();
     bubble.classList.remove('show-prompt');
     bubble.setAttribute('aria-expanded', String(shouldOpen));
 
@@ -1563,15 +1575,27 @@ document.addEventListener('DOMContentLoaded', () => {
             setFloatingChatOpen(shouldOpen, shouldOpen);
         });
         
-        // Give the page room to breathe before offering help. On mobile, use the
-        // same guide with a shorter delay and a compact prompt.
+        // Keep the conversion hero clear. Reveal the same guide on every screen
+        // size once the visitor moves beyond the hero, or after a patient delay.
+        const hero = document.querySelector('.pro-hero');
+        if (hero && 'IntersectionObserver' in window) {
+            const heroObserver = new IntersectionObserver(([entry]) => {
+                if (entry.intersectionRatio >= 0.18) return;
+                revealFloatingChat();
+                heroObserver.disconnect();
+            }, { threshold: [0, 0.18] });
+            heroObserver.observe(hero);
+        } else {
+            window.addEventListener('scroll', () => revealFloatingChat(), { once: true, passive: true });
+        }
+
         const isMobileViewport = window.matchMedia('(max-width: 768px)').matches;
         setTimeout(() => {
             if (chatWindow.hidden) {
-                bubble.classList.add('show-prompt');
+                revealFloatingChat(true);
                 window.setTimeout(() => bubble.classList.remove('show-prompt'), 7000);
             }
-        }, isMobileViewport ? 18000 : 30000);
+        }, isMobileViewport ? 25000 : 30000);
     }
     
     const chatClose = document.getElementById('chat-close-btn');

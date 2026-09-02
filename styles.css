@@ -2229,8 +2229,21 @@ footer {
     justify-content: center;
     cursor: pointer;
     z-index: 98;
-    transition: var(--transition-smooth);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px) scale(0.94);
+    transition: opacity 0.24s ease, transform 0.24s ease, visibility 0.24s ease, box-shadow 0.24s ease;
     border: 1px solid rgba(255,255,255,0.2);
+}
+
+.floating-chat-bubble[hidden] { display: none; }
+
+.floating-chat-bubble.is-ready {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
 }
 
 .floating-chat-bubble:hover {
