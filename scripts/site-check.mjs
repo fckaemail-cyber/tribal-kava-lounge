@@ -59,6 +59,10 @@ assert.match(analytics, /isProductionHost/, 'local previews must be excluded fro
 assert.match(analytics, /document\.readyState === 'complete'/, 'deferred analytics must wait for the router before its initial page-view fallback');
 assert.match(workbookBicep, /Microsoft\.Insights\/workbooks@2023-06-01/, 'conversion workbook must be deployable');
 assert.equal(JSON.parse(workbookConfig).items.filter(item => item.type === 3).length, 5, 'conversion workbook must contain five query panels');
+assert.match(workbookConfig, /Visits → menu → directions\/calls → DoorDash/, 'dashboard must expose the requested conversion path');
+assert.match(workbookConfig, /DoorDash checkout starts/, 'dashboard must count outbound checkout starts explicitly');
+assert.match(workbookConfig, /Google, Instagram, QR, and direct action sources/, 'dashboard must separate the requested traffic sources');
+assert.match(workbookConfig, /campaign_medium\) != 'qa'/, 'dashboard must exclude controlled QA traffic');
 assert.doesNotMatch(app, /stay quiet on mobile/, 'the Kava Guide prompt must not be disabled on mobile');
 assert.match(styles, /width:\s*min\(210px, calc\(100vw - 6\.75rem\)\)/, 'mobile Kava Guide prompt must fit the viewport');
 assert.doesNotMatch(html, /Joined VIP list!/, 'VIP path must not fake a successful signup');

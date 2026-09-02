@@ -20,7 +20,7 @@ resource conversionWorkbook 'Microsoft.Insights/workbooks@2023-06-01' = {
   properties: {
     category: 'workbook'
     displayName: 'Tribal Kava Conversion Dashboard'
-    description: 'Order, directions, call, VIP, event, and drink-finder conversion reporting.'
+    description: 'Visits, menu, directions/calls, DoorDash checkout starts, source attribution, and drink-finder reporting.'
     serializedData: string(workbookData)
     sourceId: insights.id
     version: 'Notebook/1.0'

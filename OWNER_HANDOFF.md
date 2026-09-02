@@ -61,3 +61,11 @@ Every Monday, record:
 - The top Daily Kava landing pages
 
 The goal is not traffic alone. Keep promotions that create calls, directions, event interest, and real visits.
+
+## F. Azure conversion dashboard — already connected
+
+Application Insights and the **Tribal Kava Conversion Dashboard** are live in
+the `tribal-kava-site-rg` resource group. It reports visits, menu sessions,
+directions/calls, DoorDash checkout starts, campaign sources, and drink-finder
+recommendations. Controlled QA traffic is excluded. DoorDash checkout starts
+measure outbound checkout intent, not a confirmed DoorDash purchase.

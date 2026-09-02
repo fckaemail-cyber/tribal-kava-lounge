@@ -17,3 +17,27 @@ Security boundaries:
 
 The GitHub workflow remains available for manual fallback, but its schedule is
 disabled after the Azure execution is verified.
+
+## Conversion dashboard
+
+`conversion-workbook.bicep` deploys the shared **Tribal Kava Conversion
+Dashboard** against `tribal-kava-insights` in `tribal-kava-site-rg`.
+The workbook reports:
+
+- visits, menu sessions, directions/calls, and DoorDash checkout starts;
+- conversion actions and unique sessions;
+- Google, Instagram, QR, direct, and other UTM sources;
+- drink-finder recommendations.
+
+Local previews never initialize browser telemetry. Controlled validation uses
+`utm_medium=qa`, which every workbook query excludes. `begin_checkout` means
+the visitor opened Tribal's DoorDash checkout path; DoorDash does not expose a
+completed-purchase event to this site.
+
+Validate all five KQL queries before deployment, then update the workbook with:
+
+```sh
+az deployment group create \
+  --resource-group tribal-kava-site-rg \
+  --template-file infra/azure/conversion-workbook.bicep
+```

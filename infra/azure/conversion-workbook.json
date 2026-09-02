@@ -5,7 +5,7 @@
     {
       "type": 1,
       "content": {
-        "json": "# Tribal Kava conversion dashboard\nOrder, directions, call, VIP, events, and drink-finder activity from the live site. Local preview traffic is excluded."
+        "json": "# Tribal Kava conversion dashboard\nVisits, menu interest, directions, calls, DoorDash checkout starts, VIP, events, and drink-finder activity from the live site. Local preview and QA traffic are excluded."
       },
       "name": "title"
     },
@@ -46,7 +46,7 @@
       "content": {
         "version": "KqlItem/1.0",
         "title": "Conversion actions",
-        "query": "let live = customEvents\n| where timestamp {TimeRange}\n| where tostring(customDimensions.page_location) has 'thetribalkavalounge.com';\ndatatable(Action:string, Sort:int, EventName:string)[\n'Order online', 1, 'order_online',\n'Directions', 2, 'directions',\n'Phone calls', 3, 'phone_call',\n'VIP texts', 4, 'vip_sms',\n'VIP emails', 5, 'vip_email',\n'Event interest', 6, 'event_interest',\n'Event inquiries', 7, 'event_inquiry',\n'Drink recommendations', 8, 'drink_recommendation'\n]\n| join kind=leftouter (live | summarize Actions=count(), People=dcount(user_Id), Sessions=dcount(session_Id) by EventName=name) on EventName\n| project Action, Actions=coalesce(Actions, 0), People=coalesce(People, 0), Sessions=coalesce(Sessions, 0), Sort\n| order by Sort asc\n| project-away Sort",
+        "query": "let live = customEvents\n| where timestamp {TimeRange}\n| where tostring(customDimensions.page_location) has 'thetribalkavalounge.com'\n| where tostring(customDimensions.campaign_medium) != 'qa';\ndatatable(Action:string, Sort:int, EventName:string)[\n'DoorDash checkout starts', 1, 'begin_checkout',\n'Order-link clicks', 2, 'order_online',\n'Menu views', 3, 'menu_view',\n'Directions', 4, 'directions',\n'Phone calls', 5, 'phone_call',\n'VIP texts', 6, 'vip_sms',\n'VIP emails', 7, 'vip_email',\n'Event interest', 8, 'event_interest',\n'Event inquiries', 9, 'event_inquiry',\n'Drink recommendations', 10, 'drink_recommendation'\n]\n| join kind=leftouter (live | summarize Actions=count(), People=dcount(user_Id), Sessions=dcount(session_Id) by EventName=name) on EventName\n| project Action, Actions=coalesce(Actions, 0), People=coalesce(People, 0), Sessions=coalesce(Sessions, 0), Sort\n| order by Sort asc\n| project-away Sort",
         "size": 0,
         "queryType": 0,
         "resourceType": "microsoft.insights/components",
@@ -65,7 +65,7 @@
       "content": {
         "version": "KqlItem/1.0",
         "title": "Visits and high-intent actions over time",
-        "query": "let pages = pageViews\n| where timestamp {TimeRange}\n| where url has 'thetribalkavalounge.com'\n| summarize PageViews=count() by bin(timestamp, 1d);\nlet actions = customEvents\n| where timestamp {TimeRange}\n| where tostring(customDimensions.page_location) has 'thetribalkavalounge.com'\n| where name in ('order_online', 'directions', 'phone_call', 'vip_sms', 'vip_email', 'event_interest', 'event_inquiry', 'drink_recommendation')\n| summarize Actions=count() by bin(timestamp, 1d);\npages\n| join kind=fullouter actions on timestamp\n| project timestamp=coalesce(timestamp, timestamp1), PageViews=coalesce(PageViews, 0), Actions=coalesce(Actions, 0)\n| order by timestamp asc",
+        "query": "let pages = pageViews\n| where timestamp {TimeRange}\n| where url has 'thetribalkavalounge.com'\n| where tostring(customDimensions.campaign_medium) != 'qa'\n| summarize PageViews=count() by bin(timestamp, 1d);\nlet actions = customEvents\n| where timestamp {TimeRange}\n| where tostring(customDimensions.page_location) has 'thetribalkavalounge.com'\n| where tostring(customDimensions.campaign_medium) != 'qa'\n| where name in ('menu_view', 'order_online', 'begin_checkout', 'directions', 'phone_call', 'vip_sms', 'vip_email', 'event_interest', 'event_inquiry', 'drink_recommendation')\n| summarize Actions=count() by bin(timestamp, 1d);\npages\n| join kind=fullouter actions on timestamp\n| project timestamp=coalesce(timestamp, timestamp1), PageViews=coalesce(PageViews, 0), Actions=coalesce(Actions, 0)\n| order by timestamp asc",
         "size": 0,
         "queryType": 0,
         "resourceType": "microsoft.insights/components",
@@ -77,8 +77,8 @@
       "type": 3,
       "content": {
         "version": "KqlItem/1.0",
-        "title": "High-intent path by session",
-        "query": "let livePages = pageViews\n| where timestamp {TimeRange}\n| where url has 'thetribalkavalounge.com';\nlet liveEvents = customEvents\n| where timestamp {TimeRange}\n| where tostring(customDimensions.page_location) has 'thetribalkavalounge.com';\ndatatable(Stage:string, Sort:int, EventName:string)[\n'Site sessions', 1, 'page_view',\n'Menu views', 2, 'menu_view',\n'Drink recommendations', 3, 'drink_recommendation',\n'Order clicks', 4, 'order_online'\n]\n| join kind=leftouter (\n    union (livePages | summarize Sessions=dcount(session_Id) | extend EventName='page_view'),\n          (liveEvents | where name in ('menu_view', 'drink_recommendation', 'order_online') | summarize Sessions=dcount(session_Id) by EventName=name)\n  ) on EventName\n| project Stage, Sessions=coalesce(Sessions, 0), Sort\n| order by Sort asc\n| project-away Sort",
+        "title": "Visits → menu → directions/calls → DoorDash",
+        "query": "let livePages = pageViews\n| where timestamp {TimeRange}\n| where url has 'thetribalkavalounge.com'\n| where tostring(customDimensions.campaign_medium) != 'qa';\nlet liveEvents = customEvents\n| where timestamp {TimeRange}\n| where tostring(customDimensions.page_location) has 'thetribalkavalounge.com'\n| where tostring(customDimensions.campaign_medium) != 'qa';\ndatatable(Stage:string, Sort:int, EventName:string)[\n'Site sessions', 1, 'page_view',\n'Menu sessions', 2, 'menu_view',\n'Directions / calls', 3, 'visit_intent',\n'DoorDash checkout starts', 4, 'begin_checkout'\n]\n| join kind=leftouter (\n    union (livePages | summarize Sessions=dcount(session_Id) | extend EventName='page_view'),\n          (liveEvents | where name in ('menu_view', 'begin_checkout') | summarize Sessions=dcount(session_Id) by EventName=name),\n          (liveEvents | where name in ('directions', 'phone_call') | summarize Sessions=dcount(session_Id) | extend EventName='visit_intent')\n  ) on EventName\n| project Stage, Sessions=coalesce(Sessions, 0), Sort\n| order by Sort asc\n| project-away Sort",
         "size": 0,
         "queryType": 0,
         "resourceType": "microsoft.insights/components",
@@ -90,8 +90,8 @@
       "type": 3,
       "content": {
         "version": "KqlItem/1.0",
-        "title": "Campaigns producing action",
-        "query": "customEvents\n| where timestamp {TimeRange}\n| where tostring(customDimensions.page_location) has 'thetribalkavalounge.com'\n| where name in ('order_online', 'directions', 'phone_call', 'vip_sms', 'vip_email', 'event_interest', 'event_inquiry', 'drink_recommendation')\n| extend Source=tostring(customDimensions.campaign_source), Medium=tostring(customDimensions.campaign_medium), Campaign=tostring(customDimensions.campaign_name)\n| summarize Actions=count(), People=dcount(user_Id), Orders=countif(name == 'order_online'), Directions=countif(name == 'directions'), Calls=countif(name == 'phone_call') by Source, Medium, Campaign\n| order by Actions desc",
+        "title": "Google, Instagram, QR, and direct action sources",
+        "query": "customEvents\n| where timestamp {TimeRange}\n| where tostring(customDimensions.page_location) has 'thetribalkavalounge.com'\n| where tostring(customDimensions.campaign_medium) != 'qa'\n| where name in ('menu_view', 'order_online', 'begin_checkout', 'directions', 'phone_call', 'vip_sms', 'vip_email', 'event_interest', 'event_inquiry', 'drink_recommendation')\n| extend Source=tostring(customDimensions.campaign_source), Medium=tostring(customDimensions.campaign_medium), Campaign=tostring(customDimensions.campaign_name)\n| summarize Actions=count(), People=dcount(user_Id), MenuClicks=countif(name == 'menu_view'), CheckoutStarts=countif(name == 'begin_checkout'), Directions=countif(name == 'directions'), Calls=countif(name == 'phone_call') by Source, Medium, Campaign\n| order by Actions desc",
         "size": 0,
         "queryType": 0,
         "resourceType": "microsoft.insights/components",
@@ -104,7 +104,7 @@
       "content": {
         "version": "KqlItem/1.0",
         "title": "What the drink finder recommends",
-        "query": "customEvents\n| where timestamp {TimeRange}\n| where tostring(customDimensions.page_location) has 'thetribalkavalounge.com'\n| where name == 'drink_recommendation'\n| extend Drink=tostring(customDimensions.recommended_item), Base=tostring(customDimensions.botanical), Flavor=tostring(customDimensions.flavor), Moment=tostring(customDimensions.vibe)\n| summarize Recommendations=count(), People=dcount(user_Id) by Drink, Base, Flavor, Moment\n| order by Recommendations desc",
+        "query": "customEvents\n| where timestamp {TimeRange}\n| where tostring(customDimensions.page_location) has 'thetribalkavalounge.com'\n| where tostring(customDimensions.campaign_medium) != 'qa'\n| where name == 'drink_recommendation'\n| extend Drink=tostring(customDimensions.recommended_item), Base=tostring(customDimensions.botanical), Flavor=tostring(customDimensions.flavor), Moment=tostring(customDimensions.vibe)\n| summarize Recommendations=count(), People=dcount(user_Id) by Drink, Base, Flavor, Moment\n| order by Recommendations desc",
         "size": 0,
         "queryType": 0,
         "resourceType": "microsoft.insights/components",
