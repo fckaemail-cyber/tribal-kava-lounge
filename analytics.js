@@ -160,11 +160,15 @@
   });
   window.tribalTrack = send;
 
-  if (document.readyState === 'loading') {
-    window.addEventListener('DOMContentLoaded', () => {
+  // Deferred scripts execute while the document is usually "interactive".
+  // Wait for the router's DOMContentLoaded handler so its initial
+  // tribal:navigation event owns the first page view. Only use the fallback
+  // when analytics is injected after DOMContentLoaded has already finished.
+  if (document.readyState === 'complete') {
+    if (!routeEventSeen) pageView();
+  } else {
+    document.addEventListener('DOMContentLoaded', () => {
       if (!routeEventSeen) pageView();
     }, { once: true });
-  } else {
-    pageView();
   }
 })();

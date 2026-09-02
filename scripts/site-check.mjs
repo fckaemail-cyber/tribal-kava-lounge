@@ -56,6 +56,7 @@ assert.match(siteConfig, /applicationInsightsConnectionString:\s*'Instrumentatio
 assert.match(analytics, /azureInsights\.trackEvent/, 'conversion events must be sent to Application Insights');
 assert.match(analytics, /azureInsights\.trackPageView/, 'page views must be sent to Application Insights');
 assert.match(analytics, /isProductionHost/, 'local previews must be excluded from production telemetry');
+assert.match(analytics, /document\.readyState === 'complete'/, 'deferred analytics must wait for the router before its initial page-view fallback');
 assert.match(workbookBicep, /Microsoft\.Insights\/workbooks@2023-06-01/, 'conversion workbook must be deployable');
 assert.equal(JSON.parse(workbookConfig).items.filter(item => item.type === 3).length, 5, 'conversion workbook must contain five query panels');
 assert.doesNotMatch(app, /stay quiet on mobile/, 'the Kava Guide prompt must not be disabled on mobile');
