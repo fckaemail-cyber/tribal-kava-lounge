@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
@@ -26,6 +26,7 @@ const preRenderedMenu = await readFile(path.join(root, 'dist/menu/index.html'), 
 const preRenderedLoteria = await readFile(path.join(root, 'dist/events/friday-loteria/index.html'), 'utf8');
 const preRenderedLakeWorth = await readFile(path.join(root, 'dist/nearby/lake-worth/index.html'), 'utf8');
 const preRenderedDaily = await readFile(path.join(root, 'dist/the-daily-kava/kava-bar-west-palm-beach-first-visit/index.html'), 'utf8');
+const publishedImages = (await readdir(path.join(root, 'dist/images'))).sort();
 
 assert.match(html, /https:\/\/www\.thetribalkavalounge\.com\//, 'canonical domain must use www');
 assert.match(html, /<meta name="google-site-verification" content="zXsp7qWCsUyKjaGf-yWfi92M_A_csa1mz6SO2WbTjP0">/, 'Google Search Console verification must remain in the public home page');
@@ -47,6 +48,12 @@ assert.match(html, /\/images\/tribal-mario-kart-racers\.webp/, 'authentic owned 
 assert.ok(communityPhoto.length > 50000, 'owned community photo must be a real optimized image asset');
 assert.ok(barPhoto.length > 50000, 'owned lounge photo must be a real optimized image asset');
 assert.ok(racersPhoto.length > 50000, 'owned event photo must be a real optimized image asset');
+assert.deepEqual(publishedImages, [
+  'tribal-bar-game-night.webp',
+  'tribal-community-game-night.webp',
+  'tribal-logo-cutout.png',
+  'tribal-mario-kart-racers.webp'
+], 'production must publish only the verified Tribal media allowlist');
 assert.match(html, /verified[\s\S]*@TribalKavaLounge post published August 18, 2026/, 'owned photography must retain visible source provenance');
 assert.doesNotMatch(`${html}\n${app}\n${dailyKava}`, /Kava Clouds?|Kratom Refreshers?|Agua Frescas?|Viral Signatures?/, 'retired drink branding must not return');
 assert.equal(logo[25], 6, 'Tribal logo PNG must contain an RGBA alpha channel');

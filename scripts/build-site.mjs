@@ -17,11 +17,18 @@ const files = [
   'staticwebapp.config.json',
   '34a68ae0477ea10ed9d8a543952e0cdb.txt'
 ];
+const imageFiles = [
+  'tribal-bar-game-night.webp',
+  'tribal-community-game-night.webp',
+  'tribal-logo-cutout.png',
+  'tribal-mario-kart-racers.webp'
+];
 
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
 await Promise.all(files.map((file) => cp(path.join(root, file), path.join(output, file))));
-await cp(path.join(root, 'images'), path.join(output, 'images'), { recursive: true });
+await mkdir(path.join(output, 'images'), { recursive: true });
+await Promise.all(imageFiles.map((file) => cp(path.join(root, 'images', file), path.join(output, 'images', file))));
 const calendarSource = await readFile(path.join(root, 'events.ics'), 'utf8');
 await writeFile(path.join(output, 'events.ics'), calendarSource.replace(/\r?\n/g, '\r\n'));
 
@@ -125,4 +132,4 @@ for (const route of [...staticPaths, ...dailyPaths]) {
   await writeFile(routeFile, renderRouteHtml(route, routeMetadata.get(route)));
 }
 
-console.log(`Built ${files.length} files, ${dailyPaths.length} Daily Kava URLs, ${routeMetadata.size} pre-rendered routes, and images into ${output}`);
+console.log(`Built ${files.length} files, ${imageFiles.length} verified images, ${dailyPaths.length} Daily Kava URLs, and ${routeMetadata.size} pre-rendered routes into ${output}`);
