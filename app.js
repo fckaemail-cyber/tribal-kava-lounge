@@ -16,7 +16,8 @@ const seoDatabase = {
             "logo": `${SITE_ORIGIN}/images/tribal-logo-cutout.png`,
             "image": [
                 `${SITE_ORIGIN}/images/tribal-community-game-night.webp`,
-                `${SITE_ORIGIN}/images/tribal-bar-game-night.webp`
+                `${SITE_ORIGIN}/images/tribal-bar-game-night.webp`,
+                `${SITE_ORIGIN}/images/tribal-mario-kart-racers.webp`
             ],
             "@id": `${SITE_ORIGIN}/#lounge`,
             "url": SITE_ORIGIN,
@@ -471,7 +472,8 @@ const eventDatabase = {
             eventStatus: 'https://schema.org/EventScheduled',
             image: [
                 `${SITE_ORIGIN}/images/tribal-community-game-night.webp`,
-                `${SITE_ORIGIN}/images/tribal-bar-game-night.webp`
+                `${SITE_ORIGIN}/images/tribal-bar-game-night.webp`,
+                `${SITE_ORIGIN}/images/tribal-mario-kart-racers.webp`
             ],
             location: {
                 '@type': 'Place',

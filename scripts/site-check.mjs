@@ -20,6 +20,7 @@ const [html, robots, sitemap, config, analytics, siteConfig, app, styles, dailyK
 const logo = await readFile(path.join(root, 'images/tribal-logo-cutout.png'));
 const communityPhoto = await readFile(path.join(root, 'images/tribal-community-game-night.webp'));
 const barPhoto = await readFile(path.join(root, 'images/tribal-bar-game-night.webp'));
+const racersPhoto = await readFile(path.join(root, 'images/tribal-mario-kart-racers.webp'));
 const indexNowKey = await readFile(path.join(root, 'dist/34a68ae0477ea10ed9d8a543952e0cdb.txt'), 'utf8');
 const preRenderedMenu = await readFile(path.join(root, 'dist/menu/index.html'), 'utf8');
 const preRenderedLoteria = await readFile(path.join(root, 'dist/events/friday-loteria/index.html'), 'utf8');
@@ -42,8 +43,10 @@ assert.doesNotMatch(html, /\/images\/(?:lounge-interior|hero-placeholder)\.jpg/,
 assert.doesNotMatch(app, /\/images\/lounge-interior\.jpg/, 'inauthentic lounge image must not appear in schema');
 assert.match(html, /\/images\/tribal-community-game-night\.webp/, 'authentic owned community photography must appear in the hero');
 assert.match(html, /\/images\/tribal-bar-game-night\.webp/, 'authentic owned lounge photography must appear in the gallery');
+assert.match(html, /\/images\/tribal-mario-kart-racers\.webp/, 'authentic owned event photography must appear in the gallery');
 assert.ok(communityPhoto.length > 50000, 'owned community photo must be a real optimized image asset');
 assert.ok(barPhoto.length > 50000, 'owned lounge photo must be a real optimized image asset');
+assert.ok(racersPhoto.length > 50000, 'owned event photo must be a real optimized image asset');
 assert.match(html, /verified[\s\S]*@TribalKavaLounge post published August 18, 2026/, 'owned photography must retain visible source provenance');
 assert.doesNotMatch(`${html}\n${app}\n${dailyKava}`, /Kava Clouds?|Kratom Refreshers?|Agua Frescas?|Viral Signatures?/, 'retired drink branding must not return');
 assert.equal(logo[25], 6, 'Tribal logo PNG must contain an RGBA alpha channel');

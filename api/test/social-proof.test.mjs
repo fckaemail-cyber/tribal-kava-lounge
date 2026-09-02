@@ -19,7 +19,8 @@ test('returns honest snapshots without provider credentials', async () => {
   assert.equal(payload.providerStatus.instagram, 'snapshot');
   assert.equal(payload.google.rating, 4.8);
   assert.equal(payload.google.reviewCount, 269);
-  assert.equal(payload.instagram.items.length, 2);
+  assert.equal(payload.instagram.items.length, 3);
+  assert.equal(payload.instagram.items[2].imageUrl, '/images/tribal-mario-kart-racers.webp');
 });
 
 test('hydrates live Google rating and curated Instagram carousel media', async () => {

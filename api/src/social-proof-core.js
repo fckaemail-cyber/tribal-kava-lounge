@@ -18,6 +18,13 @@ const fallbackInstagramItems = Object.freeze([
     permalink: 'https://www.instagram.com/tribalkavalounge/p/DcMhfR2kY2X/',
     alt: 'The Tribal Kava Lounge bar during a real Mario Kart event',
     caption: 'The bar at Tribal during game night'
+  },
+  {
+    id: 'fallback-racers',
+    imageUrl: '/images/tribal-mario-kart-racers.webp',
+    permalink: 'https://www.instagram.com/tribalkavalounge/p/DcMhfR2kY2X/',
+    alt: 'Nine guests playing Mario Kart during a real community event at Tribal Kava Lounge',
+    caption: 'The tribe came to race at Mario Kart night'
   }
 ]);
 
